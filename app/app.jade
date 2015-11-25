@@ -1,0 +1,33 @@
+doctype html
+html
+
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width')
+        title
+        // I'm not concatenating vendors to ease debugging without source maps.
+        // In a cordova app, we can afford it.
+        link(href='css/ionic.app.css', rel='stylesheet')
+        link(href='css/app.css', rel='stylesheet')
+        //
+        // I'm not concatenating vendors to ease debugging without source maps.
+        // In a cordova app, we can afford it.
+        // ionic/angularjs js
+        script(src='js/ionic.bundle.js')
+        // cordova script (this will be a 404 during development)
+        script(src='cordova.js')
+        // your app's js
+        script(src='js/templates.js')
+        script(src='js/app.js')
+
+    body(ng-app='app')
+        //
+          The nav bar that will be updated as we navigate between views.
+        ion-nav-bar.bar-stable
+            ion-nav-back-button
+        //
+          The views will be rendered in the <ion-nav-view> directive below
+          Templates are in the /templates folder (but you could also
+          have templates inline in this html file if you'd like).
+        ion-nav-view
+                       

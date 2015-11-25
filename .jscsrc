@@ -1,0 +1,15 @@
+{
+    "disallowEmptyBlocks": true,
+    "disallowMixedSpacesAndTabs": true,
+    "disallowTrailingComma": true,
+    "maximumLineLength": 160,
+    "maximumNumberOfLines": 200,
+    "requireCapitalizedConstructors": true,
+    "requireDollarBeforejQueryAssignment": true,
+    "requireDotNotation": true,
+    "requireSemicolons": true,
+    "safeContextKeyword": ["self", "vm"],
+    "validateIndentation": 4,
+    "validateLineBreaks": "LF",
+    "validateQuoteMarks": { "mark": "'", "escape": true }
+}

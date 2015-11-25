@@ -1,0 +1,36 @@
+{
+    "eqeqeq": true,
+    "forin": true,
+    "freeze": true,
+    "futurehostile": true,
+    "latedef": true,
+    "maxcomplexity": 12,
+    "maxdepth": 5,
+    "maxparams": 5,
+    "maxstatements": 200,
+    "noarg": true,
+    "nonbsp": true,
+    "undef": true,
+    "unused": true,
+    "latedef": "nofunc",
+
+    "eqnull": true,
+    "expr": true,
+    "lastsemic": true,
+
+    "browser": true,
+    "jasmine": true,
+    "jquery": true,
+    "node": true,
+
+    "globals": {
+        "angular": false,
+        "dump": false,
+        "expect": false,
+        "inject": false,
+        "module": false,
+        "spyOn": false,
+        "cordova": false,
+        "StatusBar": false
+    }
+}

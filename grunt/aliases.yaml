@@ -1,0 +1,80 @@
+
+# Default build
+default:
+    - newdev
+
+
+
+# Build whole project for development
+dev:
+    - clean:build
+    - jshint:dev
+    - jscs
+    - replace
+    - sass
+    - postcss
+    - copy
+    - jade:index
+    - html2js:dev
+    - ngAnnotate
+
+
+# Same as dev but build only what changed
+newdev:
+    - newer:jshint:dev
+    - newer:jscs
+    - newer:replace
+    - sass
+    - newer:postcss
+    - newer:copy
+    - newer:jade:index
+    - html2js:dev
+    - ngAnnotate
+
+
+
+# Distribution build: same as dev + uglify
+dist:
+    - clean:build
+    - jshint:dist
+    - jscs
+    - replace
+    - sass
+    - postcss
+    - copy
+    - jade:index
+    - html2js:dist
+    - ngAnnotate
+    - uglify
+
+
+
+# Generate documentation and stats
+doc:
+    - clean:doc
+    - groc
+    - plato
+
+
+
+# Build then start a watcher and a web server which open index.html
+# This command uses `ionic serve` under the hood for the web server.
+# So you may pass the `--lab` option if you want.
+serve:
+#  - dev
+  - shell:serve
+
+
+
+# Build then launch karma in single run mode for Chrome and Firefox.
+# Suitable for CI.
+test:
+  - dev
+  - karma:dev
+
+# Build then launch karma in watch mode for Chrome only and a watcher (chokidar).
+# Usually you want to test in one browser while developping and test all others after.
+wtest:
+  - dev
+  - concurrent:wtest
+
