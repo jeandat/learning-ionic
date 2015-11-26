@@ -5,24 +5,33 @@ module.exports = function (grunt) {
     return {
         tasks: {
 
-            concurrent: {
-                options: {
-                    logConcurrentOutput: true
-                },
+            parallel:{
                 // Launch a web server and a watch server.
-                serve: {
-                    tasks: ['chokidar', 'shell:serve']
+                serve:{
+                    options:{
+                        stream: true
+                    },
+                    tasks:[{
+                        grunt: true,
+                        args: ['chokidar']
+                    },{
+                        grunt: true,
+                        args: ['shell:serve']
+                    }]
                 },
-                // Launch a karma server in watch mode for Chrome only and a watch server.
-                // When developing a test case for the first time, I launch karma in watch mode and test in chrome only to have
-                // a quick feedback.
+                // Launch a karma server in watch mode and a watch server for source files.
                 wtest: {
+                    options: {
+                        stream: true,
+                        grunt: true
+                    },
                     tasks: ['karma:wdev', 'chokidar']
                 }
             },
 
-            // wrapper for `ionic serve` command
             shell: {
+                // wrapper for `ionic serve` command which launch a local web server serving `www` folder.
+                // You may pass the classical `--lab` option.
                 serve: {
                     command: function () {
                         var labArg = grunt.option('lab');

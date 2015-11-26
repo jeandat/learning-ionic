@@ -61,20 +61,18 @@ doc:
 # This command uses `ionic serve` under the hood for the web server.
 # So you may pass the `--lab` option if you want.
 serve:
-#  - dev
-  - shell:serve
+  - dev
+  - parallel:serve
 
 
 
-# Build then launch karma in single run mode for Chrome and Firefox.
-# Suitable for CI.
+# Build then launch karma in single run mode. Suitable for CI.
 test:
   - dev
   - karma:dev
 
-# Build then launch karma in watch mode for Chrome only and a watcher (chokidar).
-# Usually you want to test in one browser while developping and test all others after.
+# Build then launch karma in watch mode and a watcher for source files.
 wtest:
   - dev
-  - concurrent:wtest
+  - parallel:wtest
 
