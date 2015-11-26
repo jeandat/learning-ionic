@@ -3,7 +3,7 @@
 
 # Overview 
 
-This is a very simple project to apprehend Ionic. It is a fork of [learning-angular](http://github.com/jdat82/learning-angular).
+This is a very simple project to apprehend Ionic. The grunt build is very close to the one in [learning-angular](http://github.com/jdat82/learning-angular).
 
 To try it, just clone or download the project from github, then `npm start`.
 
