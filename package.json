@@ -61,7 +61,7 @@
   "scripts": {
     "prestart": "npm install",
     "postinstall": "bower install",
-    "start": "ionic serve --lab",
-    "test": "grunt dev karma:dev"
+    "start": "grunt serve --lab",
+    "test": "grunt test"
   }
 }

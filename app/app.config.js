@@ -3,7 +3,13 @@
 
     angular
         .module('app')
+        .config(appConfig)
         .config(routeConfig);
+
+    function appConfig($compileProvider) {
+        // Remove angular debug info in DOM when compiling for production
+        $compileProvider.debugInfoEnabled('@@env' === 'dev');
+    }
 
     function routeConfig($stateProvider, $urlRouterProvider) {
 
