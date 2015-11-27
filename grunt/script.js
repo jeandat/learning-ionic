@@ -10,7 +10,8 @@ module.exports = function () {
                     files: [{
                         dest: '<%= pub %>/js',
                         src: [
-                            'ionic/js/ionic.bundle.js'
+                            'ionic/js/ionic.bundle.js',
+                            'lodash/lodash.js'
                         ],
                         expand: true,
                         cwd: 'vendor',

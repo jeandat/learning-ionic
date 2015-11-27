@@ -14,16 +14,16 @@
     //$scope.$on('$ionicView.enter', function(e) {
     //});
 
-    function ChatsController(Chats) {
+    function ChatsController(chatsService) {
 
         var vm = this;
-        vm.chats = Chats.all();
+        vm.chats = chatsService.all();
         vm.remove = remove;
 
         ////////////////
 
         function remove(chat) {
-            Chats.remove(chat);
+            chatsService.remove(chat);
         }
 
     }

@@ -14,10 +14,10 @@
     //$scope.$on('$ionicView.enter', function(e) {
     //});
 
-    function ChatDetailController($stateParams, Chats) {
+    function ChatDetailController($stateParams, chatsService) {
 
         var vm = this;
-        vm.chat = Chats.get($stateParams.chatId);
+        vm.chat = chatsService.get($stateParams.chatId);
 
     }
 

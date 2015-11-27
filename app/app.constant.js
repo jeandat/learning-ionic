@@ -5,7 +5,8 @@
         .module('app')
         // App version from package.json
         .constant('version', '@@version')
-        .constant('stringify', stringify);
+        .constant('stringify', stringify)
+        .constant('_', _);
 
     // Same as `JSON.stringify` but with indentation.
     function stringify(value) {

@@ -5,14 +5,32 @@ module.exports.tasks = {
     // Unit tests
     karma: {
         options: {
-            configFile: 'test/karma.conf.js'
+            configFile: 'test/karma.conf.js',
+            browsers: ['PhantomJS']
         },
         dev: {
-            browsers: ['Chrome']
+            singleRun: true
         },
-        'wdev': {
-            browsers: ['Chrome'],
+        wdev: {
             singleRun: false
+        }
+    },
+
+    parallel: {
+        // Launch a karma server in watch mode and a watch server for source files.
+        wtest: {
+            options: {
+                stream: true,
+                grunt: true
+            },
+            tasks: ['karma:wdev', 'chokidar']
+        }
+    },
+
+    chokidar:{
+        jsSpecs: {
+            files: ['<%= src %>/**/*.spec.js', 'test/unit/**/*.spec.js'],
+            tasks: ['newer:jshint:dev', 'newer:replace']
         }
     }
 };

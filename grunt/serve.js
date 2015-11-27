@@ -18,14 +18,6 @@ module.exports = function (grunt) {
                         grunt: true,
                         args: ['shell:serve']
                     }]
-                },
-                // Launch a karma server in watch mode and a watch server for source files.
-                wtest: {
-                    options: {
-                        stream: true,
-                        grunt: true
-                    },
-                    tasks: ['karma:wdev', 'chokidar']
                 }
             },
 
