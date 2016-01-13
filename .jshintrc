@@ -6,13 +6,14 @@
     "latedef": true,
     "maxcomplexity": 12,
     "maxdepth": 5,
-    "maxparams": 5,
+    "maxparams": 20,
     "maxstatements": 200,
     "noarg": true,
     "nonbsp": true,
     "undef": true,
     "unused": true,
     "latedef": "nofunc",
+    "validthis": true,
 
     "eqnull": true,
     "expr": true,
@@ -32,6 +33,9 @@
         "spyOn": false,
         "cordova": false,
         "StatusBar": false,
-        "_": false
+        "_": false,
+        "ionic": false,
+        "H": false,
+        "defaultTranslations": true
     }
 }

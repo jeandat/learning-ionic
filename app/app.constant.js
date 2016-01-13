@@ -5,6 +5,7 @@
         .module('app')
         // App version from package.json
         .constant('version', '@@version')
+        .constant('apiEndpoint', '@@apiEndpoint')
         .constant('stringify', stringify)
         .constant('_', _);
 

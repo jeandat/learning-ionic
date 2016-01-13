@@ -6,7 +6,9 @@ module.exports = function (grunt) {
     };
 
     // Load grunt tasks on demand
-    require('jit-grunt')(grunt);
+    require('jit-grunt')(grunt, {
+        sass_compile_imports: 'grunt-sass-compile-imports'
+    });
 
     // Will print the time taken by each task at the end of the process
     require('time-grunt')(grunt);

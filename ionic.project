@@ -7,5 +7,11 @@
       "browser": "crosswalk",
       "version": "12.41.296.5"
     }
-  ]
+  ],
+  "proxies": [
+      {
+        "path": "/api",
+        "proxyUrl": "TODO"
+      }
+    ]
 }

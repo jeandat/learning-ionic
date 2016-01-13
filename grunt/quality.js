@@ -3,7 +3,7 @@
 var extend = require('node.extend');
 
 var jshintFiles = [{
-    src: ['grunt/*.js', '<%= src %>/**/*.js', 'test/unit/**/*.js']
+    src: ['grunt/*.js', '<%= tmp %>/**/*.js', 'test/unit/**/*.js']
 }];
 
 module.exports = function (grunt) {
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
                     reporter: require('jscs-stylish').path
                 },
                 build: {
-                    src: ['grunt/*.js', '<%= src %>/**/*.js', '!<%= src %>/**/*.spec.js']
+                    src: ['grunt/*.js', '<%= tmp %>/**/*.js', '!<%= tmp %>/**/*.spec.js']
                 }
             }
         }

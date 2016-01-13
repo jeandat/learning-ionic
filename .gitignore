@@ -10,4 +10,5 @@ plugins/
 .tmp/
 vendor/
 www/
-
+sublime/
+npm-debug.log

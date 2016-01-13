@@ -1,5 +1,4 @@
 (function () {
     'use strict';
-
-    angular.module('app', ['ionic', 'templates']);
+    angular.module('app', ['ionic', 'templates', '@@ngCordovaModuleName', 'LocalStorageModule', 'angular-cache']);
 })();

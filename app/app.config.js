@@ -4,7 +4,11 @@
     angular
         .module('app')
         .config(appConfig)
-        .config(routeConfig);
+        .config(routeConfig)
+        .config(localStorageConfig)
+        .config(ionicConfig)
+        .config(httpInterceptors)
+        .config(inAppBrowserConfig);
 
     function appConfig($compileProvider) {
         // Remove angular debug info in DOM when compiling for production
@@ -24,7 +28,7 @@
             .state('tab', {
                 url: '/tab',
                 abstract: true,
-                templateUrl: 'tabs.jade'
+                templateUrl: 'common/layout/layout.jade'
             })
 
             // Each tab has its own nav history stack:
@@ -74,6 +78,45 @@
 
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/tab/dash');
+
+        console.debug('States defined');
+
+    }
+
+    // All keys in local storage will have prefix 'myald'.
+    function localStorageConfig(localStorageServiceProvider) {
+        localStorageServiceProvider.setPrefix('li'); // learning-ionic
+    }
+
+    // Ionic defaults
+    function ionicConfig($ionicConfigProvider) {
+        // Enable native scrolling on browsers capable of handling it correctly.
+        $ionicConfigProvider.scrolling.jsScrolling(ionic.Platform.isIOS() ? true : false);
+
+        // Default spinner
+        $ionicConfigProvider.spinner.icon('dots');
+    }
+
+    // ! NOT USED FOR THE MOMENT !
+    function httpInterceptors() {
+        // $httpProvider.interceptors.push('throwExceptionOnHttpError');
+    }
+
+    function inAppBrowserConfig($injector) {
+        // $cordovaInAppBrowserProvider may not exist in web mode because there is no mock for this component in ngCordovaMocks.
+        // NO time to create a proper mock for $cordovaInAppBrowser in web mode.
+        // TODO fork ngCordovaMocks : add a proper mock.
+        var $cordovaInAppBrowserProvider;
+        try {
+            $cordovaInAppBrowserProvider = $injector.get('$cordovaInAppBrowserProvider');
+        }
+        catch (err) {
+            console.warn('$cordovaInAppBrowserProvider not configured because we are in web mode');
+        }
+        $cordovaInAppBrowserProvider && $cordovaInAppBrowserProvider.setDefaultOptions({
+            'location': 'yes',
+            'toolbar': 'yes'
+        });
 
     }
 

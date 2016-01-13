@@ -9,36 +9,44 @@ module.exports = function () {
     return {
         tasks: {
 
-            //copy: {
-            //    cssVendor: {
-            //        files: [
-            //            {
-            //                dest: '<%= pub %>/css',
-            //                src: [
-            //                    ''
-            //                ],
-            //                expand: true,
-            //                cwd: 'vendor',
-            //                flatten: true
-            //            }
-            //        ]
-            //    }
-            //},
+            copy: {
+                cssVendor: {
+                    files: [
+                        {
+                            dest: '<%= pub %>/css/',
+                            src: [
+                                'ion-autocomplete/dist/ion-autocomplete.css'
+                            ],
+                            expand: true,
+                            flatten: true,
+                            cwd: 'vendor'
+                        }
+                    ]
+                }
+            },
 
             sass: {
                 options: {
                     style: 'expanded',
                     sourceMap: true
                 },
-                ionic: {
-                    files:{
-                        '<%= pub %>/css/ionic.app.css': '<%= tmp %>/ionic.app.scss'
-                    }
-                },
                 app: {
                     files: {
-                        '<%= pub %>/css/app.css': ['<%= tmp %>/**/*.scss', '!<%= tmp %>/ionic.app.scss']
+                        '<%= pub %>/css/app.css': ['<%= tmp %>/app.scss']
                     }
+                }
+            },
+
+            sass_compile_imports: {
+                app: {
+                    options: {
+                        removeExtension: true
+                    },
+                    target: '<%= tmp %>/_partials.scss',
+                    files: [{
+                        src: ['<%= src %>/_ionic.app.scss', '<%= src %>/**/_variables.scss',
+                            '<%= src %>/common/fonts/*', '<%= src %>/**/_*.scss']
+                    }]
                 }
             },
 
@@ -59,18 +67,10 @@ module.exports = function () {
 
             // Watcher for css files
             chokidar: {
-                cssIonic: {
-                    files: ['<%= src %>/ionic.app.scss'],
-                    tasks: ['newer:replace', 'sass:ionic', 'newer:postcss']
-                },
                 cssApp: {
-                    files: ['<%= src %>/**/*.scss', '!<%= src %>/ionic.app.scss'],
-                    tasks: ['newer:replace', 'sass:app', 'newer:postcss']
+                    files: ['<%= src %>/**/*.scss'],
+                    tasks: ['newer:replace', 'sass_compile_imports', 'sass', 'newer:postcss']
                 }
-                //cssVendor: {
-                //    files: ['vendor/**/*.css'],
-                //    tasks: ['copy:cssVendor']
-                //}
             }
         }
     };

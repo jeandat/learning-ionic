@@ -3,7 +3,7 @@
     "disallowMixedSpacesAndTabs": true,
     "disallowTrailingComma": true,
     "maximumLineLength": 160,
-    "maximumNumberOfLines": 200,
+    "maximumNumberOfLines": 250,
     "requireCapitalizedConstructors": true,
     "requireDollarBeforejQueryAssignment": true,
     "requireDotNotation": true,

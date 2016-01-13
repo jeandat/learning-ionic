@@ -30,7 +30,7 @@ module.exports.tasks = {
     chokidar:{
         jsSpecs: {
             files: ['<%= src %>/**/*.spec.js', 'test/unit/**/*.spec.js'],
-            tasks: ['newer:jshint:dev', 'newer:replace']
+            tasks: ['newer:replace', 'newer:jshint:dev']
         }
     }
 };

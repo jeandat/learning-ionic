@@ -6,9 +6,18 @@ module.exports = function (config) {
         basePath: '..',
         files: [
             // vendors
-            'www/js/ionic.bundle.js',
+            'www/js/jquery.js',
+            'www/js/ionic.js',
+            'www/js/angular.js',
+            'www/js/angular-animate.js',
+            'www/js/angular-sanitize.js',
+            'www/js/angular-ui-router.js',
+            'www/js/ionic-angular.js',
             'www/js/lodash.js',
             'vendor/angular-mocks/angular-mocks.js',
+            'www/js/ng-cordova-mocks.js',
+            'www/js/angular-local-storage.js',
+            'www/js/angular-cache.js',
             // app
             'www/js/templates.js',
             '.tmp/**/*.module.js',
@@ -26,10 +35,14 @@ module.exports = function (config) {
         },
         coverageReporter: {
             type: 'lcov',
-            dir: 'doc/test/coverage'
+            dir: 'doc/test/coverage/',
+            subdir: 'phantom'
         },
         junitReporter: {
-            outputDir: 'doc/test/junit/'
+            outputDir: 'doc/test/junit/',
+            // Name is very important for Sonar: don't change it !
+            outputFile: 'TESTS-xunit.xml',
+            useBrowserName: false
         },
         browsers: ['PhantomJS'],
         phantomjsLauncher: {

@@ -25,6 +25,7 @@
     "grunt-postcss": "^0.7.1",
     "grunt-replace": "^0.11.0",
     "grunt-sass": "^1.1.0",
+    "grunt-sass-compile-imports": "^0.2.1",
     "grunt-shell": "^1.1.2",
     "jasmine-core": "^2.3.0",
     "jit-grunt": "^0.9.1",
@@ -49,7 +50,8 @@
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "cordova-plugin-dialogs"
   ],
   "cordovaPlatforms": [
     {
@@ -61,7 +63,14 @@
   "scripts": {
     "prestart": "npm install",
     "postinstall": "bower install",
-    "start": "grunt serve --lab",
-    "test": "grunt test"
+    "start": "npm run serve",
+    "serve": "grunt dev --mock true --proxy true && grunt serve --mock true --proxy true",
+    "android": "grunt dev && ionic run android",
+    "android-lr": "grunt dev --proxy true && grunt run:android -l --proxy true",
+    "ios": "grunt dev && ionic run ios",
+    "ios-lr": "grunt dev --proxy true && grunt run:ios -l --proxy true",
+    "test": "grunt dev --mock true && grunt karma:dev",
+    "wtest": "grunt dev --mock true && grunt parallel:wtest --mock true",
+    "doc": "grunt clean:doc groc plato"
   }
 }

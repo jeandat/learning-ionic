@@ -10,8 +10,18 @@ module.exports = function () {
                     files: [{
                         dest: '<%= pub %>/js',
                         src: [
-                            'ionic/js/ionic.bundle.js',
-                            'lodash/lodash.js'
+                            'jquery/dist/jquery.js',
+                            'ionic/js/ionic.js',
+                            'angular/angular.js',
+                            'angular-animate/angular-animate.js',
+                            'angular-sanitize/angular-sanitize.js',
+                            'angular-ui-router/release/angular-ui-router.js',
+                            'ionic/js/ionic-angular.js',
+                            'lodash/lodash.js',
+                            'ngCordova/dist/ng-cordova.js',
+                            'ngCordova/dist/ng-cordova-mocks.js',
+                            'angular-local-storage/dist/angular-local-storage.js',
+                            'angular-cache/dist/angular-cache.js'
                         ],
                         expand: true,
                         cwd: 'vendor',
@@ -61,11 +71,11 @@ module.exports = function () {
                     tasks: ['newer:copy:jsVendor']
                 },
                 jsApp: {
-                    files: ['<%= src %>/**/*.js', '!<%= src %>/**/*.spec.js', '.jshintrc', '.jscsrc'],
+                    files: ['<%= src %>/**/*.js', '<%= src %>/../i18n/*.js', '!<%= src %>/**/*.spec.js', '.jshintrc', '.jscsrc'],
                     tasks: [
+                        'newer:replace',
                         'newer:jshint:dev',
                         'newer:jscs',
-                        'newer:replace',
                         'ngAnnotate']
                 }
             }
