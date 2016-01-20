@@ -5,17 +5,17 @@ module.exports = function (grunt) {
         return JSON.stringify(object, null, '    ');
     };
 
-    // Load grunt tasks on demand
+    // Load grunt tasks on demand —> Better build time
     require('jit-grunt')(grunt, {
         sass_compile_imports: 'grunt-sass-compile-imports'
     });
 
-    // Will print the time taken by each task at the end of the process
+    // Will print the time taken by each task at the end of process
     require('time-grunt')(grunt);
 
 
     // Current task name
-    var taskName = grunt.cli.tasks && grunt.cli.tasks[0] || 'default';
+    var taskName = _.get(grunt.cli, 'tasks[0]') || 'default';
 
 
     // Load patterns file in conf/ folder.
@@ -29,15 +29,11 @@ module.exports = function (grunt) {
         // So, writing `grunt dist` is equivalent to `grunt dist --patterns dist`
         patternsFileName = taskName === 'dist' ? 'dist' : 'dev';
     }
-    grunt.verbose.writeln('Will use patterns inside file conf/' + patternsFileName + '.js');
     var patterns = require('./conf/' + patternsFileName + '.js');
-    grunt.verbose.writeln('Patterns: ' + stringify(patterns));
-
+    grunt.verbose.writeln('Loaded patterns from conf/' + patternsFileName + '.js: ' + stringify(patterns);
 
     var options = {
-        config: {
-            src: "grunt/*.js"
-        },
+        config: {src: "grunt/*.js"},
         src: 'app',
         tmp: '.tmp',
         pub: 'www',
