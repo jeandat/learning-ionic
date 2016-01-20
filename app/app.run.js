@@ -11,13 +11,11 @@
     function land($state, $log, $cordovaSplashscreen, $timeout) {
         //$state.go('app.landing').then(hideSplash);
         // TODO
-        hideSplash();
+        $timeout(hideSplash, 1000);
         /////////////////////
         function hideSplash() {
-            return $timeout(function () {
-                $log.debug('Splashscreen hidden');
-                $cordovaSplashscreen.hide();
-            });
+            $log.debug('Splashscreen hidden');
+            $cordovaSplashscreen.hide();
         }
     }
 
@@ -43,6 +41,10 @@
     }
 
     function setHttpDefaultCache($log, $http, CacheFactory) {
+
+        // In unit tests, we will run this for each spec.
+        if(CacheFactory.get('defaultCache')) return;
+
         var options = {
             maxAge: 60 * 60 * 1000, // Items added to this cache expire after 1 hour
             deleteOnExpire: 'passive' // Cache will do nothing when an item expires.
