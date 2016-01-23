@@ -25,3 +25,18 @@ $font-family-light-sans-serif:    "Roboto-Light", "Segoe UI-Light", "Arial-Light
 
 // Include all of Ionic
 @import "../vendor/ionic/scss/ionic";
+
+.spinner {
+    stroke: $positive;
+    fill: $positive;
+}
+
+.loading-container .loading{
+    background-color: transparent;
+}
+
+.button{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

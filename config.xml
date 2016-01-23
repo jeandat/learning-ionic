@@ -13,13 +13,14 @@
   <preference name="android-minSdkVersion" value="16"/>
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
-  <preference name="AutoHideSplashScreen" value="false"/>
-  <preference name="SplashScreenDelay" value="300000"/>
-  <preference name="xwalkVersion" value="15+"/>
+  <preference name="AutoHideSplashScreen" value="true"/>
+  <preference name="SplashScreenDelay" value="1000"/>
+<preference name="FadeSplashScreenDuration" value="1000"/>
+  <preference name="xwalkVersion" value="16+"/>
   <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect"/>
   <preference name="xwalkMode" value="embedded"/>
   <preference name="xwalkMultipleApk" value="true"/>
-  <preference name="BackupWebStorage" value="none"/>
+    <preference name="Orientation" value="all"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="sms:*"/>
@@ -29,6 +30,7 @@
     <param name="ios-package" onload="true" value="CDVStatusBar"/>
   </feature>
   <platform name="android">
+        <preference name="SplashShowOnlyFirstTime" value="false"/>
     <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png"/>
     <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png"/>
     <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png"/>

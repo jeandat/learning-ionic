@@ -7,15 +7,14 @@
         .config(routeConfig)
         .config(localStorageConfig)
         .config(ionicConfig)
-        .config(httpInterceptors)
-        .config(inAppBrowserConfig);
+        .config(httpInterceptors);
 
     function appConfig($compileProvider) {
         // Remove angular debug info in DOM when compiling for production
         $compileProvider.debugInfoEnabled('@@env' === 'dev');
     }
 
-    function routeConfig($stateProvider, $urlRouterProvider) {
+    function routeConfig($stateProvider) {
 
         // Ionic uses AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
@@ -73,9 +72,6 @@
                     }
                 }
             });
-
-        // If none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/tab/dash');
 
         console.debug('States defined');
 

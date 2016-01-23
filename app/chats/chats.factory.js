@@ -5,6 +5,9 @@
         .module('app')
         .factory('chatsService', chatsService);
 
+    // Some fake testing data
+    var chats = fakeData();
+
     function chatsService() {
 
         var service = {
@@ -35,9 +38,6 @@
         }
 
     }
-
-    // Some fake testing data
-    var chats = fakeData();
 
     function fakeData(){
         return [{

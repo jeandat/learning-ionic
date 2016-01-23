@@ -3,21 +3,12 @@
 
     angular
         .module('app')
-        .run(land)
         .run(configureCordova)
         .run(setCustomLogs)
-        .run(setHttpDefaultCache);
+        .run(setHttpDefaultCache)
+        .run(checkRequirements);
 
-    function land($state, $log, $cordovaSplashscreen, $timeout) {
-        //$state.go('app.landing').then(hideSplash);
-        // TODO
-        $timeout(hideSplash, 1000);
-        /////////////////////
-        function hideSplash() {
-            $log.debug('Splashscreen hidden');
-            $cordovaSplashscreen.hide();
-        }
-    }
+    //////////////////////
 
     function configureCordova() {
 
@@ -43,7 +34,7 @@
     function setHttpDefaultCache($log, $http, CacheFactory) {
 
         // In unit tests, we will run this for each spec.
-        if(CacheFactory.get('defaultCache')) return;
+        if (CacheFactory.get('defaultCache')) return;
 
         var options = {
             maxAge: 60 * 60 * 1000, // Items added to this cache expire after 1 hour
@@ -55,5 +46,10 @@
 
         $http.defaults.cache = new CacheFactory('defaultCache', options);
     }
+
+    function checkRequirements($state) {
+        $state.go('tab.dash');
+    }
+
 
 })();

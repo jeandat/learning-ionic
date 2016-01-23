@@ -9,9 +9,9 @@
     }
   ],
   "proxies": [
-      {
-        "path": "/api",
-        "proxyUrl": "TODO"
-      }
-    ]
+    {
+      "path": "/api",
+      "proxyUrl": "TODO"
+    }
+  ]
 }

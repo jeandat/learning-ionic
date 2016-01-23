@@ -1,5 +1,7 @@
 module.exports = function (grunt) {
 
+    var _ = require('lodash');
+
     // Utility function
     global.stringify = function (object) {
         return JSON.stringify(object, null, '    ');
@@ -30,7 +32,7 @@ module.exports = function (grunt) {
         patternsFileName = taskName === 'dist' ? 'dist' : 'dev';
     }
     var patterns = require('./conf/' + patternsFileName + '.js');
-    grunt.verbose.writeln('Loaded patterns from conf/' + patternsFileName + '.js: ' + stringify(patterns);
+    grunt.verbose.writeln('Loaded patterns from conf/' + patternsFileName + '.js: ' + stringify(patterns));
 
     var options = {
         config: {src: "grunt/*.js"},

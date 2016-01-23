@@ -7,7 +7,8 @@
         .constant('version', '@@version')
         .constant('apiEndpoint', '@@apiEndpoint')
         .constant('stringify', stringify)
-        .constant('_', _);
+        .constant('_', _)
+		.constant('gaUserId', '@@gaUserId');
 
     // Same as `JSON.stringify` but with indentation.
     function stringify(value) {
