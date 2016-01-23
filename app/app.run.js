@@ -47,8 +47,10 @@
         $http.defaults.cache = new CacheFactory('defaultCache', options);
     }
 
-    function checkRequirements($state) {
-        $state.go('tab.dash');
+    function checkRequirements($state, $timeout) {
+        $timeout(function(){
+            $state.go('tab.dash');
+        }, 5000);
     }
 
 
