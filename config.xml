@@ -14,7 +14,7 @@
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="AutoHideSplashScreen" value="true"/>
-  <preference name="SplashScreenDelay" value="2000"/>
+  <preference name="SplashScreenDelay" value="3000"/>
   <preference name="FadeSplashScreenDuration" value="1000"/>
   <preference name="xwalkVersion" value="16+"/>
   <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect"/>
