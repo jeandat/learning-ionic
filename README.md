@@ -176,14 +176,27 @@ JDK 7 (or more recent) should be installed.
 
 This project should work on all versions of node since 0.12.7. I recommend NVM for simple and powerful node management.
 
-# Platform quirks
+# Strategies
 
 ## Splashscreen
 
-### Android
+I do not recommend to auto hide the splashscreen. Depending on your device velocity the splashscreen may hide itself before the webview is visible. This is what happens on Android:
 
-While it is not documented, the preference `AutoHideSplashScreen` works only on iOS.
-For Android, I had to configure a very large timeout with `SplashScreenDelay`. See `config.xml`.
+1. Black screen (which is your app's background)
+1. Show Splashscreen then hide after delay
+1. Reveal what is behind, so depending on device, it may be :
+
+- still a black screen
+- your webview
+
+Augmenting the delay may be a solution if you didn't set preference `SplashShowOnlyFirstTime` to false. It is not very pretty though.
+ 
+I recommend to either hide the splashscreen yourself when you are ready* (more on that later) or use a very basic native splashscreen (one color) and then a web splashscreen. A web splashscreen allows much more flexibility and creativity but is more expensive.
+
+> Warning: [the plugin splashscreen is broken in version 3.0.0 and 3.1.0](https://issues.apache.org/jira/browse/CB-10412?jql=project%20%3D%20CB%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20resolution%20%3D%20Unresolved%20AND%20component%20%3D%20%22Plugin%20Splashscreen%22%20AND%20text%20~%20%22hide%22%20ORDER%20BY%20priority%20DESC%2C%20summary%20ASC%2C%20updatedDate%20DESC): you can't hide the splashscreen yourself.
+
+I don't know a cordova way to customize the app's default background, but by modifying the code of each shell and defining a custom background color in adequation with your look it can be even prettier. I don't like modifying native code though. 
+
 
 # Error handling
 
