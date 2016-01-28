@@ -47,8 +47,7 @@
         $http.defaults.cache = new CacheFactory('defaultCache', options);
     }
 
-    function checkRequirements($cordovaSplashscreen, $state) {
-        $cordovaSplashscreen.hide();
+    function checkRequirements($state) {
         $state.go('tab.dash');
     }
 
