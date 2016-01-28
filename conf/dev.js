@@ -14,6 +14,6 @@ module.exports = extend(true, {}, pkg, {
     ngCordovaScript: mock ? 'js/ng-cordova-mocks.js' : 'js/ng-cordova.js',
     ngCordovaModuleName: mock ? 'ngCordovaMocks' : 'ngCordova',
     debug: '<script>Error && Error.stackTraceLimit && (Error.stackTraceLimit=50);</script>',
-    csp: "default-src 'self' http://m-accept.aldautomotive.com:8200/ALDOLIGHT/ https://*.api.here.com/ 'unsafe-eval' http://*:35729 ws://*:35729 http://*:8100 'unsafe-inline' data: blob: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *; frame-src *",
+    csp: "default-src 'self' 'unsafe-inline' http://*:35729 ws://*:35729 http://*:8100 gap: https://ssl.gstatic.com;",
     gaUserId: 'TODO'
 });
