@@ -17,26 +17,34 @@ $dark:                            #444 !default;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "fonts" !default;
-
+$base-background-color: #EEE;
 
 // Override default font family
 //$font-family-sans-serif:          "Roboto", "Segoe UI", "Arial", sans-serif;
 //$font-family-light-sans-serif:    "Roboto-Light", "Segoe UI-Light", "Arial-Light", sans-serif-light;
 
-// Include all of Ionic
+
+
+
+// Include all of Ionic /////////////////////////
 @import "../vendor/ionic/scss/ionic";
 
+
+
+
+// CSS overrides ///////////////////////////////
+
 .spinner {
-    stroke: $positive;
-    fill: $positive;
+  stroke: $positive;
+  fill: $positive;
 }
 
-.loading-container .loading{
-    background-color: transparent;
+.loading-container .loading {
+  background-color: transparent;
 }
 
-.button{
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+.button {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

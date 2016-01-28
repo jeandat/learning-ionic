@@ -4,7 +4,7 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 ion-view(view-title='{{vm.chat.name}}')
-    ion-content.padding
+    ion-content.padding.has-tabs
         img(ng-src='{{vm.chat.face}}', style='width: 64px; height: 64px')
         p
             | {{vm.chat.lastText}}

@@ -10,7 +10,7 @@
 
     //////////////////////
 
-    function configureCordova() {
+    function configureCordova($cordovaStatusbar) {
 
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard for form inputs)
         if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -18,9 +18,9 @@
             cordova.plugins.Keyboard.disableScroll(false);
         }
 
-        if (window.StatusBar) {
-            StatusBar.styleDefault();
-        }
+        // Style status bar
+        var style = _.get($cordovaStatusbar, 'style');
+        style && style(1);
     }
 
     function setCustomLogs($rootScope, $log, stringify) {
@@ -47,10 +47,9 @@
         $http.defaults.cache = new CacheFactory('defaultCache', options);
     }
 
-    function checkRequirements($state, $timeout) {
-        $timeout(function(){
-            $state.go('tab.dash');
-        }, 5000);
+    function checkRequirements($cordovaSplashscreen, $state) {
+        $cordovaSplashscreen.hide();
+        $state.go('tab.dash');
     }
 
 

@@ -1,5 +1,5 @@
 ion-view(view-title='Chats')
-    ion-content
+    ion-content.has-tabs
         ion-list
             ion-item.item-remove-animate.item-avatar.item-icon-right(ng-repeat='chat in vm.chats', type='item-text-wrap', href='#/tab/chats/{{chat.id}}')
                 img(ng-src='{{chat.face}}')
