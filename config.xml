@@ -14,8 +14,7 @@
     <preference name="android-minSdkVersion" value="16"/>
     <preference name="BackgroundColor" value="0xeeeeeeff"/>
     <preference name="FadeSplashScreenDuration" value="1200"/>
-    <preference name="AutoHideSplashScreen" value="true"/>
-    <preference name="SplashScreenDelay" value="5000"/>
+    <preference name="AutoHideSplashScreen" value="false"/>
     <preference name="xwalkVersion" value="16+"/>
     <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect"/>
     <preference name="xwalkMode" value="embedded"/>
@@ -27,6 +26,7 @@
     </feature>
     <platform name="android">
         <preference name="SplashShowOnlyFirstTime" value="false"/>
+        <preference name="SplashScreenDelay" value="500000"/>
         <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
         <icon src="resources/android/icon/drawable-mdpi-icon.png" density="mdpi"/>
         <icon src="resources/android/icon/drawable-hdpi-icon.png" density="hdpi"/>
