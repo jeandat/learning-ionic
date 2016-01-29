@@ -48,7 +48,7 @@
     }
 
     function checkRequirements($state, $cordovaSplashscreen, $timeout) {
-        $state.go('tab.dash');
+        $state.go('tab.heroes');
         $timeout($cordovaSplashscreen.hide, 1000);
     }
 

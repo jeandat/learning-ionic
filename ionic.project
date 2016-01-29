@@ -11,7 +11,7 @@
   "proxies": [
     {
       "path": "/api",
-      "proxyUrl": "TODO"
+      "proxyUrl": "http://gateway.marvel.com:80/v1/public"
     }
   ]
 }

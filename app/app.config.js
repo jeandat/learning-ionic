@@ -7,7 +7,8 @@
         .config(routeConfig)
         .config(localStorageConfig)
         .config(ionicConfig)
-        .config(httpInterceptors);
+        .config(httpInterceptors)
+        .config(restConfig);
 
     function appConfig($compileProvider) {
         // Remove angular debug info in DOM when compiling for production
@@ -30,12 +31,12 @@
 
             // Each tab has its own nav history stack:
 
-            .state('tab.dash', {
-                url: '/dash',
+            .state('tab.heroes', {
+                url: '/heroes',
                 views: {
-                    'tab-dash': {
-                        templateUrl: 'dash/tab-dash.jade',
-                        controller: 'DashController',
+                    'tab-heroes': {
+                        templateUrl: 'heroes/tab-heroes.jade',
+                        controller: 'HeroesController',
                         controllerAs: 'vm'
                     }
                 }
@@ -94,6 +95,45 @@
     // ! NOT USED FOR THE MOMENT !
     function httpInterceptors() {
         // $httpProvider.interceptors.push('throwExceptionOnHttpError');
+    }
+
+    // Restangular configuration
+    function restConfig(RestangularProvider) {
+
+        // Temporary hack: Restangular is not compatible with Lodash v4.
+        _.contains = _.includes;
+
+        // All xhr requests url will have this prefix
+        RestangularProvider.setBaseUrl('@@apiEndpoint');
+
+        // All xhr requests will contain the apikey parameter
+        RestangularProvider.setDefaultRequestParams({apikey: '@@apiKey'});
+
+        // Define which property in JSON responses contains the self link
+        RestangularProvider.setRestangularFields({
+            selfLink: 'resourceURI'
+        });
+
+        // What we need to do everytime we request marvel API
+        RestangularProvider.addResponseInterceptor(function(data, operation) {
+            var extractedData;
+            // For getList operations
+            if (operation === 'getList') {
+                extractedData = data.data.results;
+                extractedData.meta = _.pickBy(data.data, keepMetadata);
+            }
+            //else {
+            //    extractedData = data.data;
+            //}
+            return extractedData;
+        });
+
+        ////////////
+
+        function keepMetadata(key, value){
+            return value !== 'results';
+        }
+
     }
 
 })();

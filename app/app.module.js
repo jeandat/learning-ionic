@@ -5,6 +5,7 @@
         'templates',
         '@@ngCordovaModuleName',
         'LocalStorageModule',
-        'angular-cache'
+        'angular-cache',
+        'restangular'
     ]);
 })();

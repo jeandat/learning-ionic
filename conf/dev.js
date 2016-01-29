@@ -10,7 +10,8 @@ grunt.verbose.writeln('Mock:', mock);
 
 module.exports = extend(true, {}, pkg, {
     env: 'dev',
-    apiEndpoint: proxy ? '/api' : 'TODO',
+    apiEndpoint: proxy ? '/api' : 'http://gateway.marvel.com:80/v1/public',
+    apiKey: '0a52dbf67ba6feb10084654c8a41e770',
     ngCordovaScript: mock ? 'js/ng-cordova-mocks.js' : 'js/ng-cordova.js',
     ngCordovaModuleName: mock ? 'ngCordovaMocks' : 'ngCordova',
     debug: '<script>Error && Error.stackTraceLimit && (Error.stackTraceLimit=50);</script>',
