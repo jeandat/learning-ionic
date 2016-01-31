@@ -36,6 +36,7 @@
         "_": false,
         "ionic": false,
         "H": false,
-        "defaultTranslations": true
+        "defaultTranslations": true,
+        "md5": false
     }
 }

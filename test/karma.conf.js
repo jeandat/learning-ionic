@@ -7,6 +7,7 @@ module.exports = function (config) {
         files: [
             // vendors
             'www/js/jquery.js',
+            'www/js/md5.js',
             'www/js/ionic.js',
             'www/js/angular.js',
             'www/js/angular-animate.js',

@@ -53,7 +53,11 @@
     "cordova-plugin-statusbar",
     "cordova-plugin-whitelist",
     "ionic-plugin-keyboard",
-    "cordova-plugin-splashscreen"
+    "cordova-plugin-splashscreen",
+    {
+      "locator": "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
+      "id": "cordova-plugin-x-toast"
+    }
   ],
   "cordovaPlatforms": [
     "android",

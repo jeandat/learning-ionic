@@ -11,6 +11,7 @@ module.exports = function () {
                         dest: '<%= pub %>/js',
                         src: [
                             'jquery/dist/jquery.js',
+                            'md5/md5.js',
                             'ionic/js/ionic.js',
                             'angular/angular.js',
                             'angular-animate/angular-animate.js',

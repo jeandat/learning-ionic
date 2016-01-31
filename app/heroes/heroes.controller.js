@@ -5,7 +5,7 @@
         .module('app')
         .controller('HeroesController', HeroesController);
 
-    function HeroesController($log, Heroes) {
+    function HeroesController($log, heroesService, $cordovaToast) {
 
         var vm = this;
         vm.title = 'HeroesController';
@@ -16,8 +16,9 @@
 
         function activate(){
             $log.debug(vm.title + ' instantiated');
-            Heroes.getList().then(function(heroes){
-                $log.debug(heroes.length + ' heroes:', heroes);
+            heroesService.getList({nameStartsWith: 'B'}).then(function(heroes){
+                $log.debug(heroes.length + ' heroess:', heroes);
+                $cordovaToast.showLongBottom(heroes.length + ' heroes in stock');
             });
         }
 
