@@ -7,8 +7,7 @@
         .config(routeConfig)
         .config(localStorageConfig)
         .config(ionicConfig)
-        .config(httpInterceptors)
-        .config(restConfig);
+        .config(httpInterceptors);
 
     function appConfig($compileProvider, env) {
         // Remove angular debug info in DOM when compiling for production
@@ -90,58 +89,8 @@
     }
 
     // ! NOT USED FOR THE MOMENT !
-    function httpInterceptors() {
-        // $httpProvider.interceptors.push('throwExceptionOnHttpError');
-    }
-
-    // Restangular configuration
-    function restConfig(RestangularProvider, apiEndpoint, apiKey, privateApiKey) {
-
-        // Temporary hack: Restangular is not compatible with Lodash v4.
-        _.contains = _.includes;
-
-        // All xhr requests url will have this prefix
-        RestangularProvider.setBaseUrl(apiEndpoint);
-
-        // All xhr requests will contain the apikey parameter
-        RestangularProvider.setDefaultRequestParams({apikey: apiKey});
-
-        // Define which property in JSON responses contains the self link
-        RestangularProvider.setRestangularFields({
-            selfLink: 'resourceURI'
-        });
-
-        // I'm ashamed but marvel API thinks a cordova app which load the index page from a file:// url
-        // is a server app and then it requires more query parameters. That's too bad because one of them
-        // is the private key !!! So here I am adding it with courage forgetting about what I just did.
-        if(window.location.origin === 'file://') {
-            RestangularProvider.addFullRequestInterceptor(function (element, operation, model, url,
-                                                                    headers, query) {
-                query.ts = Date.now();
-                query.hash = md5(query.ts + privateApiKey + apiKey);
-            });
-        }
-
-        // What we need to do everytime we request marvel API
-        RestangularProvider.addResponseInterceptor(function (data, operation) {
-            var extractedData;
-            // For getList operations
-            if (operation === 'getList') {
-                extractedData = data.data.results;
-                extractedData.meta = _.pickBy(data.data, keepMetadata);
-            }
-            //else {
-            //    extractedData = data.data;
-            //}
-            return extractedData;
-        });
-
-        ////////////
-
-        function keepMetadata(key, value) {
-            return value !== 'results';
-        }
-
+    function httpInterceptors($httpProvider) {
+        $httpProvider.interceptors.push('httpInterceptor');
     }
 
 })();

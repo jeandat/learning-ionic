@@ -6,6 +6,7 @@
         .run(configureCordova)
         .run(setCustomLogs)
         .run(setHttpDefaultCache)
+        .run(restConfig)
         .run(checkRequirements);
 
     //////////////////////
@@ -45,6 +46,57 @@
         $log.debug('Created a default cache for HTTP requests with properties:', options);
 
         $http.defaults.cache = new CacheFactory('defaultCache', options);
+    }
+
+    // Restangular configuration
+    function restConfig(Restangular, apiEndpoint, apiKey, privateApiKey, $q, $window) {
+
+        // Temporary hack: Restangular is not compatible with Lodash v4.
+        _.contains = _.includes;
+
+        // All xhr requests url will have this prefix
+        Restangular.setBaseUrl(apiEndpoint);
+
+        // All xhr requests will contain the apikey parameter
+        //Restangular.setDefaultRequestParams({apikey: apiKey});
+
+        // Define which property in JSON responses contains the self link
+        Restangular.setRestangularFields({
+            selfLink: 'resourceURI'
+        });
+
+        // I'm ashamed but marvel API thinks a cordova app which load the index page from a file:// url
+        // is a server app and then it requires more query parameters. That's too bad because one of them
+        // is the private key !!! So here I am adding it with courage forgetting about what I just did.
+        if ($window.location.origin === 'file://') {
+            Restangular.addFullRequestInterceptor(function (element, operation, model, url,
+                                                                    headers, query) {
+                query.ts = Date.now();
+                query.hash = md5(query.ts + privateApiKey + apiKey);
+            });
+        }
+
+        // What we need to do everytime we request marvel API
+        Restangular.addResponseInterceptor(function (data, operation) {
+            var extractedData;
+            // For getList operations
+            if (operation === 'getList') {
+                // Success
+                if(data.data) {
+                    extractedData = data.data.results;
+                    extractedData.meta = _.pickBy(data.data, keepMetadata);
+                    return extractedData;
+                }
+                return $q.reject(data);
+            }
+        });
+
+        ////////////
+
+        function keepMetadata(key, value) {
+            return value !== 'results';
+        }
+
     }
 
     function checkRequirements($state, $cordovaSplashscreen, $timeout) {
