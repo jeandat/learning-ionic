@@ -9,21 +9,19 @@ module.exports = function () {
     return {
         tasks: {
 
-            copy: {
-                cssVendor: {
-                    files: [
-                        {
-                            dest: '<%= pub %>/css/',
-                            src: [
-                                'ion-autocomplete/dist/ion-autocomplete.css'
-                            ],
-                            expand: true,
-                            flatten: true,
-                            cwd: 'vendor'
-                        }
-                    ]
-                }
-            },
+            //copy: {
+            //    cssVendor: {
+            //        files: [
+            //            {
+            //                dest: '<%= pub %>/css/',
+            //                src: [],
+            //                expand: true,
+            //                flatten: true,
+            //                cwd: 'vendor'
+            //            }
+            //        ]
+            //    }
+            //},
 
             sass: {
                 options: {
@@ -44,8 +42,12 @@ module.exports = function () {
                     },
                     target: '<%= tmp %>/_partials.scss',
                     files: [{
-                        src: ['<%= src %>/_ionic.app.scss', '<%= src %>/**/_variables.scss',
-                            '<%= src %>/common/fonts/*', '<%= src %>/**/_*.scss']
+                        src: [
+                            '<%= src %>/_ionic.app.scss',
+                            '<%= src %>/**/_variables.scss',
+                            '<%= src %>/common/fonts/*',
+                            '<%= src %>/**/_*.scss'
+                        ]
                     }]
                 }
             },
