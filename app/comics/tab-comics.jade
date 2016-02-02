@@ -1,0 +1,10 @@
+ion-view(view-title='Comics')
+    ion-content.has-tabs
+        ion-list
+            ion-item.item-remove-animate.item-avatar.item-icon-right(ng-repeat='comic in vm.comics', type='item-text-wrap', href='#/tab/comics/{{comic.id}}')
+                img(ng-src='{{comic.face}}')
+                h2 {{comic.name}}
+                p {{comic.lastText}}
+                i.icon.ion-chevron-right.icon-accessory
+                ion-option-button.button-assertive(ng-click='remove(comic)')
+                    | Delete

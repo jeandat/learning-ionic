@@ -1,0 +1,7 @@
+ion-view.crt(view-title='Characters')
+    ion-content.has-tabs
+            .list.card(ng-repeat="character in vm.characters track by character.id")
+                .item.item-image
+                    img(ng-src="{{character.getThumbnailUrl()}}")
+                .item.item-icon-left.assertive(ng-click='vm.keep()')
+                    i.icon.ion-android-favorite-outline

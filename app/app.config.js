@@ -30,45 +30,51 @@
 
             // Each tab has its own nav history stack:
 
-            .state('tab.heroes', {
-                url: '/heroes',
+            .state('tab.characters', {
+                url: '/characters',
                 views: {
-                    'tab-heroes': {
-                        templateUrl: 'heroes/tab-heroes.jade',
-                        controller: 'HeroesController',
-                        controllerAs: 'vm'
+                    'tab-characters': {
+                        templateUrl: 'characters/tab-characters.jade',
+                        controller: 'CharactersController as vm'
                     }
                 }
             })
 
-            .state('tab.chats', {
-                url: '/chats',
+            .state('tab.comics', {
+                url: '/comics',
                 views: {
-                    'tab-chats': {
-                        templateUrl: 'chats/tab-chats.jade',
-                        controller: 'ChatsController',
-                        controllerAs: 'vm'
+                    'tab-comics': {
+                        templateUrl: 'comics/tab-comics.jade',
+                        controller: 'ComicsController as vm'
                     }
                 }
             })
-            .state('tab.chat-detail', {
-                url: '/chats/:chatId',
+            .state('tab.comic-detail', {
+                url: '/comics/:comicId',
                 views: {
-                    'tab-chats': {
-                        templateUrl: 'chats/chat-detail.jade',
-                        controller: 'ChatDetailController',
-                        controllerAs: 'vm'
+                    'tab-comics': {
+                        templateUrl: 'comics/comic-detail.jade',
+                        controller: 'ComicDetailController as vm'
                     }
                 }
             })
 
-            .state('tab.account', {
-                url: '/account',
+            .state('tab.favourites', {
+                url: '/favourites',
                 views: {
-                    'tab-account': {
-                        templateUrl: 'account/tab-account.jade',
-                        controller: 'AccountController',
-                        controllerAs: 'vm'
+                    'tab-favourites': {
+                        templateUrl: 'favourites/tab-favourites.jade',
+                        controller: 'FavouritesController as vm'
+                    }
+                }
+            })
+
+            .state('tab.settings', {
+                url: '/settings',
+                views: {
+                    'tab-settings': {
+                        templateUrl: 'settings/tab-settings.jade',
+                        controller: 'SettingsController as vm'
                     }
                 }
             });

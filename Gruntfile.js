@@ -39,6 +39,7 @@ module.exports = function (grunt) {
         src: 'app',
         tmp: '.tmp',
         pub: 'www',
+        vendor: 'vendor',
         patterns: patterns
     };
 
