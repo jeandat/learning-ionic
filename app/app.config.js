@@ -39,6 +39,18 @@
                     }
                 }
             })
+            .state('tab.character-detail', {
+                url: '/characters',
+                params:{
+                    character: {}
+                },
+                views: {
+                    'tab-characters': {
+                        templateUrl: 'characters/character-detail.jade',
+                        controller: 'CharacterDetailController as vm'
+                    }
+                }
+            })
 
             .state('tab.comics', {
                 url: '/comics',
