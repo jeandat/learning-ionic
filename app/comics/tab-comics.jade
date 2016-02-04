@@ -1,5 +1,5 @@
 ion-view(view-title='Comics')
-    ion-content.has-tabs
+    ion-content
         ion-list
             ion-item.item-remove-animate.item-avatar.item-icon-right(ng-repeat='comic in vm.comics', type='item-text-wrap', href='#/tab/comics/{{comic.id}}')
                 img(ng-src='{{comic.face}}')
