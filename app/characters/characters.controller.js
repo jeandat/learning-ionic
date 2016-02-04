@@ -5,13 +5,16 @@
         .module('app')
         .controller('CharactersController', CharactersController);
 
-    function CharactersController($log, charactersService, $cordovaToast) {
+    function CharactersController($log, charactersService, $cordovaToast, throwErr, $scope, $cordovaKeyboard) {
 
         var vm = this;
         vm.title = 'CharactersController';
-        //vm.request = request;
-        vm.characters = charactersService.getList().$object;
+        vm.filter = '';
+        // Let's start with something cool ;)
+        vm.characters = charactersService.getList({nameStartsWith:'Deadpool'}).$object;
         vm.keep = keep;
+        vm.search = search;
+        vm.searching = false;
 
         activate();
 
@@ -21,16 +24,28 @@
             $log.debug(vm.title + ' instantiated');
         }
 
-        function keep(){
+        function keep() {
             $cordovaToast.showShortBottom('Not implemented yet…');
         }
 
-        //function request(){
-        //    charactersService.getList().then(function (characters) {
-        //        $log.debug(characters.length + ' characters:', characters);
-        //        $cordovaToast.showLongBottom(characters.length + ' characters in stock');
-        //    }).catch(throwErr);
-        //}
+        function search() {
+            var criteria = vm.filter ? {nameStartsWith: vm.filter} : {};
+            var promise = charactersService.getList(criteria);
+            vm.characters = promise.$object;
+            vm.searching = true;
+            $cordovaKeyboard.close();
+            return promise.then(log).catch(throwErr).finally(hideSpinner);
+
+            ///////////
+
+            function log(characters) {
+                $log.debug(characters.length + ' results:', characters);
+            }
+
+            function hideSpinner(){
+                vm.searching = false;
+            }
+        }
 
     }
 
