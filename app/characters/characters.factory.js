@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .factory('heroesService', factory);
+        .factory('charactersService', factory);
 
     function factory(Restangular) {
         return Restangular.service('characters');

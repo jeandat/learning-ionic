@@ -1,0 +1,19 @@
+ion-view.crt(view-title='Characters')
+    ion-content
+        .bar.item-input-inset
+            form.crt__form(name='crtSearchForm', novalidate, ng-submit='vm.search()', autocomplete="off")
+                label.item-input-wrapper
+                    i.icon.ion-ios-search.placeholder-icon
+                    input(type='search', placeholder='Name starts with…', name='name',
+                    ng-model='vm.filter', spellcheck="false")
+        .list
+            .card(ng-repeat="character in vm.characters track by character.id")
+                .item.item-image(ui-sref='tab.character-detail({character:character})')
+                    img(ng-src="{{character.getThumbnailUrl()}}")
+                .item.item-icon-right.assertive
+                    i.icon.ion-android-favorite-outline(ng-click='vm.keep()')
+                    | {{character.name}}
+        .crt__footer
+            ion-spinner.spinner-assertive(ng-if='vm.searching')
+            button.button.button-block.button-assertive(ng-click='vm.loadMore()',
+            ng-show='vm.hasMoreData()') Load more

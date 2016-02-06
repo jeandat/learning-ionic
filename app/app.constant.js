@@ -12,7 +12,9 @@
 		.constant('apiEndpoint', '@@apiEndpoint')
 		.constant('apiKey', '@@apiKey')
         // Oups, I did it again
-		.constant('privateApiKey', '@@privateApiKey');
+		.constant('privateApiKey', '@@privateApiKey')
+        // Marvel default offset when requesting a list of results (number of items)
+        .constant('defaultOffset', 20);
 
     // Same as `JSON.stringify` but with indentation.
     function stringify(value) {

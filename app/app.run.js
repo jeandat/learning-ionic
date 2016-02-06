@@ -58,7 +58,7 @@
         Restangular.setBaseUrl(apiEndpoint);
 
         // All xhr requests will contain the apikey parameter
-        //Restangular.setDefaultRequestParams({apikey: apiKey});
+        Restangular.setDefaultRequestParams({apikey: apiKey});
 
         // Define which property in JSON responses contains the self link
         Restangular.setRestangularFields({
@@ -100,7 +100,7 @@
     }
 
     function checkRequirements($state, $cordovaSplashscreen, $timeout) {
-        $state.go('tab.heroes');
+        $state.go('tab.characters');
         $timeout($cordovaSplashscreen.hide, 1000);
     }
 

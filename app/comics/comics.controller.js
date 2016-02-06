@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .controller('ChatDetailController', ChatDetailController);
+        .controller('ComicsController', ComicsController);
 
 
     // With the new view caching in Ionic, Controllers are only called
@@ -14,11 +14,19 @@
     //$scope.$on('$ionicView.enter', function(e) {
     //});
 
-    function ChatDetailController($stateParams, chatsService) {
+    function ComicsController(comicsService) {
 
         var vm = this;
-        vm.chat = chatsService.get($stateParams.chatId);
+        vm.comics = comicsService.all();
+        vm.remove = remove;
+
+        ////////////////
+
+        function remove(comic) {
+            comicsService.remove(comic);
+        }
 
     }
 
 })();
+

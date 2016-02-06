@@ -35,7 +35,7 @@
 
         // Does that thing works ?
         window.onerror = function(message, url, lineNumber, columnNumber, source){
-            $log.debug('Redirected a non angular error to ald angular handler');
+            $log.debug('Redirected a non angular error to our angular handler');
             exceptionHandler(source, message);
         };
 

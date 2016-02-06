@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .controller('AccountController', AccountController);
+        .controller('SettingsController', SettingsController);
 
-    function AccountController() {
+    function SettingsController() {
 
         var vm = this;
         vm.settings = {enableFriends: true};

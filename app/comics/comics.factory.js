@@ -3,12 +3,12 @@
 
     angular
         .module('app')
-        .factory('chatsService', chatsService);
+        .factory('comicsService', comicsService);
 
     // Some fake testing data
-    var chats = fakeData();
+    var comics = fakeData();
 
-    function chatsService() {
+    function comicsService() {
 
         var service = {
             all: all,
@@ -21,17 +21,17 @@
         ////////////////
 
         function all(){
-            return chats;
+            return comics;
         }
 
-        function remove(chat) {
-            chats.splice(chats.indexOf(chat), 1);
+        function remove(comic) {
+            comics.splice(comics.indexOf(comic), 1);
         }
 
-        function get(chatId) {
-            for (var i = 0; i < chats.length; i++) {
-                if (chats[i].id === parseInt(chatId)) {
-                    return chats[i];
+        function get(comicId) {
+            for (var i = 0; i < comics.length; i++) {
+                if (comics[i].id === parseInt(comicId)) {
+                    return comics[i];
                 }
             }
             return null;

@@ -3,8 +3,8 @@
   'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
-ion-view(view-title='{{vm.chat.name}}')
+ion-view(view-title='{{vm.comic.name}}')
     ion-content.padding.has-tabs
-        img(ng-src='{{vm.chat.face}}', style='width: 64px; height: 64px')
+        img(ng-src='{{vm.comic.face}}', style='width: 64px; height: 64px')
         p
-            | {{vm.chat.lastText}}
+            | {{vm.comic.lastText}}

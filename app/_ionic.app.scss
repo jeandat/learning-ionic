@@ -1,18 +1,6 @@
 /*
-To customize the look and feel of Ionic, you can override the variables
+To customize the look and feel of Ionic, you can override the variables defined
 in ionic's _variables.scss file.
-
-For example, you might change some of the default colors:
-
-$light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
-$positive:                        #387ef5 !default;
-$calm:                            #11c1f3 !default;
-$balanced:                        #33cd5f !default;
-$energized:                       #ffc900 !default;
-$assertive:                       #ef473a !default;
-$royal:                           #886aea !default;
-$dark:                            #444 !default;
 */
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -23,26 +11,34 @@ $base-background-color: #EEE;
 //$font-family-sans-serif:          "Roboto", "Segoe UI", "Arial", sans-serif;
 //$font-family-light-sans-serif:    "Roboto-Light", "Segoe UI-Light", "Arial-Light", sans-serif-light;
 
+// Remove border under tabs
+$tabs-striped-border-width: 0px;
 
 
 
-// Include all of Ionic /////////////////////////
+/*
+Include ionic sass files.
+*/
 @import "../vendor/ionic/scss/ionic";
 
 
 
+/*
+CSS overrides.
+*/
 
-// CSS overrides ///////////////////////////////
-
+// Spinner color.
 .spinner {
   stroke: $positive;
   fill: $positive;
 }
 
+// Useless background.
 .loading-container .loading {
   background-color: transparent;
 }
 
+// All buttons should handle long text overflowing.
 .button {
   text-overflow: ellipsis;
   white-space: nowrap;
