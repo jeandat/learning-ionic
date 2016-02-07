@@ -5,8 +5,26 @@
         .module('app')
         .factory('charactersService', factory);
 
+
     function factory(Restangular) {
-        return Restangular.service('characters');
+        var characters = Restangular.all('characters');
+
+        var service = {
+            findByName: findByName
+        };
+
+        return service;
+
+        ///////////////
+
+        // Search characters which name starts with `name`.
+        function findByName(prefix, offset){
+            var criteria = {};
+            prefix && (criteria.nameStartsWith = prefix);
+            offset && (criteria.offset = offset);
+            return characters.getList(criteria);
+        }
+
     }
 
 })();

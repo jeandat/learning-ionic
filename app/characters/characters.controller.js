@@ -35,8 +35,7 @@
 
         function search() {
             showSpinner();
-            var criteria = vm.filter ? {nameStartsWith: vm.filter} : {};
-            var promise = charactersService.getList(criteria);
+            var promise = charactersService.findByName(vm.filter);
             vm.characters = promise.$object;
             vm.offset = 0;
             $cordovaKeyboard.close();
@@ -64,11 +63,8 @@
 
         function loadMore() {
             showSpinner();
-            var criteria = {};
-            vm.filter && (criteria.nameStartsWith = vm.filter);
             vm.offset += defaultOffset;
-            criteria.offset = vm.offset;
-            return charactersService.getList(criteria)
+            return charactersService.findByName(vm.filter, vm.offset)
                 .then(updateList)
                 .catch(throwErr)
                 .finally(hideSpinner);

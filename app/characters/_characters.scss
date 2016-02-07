@@ -1,4 +1,4 @@
-.crt{
+.characters{
     &__form{
         width: 100%;
     }
@@ -6,7 +6,7 @@
         text-align: center;
         margin: $content-padding $content-padding $content-padding*2 $content-padding;
     }
-    &__cover{
+    &__item-cover{
         background-color: #CCC;
         object-fit: cover;
         object-position: center;
