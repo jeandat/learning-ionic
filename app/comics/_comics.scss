@@ -1,0 +1,14 @@
+.comics{
+    &__form{
+        width: 100%;
+    }
+    &__footer{
+        text-align: center;
+        margin: $content-padding $content-padding $content-padding*2 $content-padding;
+    }
+    &__item-cover{
+        background-color: #CCC;
+        object-fit: cover;
+        object-position: center;
+    }
+}
