@@ -5,8 +5,11 @@
         .module('app')
         .factory('httpInterceptor', httpInterceptor);
 
-    function httpInterceptor(Err, $q) {
+    function httpInterceptor(Err, $q, $log) {
         return {
+            requestError: function(){
+                $log.debug('REQUEST ERROR:', arguments);
+            },
             responseError: function (response) {
                 if (response.status === -1) {
                     // Offline
