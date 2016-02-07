@@ -6,4 +6,9 @@
         text-align: center;
         margin: $content-padding $content-padding $content-padding*2 $content-padding;
     }
+    &__cover{
+        background-color: #CCC;
+        object-fit: cover;
+        object-position: center;
+    }
 }
