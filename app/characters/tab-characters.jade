@@ -9,11 +9,11 @@ ion-view.characters(view-title='Characters')
         .list
             .card(ng-repeat="character in vm.characters track by character.id")
                 .item.item-image(ui-sref='tab.character-detail({character:character})')
-                    img.characters__item-cover(jd-src="{{character.getThumbnailUrl()}}", width="100%",
+                    img.characters__item-cover(jd-src="{{::character.getThumbnailUrl()}}", width="100%",
                     height="250px")
                 .item.item-icon-right.assertive
-                    i.icon.ion-android-favorite-outline(ng-click='vm.keep()')
-                    | {{character.name}}
+                    i.icon.ion-android-favorite-outline(ng-click='::vm.keep()')
+                    | {{::character.name}}
         .characters__footer
             ion-spinner.spinner-assertive(ng-if='vm.searching')
             button.button.button-block.button-assertive(ng-click='vm.loadMore()',
