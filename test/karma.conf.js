@@ -15,6 +15,7 @@ module.exports = function (config) {
             'www/js/angular-ui-router.js',
             'www/js/ionic-angular.js',
             'www/js/lodash.js',
+            'vendor/karma-read-json/karma-read-json.js',
             'vendor/angular-mocks/angular-mocks.js',
             'www/js/ng-cordova-mocks.js',
             'www/js/angular-local-storage.js',
@@ -24,7 +25,10 @@ module.exports = function (config) {
             'www/js/templates.js',
             '.tmp/**/*.module.js',
             '.tmp/**/!(*.spec).js',
-            'bower_components/angular-markdown-directive/markdown.js',
+            // globals for tests
+            'test/unit/global.js',
+            // fixtures used in tests
+            {pattern: 'test/unit/fixtures/**/*.json', included: false},
             // specs from `app/` and `test/unit/`
             '.tmp/**/*.spec.js',
             'test/unit/**/*.spec.js'],
@@ -46,6 +50,7 @@ module.exports = function (config) {
             outputFile: 'TESTS-xunit.xml',
             useBrowserName: false
         },
+        //browsers: ['Chrome'],
         browsers: ['PhantomJS'],
         phantomjsLauncher: {
             // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
