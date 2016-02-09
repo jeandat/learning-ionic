@@ -43,14 +43,13 @@
     "node.extend": "^1.1.5",
     "phantomjs": "^2.1.3",
     "phantomjs-prebuilt": "^2.1.4",
-    "shelljs": "^0.5.3",
+    "shelljs": "^0.6.0",
     "time-grunt": "^1.3.0"
   },
   "cordovaPlugins": [
     "cordova-plugin-console",
     "cordova-plugin-crosswalk-webview",
     "cordova-plugin-device",
-    "cordova-plugin-google-analytics",
     "cordova-plugin-statusbar",
     "cordova-plugin-whitelist",
     "ionic-plugin-keyboard",
