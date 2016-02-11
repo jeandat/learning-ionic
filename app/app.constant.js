@@ -14,7 +14,8 @@
         // Oups, I did it again
 		.constant('privateApiKey', '@@privateApiKey')
         // Marvel default offset when requesting a list of results (number of items)
-        .constant('defaultOffset', 20);
+        .constant('defaultOffset', 20)
+        .constant('defaultCacheName', 'defaultCache');
 
     // Same as `JSON.stringify` but with indentation.
     function stringify(value) {

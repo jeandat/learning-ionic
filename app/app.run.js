@@ -32,10 +32,10 @@
         }
     }
 
-    function setHttpDefaultCache($log, $http, CacheFactory) {
+    function setHttpDefaultCache($log, $http, CacheFactory, defaultCacheName) {
 
         // In unit tests, we will run this for each spec.
-        if (CacheFactory.get('defaultCache')) return;
+        if (CacheFactory.get(defaultCacheName)) return;
 
         var options = {
             maxAge: 60 * 60 * 1000, // Items added to this cache expire after 1 hour

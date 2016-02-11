@@ -1,5 +1,7 @@
 ion-view(view-title='Settings')
     ion-content
         ion-list
-            ion-toggle(ng-model='vm.settings.enableCache')
+            ion-toggle(ng-model='vm.settings.enableCache', toggle-class='toggle-positive')
                 | Enable Cache
+            ion-item(ng-click='vm.clearCache()')
+                button.button.button-assertive.button-small.button-block Empty cache
