@@ -5,7 +5,7 @@
         .module('app')
         .directive('jdSrc', jdSrc);
 
-    function jdSrc() {
+    function jdSrc($timeout) {
 
         var directive = {
             link: link,
@@ -25,7 +25,9 @@
             //////////////
 
             function updateSource(){
-                element.attr('src', src);
+                $timeout(function(){
+                    element.attr('src', src);
+                }, 0);
             }
         }
     }

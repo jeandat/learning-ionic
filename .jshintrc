@@ -37,6 +37,8 @@
         "ionic": false,
         "H": false,
         "defaultTranslations": true,
-        "md5": false
+        "md5": false,
+        "readJSON": false,
+        "fixturesPath": true
     }
 }

@@ -1,36 +1,60 @@
 
 # Overview
 
-This is a very simple project to apprehend Ionic. The grunt build is very close to the one in [learning-angular](http://github.com/jdat82/learning-angular).
-
-This mobile app is built upon IONIC and Cordova.
+This is a demo app to apprehend IONIC which is built upon Cordova.
 
 Scope : iOS 8+ / Android 4.4+
 
-To try it, just clone or download the project from github, then `npm start`.
-
-What this command does for you is :
+Quick readers can do `npm start` in order to :
 
 - Install node dependencies
 - Install javascript dependencies
-- Build the project and launch a web server
+- Build project
+- Launch a web server with reverse proxy and livereload
+- Open app in default browser
 
-In order to test in a simulator/emulator or even a device, you will need to install everything needed by cordova and ionic (sdk, emulators, etc.) and hit `source install-platforms.sh` which will install ios, android and browser platforms. Crosswalk is used as the default android browser.
+Nonetheless I do not recommend to develop with your browser. It is different than a real device. You should develop on a real device and use the browser solution when it makes sense to make your life simpler for particular cases.
 
-You can use ionic command line tools normally.
+In order to test in a simulator/emulator/device, you will need first to install everything needed by cordova and ionic (sdk, emulators, etc.) and then hit `ionic state restore` in your terminal which will install all cordova platforms and plugins. See prerequisites (next section).
 
-During development, you can always restore platforms and plugins with this command:
+Then you just need to use one of the predefined npm alias. For instance: `npm run android` in order to :
+
+- Build project
+- Deploy on a real device if connected or an emulator/simulator as fallback
+
+[Crosswalk](https://www.npmjs.com/package/cordova-plugin-crosswalk-webview) is used as the default android browser, thus allowing us to share the same engine for all platforms. It give us control on that engine. We can update it whenever we want and have always the latest innovations from Chromium. The downside is a 25mb overload to the apk size.
+
+On iOS land, [WkWebView](https://www.npmjs.com/package/cordova-plugin-wkwebview-engine) is not used yet because it is too young.
+
+# Prerequisites
+
+Cordova, Ionic, Bower and Grunt should be installed globally, they will delegate to a local instance if any :
 ```bash
-ionic state restore [--plugins] [--platforms]
+npm i -g cordova ionic bower grunt-cli
 ```
+
+iOS deployment tools should also be installed globally as recommended by Ionic for practical reasons too :
+```bash
+npm i -g ios-sim ios-deploy
+```
+
+XCode should be installed from Mac App Store and launched at least once.
+
+Android Studio and sdk should be installed. Android tools should be in path.
+You may install and configure emulator images if you want to run this project in an emulator.
+
+JDK 7 (or more recent) should be installed.
+
+This project should work on all versions of node since 0.12.7. I recommend [NVM](https://github.com/creationix/nvm) for simple and powerful node management.
 
 # Conventions
 
-## Task builder
+## Build
 
-This project uses Grunt as a task manager. Grunt tasks are lazy-loaded for performance.
-Tasks are defined inside `grunt` folder. There is one file per type of task. For instance, `css.js` contains css related tasks.
-It allows to have all related tasks in one file without having a too big file. I found it to be a good compromise between a one-file-per-task and and a one-big-monolithic-file strategies.
+This project uses [Grunt](http://gruntjs.com/) as a task manager. Grunt tasks are lazy-loaded for performance.
+Tasks are defined inside `grunt` folder. There is one file per type of task. For instance, `css.js` contains css related tasks. It allows to have all related tasks in one file without having a too bigger file. I found it to be a good compromise between a one-file-per-task and and a one-big-monolithic-file strategies.
+
+Grunt is used essentially to build web code and start tools.
 
 ## Javascript
 
@@ -63,7 +87,90 @@ I would like to try a [BEM custom approach](http://csswizardry.com/2013/01/mindb
 - better performance because there is less levels of imbrication
 - better maintainability and readability
 
-# Build
+# Run
+
+The file `package.json` contains a list of useful alias that you can invoke with `npm run <alias>`.
+
+## In case you don't know
+
+Ionic comes with some very useful tools. Essentially it allows three differents way to test and deploy your code :
+
+- Start a web server with optional proxy support and then deploy in a browser
+  - which means your code is served via a web server loaded from `http://localhost:8100`
+- Deploy in a real device (or a simulator/emulator if none)
+  - which means your code is copied on device and loaded from a `file://` url
+- Deploy in a real device (or a simulator/emulator if none) in livereload mode
+  - which means your code is copied once on device and then served via a web server
+  - your code is loaded from `http://<ip>:8100` even though your are on a real device
+
+> WARNING: if I'm not mistaken, ionic built-in proxy is not working behind a corporate proxy.
+> For myself, I'm working either on wifi or on a local network made with my mobile.
+
+
+## npm run serve
+
+- Build project with cordova mocks and proxy support
+- Serve the app in default browser
+
+You may pass a `--lab` option as it will delegate to `ionic serve` internally:
+```bash
+npm run serve -- --lab
+```
+
+## npm run android
+
+- Build web code
+- Build native code 
+- Deploy to android device (emulator if none)
+
+## npm run android-lr
+
+- Build web code with proxy support
+- Build native code
+- Start a watcher for web code
+- Start a web server with proxy
+- Deploy to android device (emulator if none) with livereload support
+
+## npm run ios
+
+- Build web code 
+- Build native code 
+- Deploy to ios device (simulator if none)
+
+## npm run ios-lr
+
+- Build web project with proxy support
+- Build native code 
+- Start a watcher for web code
+- Start a web server with proxy
+- Deploy to ios device (simulator if none) with livereload support
+
+## npm test
+
+- Build web project with cordova mocks support
+- Execute unit tests with karma in a PhantomJS container
+
+## npm run wtest
+
+- Build web project with cordova mocks support
+- Start a watcher for web code
+- Execute unit tests with karma in a PhantomJS container with auto-watch enabled
+  - it means changes to code or tests are taken into account live
+
+## npm run doc
+
+- Generate [groc](https://github.com/nevir/groc) and [plato](https://github.com/es-analysis/plato) documentation.
+
+## npm run build [-- \<platform>]
+
+If you simply want to build code without mocks/proxy/livereload options.
+
+- Build web code
+- Build native code
+
+# Build (web code)
+
+## Overview
 
 Project is built inside `www`.
 
@@ -71,72 +178,27 @@ Just hit `grunt dev` to build the whole project for development.
 
 To reduce build time, you can use `grunt` or `grunt newdev` to build only what changed since last build.
 
-`grunt dist` will build with distribution options although this is not that relevant for this project ;)
+`grunt dist` will build with distribution options.
 
 ## Options
 
-### --proxy true|fase
+### --proxy | --no-proxy
 
 Instrument `conf/dev.js`: change API endpoint in order to use a reverse proxy.
 
-### --mock true|false
+### --mock | --no-mock
 
 Instrument `conf/dev.js`: enable ngCordova mocks.
 
-### --patterns <name>
+### --patterns \<name>
 
 Define which file from `conf/` will be used as source of patterns. These patterns will be used to make replacements in source files. See [grunt-replace](https://github.com/outaTiME/grunt-replace).
 
 For instance : `grunt dev --patterns foo` would use `conf/foo.js`.
 
-# Serving changes
+### --platform \<name>
 
-> WARNING: if I'm not mistaken, ionic built-in proxy is not working behind a corporate proxy.
-> For myself, I'm working on a local network made with my mobile.
-
-## In your browser
-
-To build, launch a local web server and watch for changes:
-```bash
-npm run serve
-```
-
-You may pass a `--lab` option as it will delegate to `ionic serve` internally:
-```bash
-npm run serve -- --lab
-```
-
-Code is loaded from `http://localhost:8100`.
-
-## On device
-
-To build and deploy on device (or simulator if any):
-```bash
-npm run <platform>
-```
-
-### Without livereload support
-
-Allowed `platform` values:
-
-- android
-- ios
-
-Code is loaded from `file://assets/index.html`.
-
-### With livereload support
-
-You may use instead:
-
-- android-lr
-- ios-lr
-
-It will also start a watcher for code changes and the built-in ionic web server in livereload mode.
-
-Code is loaded from `http://<your ip>:8100`.
-
-See npm scripts in `package.json` to have better understanding and [IONIC CLI](http://ionicframework.com/docs/cli/test.html).
-
+Not used right now but can be useful if you want to instrument a configuration file or a task for a platform.
 
 # Tests
 
@@ -154,27 +216,6 @@ Unit tests are run by Karma and written with Jasmine:
 # Documentation
 
 To generate groc and plato documentation inside `doc` folder: `npm run doc`.
-
-# Prerequisite
-
-Cordova, Ionic, Bower and Grunt should be installed globally, they will delegate to a local instance if any :
-```bash
-npm i -g cordova ionic bower grunt-cli
-```
-
-iOS deployment tools should also be installed globally as recommended by Ionic for practical reasons too :
-```bash
-npm i -g ios-sim ios-deploy
-```
-
-XCode should be installed from Mac App Store and launched at least once.
-
-Android Studio and sdk should be installed. Android tools should be in path.
-You may install and configure emulator images if you want to run this project in an emulator.
-
-JDK 7 (or more recent) should be installed.
-
-This project should work on all versions of node since 0.12.7. I recommend NVM for simple and powerful node management.
 
 # Strategies
 

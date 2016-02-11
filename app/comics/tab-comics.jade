@@ -1,10 +1,19 @@
-ion-view(view-title='Comics')
+ion-view.comics(view-title='Comics')
     ion-content
-        ion-list
-            ion-item.item-remove-animate.item-avatar.item-icon-right(ng-repeat='comic in vm.comics', type='item-text-wrap', href='#/tab/comics/{{comic.id}}')
-                img(ng-src='{{comic.face}}')
-                h2 {{comic.name}}
-                p {{comic.lastText}}
-                i.icon.ion-chevron-right.icon-accessory
-                ion-option-button.button-assertive(ng-click='remove(comic)')
-                    | Delete
+        .bar.item-input-inset
+            form.comics__form(name='cmSearchForm', novalidate, ng-submit='vm.search()', autocomplete="off")
+                label.item-input-wrapper
+                    i.icon.ion-ios-search.placeholder-icon
+                    input(type='search', placeholder='Title starts with…', name='name',
+                    ng-model='vm.filter', spellcheck="false")
+        .list
+            .card(ng-repeat="comic in vm.comics track by comic.id")
+                .item.item-image(ui-sref='tab.comic-detail({comic:comic})')
+                    img.comics__item-cover(jd-src="{{comic.getThumbnailUrl()}}", width="100%", height="250px")
+                .item.item-icon-right.assertive
+                    i.icon.ion-android-favorite-outline(ng-click='vm.keep()')
+                    | {{comic.title}}
+        .comics__footer
+            ion-spinner.spinner-assertive(ng-if='vm.searching')
+            button.button.button-block.button-assertive(ng-click='vm.loadMore()',
+            ng-show='vm.hasMoreData()') Show more

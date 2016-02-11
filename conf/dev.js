@@ -2,6 +2,9 @@ var pkg = require('../package.json');
 var extend = require('node.extend');
 var grunt = require('grunt');
 
+var platform = grunt.option('platform');
+grunt.verbose.writeln('Platform:', platform);
+
 var proxy = grunt.option('proxy');
 grunt.verbose.writeln('Proxy:', proxy);
 

@@ -1,0 +1,2048 @@
+{
+    "code": 200,
+    "status": "Ok",
+    "copyright": "© 2016 MARVEL",
+    "attributionText": "Data provided by Marvel. © 2016 MARVEL",
+    "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2016 MARVEL</a>",
+    "etag": "db00ac9a8a259c6a85bcf4f5c0dc2a9976e87746",
+    "data": {
+        "offset": 20,
+        "limit": 20,
+        "total": 33,
+        "count": 13,
+        "results": [
+            {
+                "id": 1016181,
+                "name": "Spider-Man (Miles Morales)",
+                "description": "Teenager Miles Morales grew up in Brooklyn, New York. Recently, Miles took on the controversial and pressured role of Spider-Man shortly after the death of the original. Morales made his debut against The Kangaroo, much to the surprise and disapproval of many present at the confrontation.",
+                "modified": "2014-10-23T12:07:33-0400",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/f/50/537bcfa1eed73",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1016181",
+                "comics": {
+                    "available": 14,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1016181/comics",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/42566",
+                            "name": "Spider-Men (Hardcover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/42579",
+                            "name": "Spider-Men (2012) #1"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/42578",
+                            "name": "Spider-Men (2012) #2"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/42613",
+                            "name": "Spider-Men (2012) #2 (Pichelli Variant)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/42612",
+                            "name": "Spider-Men (2012) #2 (Martin Variant)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/42577",
+                            "name": "Spider-Men (2012) #3"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/42614",
+                            "name": "Spider-Men (2012) #4 (Tbd Artist Variant)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/38394",
+                            "name": "Ultimate Comics Spider-Man (2011) #1"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/38395",
+                            "name": "Ultimate Comics Spider-Man (2011) #2"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/41846",
+                            "name": "Ultimate Comics Spider-Man (2011) #2 (2nd Printing Variant)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/38396",
+                            "name": "Ultimate Comics Spider-Man (2011) #3"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/38400",
+                            "name": "Ultimate Comics Spider-Man (2011) #4"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/38403",
+                            "name": "Ultimate Comics Spider-Man (2011) #7"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/27955",
+                            "name": "Ultimate Comics Spider-Man (2009) #7"
+                        }
+                    ],
+                    "returned": 14
+                },
+                "series": {
+                    "available": 4,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1016181/series",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/16262",
+                            "name": "Spider-Men (2012 - Present)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/16264",
+                            "name": "Spider-Men (2012)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/8509",
+                            "name": "Ultimate Comics Spider-Man (2009 - 2012)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/13831",
+                            "name": "Ultimate Comics Spider-Man (2011 - Present)"
+                        }
+                    ],
+                    "returned": 4
+                },
+                "stories": {
+                    "available": 22,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1016181/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/61155",
+                            "name": "Interior #61155",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/93618",
+                            "name": "Ultimate Comics Spider-Man (2011) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/94126",
+                            "name": "Ultimate Comics Spider-Man (2011) #3",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/94415",
+                            "name": "Ultimate Comics Spider-Man (2011) #4",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/94648",
+                            "name": "Ultimate Comics Spider-Man (2011) #1",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/94651",
+                            "name": "Cover #94651",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/94780",
+                            "name": "Ultimate Comics Spider-Man (2011) #2 cover",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/95141",
+                            "name": "ULTIMATE COMICS THE ULTIMATES #6 story",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/95279",
+                            "name": "Ultimate Comics Spider-Man (2011) #4 - Int",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/95914",
+                            "name": "Cover #95914",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/95915",
+                            "name": "Interior #95915",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/95936",
+                            "name": "Cover #95936",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/95937",
+                            "name": "Interior #95937",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/95938",
+                            "name": "Cover #95938",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/95939",
+                            "name": "Interior #95939",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/95940",
+                            "name": "Cover #95940",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/95992",
+                            "name": "Cover #95992",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/95994",
+                            "name": "Cover #95994",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/95996",
+                            "name": "Cover #95996",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/95998",
+                            "name": "Cover #95998",
+                            "type": "cover"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1016181/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/characters/1016181/spider-man_miles_morales/featured?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "wiki",
+                        "url": "http://marvel.com/universe/Morales,_Miles?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "comiclink",
+                        "url": "http://marvel.com/comics/characters/1016181/spider-man_miles_morales?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ]
+            },
+            {
+                "id": 1012295,
+                "name": "Spider-Man (Noir)",
+                "description": "",
+                "modified": "2014-03-05T13:50:50-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/40/531771a14fcf6",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1012295",
+                "comics": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1012295/comics",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/24312",
+                            "name": "Spider-Man Noir (Hardcover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/41148",
+                            "name": "Spider-Man Noir GN-TPB (Reprint) (Trade Paperback)"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "series": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1012295/series",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/7511",
+                            "name": "Spider-Man Noir (2009 - Present)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/15284",
+                            "name": "Spider-Man Noir GN-TPB (Reprint) (2011 - Present)"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "stories": {
+                    "available": 3,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1012295/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/53865",
+                            "name": "Spider-Man Noir 1-4",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/93153",
+                            "name": "Cover #93153",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/93154",
+                            "name": "Interior #93154",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 3
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1012295/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/characters/1012295/spider-man_noir/featured?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "comiclink",
+                        "url": "http://marvel.com/comics/characters/1012295/spider-man_noir?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ]
+            },
+            {
+                "id": 1011377,
+                "name": "Spider-Man (Takuya Yamashiro)",
+                "description": "",
+                "modified": "2012-08-06T16:27:55-0400",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/f/50/4be86ad8ada17",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011377",
+                "comics": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011377/comics",
+                    "items": [],
+                    "returned": 0
+                },
+                "series": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011377/series",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011377/stories",
+                    "items": [],
+                    "returned": 0
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011377/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/characters/54/spider-man?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "comiclink",
+                        "url": "http://marvel.com/comics/characters/1011377/spider-man_takuya_yamashiro?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ]
+            },
+            {
+                "id": 1011010,
+                "name": "Spider-Man (Ultimate)",
+                "description": "Peter’s relatively normal life changed abruptly during a school trip to Osborn Industries, Inc, where the company had been working on a super soldier serum, the Oz Compound; a spider exposed to it escaped and bit Peter before it was destroyed.",
+                "modified": "2014-03-05T13:50:46-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/50/531771b4e8c60",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011010",
+                "comics": {
+                    "available": 229,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011010/comics",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/3438",
+                            "name": "Ultimate Annuals Vol. 1 (Trade Paperback)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/35582",
+                            "name": "Ultimate Comics Avengers Vs New Ultimates (2010) #1"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/39343",
+                            "name": "Ultimate Comics Avengers Vs New Ultimates (2010) #1 (2nd Printing Variant)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/38503",
+                            "name": "Ultimate Comics Avengers Vs New Ultimates (2010) #2 (HITCH VARIANT)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/40246",
+                            "name": "Ultimate Comics Avengers Vs New Ultimates (2010) #2 (2nd Printing Variant)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/38500",
+                            "name": "Ultimate Comics Avengers Vs New Ultimates (2010) #3 (CHO VARIANT)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/40245",
+                            "name": "Ultimate Comics Avengers Vs New Ultimates (2010) #3 (2nd Printing Variant)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/36127",
+                            "name": "Ultimate Comics Avengers Vs New Ultimates (2010) #4"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/38502",
+                            "name": "Ultimate Comics Avengers Vs New Ultimates (2010) #4 (HITCH VARIANT)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/36350",
+                            "name": "Ultimate Comics Avengers Vs New Ultimates (2010) #5"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/36125",
+                            "name": "Ultimate Comics Avengers Vs New Ultimates (2010) #6"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/38501",
+                            "name": "Ultimate Comics Avengers Vs New Ultimates (2010) #6 (Hitch Variant)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/39468",
+                            "name": "Ultimate Comics Avengers Vs. New Ultimates (Hardcover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/30215",
+                            "name": "Ultimate Comics Doom (2010) #2"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/28946",
+                            "name": "ULTIMATE COMICS NEW ULTIMATES: THOR REBORN PREMIERE HC (Hardcover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/26854",
+                            "name": "Ultimate Comics Spider-Man (2009) #1"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/29023",
+                            "name": "Ultimate Comics Spider-Man (2009) #1 (BLACK AND WHITE VARIANT)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/29610",
+                            "name": "Ultimate Comics Spider-Man (2009) #1 (2ND PRINTING VARIANT)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/28113",
+                            "name": "Ultimate Comics Spider-Man (2009) #1 (SPECIAL VARIANT)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/26859",
+                            "name": "Ultimate Comics Spider-Man (2009) #2"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "series": {
+                    "available": 41,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011010/series",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1673",
+                            "name": "Ultimate Annuals Vol. 1 (2006)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/12615",
+                            "name": "Ultimate Comics Avengers Vs New Ultimates (2010 - 2011)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/14423",
+                            "name": "Ultimate Comics Avengers Vs. New Ultimates (2011 - Present)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/9958",
+                            "name": "Ultimate Comics Doom (2010 - 2011)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/10532",
+                            "name": "ULTIMATE COMICS NEW ULTIMATES: THOR REBORN PREMIERE HC (2011)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/8509",
+                            "name": "Ultimate Comics Spider-Man (2009 - 2012)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/13831",
+                            "name": "Ultimate Comics Spider-Man (2011 - Present)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/14807",
+                            "name": "Ultimate Fallout (2011)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/2311",
+                            "name": "Ultimate Marvel Team-Up (2001 - 2002)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1823",
+                            "name": "Ultimate Marvel Team-Up Ultimate Collection (2006)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1124",
+                            "name": "Ultimate Power (2006 - 2008)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/466",
+                            "name": "Ultimate Spider-Man (2000 - 2009)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/5105",
+                            "name": "Ultimate Spider-Man (Spanish Language Edition) (2000 - 2001)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1054",
+                            "name": "Ultimate Spider-Man Annual (2005 - 2008)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/14744",
+                            "name": "Ultimate Spider-Man MGC (2011)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1919",
+                            "name": "Ultimate Spider-Man Ultimate Collection Book 1 (2007)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1220",
+                            "name": "Ultimate Spider-Man Vol. 10: Hollywood (2004)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1221",
+                            "name": "Ultimate Spider-Man Vol. 11: Carnage (2004)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1383",
+                            "name": "Ultimate Spider-Man Vol. 12: Superstars (2005)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1397",
+                            "name": "Ultimate Spider-Man Vol. 13: Hobgoblin (2005)"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "stories": {
+                    "available": 254,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011010/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/528",
+                            "name": "Interior #528",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/529",
+                            "name": "Interior #529",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1290",
+                            "name": "1 of 2 - Human Torch",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1291",
+                            "name": "1 of 2 - Human Torch",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1293",
+                            "name": "2 of 2 - Human Torch",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1307",
+                            "name": "Interior #1307",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1309",
+                            "name": "Interior #1309",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1311",
+                            "name": "Interior #1311",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1313",
+                            "name": "Interior #1313",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1315",
+                            "name": "Interior #1315",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1317",
+                            "name": "Interior #1317",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1319",
+                            "name": "Interior #1319",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1321",
+                            "name": "Interior #1321",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1323",
+                            "name": "Interior #1323",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1325",
+                            "name": "Interior #1325",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1327",
+                            "name": "Interior #1327",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1329",
+                            "name": "SELF-CONTAINED STORY!  It’s the Breakfast Club redux as Peter, Mary Jane, Liz, Flash and Kong are busted and given detention. No",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1330",
+                            "name": "\"SWITCHEROO\" PART 1 (OF 2) A bizarre occurrence brings Spider-Man and Wolverine together for the weirdest team-up in super-hero ",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1331",
+                            "name": "\"SWITCHEROO\" PART 1 (OF 2) A bizarre occurrence brings Spider-Man and Wolverine together for the weirdest team-up in super-hero ",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/1333",
+                            "name": "\"SWITCHEROO\" PART 2 (OF 2) A bizarre occurrence brings Spider-Man and Wolverine together for the weirdest team-up in super-hero ",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011010/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/characters/54/spider-man?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "wiki",
+                        "url": "http://marvel.com/universe/Spider-Man_(Ultimate)?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "comiclink",
+                        "url": "http://marvel.com/comics/characters/1011010/spider-man_ultimate?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ]
+            },
+            {
+                "id": 1010795,
+                "name": "Spider-Woman (Charlotte Witter)",
+                "description": "",
+                "modified": "2014-03-05T13:49:34-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/60/531771afe4ffa",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010795",
+                "comics": {
+                    "available": 9,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010795/comics",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/37899",
+                            "name": "Amazing Spider-Man (1999) #5"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/37900",
+                            "name": "Amazing Spider-Man (1999) #6"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/23996",
+                            "name": "Astonishing Tales (2009) #3"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/21247",
+                            "name": "Avengers/Invaders (2008) #1"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/21248",
+                            "name": "Avengers/Invaders (2008) #1 (FINCH VARIANT)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/21565",
+                            "name": "Avengers/Invaders (2008) #3"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/6152",
+                            "name": "Captain America (2004) #26"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/21424",
+                            "name": "Captain America: The Death of Captain America Vol. 1 (Trade Paperback)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/17325",
+                            "name": "Captain America: The Death of Captain America Vol. 1 Premiere (Hardcover)"
+                        }
+                    ],
+                    "returned": 9
+                },
+                "series": {
+                    "available": 6,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010795/series",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/454",
+                            "name": "Amazing Spider-Man (1999 - 2013)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/6792",
+                            "name": "Astonishing Tales (2009)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/4864",
+                            "name": "Avengers/Invaders (2008 - 2009)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/832",
+                            "name": "Captain America (2004 - 2011)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/5061",
+                            "name": "Captain America: The Death of Captain America Vol. 1 (2008)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/3127",
+                            "name": "Captain America: The Death of Captain America Vol. 1 Premiere (2007)"
+                        }
+                    ],
+                    "returned": 6
+                },
+                "stories": {
+                    "available": 9,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010795/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/7703",
+                            "name": "2 of 6 - Death of the Dream",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/46927",
+                            "name": "12XLS 1 of 12",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/46928",
+                            "name": "12XLS 1 of 12",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/46929",
+                            "name": "12XLS 1 of 12",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/47537",
+                            "name": "12XLS 3 of 12",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/53224",
+                            "name": "Cover #53224",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/53225",
+                            "name": "Interior #53225",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/94843",
+                            "name": "Amazing Spider-Man (1999) #5",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/94906",
+                            "name": "Amazing Spider-Man (1999) #6",
+                            "type": "cover"
+                        }
+                    ],
+                    "returned": 9
+                },
+                "events": {
+                    "available": 1,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010795/events",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/events/255",
+                            "name": "Initiative"
+                        }
+                    ],
+                    "returned": 1
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/characters/1010795/spider-woman_charlotte_witter/featured?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "wiki",
+                        "url": "http://marvel.com/universe/Spider-Woman_%28Charlotte_Witter%29?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "comiclink",
+                        "url": "http://marvel.com/comics/characters/1010795/spider-woman_charlotte_witter?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ]
+            },
+            {
+                "id": 1009608,
+                "name": "Spider-Woman (Jessica Drew)",
+                "description": "When young Jessica Drew suffered uranium poisoning in 1931, her father was forced to inject her with his untested spider serum and seal her in a genetic accelerator.",
+                "modified": "2013-10-21T11:31:27-0400",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/50/5265479097743",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009608",
+                "comics": {
+                    "available": 95,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009608/comics",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/37899",
+                            "name": "Amazing Spider-Man (1999) #5"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/37900",
+                            "name": "Amazing Spider-Man (1999) #6"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/35513",
+                            "name": "Amazing Spider-Man (1999) #666"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/35528",
+                            "name": "Amazing Spider-Man (1999) #667"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/35532",
+                            "name": "Amazing Spider-Man (1999) #668"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/35509",
+                            "name": "Amazing Spider-Man (1999) #673"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/29205",
+                            "name": "Avengers (2010) #2"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/29206",
+                            "name": "Avengers (2010) #3"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/34142",
+                            "name": "Avengers (2010) #3 (ROMITA JR. VARIANT)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/29209",
+                            "name": "Avengers (2010) #6"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/29196",
+                            "name": "Avengers (2010) #10"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/29197",
+                            "name": "Avengers (2010) #11"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/38617",
+                            "name": "Avengers (2010) #11 (CAPTAIN AMERICA 70TH ANNIVERSARY VARIANT)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/39852",
+                            "name": "Avengers (2010) #12.1"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/29199",
+                            "name": "Avengers (2010) #13"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/39040",
+                            "name": "Avengers (2010) #13 (X-Men Art Variant)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/29200",
+                            "name": "Avengers (2010) #14"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/29201",
+                            "name": "Avengers (2010) #15"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/29202",
+                            "name": "Avengers (2010) #16"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/29203",
+                            "name": "Avengers (2010) #17"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "series": {
+                    "available": 37,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009608/series",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/454",
+                            "name": "Amazing Spider-Man (1999 - 2013)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1991",
+                            "name": "Avengers (1963 - 1996)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/9085",
+                            "name": "Avengers (2010 - 2012)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/10051",
+                            "name": "Avengers By Brian Michael Bendis Vol. 2 Premiere HC (2011)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/10048",
+                            "name": "Avengers Vol 1: By Brian Michel Bendis TPB (2011)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/13032",
+                            "name": "Avengers Vs. Pet Avengers (2010 - 2011)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/15305",
+                            "name": "Avengers Vs. X-Men (2012)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/4864",
+                            "name": "Avengers/Invaders (2008 - 2009)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1945",
+                            "name": "Avengers: The Initiative (2007 - 2010)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/14246",
+                            "name": "Avenging Spider-Man (2011 - Present)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1067",
+                            "name": "Civil War (2006 - 2007)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/378",
+                            "name": "Earth X (1999)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1806",
+                            "name": "Earth X (New (2006)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/13691",
+                            "name": "Fear Itself (2010 - 2011)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/3204",
+                            "name": "Giant-Size Avengers Special (2007)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/9896",
+                            "name": "Hawkeye & Mockingbird (2010)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/13508",
+                            "name": "Impossible Man (2010 - Present)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/3715",
+                            "name": "Marvel Two-in-One (1974 - 1983)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1866",
+                            "name": "Mighty Avengers (2007 - 2010)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/5381",
+                            "name": "Mighty Avengers Vol. 1: The Ultron Initiative (2008)"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "stories": {
+                    "available": 90,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009608/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3435",
+                            "name": "New Avengers (2004) #1",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3436",
+                            "name": "New Avengers (2004) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3439",
+                            "name": "Cover #3439",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3443",
+                            "name": "4 of 5 - Breakout!",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3445",
+                            "name": "5 of 6 - Breakout!",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3455",
+                            "name": "6 of 6 - Breakout!",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3457",
+                            "name": "1 of 5 - The Raft",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3459",
+                            "name": "1 of 3 - Sentry",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3463",
+                            "name": "3 of 3 - Sentry",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3465",
+                            "name": "1 of 3 - Ronin",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3467",
+                            "name": "2 of 3 - Ronin",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3469",
+                            "name": "4 of 4 - Sentry",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3475",
+                            "name": "3 of 3 - Ronin",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3477",
+                            "name": "1 of 2 - Spider-Woman",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3479",
+                            "name": "2 of 2 - Spider-Woman",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3486",
+                            "name": "New Avengers (2004) #19",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/3526",
+                            "name": "4 of 4 - Family Matters",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/4499",
+                            "name": "Cover #4499",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/5872",
+                            "name": "1 of 7 - 7XLS",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/5874",
+                            "name": "Cover #5874",
+                            "type": "cover"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "events": {
+                    "available": 7,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009608/events",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/events/310",
+                            "name": "Avengers VS X-Men"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/events/238",
+                            "name": "Civil War"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/events/318",
+                            "name": "Dark Reign"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/events/302",
+                            "name": "Fear Itself"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/events/255",
+                            "name": "Initiative"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/events/269",
+                            "name": "Secret Invasion"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/events/305",
+                            "name": "Spider-Island"
+                        }
+                    ],
+                    "returned": 7
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/characters/55/spider-woman?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "wiki",
+                        "url": "http://marvel.com/universe/Spider-Woman_%28Jessica_Drew%29?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "comiclink",
+                        "url": "http://marvel.com/comics/characters/1009608/spider-woman_jessica_drew?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ]
+            },
+            {
+                "id": 1010794,
+                "name": "Spider-Woman (Mattie Franklin)",
+                "description": "Mattie Franklin was granted her powers when, after overhearing a phone call between her father and Norman Osborn about the Gathering of the Five, she took her father's place during the Gathering and was endowed with the awesome powers that Norman Osborn had wanted for himself.",
+                "modified": "2014-03-05T13:50:37-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/30/531771c2ab020",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010794",
+                "comics": {
+                    "available": 5,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010794/comics",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/37895",
+                            "name": "Amazing Spider-Man (1999) #2"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/37899",
+                            "name": "Amazing Spider-Man (1999) #5"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/37900",
+                            "name": "Amazing Spider-Man (1999) #6"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/24418",
+                            "name": "Amazing Spider-Man (1999) #611"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/15848",
+                            "name": "The Loners (2007) #3"
+                        }
+                    ],
+                    "returned": 5
+                },
+                "series": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010794/series",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/454",
+                            "name": "Amazing Spider-Man (1999 - 2013)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1938",
+                            "name": "The Loners (2007 - 2008)"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "stories": {
+                    "available": 5,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010794/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/32363",
+                            "name": "3 of 6 - 6XLS",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/54194",
+                            "name": "Amazing Spider-Man (1999) #611 - Int",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/94838",
+                            "name": "Amazing Spider-Man (1999) #2",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/94843",
+                            "name": "Amazing Spider-Man (1999) #5",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/94906",
+                            "name": "Amazing Spider-Man (1999) #6",
+                            "type": "cover"
+                        }
+                    ],
+                    "returned": 5
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010794/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/characters/1010794/spider-woman_mattie_franklin/featured?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "wiki",
+                        "url": "http://marvel.com/universe/Spider-Woman_%28Mattie_Franklin%29?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "comiclink",
+                        "url": "http://marvel.com/comics/characters/1010794/spider-woman_mattie_franklin?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ]
+            },
+            {
+                "id": 1009614,
+                "name": "Spiral (Rita Wayword)",
+                "description": "Spiral was created to be an agent of Mojo, the despotic leader of Mojo World, often used as his favored personal servant, executioner, and spy.",
+                "modified": "1969-12-31T19:00:00-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/4c003ad84f314",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009614",
+                "comics": {
+                    "available": 39,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009614/comics",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/8571",
+                            "name": "Excalibur (1988) #107"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/8573",
+                            "name": "Excalibur (1988) #109"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/8575",
+                            "name": "Excalibur (1988) #110"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/22242",
+                            "name": "Longshot (1985) #1"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/22244",
+                            "name": "Longshot (1985) #3"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/22245",
+                            "name": "Longshot (1985) #4"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/22246",
+                            "name": "Longshot (1985) #5"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/22247",
+                            "name": "Longshot (1985) #6"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/37592",
+                            "name": "New Mutants Classic Vol. 6 (Trade Paperback)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/13740",
+                            "name": "Uncanny X-Men (1963) #199"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/13741",
+                            "name": "Uncanny X-Men (1963) #200"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/13750",
+                            "name": "Uncanny X-Men (1963) #209"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/13764",
+                            "name": "Uncanny X-Men (1963) #223"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/13766",
+                            "name": "Uncanny X-Men (1963) #225"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/13767",
+                            "name": "Uncanny X-Men (1963) #226"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/13777",
+                            "name": "Uncanny X-Men (1963) #236"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/13797",
+                            "name": "Uncanny X-Men (1963) #256"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/14173",
+                            "name": "Wolverine (1988) #52"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/14208",
+                            "name": "Wolverine (1988) #84"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/12301",
+                            "name": "X-Factor (1986) #8"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "series": {
+                    "available": 18,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009614/series",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/2011",
+                            "name": "Excalibur (1988 - 1998)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/5861",
+                            "name": "Longshot (1985 - 1986)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/13519",
+                            "name": "New Mutants Classic Vol. 6 (2010 - Present)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/2258",
+                            "name": "Uncanny X-Men (1963 - 2011)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/2262",
+                            "name": "Wolverine (1988 - 2003)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/2098",
+                            "name": "X-Factor (1986 - 1998)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/6689",
+                            "name": "X-Factor Annual (1986 - 1994)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/3633",
+                            "name": "X-Force (1991 - 2004)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/2265",
+                            "name": "X-Men (1991 - 2001)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/2100",
+                            "name": "X-Men Annual (1970 - 1991)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/211",
+                            "name": "X-Men Legends Vol. 3: Art Adams Book I (2003)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/242",
+                            "name": "X-Men Legends Vol. III: Arthur Adams Book I (2003)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/3637",
+                            "name": "X-Men Unlimited (1993 - 1999)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/139",
+                            "name": "X-Men Visionaries: Jim Lee (2002)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/14362",
+                            "name": "X-Men: Lifedeath (2011 - Present)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/14364",
+                            "name": "X-Men: Lifedeath (2011 - Present)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/6045",
+                            "name": "X-Men: Longshot Premiere (2008 - Present)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1774",
+                            "name": "X-Men: Mutant Genesis (2006)"
+                        }
+                    ],
+                    "returned": 18
+                },
+                "stories": {
+                    "available": 40,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009614/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/19848",
+                            "name": "Performance",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/22237",
+                            "name": "Kiss Of Death!",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/22243",
+                            "name": "For All The World To See",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/22352",
+                            "name": "Lost and Found!",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/22376",
+                            "name": "Spots!",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/22420",
+                            "name": "Focus",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/22424",
+                            "name": "Cover #22424",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/22425",
+                            "name": "Dragon Moon Rising",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/22430",
+                            "name": "Hearts Bled Crimson",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/27908",
+                            "name": "The Spiral Path",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/27910",
+                            "name": "The Trial of Magneto",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/27928",
+                            "name": "Salvation",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/27956",
+                            "name": "Omens and Portents",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/27959",
+                            "name": "The Fall of the Mutants",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/27962",
+                            "name": "Go Tell the Spartans",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/27982",
+                            "name": "Busting Loose",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/28022",
+                            "name": "The Key That Breaks the Locke",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/28861",
+                            "name": "The Crunch Conundrum Part 2",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/28935",
+                            "name": "Things That Go Bump In the Night!",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/29116",
+                            "name": "A Villains Gallery",
+                            "type": "pinup"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "events": {
+                    "available": 4,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009614/events",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/events/116",
+                            "name": "Acts of Vengeance!"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/events/246",
+                            "name": "Evolutionary War"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/events/248",
+                            "name": "Fall of the Mutants"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/events/263",
+                            "name": "Mutant Massacre"
+                        }
+                    ],
+                    "returned": 4
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/characters/2176/spiral?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "wiki",
+                        "url": "http://marvel.com/universe/Spiral_%28Rita_Wayword%29?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "comiclink",
+                        "url": "http://marvel.com/comics/characters/1009614/spiral_rita_wayword?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ]
+            },
+            {
+                "id": 1011158,
+                "name": "Spirit",
+                "description": "Spirit is a member of the Luphomoid race and she is one of the few survivors of her planet's destruction.",
+                "modified": "1969-12-31T19:00:00-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/90/4c002f471444a",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011158",
+                "comics": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011158/comics",
+                    "items": [],
+                    "returned": 0
+                },
+                "series": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011158/series",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011158/stories",
+                    "items": [],
+                    "returned": 0
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011158/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/characters/2177/spirit?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "wiki",
+                        "url": "http://marvel.com/universe/Spirit?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "comiclink",
+                        "url": "http://marvel.com/comics/characters/1011158/spirit?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ]
+            },
+            {
+                "id": 1010899,
+                "name": "Spitfire",
+                "description": "During World War II, Jacqueline Falsworth bravely served in Britain’s Home Guard.",
+                "modified": "2011-02-08T19:12:56-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/5/90/4c00359222ceb",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010899",
+                "comics": {
+                    "available": 14,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010899/comics",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/24549",
+                            "name": "Avengers/Invaders (2008) #9"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/16239",
+                            "name": "Cap Transport (2005) #19"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/16241",
+                            "name": "Cap Transport (2005) #20"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/4152",
+                            "name": "Captain America (2004) #18"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/4326",
+                            "name": "Captain America (2004) #19"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/4482",
+                            "name": "Captain America (2004) #20"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/4798",
+                            "name": "Captain America (2004) #21"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/5543",
+                            "name": "Captain America: Red Menace Vol. 2 (Trade Paperback)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/31908",
+                            "name": "Invaders Now! (Hardcover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/34477",
+                            "name": "Invaders Now! (2010) #3"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/10173",
+                            "name": "Marvel Comics Presents (1988) #89"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/30252",
+                            "name": "Spitfire (2010) #1"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/11008",
+                            "name": "Star Brand (1986) #2"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/5127",
+                            "name": "Star Brand Classic Vol. 1 (Trade Paperback)"
+                        }
+                    ],
+                    "returned": 14
+                },
+                "series": {
+                    "available": 10,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010899/series",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/4864",
+                            "name": "Avengers/Invaders (2008 - 2009)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/2722",
+                            "name": "Cap Transport (2005 - 2006)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/832",
+                            "name": "Captain America (2004 - 2011)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1779",
+                            "name": "Captain America: Red Menace Vol. 2 (2006)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/10262",
+                            "name": "Invaders Now! (2011)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/11825",
+                            "name": "Invaders Now! (2010 - 2011)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/2039",
+                            "name": "Marvel Comics Presents (1988 - 1995)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/9972",
+                            "name": "Spitfire (2010)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/2075",
+                            "name": "Star Brand (1986 - 1989)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/1819",
+                            "name": "Star Brand Classic Vol. 1 (2006)"
+                        }
+                    ],
+                    "returned": 10
+                },
+                "stories": {
+                    "available": 13,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010899/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/4264",
+                            "name": "1 of",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/4266",
+                            "name": "Interior #4266",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/4267",
+                            "name": "3 of ? - Twenty-first Century Blitz",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/4268",
+                            "name": "3 of ? - Twenty-first Century Blitz",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/4270",
+                            "name": "4 of ? - Twenty-first Century Blitz",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/22066",
+                            "name": "Taking Charge!",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/23637",
+                            "name": "Young Blood",
+                            "type": ""
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/34005",
+                            "name": "Twenty-First Century Blitz!",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/34009",
+                            "name": "Captain America",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/34010",
+                            "name": "Twenty-First Century Blitz!",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/54327",
+                            "name": "Avengers/Invaders (2008) #9",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/69331",
+                            "name": "Interior #69331",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/76756",
+                            "name": "Interior #76756",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 13
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1010899/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/characters/2181/spitfire?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "wiki",
+                        "url": "http://marvel.com/universe/Spitfire?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "comiclink",
+                        "url": "http://marvel.com/comics/characters/1010899/spitfire?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ]
+            },
+            {
+                "id": 1009616,
+                "name": "Spot",
+                "description": "Jonathan Ohnn was working as a research scientist on behalf of Wilson Fisk, the Kingpin of Crime.",
+                "modified": "1969-12-31T19:00:00-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/b0/4c003ad4d2e8d",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009616",
+                "comics": {
+                    "available": 3,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009616/comics",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/23739",
+                            "name": "Amazing Spider-Man (1999) #589"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/35880",
+                            "name": "Amazing Spider-Man (1999) #645 (SPIDEY VS. VARIANT)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/15558",
+                            "name": "Fantastic Four (1998) #38"
+                        }
+                    ],
+                    "returned": 3
+                },
+                "series": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009616/series",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/454",
+                            "name": "Amazing Spider-Man (1999 - 2013)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/421",
+                            "name": "Fantastic Four (1998 - 2012)"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "stories": {
+                    "available": 3,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009616/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/31753",
+                            "name": "Flesh and Stone",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/52680",
+                            "name": "FF and Mayor JJJ 1 of 2",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/94765",
+                            "name": "Amazing Spider-Man (1999) #645, SPIDEY VS. VARIANT",
+                            "type": "cover"
+                        }
+                    ],
+                    "returned": 3
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009616/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/characters/2182/spot?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "wiki",
+                        "url": "http://marvel.com/universe/Spot?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "comiclink",
+                        "url": "http://marvel.com/comics/characters/1009616/spot?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ]
+            },
+            {
+                "id": 1011180,
+                "name": "Sprite",
+                "description": "Sprite is a mischievous Eternal who maintains a perpetual youthful appearance.",
+                "modified": "1969-12-31T19:00:00-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011180",
+                "comics": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011180/comics",
+                    "items": [],
+                    "returned": 0
+                },
+                "series": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011180/series",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011180/stories",
+                    "items": [],
+                    "returned": 0
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011180/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/characters/2183/sprite?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "wiki",
+                        "url": "http://marvel.com/universe/Sprite_%28Eternal%29?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "comiclink",
+                        "url": "http://marvel.com/comics/characters/1011180/sprite?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ]
+            },
+            {
+                "id": 1009617,
+                "name": "Spyke",
+                "description": "",
+                "modified": "1969-12-31T19:00:00-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009617",
+                "comics": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009617/comics",
+                    "items": [],
+                    "returned": 0
+                },
+                "series": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009617/series",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009617/stories",
+                    "items": [],
+                    "returned": 0
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009617/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/characters/2185/spyke?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "comiclink",
+                        "url": "http://marvel.com/comics/characters/1009617/spyke?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ]
+            }
+        ]
+    }
+}

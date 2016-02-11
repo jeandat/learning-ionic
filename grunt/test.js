@@ -5,8 +5,7 @@ module.exports.tasks = {
     // Unit tests
     karma: {
         options: {
-            configFile: 'test/karma.conf.js',
-            browsers: ['PhantomJS']
+            configFile: 'test/karma.conf.js'
         },
         dev: {
             singleRun: true

@@ -39,8 +39,9 @@
 
         var options = {
             maxAge: 60 * 60 * 1000, // Items added to this cache expire after 1 hour
-            deleteOnExpire: 'passive' // Cache will do nothing when an item expires.
+            deleteOnExpire: 'passive', // Cache will do nothing when an item expires.
             // Expired items will remain in the cache until requested, at which point they are removed, and undefined is returned.
+            storageMode: 'localStorage' // This cache will use `localStorage`.
         };
 
         $log.debug('Created a default cache for HTTP requests with properties:', options);
