@@ -23,7 +23,8 @@
         }
 
         function scrollTop(){
-            $ionicScrollDelegate.scrollTop(true);
+            var offset = $ionicScrollDelegate.getScrollPosition();
+            $ionicScrollDelegate.scrollTop(offset.top > 3000 ? false : true);
         }
 
     }
