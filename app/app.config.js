@@ -9,9 +9,17 @@
         .config(ionicConfig)
         .config(httpInterceptors);
 
-    function appConfig($compileProvider, env) {
+    function appConfig($compileProvider) {
         // Remove angular debug info in DOM when compiling for production
-        $compileProvider.debugInfoEnabled(env === 'dev');
+        $compileProvider.debugInfoEnabled(false);
+
+        // You may enable them manually by executing in your console: `angular.reloadWithDebugInfo()`
+
+        // If you want a permanent change, modify the above line:
+        // ```
+        // $compileProvider.debugInfoEnabled(env === 'dev');
+        // ```
+        // Don't forget to inject the env constant.
     }
 
     function routeConfig($stateProvider) {
