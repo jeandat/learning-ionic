@@ -59,7 +59,8 @@
       "id": "cordova-plugin-x-toast"
     },
     "cordova-plugin-file-transfer",
-    "cordova-plugin-file"
+    "cordova-plugin-file",
+    "cordova-plugin-inappbrowser"
   ],
   "cordovaPlatforms": [
     "android",

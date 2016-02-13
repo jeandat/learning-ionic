@@ -111,8 +111,8 @@
 
     // Ionic defaults
     function ionicConfig($ionicConfigProvider) {
-        // Default spinner
         $ionicConfigProvider.spinner.icon('dots');
+        //$ionicConfigProvider.views.transition('none');
     }
 
     // ! NOT USED FOR THE MOMENT !

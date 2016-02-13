@@ -1,0 +1,28 @@
+.character{
+    &__content{
+        padding: $content-padding;
+    }
+    &__meta{
+        padding: $content-padding;
+    }
+    &__text{
+        background-color: black;
+        color: $light;
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        padding: $content-padding/2 0;
+        box-shadow: $content-padding 0 0 0 black, -$content-padding 0 0 0 black;
+    }
+    &__title{
+        font-size: 1.3rem;
+    }
+    &__background{
+        background-size: cover;
+        background-position: top center;
+    }
+    &__details.button{
+        margin-top: $margin-large;
+        background-color: rgba(black, .7) !important;
+        color: $assertive !important;
+    }
+}
