@@ -15,7 +15,7 @@
             /////////////
 
             function getThumbnailUrl() {
-                if(_.isEmpty(model.thumbnail)) return;
+                if(_.isEmpty(model.thumbnail)) return '';
                 return model.thumbnail.path + '.' + model.thumbnail.extension;
             }
         });

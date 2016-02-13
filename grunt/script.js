@@ -23,7 +23,9 @@ module.exports = function () {
                             'ngCordova/dist/ng-cordova-mocks.js',
                             'angular-local-storage/dist/angular-local-storage.js',
                             'angular-cache/dist/angular-cache.js',
-                            'restangular/dist/restangular.js'
+                            'restangular/dist/restangular.js',
+                            'imgcache.js/js/imgcache.js',
+                            'angular-imgcache/angular-imgcache.js'
                         ],
                         expand: true,
                         cwd: 'vendor',

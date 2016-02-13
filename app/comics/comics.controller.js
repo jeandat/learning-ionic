@@ -10,15 +10,15 @@
 
         var vm = this;
         vm.title = 'ComicsController';
-        vm.filter = 'Deadpool';
         // Let's start with something cool ;)
+        vm.filter = 'Deadpool';
         vm.comics = [];
+        vm.searching = false;
+        vm.offset = 0;
         vm.keep = keep;
         vm.search = search;
-        vm.searching = false;
         vm.loadMore = loadMore;
         vm.hasMoreData = hasMoreData;
-        vm.offset = 0;
 
         activate();
 

@@ -7,7 +7,8 @@
         .config(routeConfig)
         .config(localStorageConfig)
         .config(ionicConfig)
-        .config(httpInterceptors);
+        .config(httpInterceptors)
+        .config(imgCache);
 
     function appConfig($compileProvider) {
         // Remove angular debug info in DOM when compiling for production
@@ -117,6 +118,16 @@
     // ! NOT USED FOR THE MOMENT !
     function httpInterceptors($httpProvider) {
         $httpProvider.interceptors.push('httpInterceptor');
+    }
+
+    function imgCache(ImgCacheProvider){
+        ImgCacheProvider.setOptions({
+            debug: true,
+            chromeQuota: 50 * 1024 * 1024,
+            skipURIencoding: true,
+            usePersistentCache: false
+        });
+        ImgCacheProvider.manualInit = true;
     }
 
 })();

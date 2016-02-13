@@ -10,9 +10,11 @@
     "jquery": "~2.2.0",
     "angular-cache": "~4.5.0",
     "karma-read-json": "^1.1.0",
-    "restangular": "^1.5.1"
+    "restangular": "^1.5.1",
+    "angular-imgcache": "angular-imgcache.js#^0.1.0",
+    "imgcache.js": "^1.0.0"
   },
   "resolutions": {
-    "angular": "~1.4.9"
+    "angular": "~1.5.0"
   }
 }

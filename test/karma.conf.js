@@ -21,6 +21,8 @@ module.exports = function (config) {
             'www/js/angular-local-storage.js',
             'www/js/angular-cache.js',
             'www/js/restangular.js',
+            'www/js/imgcache.js',
+            'www/js/angular-imgcache.js',
             // app
             'www/js/templates.js',
             '.tmp/**/*.module.js',

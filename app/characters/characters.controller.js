@@ -10,15 +10,15 @@
 
         var vm = this;
         vm.title = 'CharactersController';
-        vm.filter = 'Deadpool';
         // Let's start with something cool ;)
+        vm.filter = 'Deadpool';
         vm.characters = [];
+        vm.searching = false;
+        vm.offset = 0;
         vm.keep = keep;
         vm.search = search;
-        vm.searching = false;
         vm.loadMore = loadMore;
         vm.hasMoreData = hasMoreData;
-        vm.offset = 0;
 
         activate();
 

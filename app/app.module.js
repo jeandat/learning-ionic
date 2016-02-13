@@ -6,6 +6,7 @@
         '@@ngCordovaModuleName',
         'LocalStorageModule',
         'angular-cache',
-        'restangular'
+        'restangular',
+        'ImgCache'
     ]);
 })();

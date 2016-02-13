@@ -5,8 +5,11 @@
         Project to learn ionic
     </description>
   <author email="jean.dat@gmail.com" href="github.com/jdat82">Jean DAT</author>
-  <content src="http://192.168.20.70:8100" original-src="index.html"/>
+  <content src="index.html"/>
   <access origin="*"/>
+  <access origin="cdvfile://*"/>
+  <allow-intent href="cdvfile://*"/>
+  <allow-navigation href="*"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
@@ -19,7 +22,6 @@
   <preference name="xwalkMode" value="embedded"/>
   <preference name="xwalkMultipleApk" value="true"/>
   <preference name="Orientation" value="default"/>
-  <allow-intent href="*"/>
   <feature name="StatusBar">
     <param name="ios-package" onload="true" value="CDVStatusBar"/>
   </feature>
@@ -48,6 +50,7 @@
   <platform name="ios">
     <preference name="Orientation" value="all"/>
     <preference name="BackupWebStorage" value="none"/>
+    <preference name="KeyboardDisplayRequiresUserAction" value="false"/>
     <icon src="resources/ios/icon/icon.png" width="57" height="57"/>
     <icon src="resources/ios/icon/icon@2x.png" width="114" height="114"/>
     <icon src="resources/ios/icon/icon-40.png" width="40" height="40"/>

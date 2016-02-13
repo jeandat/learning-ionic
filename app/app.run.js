@@ -7,6 +7,7 @@
         .run(setCustomLogs)
         .run(setHttpDefaultCache)
         .run(restConfig)
+        .run(addGlobals)
         .run(checkRequirements);
 
     //////////////////////
@@ -38,7 +39,7 @@
         if (CacheFactory.get(defaultCacheName)) return;
 
         var options = {
-            maxAge: 60 * 60 * 1000, // Items added to this cache expire after 1 hour
+            maxAge: 7 * 24 * 60 * 60 * 1000, // Items added to this cache expire after 1 week
             deleteOnExpire: 'passive', // Cache will do nothing when an item expires.
             // Expired items will remain in the cache until requested, at which point they are removed, and undefined is returned.
             storageMode: 'localStorage' // This cache will use `localStorage`.
@@ -100,9 +101,25 @@
 
     }
 
-    function checkRequirements($state, $cordovaSplashscreen, $timeout) {
-        $state.go('tab.characters');
-        $timeout($cordovaSplashscreen.hide, 1000);
+    function addGlobals($rootScope){
+        $rootScope.isCordova = ionic.Platform.isWebView();
+    }
+
+    function checkRequirements($state, $cordovaSplashscreen, $timeout, ImgCache) {
+        initImgCache().then(goHome).then(hideSplash);
+
+        /////////////
+
+        function initImgCache(){
+            ImgCache.$init();
+            return ImgCache.$promise;
+        }
+        function goHome(){
+            return $state.go('tab.characters');
+        }
+        function hideSplash(){
+            return $timeout($cordovaSplashscreen.hide, 1000);
+        }
     }
 
 
