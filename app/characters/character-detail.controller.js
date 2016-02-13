@@ -18,11 +18,11 @@
 
         function activate() {
             $log.debug(vm.title + ' instantiated');
-            $log.debug('character:', vm.character);
         }
 
         function openDetailPage(){
-            cordova.InAppBrowser.open(vm.character.getDetailUrl(), '_system');
+            var open = _.get(window, 'cordova.InAppBrowser.open') || window.open;
+            open(vm.character.getDetailUrl(), '_system');
         }
 
     }
