@@ -47,6 +47,7 @@ CSS overrides.
 
 // Bugfix for Android
 // Starting at 4 tabs, there is a line between title and tabs bar.
-.tabs-top.tabs-striped .tab-item.tab-item-active {
+.tabs-top.tabs-striped .tab-item.tab-item-active,
+.tabs-top.tabs-striped .tab-item.activated {
     margin-top: 0;
 }
