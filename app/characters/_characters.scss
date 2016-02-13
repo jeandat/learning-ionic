@@ -12,3 +12,10 @@
         object-position: center;
     }
 }
+.platform-ios.platform-cordova .characters{
+    &__footer{
+        // Bugfix iOS
+        // margin-bottom is not respected.
+        transform: translateY(-10px);
+    }
+}
