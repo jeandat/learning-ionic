@@ -44,3 +44,9 @@ CSS overrides.
   white-space: nowrap;
   overflow: hidden;
 }
+
+// Bugfix for Android
+// Starting at 4 tabs, there is a line between title and tabs bar.
+.tabs-top.tabs-striped .tab-item.tab-item-active {
+    margin-top: 0;
+}
