@@ -1,4 +1,4 @@
-ion-view.character.character__background(view-title='Characters' img-cache ic-bg='{{::vm.character.getThumbnailUrl()}}')
+ion-view.character.character__background(view-title='{{::vm.character.name}}' img-cache ic-bg='{{::vm.character.getThumbnailUrl()}}')
     ion-content.character__content
         .character__meta
             span.character__text.character__title {{::vm.character.name}}
