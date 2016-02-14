@@ -7,6 +7,7 @@
         .config(routeConfig)
         .config(localStorageConfig)
         .config(ionicConfig)
+        .config(ionicNativeTransitions)
         .config(httpInterceptors)
         .config(imgCache);
 
@@ -30,10 +31,13 @@
 
         $stateProvider
 
-            // setup an abstract state for the tabs directive
+        // setup an abstract state for the tabs directive
             .state('tab', {
                 url: '/tab',
                 abstract: true,
+                nativeTransitions: {
+                    'type': 'fade'
+                },
                 templateUrl: 'common/layout/layout.jade'
             })
 
@@ -41,6 +45,9 @@
 
             .state('tab.characters', {
                 url: '/characters',
+                nativeTransitions: {
+                    'type': 'fade'
+                },
                 views: {
                     'tab-characters': {
                         templateUrl: 'characters/tab-characters.jade',
@@ -50,7 +57,11 @@
             })
             .state('tab.character-detail', {
                 url: '/characters',
-                params:{
+                nativeTransitions: {
+                    'type': 'slide',
+                    'direction': 'up'
+                },
+                params: {
                     character: {}
                 },
                 views: {
@@ -63,6 +74,9 @@
 
             .state('tab.comics', {
                 url: '/comics',
+                nativeTransitions: {
+                    'type': 'fade'
+                },
                 views: {
                     'tab-comics': {
                         templateUrl: 'comics/tab-comics.jade',
@@ -72,6 +86,10 @@
             })
             .state('tab.comic-detail', {
                 url: '/comics/:comicId',
+                nativeTransitions: {
+                    'type': 'slide',
+                    'direction': 'up'
+                },
                 views: {
                     'tab-comics': {
                         templateUrl: 'comics/comic-detail.jade',
@@ -82,6 +100,9 @@
 
             .state('tab.favourites', {
                 url: '/favourites',
+                nativeTransitions: {
+                    'type': 'fade'
+                },
                 views: {
                     'tab-favourites': {
                         templateUrl: 'favourites/tab-favourites.jade',
@@ -92,6 +113,9 @@
 
             .state('tab.settings', {
                 url: '/settings',
+                nativeTransitions: {
+                    'type': 'fade'
+                },
                 views: {
                     'tab-settings': {
                         templateUrl: 'settings/tab-settings.jade',
@@ -115,12 +139,18 @@
         //$ionicConfigProvider.views.transition('none');
     }
 
+    function ionicNativeTransitions($ionicNativeTransitionsProvider){
+        $ionicNativeTransitionsProvider.setDefaultOptions({
+            backInOppositeDirection: true
+        });
+    }
+
     // ! NOT USED FOR THE MOMENT !
     function httpInterceptors($httpProvider) {
         $httpProvider.interceptors.push('httpInterceptor');
     }
 
-    function imgCache(ImgCacheProvider){
+    function imgCache(ImgCacheProvider) {
         ImgCacheProvider.setOptions({
             debug: true,
             chromeQuota: 50 * 1024 * 1024,

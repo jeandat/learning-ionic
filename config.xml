@@ -28,6 +28,7 @@
   <platform name="android">
     <preference name="SplashShowOnlyFirstTime" value="false"/>
     <preference name="SplashScreenDelay" value="500000"/>
+    <preference name="CrosswalkAnimatable" value="true"/>
     <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
     <icon src="resources/android/icon/drawable-mdpi-icon.png" density="mdpi"/>
     <icon src="resources/android/icon/drawable-hdpi-icon.png" density="hdpi"/>
