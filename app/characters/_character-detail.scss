@@ -22,7 +22,8 @@
     }
     &__details.button{
         margin-top: $margin-large;
-        background-color: rgba(black, .7) !important;
-        color: $assertive !important;
+        position: absolute;
+        top: -13px;
+        right: 0;
     }
 }
