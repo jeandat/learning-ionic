@@ -124,7 +124,7 @@
         ImgCacheProvider.setOptions({
             debug: true,
             chromeQuota: 50 * 1024 * 1024,
-            skipURIencoding: true,
+            skipURIencoding: false,
             usePersistentCache: false
         });
         ImgCacheProvider.manualInit = true;
