@@ -10,6 +10,6 @@ plugins/
 .tmp/
 vendor/*
 !vendor/md5
-www/
 sublime/
 npm-debug.log
+www/*
