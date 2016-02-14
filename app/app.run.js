@@ -5,9 +5,9 @@
         .module('app')
         .run(configureCordova)
         .run(setCustomLogs)
+        .run(addGlobals)
         .run(setHttpDefaultCache)
         .run(restConfig)
-        .run(addGlobals)
         .run(checkRequirements);
 
     //////////////////////
@@ -33,7 +33,7 @@
         }
     }
 
-    function setHttpDefaultCache($log, $http, CacheFactory, defaultCacheName) {
+    function setHttpDefaultCache($log, $http, CacheFactory, defaultCacheName, angularCacheStorage) {
 
         // In unit tests, we will run this for each spec.
         if (CacheFactory.get(defaultCacheName)) return;
@@ -42,7 +42,9 @@
             maxAge: 7 * 24 * 60 * 60 * 1000, // Items added to this cache expire after 1 week
             deleteOnExpire: 'passive', // Cache will do nothing when an item expires.
             // Expired items will remain in the cache until requested, at which point they are removed, and undefined is returned.
-            storageMode: 'localStorage' // This cache will use `localStorage`.
+            storageMode: 'localStorage', // This cache will use `localStorage`.
+            storageImpl: angularCacheStorage // Custom wrapper around localStorage to circumvent a problem
+            // when all urls have a timestamp as one of their parameter
         };
 
         $log.debug('Created a default cache for HTTP requests with properties:', options);
@@ -67,12 +69,12 @@
             selfLink: 'resourceURI'
         });
 
-        // I'm ashamed but marvel API thinks a cordova app which load the index page from a file:// url
-        // is a server app and then it requires more query parameters. That's too bad because one of them
+        // Marvel thinks a cordova app which load the index page from a file:// url
+        // is a server app and so it requires more query parameters. That's too bad because one of them
         // is the private key !!! So here I am adding it with courage forgetting about what I just did.
         if ($window.location.origin === 'file://') {
             Restangular.addFullRequestInterceptor(function (element, operation, model, url,
-                                                                    headers, query) {
+                                                            headers, query) {
                 query.ts = Date.now();
                 query.hash = md5(query.ts + privateApiKey + apiKey);
             });
@@ -84,7 +86,7 @@
             // For getList operations
             if (operation === 'getList') {
                 // Success
-                if(data.data) {
+                if (data.data) {
                     extractedData = data.data.results;
                     extractedData.meta = _.pickBy(data.data, keepMetadata);
                     return extractedData;
@@ -101,8 +103,9 @@
 
     }
 
-    function addGlobals($rootScope){
+    function addGlobals($rootScope, $window) {
         $rootScope.isCordova = ionic.Platform.isWebView();
+        $rootScope.isFileUrl = _.startsWith($window.location.origin, 'file:');
     }
 
     function checkRequirements($state, $cordovaSplashscreen, $timeout, ImgCache) {
@@ -110,14 +113,16 @@
 
         /////////////
 
-        function initImgCache(){
+        function initImgCache() {
             ImgCache.$init();
             return ImgCache.$promise;
         }
-        function goHome(){
+
+        function goHome() {
             return $state.go('tab.characters');
         }
-        function hideSplash(){
+
+        function hideSplash() {
             return $timeout($cordovaSplashscreen.hide, 1000);
         }
     }
