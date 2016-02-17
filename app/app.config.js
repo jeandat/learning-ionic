@@ -11,7 +11,10 @@
         .config(httpInterceptors)
         .config(imgCache);
 
-    function appConfig($compileProvider) {
+    function appConfig($compileProvider, $log) {
+
+        $log.info('Angular bootstrapped');
+
         // Remove angular debug info in DOM when compiling for production
         $compileProvider.debugInfoEnabled(false);
 
@@ -136,7 +139,7 @@
     // Ionic defaults
     function ionicConfig($ionicConfigProvider) {
         $ionicConfigProvider.spinner.icon('dots');
-        //$ionicConfigProvider.views.transition('none');
+        $ionicConfigProvider.views.transition('none');
     }
 
     function ionicNativeTransitions($ionicNativeTransitionsProvider){
