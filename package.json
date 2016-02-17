@@ -64,7 +64,8 @@
     {
       "locator": "https://github.com/Telerik-Verified-Plugins/NativePageTransitions",
       "id": "com.telerik.plugins.nativepagetransitions"
-    }
+    },
+    "cordova-plugin-wkwebview-engine"
   ],
   "cordovaPlatforms": [
     "android",
