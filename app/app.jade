@@ -50,6 +50,10 @@ html
 
 
         script(type='text/javascript').
+            document.addEventListener('deviceready', function () {
+                console.info('CORDOVA READY');
+            }, false);
             window.ionic.Platform.ready(function () {
+                console.info('IONIC READY');
                 angular.bootstrap(document, ['app'], {strictDi: true});
             });
