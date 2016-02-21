@@ -5,8 +5,8 @@
         .module('app')
         .controller('CharactersController', CharactersController);
 
-    function CharactersController($log, charactersService, $cordovaToast, throwErr, defaultOffset,
-                                  $cordovaKeyboard) {
+    function CharactersController($log, charactersService, $cordovaToast, throwErr,
+                                  defaultOffset, $cordovaKeyboard) {
 
         var vm = this;
         vm.title = 'CharactersController';
@@ -49,6 +49,7 @@
             function clean(results) {
                 var meta = _.get(results, 'meta');
                 $log.info('Loaded', meta.count, '/', meta.total, 'characters which name starts with', vm.filter);
+                $cordovaToast.showShortBottom(meta.total + ' results');
             }
 
         }

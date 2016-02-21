@@ -136,7 +136,8 @@
         }
     }
 
-    function checkRequirements($state, $cordovaSplashscreen, $timeout, ImgCache) {
+    function checkRequirements($state, $cordovaSplashscreen, $timeout, ImgCache, $rootScope,
+                               $log) {
         initImgCache().then(goHome).then(hideSplash);
 
         /////////////
@@ -147,6 +148,8 @@
         }
 
         function goHome() {
+            $log.info('APP READY');
+            $rootScope.ready = true;
             return $state.go('tab.characters');
         }
 

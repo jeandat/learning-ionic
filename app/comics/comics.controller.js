@@ -49,6 +49,7 @@
             function clean(results) {
                 var meta = _.get(results, 'meta');
                 $log.info('Loaded', meta.count, '/', meta.total, 'comics which title contains', vm.filter);
+                $cordovaToast.showShortBottom(meta.total + ' results');
             }
 
         }
