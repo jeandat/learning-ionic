@@ -139,7 +139,6 @@
     // Ionic defaults
     function ionicConfig($ionicConfigProvider) {
         $ionicConfigProvider.spinner.icon('dots');
-        $ionicConfigProvider.views.transition('none');
         $ionicConfigProvider.views.swipeBackEnabled(false);
     }
 
