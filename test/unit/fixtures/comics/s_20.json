@@ -1,0 +1,2651 @@
+{
+    "code": 200,
+    "status": "Ok",
+    "copyright": "© 2016 MARVEL",
+    "attributionText": "Data provided by Marvel. © 2016 MARVEL",
+    "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2016 MARVEL</a>",
+    "etag": "cf9d32465963588de8b1b20395903c8a4eafe65b",
+    "data": {
+        "offset": 20,
+        "limit": 20,
+        "total": 716,
+        "count": 20,
+        "results": [
+            {
+                "id": 55717,
+                "digitalId": 0,
+                "title": "Spider-Man 2099 (2015) #5",
+                "issueNumber": 5,
+                "variantDescription": "",
+                "description": "• Spider-Man 2099 and Captain America 2099 race through the streets of present-day New York City looking for a dangerous futuristic fugitive!",
+                "modified": "2015-12-30T15:43:55-0500",
+                "isbn": "",
+                "upc": "75960608315200511",
+                "diamondCode": "NOV150840",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "• Spider-Man 2099 and Captain America 2099 race through the streets of present-day New York City looking for a dangerous futuristic fugitive!"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/55717",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/55717/spider-man_2099_2015_5?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Man-2099-5/digital-comic/40806?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20511",
+                    "name": "Spider-Man 2099 (2015 - Present)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/59125",
+                        "name": "Spider-Man 2099 (2015) #5 (Mattina 2nd Printing Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2016-01-06T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-12-21T00:00:00-0500"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/40/568440ca0945b",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/40/568440ca0945b",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 3,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55717/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/121",
+                            "name": "Peter David",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/8495",
+                            "name": "Francesco Mattina",
+                            "role": "penciller (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11965",
+                            "name": "William Sliney",
+                            "role": "artist"
+                        }
+                    ],
+                    "returned": 3
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55717/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55717/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122477",
+                            "name": "cover from Spider-Man 2099 (2015) #5",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122478",
+                            "name": "story from Spider-Man 2099 (2015) #5",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55717/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 52557,
+                "digitalId": 0,
+                "title": "Spider-Man/Deadpool (2016) #1",
+                "issueNumber": 1,
+                "variantDescription": "",
+                "description": "The Webbed Wonder and the Merc with a Mouth are teaming up for their first ongoing series EVER! It’s action, adventure and just a smattering of (b) romance in this episodic epic featuring the WORLD’S GREATEST SUPER HERO and the star of the WORLD’S GREATEST COMICS MAGAZINE. Talk about a REAL dynamic duo!",
+                "modified": "2015-12-30T16:33:55-0500",
+                "isbn": "",
+                "upc": "75960608254400111",
+                "diamondCode": "NOV150751",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 56,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "The Webbed Wonder and the Merc with a Mouth are teaming up for their first ongoing series EVER! It’s action, adventure and just a smattering of (b) romance in this episodic epic featuring the WORLD’S GREATEST SUPER HERO and the star of the WORLD’S GREATEST COMICS MAGAZINE. Talk about a REAL dynamic duo!"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/52557",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/52557/spider-mandeadpool_2016_1?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Man-Deadpool-1/digital-comic/40807?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/19679",
+                    "name": "Spider-Man/Deadpool (2016 - Present)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/59171",
+                        "name": "Spider-Man/Deadpool (2016) #1 (Mcguinness 2nd Printing Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/55974",
+                        "name": "Spider-Man/Deadpool (2016) #1 (Dave Johnson Hip-&#8203;Hop Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2016-01-06T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-12-21T00:00:00-0500"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/1/90/567187f7d6924",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/1/90/567187f7d6924",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/50/56671b2e19b1e",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/70/56671a61ebd64",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/70/5667184be117a",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/7/20/566716fce388a",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/90/5667161d5e3fa",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/7/10/55a2f7f19f286",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/30/55a2f79b311f2",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/52557/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/2428",
+                            "name": "Joe Kelly",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/649",
+                            "name": "Ed McGuinness",
+                            "role": "penciller (cover)"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/52557/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/52557/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/116691",
+                            "name": "cover from Spider-Man/Deadpool (2015) #1",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/116692",
+                            "name": "story from Spider-Man/Deadpool (2015) #1",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/52557/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 57139,
+                "digitalId": 0,
+                "title": "Spidey (2015) #2",
+                "issueNumber": 2,
+                "variantDescription": "",
+                "description": "Spidey and Sandman square off in a titanic tale that’ll knock you out! Get it? Knock you out? Because Sandman. The book has better jokes than the solicits, we swear!\n",
+                "modified": "2016-01-04T10:57:45-0500",
+                "isbn": "",
+                "upc": "75960608356500211",
+                "diamondCode": "NOV150836",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "Spidey and Sandman square off in a titanic tale that’ll knock you out! Get it? Knock you out? Because Sandman. The book has better jokes than the solicits, we swear!\n"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/57139",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/57139/spidey_2015_2?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spidey-2/digital-comic/40808?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20861",
+                    "name": "Spidey (2015 - Present)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/59126",
+                        "name": "Spidey (2015) #2 (Bradshaw 2nd Printing Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2016-01-06T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-12-21T00:00:00-0500"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/c0/568a946aa5cfd",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/c0/568a946aa5cfd",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/1/03/567c0b7104337",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57139/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11875",
+                            "name": "Nick Bradshaw",
+                            "role": "penciller (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12444",
+                            "name": "Robbie Thompson",
+                            "role": "writer"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57139/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57139/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/125095",
+                            "name": "cover from Spidey (2015) #2",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/125096",
+                            "name": "story from Spidey (2015) #2",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57139/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 56165,
+                "digitalId": 0,
+                "title": "Spider-Woman (2015) #2",
+                "issueNumber": 2,
+                "variantDescription": "",
+                "description": "TRAPPED in an alien hospital with a bunch of other moms-to-be, Jessica Drew has suddenly found herself in over her head! It’s anything but business as usual as Jess realizes she’s the only person who can save the day – but only if she can keep herself and her baby safe in the process!",
+                "modified": "2015-11-16T15:11:15-0500",
+                "isbn": "",
+                "upc": "75960608338100211",
+                "diamondCode": "OCT150871",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "TRAPPED in an alien hospital with a bunch of other moms-to-be, Jessica Drew has suddenly found herself in over her head! It’s anything but business as usual as Jess realizes she’s the only person who can save the day – but only if she can keep herself and her baby safe in the process!"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/56165",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/56165/spider-woman_2015_2?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Woman-2/digital-comic/40729?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20618",
+                    "name": "Spider-Woman (2015 - Present)"
+                },
+                "variants": [],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-12-23T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-12-08T00:00:00-0500"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/b0/564a398ab4edf",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/b0/564a398ab4edf",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 3,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/56165/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11901",
+                            "name": "Dennis Hopeless",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12457",
+                            "name": "Edward Devin Lewis",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/1117",
+                            "name": "Javier Rodriguez",
+                            "role": "penciller"
+                        }
+                    ],
+                    "returned": 3
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/56165/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/56165/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/123293",
+                            "name": "cover from Spider-Woman (2015) #2",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/123294",
+                            "name": "story from Spider-Woman (2015) #2",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/56165/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 55716,
+                "digitalId": 0,
+                "title": "Spider-Man 2099 (2015) #4",
+                "issueNumber": 4,
+                "variantDescription": "",
+                "description": "A mysterious stranger from the future arrives in New York, and he’s got Spider-Man dead in his sights!",
+                "modified": "2015-12-07T13:22:08-0500",
+                "isbn": "",
+                "upc": "75960608315200411",
+                "diamondCode": "OCT150856",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "A mysterious stranger from the future arrives in New York, and he’s got Spider-Man dead in his sights!"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/55716",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/55716/spider-man_2099_2015_4?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Man-2099-4/digital-comic/40662?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20511",
+                    "name": "Spider-Man 2099 (2015 - Present)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/57740",
+                        "name": "Spider-Man 2099 (2015) #4 (Ferry Marvel 92 Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-12-09T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-11-23T00:00:00-0500"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/80/5665cdcb16653",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/80/5665cdcb16653",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/c0/563d017e68f6b",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 3,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55716/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/121",
+                            "name": "Peter David",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/8495",
+                            "name": "Francesco Mattina",
+                            "role": "penciller (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11965",
+                            "name": "William Sliney",
+                            "role": "artist"
+                        }
+                    ],
+                    "returned": 3
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55716/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55716/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122475",
+                            "name": "cover from Spider-Man 2099 (2015) #4",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122476",
+                            "name": "story from Spider-Man 2099 (2015) #4",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55716/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 55678,
+                "digitalId": 0,
+                "title": "Spider-Gwen (2015) #3",
+                "issueNumber": 3,
+                "variantDescription": "",
+                "description": "Still reeling from the events of SPIDER-VERSE, Gwen Stacy decides to pay a visit to Jessica Drew, AKA Spider-Woman! Gwen learns about her Earth-616 counterpart, and sees that the lesson that with great power, there must also come great responsibility applies in any reality.",
+                "modified": "2015-12-02T16:59:01-0500",
+                "isbn": "",
+                "upc": "75960608313800311",
+                "diamondCode": "OCT150866",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "Still reeling from the events of SPIDER-VERSE, Gwen Stacy decides to pay a visit to Jessica Drew, AKA Spider-Woman! Gwen learns about her Earth-616 counterpart, and sees that the lesson that with great power, there must also come great responsibility applies in any reality."
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/55678",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/55678/spider-gwen_2015_3?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Gwen-3/digital-comic/40661?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20505",
+                    "name": "Spider-Gwen (2015 - Present)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/58978",
+                        "name": "Spider-Gwen (2015) #3 (Rodriguez 2nd Printing Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-12-09T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-11-23T00:00:00-0500"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/c0/565f64baddf82",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/c0/565f64baddf82",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/f/70/563ceac49dcb6",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55678/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11306",
+                            "name": "Jason Latour",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12399",
+                            "name": "Robbi Rodriguez",
+                            "role": "penciller (cover)"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55678/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55678/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122399",
+                            "name": "cover from Spider-Gwen (2015) #3",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122400",
+                            "name": "story from Spider-Gwen (2015) #3",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55678/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 57137,
+                "digitalId": 0,
+                "title": "Spidey (2015) #1",
+                "issueNumber": 1,
+                "variantDescription": "",
+                "description": "Think you know everything about Peter Parker’s early days? Think again. It’s action, adventure and a rip-roaring romp in classic Marvel style as SPIDEY swings onto shelves this winter! Featuring adventures from throughout the web-slinging wonder’s younger years, it’s a return to the days of overdue homework, not knowing how to talk to girls (or anybody, really) and just a plenty of danger. Witness some of Spidey’s earliest tangles with the likes of DOC OCK, SANDMAN and a host of other unexpected guests!",
+                "modified": "2015-11-30T22:33:57-0500",
+                "isbn": "",
+                "upc": "75960608356500111",
+                "diamondCode": "OCT150779",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "Think you know everything about Peter Parker’s early days? Think again. It’s action, adventure and a rip-roaring romp in classic Marvel style as SPIDEY swings onto shelves this winter! Featuring adventures from throughout the web-slinging wonder’s younger years, it’s a return to the days of overdue homework, not knowing how to talk to girls (or anybody, really) and just a plenty of danger. Witness some of Spidey’s earliest tangles with the likes of DOC OCK, SANDMAN and a host of other unexpected guests!"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/57137",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/57137/spidey_2015_1?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spidey-1/digital-comic/40637?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20861",
+                    "name": "Spidey (2015 - Present)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/58894",
+                        "name": "Spidey (2015) #1 (Bradshaw 2nd Printing Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/58104",
+                        "name": "Spidey (2015) #1 (Ramos Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/58102",
+                        "name": "Spidey (2015) #1 (Gariba Hip-&#8203;Hop Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-12-02T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-11-17T00:00:00-0500"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/50/5655d3a0e63d5",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/50/5655d3a0e63d5",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/8/03/5632544a5b954",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/20/563253cc1eb9b",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/f/03/563253775eb48",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/e0/563253058ffd8",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/60/5630f56bb6057",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/f/03/5630f54866c91",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/60/5630f51460df7",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/10/55f30a6e7c20e",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57137/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11875",
+                            "name": "Nick Bradshaw",
+                            "role": "penciller (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12444",
+                            "name": "Robbie Thompson",
+                            "role": "writer"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "characters": {
+                    "available": 1,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57137/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009610",
+                            "name": "Spider-Man"
+                        }
+                    ],
+                    "returned": 1
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57137/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/125091",
+                            "name": "cover from Spidey (2015) #1",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/125092",
+                            "name": "story from Spidey (2015) #1",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57137/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 56164,
+                "digitalId": 0,
+                "title": "Spider-Woman (2015) #1",
+                "issueNumber": 1,
+                "variantDescription": "",
+                "description": "BABY ON BOARD!\nJessica Drew is a private investigator, a super hero and... a mom to be? Since we last saw her, Spider-Woman's got a whole NEW responsibility -- she's super heroing for two now, after all! Ben Urich and Porcupine are still along for the adventure, too, and aren't making Jess' life any easier - half the time they won't even let her leave the car! How's a gal supposed to save innocent people and keep herself out of harm's way? See how in the mother of all Spider-Stories!",
+                "modified": "2015-11-12T15:48:39-0500",
+                "isbn": "",
+                "upc": "75960608338100111",
+                "diamondCode": "SEP150672",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "BABY ON BOARD!\nJessica Drew is a private investigator, a super hero and... a mom to be? Since we last saw her, Spider-Woman's got a whole NEW responsibility -- she's super heroing for two now, after all! Ben Urich and Porcupine are still along for the adventure, too, and aren't making Jess' life any easier - half the time they won't even let her leave the car! How's a gal supposed to save innocent people and keep herself out of harm's way? See how in the mother of all Spider-Stories!"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/56164",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/56164/spider-woman_2015_1?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Woman-1/digital-comic/40518?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20618",
+                    "name": "Spider-Woman (2015 - Present)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/57135",
+                        "name": "Spider-Woman (2015) #1 (Bustos Hip-&#8203;Hop Variant)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/57134",
+                        "name": "Spider-Woman (2015) #1 (Cosplay Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-11-18T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-11-03T00:00:00-0500"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/b0/5644fa2b5d58f",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/90/566aed0454f5e",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/e/80/565358f773637",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/90/565358cbae283",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/03/565358ab67226",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/4/60/565358859dc6b",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/d0/565358665aebc",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/f0/5653582be7eb7",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/b0/5644fa2b5d58f",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/b0/5630f45d89d1c",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/03/5630f34c76382",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/f/e0/5630f2d533341",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/a0/5630f27f95b33",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/03/55f82a1509128",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/56164/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11901",
+                            "name": "Dennis Hopeless",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/1117",
+                            "name": "Javier Rodriguez",
+                            "role": "penciller (cover)"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/56164/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/56164/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/123291",
+                            "name": "cover from Spider-Woman (2015) #1",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/123292",
+                            "name": "story from Spider-Woman (2015) #1",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/56164/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 55715,
+                "digitalId": 0,
+                "title": "Spider-Man 2099 (2015) #3",
+                "issueNumber": 3,
+                "variantDescription": "",
+                "description": "The dangerous DOCTOR CRONOS continues to put innocent people in harm's way, and Miguel O'Hara AKA SPIDER-MAN 2099 is the only one who can stop him. Even in his new duds, though, Miguel's still in for the fight of his life! What strange connection does Doctor Cronos have to the year 2099 - and will he put a stop to Miguel's attempts to right the timeline once and for all?!",
+                "modified": "2015-11-09T13:51:20-0500",
+                "isbn": "",
+                "upc": "75960608315200311",
+                "diamondCode": "SEP150818",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "The dangerous DOCTOR CRONOS continues to put innocent people in harm's way, and Miguel O'Hara AKA SPIDER-MAN 2099 is the only one who can stop him. Even in his new duds, though, Miguel's still in for the fight of his life! What strange connection does Doctor Cronos have to the year 2099 - and will he put a stop to Miguel's attempts to right the timeline once and for all?!"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/55715",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/55715/spider-man_2099_2015_3?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Man-2099-3/digital-comic/40471?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20511",
+                    "name": "Spider-Man 2099 (2015 - Present)"
+                },
+                "variants": [],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-11-11T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-10-27T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/f/a0/5640d6412d203",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/f/a0/5640d6412d203",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/a/10/5605999a2bffd",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 3,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55715/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/121",
+                            "name": "Peter David",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/8495",
+                            "name": "Francesco Mattina",
+                            "role": "penciller (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11965",
+                            "name": "William Sliney",
+                            "role": "artist"
+                        }
+                    ],
+                    "returned": 3
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55715/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55715/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122473",
+                            "name": "cover from Spider-Man 2099 (2015) #3",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122474",
+                            "name": "story from Spider-Man 2099 (2015) #3",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55715/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 55676,
+                "digitalId": 0,
+                "title": "Spider-Gwen (2015) #2",
+                "issueNumber": 2,
+                "variantDescription": "",
+                "description": "• The Lizard is loose!\n• As if that wasn’t bad enough, Spider-Gwen finds herself on SHIELD’s most wanted list!\n",
+                "modified": "2015-11-09T13:47:09-0500",
+                "isbn": "",
+                "upc": "75960608313800211",
+                "diamondCode": "SEP150801",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "• The Lizard is loose!\n• As if that wasn’t bad enough, Spider-Gwen finds herself on SHIELD’s most wanted list!\n"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/55676",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/55676/spider-gwen_2015_2?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Gwen-2/digital-comic/40470?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20505",
+                    "name": "Spider-Gwen (2015 - Present)"
+                },
+                "variants": [],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-11-11T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-10-27T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/60/5640d65c71c45",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/60/5640d65c71c45",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55676/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11306",
+                            "name": "Jason Latour",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12399",
+                            "name": "Robbi Rodriguez",
+                            "role": "penciller (cover)"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55676/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55676/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122395",
+                            "name": "cover from Spider-Gwen (2015) #2",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122396",
+                            "name": "story from Spider-Gwen (2015) #2",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55676/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 57464,
+                "digitalId": 0,
+                "title": "Spider-Gwen (2015)",
+                "issueNumber": 0,
+                "variantDescription": "",
+                "description": "• GWEN STACY: SPIDER-WOMAN! In one universe, it wasn’t Peter Parker bitten by the radioactive Spider, but Gwen Stacy! She’s smart, charming and can lift a car – Just don’t tell her Police Chief father! This special reprint of the top-selling EDGE OF SPIDER-VERSE #2 comes packed with bonus material including script pages, sketches and more!",
+                "modified": "2015-11-02T17:12:54-0500",
+                "isbn": "",
+                "upc": "75960608196700011",
+                "diamondCode": "",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 48,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "• GWEN STACY: SPIDER-WOMAN! In one universe, it wasn’t Peter Parker bitten by the radioactive Spider, but Gwen Stacy! She’s smart, charming and can lift a car – Just don’t tell her Police Chief father! This special reprint of the top-selling EDGE OF SPIDER-VERSE #2 comes packed with bonus material including script pages, sketches and more!"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/57464",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/57464/spider-gwen_2015?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Gwen-0/digital-comic/40533?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20505",
+                    "name": "Spider-Gwen (2015 - Present)"
+                },
+                "variants": [],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-11-04T00:00:00-0500"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-10-21T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 4.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/1/50/5637696f8d107",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/1/50/5637696f8d107",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57464/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11306",
+                            "name": "Jason Latour",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12399",
+                            "name": "Robbi Rodriguez",
+                            "role": "penciller (cover)"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57464/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57464/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/125746",
+                            "name": "cover from Spider-Gwen (2015)",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/125747",
+                            "name": "story from Spider-Gwen (2015)",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57464/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 55713,
+                "digitalId": 0,
+                "title": "Spider-Man 2099 (2015) #2",
+                "issueNumber": 2,
+                "variantDescription": "",
+                "description": "With a job at PARKER INDUSTRIES, a stable relationship, and uncertain of what impact his actions will have on the future, Miguel O’Hara has decided that it’s time to hang up the webs and retire from being Spider-Man. But when a dangerous new threat appears and puts his new life in jeopardy, he’s got no choice but to don some new threads and tackle the problem the only way he knows how: head on! By the webslinging wonders Peter David and Will Sliney (you know ‘em, you love ‘em.) this is one EXPLOSIVE Spider-Title you won’t want to miss.",
+                "modified": "2015-10-20T14:41:56-0400",
+                "isbn": "",
+                "upc": "75960608315200211",
+                "diamondCode": "AUG150818",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "With a job at PARKER INDUSTRIES, a stable relationship, and uncertain of what impact his actions will have on the future, Miguel O’Hara has decided that it’s time to hang up the webs and retire from being Spider-Man. But when a dangerous new threat appears and puts his new life in jeopardy, he’s got no choice but to don some new threads and tackle the problem the only way he knows how: head on! By the webslinging wonders Peter David and Will Sliney (you know ‘em, you love ‘em.) this is one EXPLOSIVE Spider-Title you won’t want to miss."
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/55713",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/55713/spider-man_2099_2015_2?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Man-2099-2/digital-comic/40346?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20511",
+                    "name": "Spider-Man 2099 (2015 - Present)"
+                },
+                "variants": [],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-10-28T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-10-14T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/f0/562688eca5e26",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/f0/562688eca5e26",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/f/f0/560ebe99dea8c",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/20/560ebe13907f0",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/70/560ebd8dba8fc",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/40/560ebd0b55dd9",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 3,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55713/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/121",
+                            "name": "Peter David",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/8495",
+                            "name": "Francesco Mattina",
+                            "role": "penciller (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11965",
+                            "name": "William Sliney",
+                            "role": "artist"
+                        }
+                    ],
+                    "returned": 3
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55713/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55713/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122469",
+                            "name": "cover from Spider-Man 2099 (2015) #2",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122470",
+                            "name": "story from Spider-Man 2099 (2015) #2",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55713/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 55674,
+                "digitalId": 0,
+                "title": "Spider-Gwen (2015) #1",
+                "issueNumber": 1,
+                "variantDescription": "",
+                "description": "BECAUSE YOU DEMANDED IT!\nGwen Stacy is back in the webs and has an all-new, all-different mystery to solve: the reappearance of The Lizard! Spider-Woman was convinced that the Lizard died in her arms along with Peter Parker. But when a similar monster goes on a reptilian rampage, she's left with doubts not only about Peter's life, but his death as well. And witness the debut of the Osborns of Earth-65! Fan-favorite creators Jason Latour, Robbi Rodriguez & Rico Renzi are back for more with a story that every Spider-Fan will be talking about!",
+                "modified": "2015-10-12T14:19:54-0400",
+                "isbn": "",
+                "upc": "75960608313800111",
+                "diamondCode": "AUG150805",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "BECAUSE YOU DEMANDED IT!\nGwen Stacy is back in the webs and has an all-new, all-different mystery to solve: the reappearance of The Lizard! Spider-Woman was convinced that the Lizard died in her arms along with Peter Parker. But when a similar monster goes on a reptilian rampage, she's left with doubts not only about Peter's life, but his death as well. And witness the debut of the Osborns of Earth-65! Fan-favorite creators Jason Latour, Robbi Rodriguez & Rico Renzi are back for more with a story that every Spider-Fan will be talking about!"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/55674",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/55674/spider-gwen_2015_1?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Gwen-1/digital-comic/40247?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20505",
+                    "name": "Spider-Gwen (2015 - Present)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/57118",
+                        "name": "Spider-Gwen (2015) #1 (Young Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-10-14T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-09-30T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/20/561bd33743ec3",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/20/561bd33743ec3",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/80/55fb3843a805e",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/f/b0/55fb37bba89fb",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/55fb3781ef51e",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/60/55fb373a82da6",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/40/558ae0c40c269",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55674/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11306",
+                            "name": "Jason Latour",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12399",
+                            "name": "Robbi Rodriguez",
+                            "role": "penciller (cover)"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55674/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55674/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122391",
+                            "name": "cover from Spider-Gwen (2015) #1",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122392",
+                            "name": "story from Spider-Gwen (2015) #1",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55674/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 55711,
+                "digitalId": 0,
+                "title": "Spider-Man 2099 (2015) #1",
+                "issueNumber": 1,
+                "variantDescription": "",
+                "description": "2099 IN YOUR CALENDARS, #1 IN YOUR HEARTS.\nWith a job at PARKER INDUSTRIES, a stable relationship, and uncertain of what impact his actions will have on the future, Miguel O'Hara has decided that it's time to hang up the webs and retire from being Spider-Man. But when a dangerous new threat appears and puts his new life in jeopardy, he's got no choice but to don some new threads and tackle the problem the only way he knows how: head on! By the webslinging wonders Peter David and Will Sliney (you know 'em, you love 'em.) this is one EXPLOSIVE Spider-Title you won't want to miss.",
+                "modified": "2015-10-12T15:43:43-0400",
+                "isbn": "",
+                "upc": "75960608315200111",
+                "diamondCode": "AUG150814",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "2099 IN YOUR CALENDARS, #1 IN YOUR HEARTS.\nWith a job at PARKER INDUSTRIES, a stable relationship, and uncertain of what impact his actions will have on the future, Miguel O'Hara has decided that it's time to hang up the webs and retire from being Spider-Man. But when a dangerous new threat appears and puts his new life in jeopardy, he's got no choice but to don some new threads and tackle the problem the only way he knows how: head on! By the webslinging wonders Peter David and Will Sliney (you know 'em, you love 'em.) this is one EXPLOSIVE Spider-Title you won't want to miss."
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/55711",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/55711/spider-man_2099_2015_1?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Man-2099-1/digital-comic/40248?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20511",
+                    "name": "Spider-Man 2099 (2015 - Present)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/57129",
+                        "name": "Spider-Man 2099 (2015) #1 (CHAN HIP-HOP VARIANT)"
+                    },
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/57127",
+                        "name": "Spider-Man 2099 (2015) #1 (Anka Design Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-10-14T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-09-30T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/70/561bd3753ed72",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/70/561bd3753ed72",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/a0/55fc818beed14",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/1/f0/55fc80ad1ebae",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/50/55fc807725d00",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/20/55d736022bd09",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 3,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55711/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/121",
+                            "name": "Peter David",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/8495",
+                            "name": "Francesco Mattina",
+                            "role": "penciller (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11965",
+                            "name": "William Sliney",
+                            "role": "artist"
+                        }
+                    ],
+                    "returned": 3
+                },
+                "characters": {
+                    "available": 1,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55711/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1014873",
+                            "name": "Spider-Man (2099)"
+                        }
+                    ],
+                    "returned": 1
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55711/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122465",
+                            "name": "cover from Spider-Man 2099 (2015) #1",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/122466",
+                            "name": "story from Spider-Man 2099 (2015) #1",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/55711/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 54817,
+                "digitalId": 0,
+                "title": "Spider-Island (2015) #5",
+                "issueNumber": 5,
+                "variantDescription": "",
+                "description": "Venom and his band of mighty monsters take the fight to the Spider-Queen once and for all! This time, though, he's not going it alone - he'll have a webslinging wonder by his side! PLUS! Don't miss the conclusion to the return of the one and only MAYDAY PARKER as Spider-Woman by DeFalco, Frenz, Buscema and Crossley!",
+                "modified": "2015-09-30T16:18:22-0400",
+                "isbn": "",
+                "upc": "75960608238400511",
+                "diamondCode": "AUG150679",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "Venom and his band of mighty monsters take the fight to the Spider-Queen once and for all! This time, though, he's not going it alone - he'll have a webslinging wonder by his side! PLUS! Don't miss the conclusion to the return of the one and only MAYDAY PARKER as Spider-Woman by DeFalco, Frenz, Buscema and Crossley!"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/54817",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/54817/spider-island_2015_5?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Island-5/digital-comic/40161?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20269",
+                    "name": "Spider-Island (2015 - Present)"
+                },
+                "variants": [],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-10-07T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-09-23T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/10/560c4258d1b08",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/10/560c4258d1b08",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/b0/55ef3efb5d1ef",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 5,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/54817/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/9565",
+                            "name": "Tom DeFalco",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11765",
+                            "name": "Christos Gage",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4150",
+                            "name": "Paco Diaz",
+                            "role": "artist"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/5764",
+                            "name": "Ron Frenz",
+                            "role": "artist"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/72",
+                            "name": "Humberto Ramos",
+                            "role": "penciller (cover)"
+                        }
+                    ],
+                    "returned": 5
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/54817/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/54817/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/120855",
+                            "name": "cover from Spider-Island (2015) #5",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/120856",
+                            "name": "story from Spider-Island (2015) #5",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/54817/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 54816,
+                "digitalId": 0,
+                "title": "Spider-Island (2015) #4",
+                "issueNumber": 4,
+                "variantDescription": "",
+                "description": "• Venom and his band of monstrous allies take the fight straight to the Spider-Queen!\n• One hero makes the ultimate sacrifice.\n",
+                "modified": "2015-09-10T15:09:01-0400",
+                "isbn": "",
+                "upc": "75960608238400411",
+                "diamondCode": "",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "• Venom and his band of monstrous allies take the fight straight to the Spider-Queen!\n• One hero makes the ultimate sacrifice.\n"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/54816",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/54816/spider-island_2015_4?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Island-4/digital-comic/39936?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20269",
+                    "name": "Spider-Island (2015 - Present)"
+                },
+                "variants": [],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-09-16T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-08-24T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/e0/55e8935ad9e20",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/e0/55e8935ad9e20",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 3,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/54816/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11765",
+                            "name": "Christos Gage",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/3820",
+                            "name": "Paco Diaz Luque",
+                            "role": "artist"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/72",
+                            "name": "Humberto Ramos",
+                            "role": "penciller (cover)"
+                        }
+                    ],
+                    "returned": 3
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/54816/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/54816/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/120853",
+                            "name": "cover from Spider-Island (2015) #4",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/120854",
+                            "name": "story from Spider-Island (2015) #4",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/54816/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 52580,
+                "digitalId": 0,
+                "title": "Spider-Verse (2015) #5",
+                "issueNumber": 5,
+                "variantDescription": "",
+                "description": "As Gwen Stacy explores her past, the Spiders square off against their greatest foe!",
+                "modified": "2015-09-10T15:12:47-0400",
+                "isbn": "",
+                "upc": "75960608240700511",
+                "diamondCode": "",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "As Gwen Stacy explores her past, the Spiders square off against their greatest foe!"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/52580",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/52580/spider-verse_2015_5?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Verse-5/digital-comic/39937?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/19685",
+                    "name": "Spider-Verse (2015 - Present)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/53576",
+                        "name": "Spider-Verse (2015) #5 (Campbell Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-09-16T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-08-19T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/b0/55e88c6136b06",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/b0/55e88c6136b06",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/90/559d701353a7f",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/52580/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12297",
+                            "name": "Andre Araujo",
+                            "role": "penciller (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12452",
+                            "name": "Mike Costa",
+                            "role": "writer"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/52580/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/52580/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/116737",
+                            "name": "cover from Spider-Verse (2015) #5",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/116738",
+                            "name": "story from Spider-Verse (2015) #5",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 1,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/52580/events",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/events/323",
+                            "name": "Secret Wars (2015)"
+                        }
+                    ],
+                    "returned": 1
+                }
+            },
+            {
+                "id": 54815,
+                "digitalId": 0,
+                "title": "Spider-Island (2015) #3",
+                "issueNumber": 3,
+                "variantDescription": "",
+                "description": "The madness continues as Venom and his squad of monstrous heroes wage all-out war on the SPIDER-QUEEN. To reclaim a Manhattan completely overrun by the Queen's spider-army, Venom'll need a little help from his friend. Which friend? We'll give you a hint: Thwip!",
+                "modified": "2015-08-28T14:43:00-0400",
+                "isbn": "",
+                "upc": "75960608238400311",
+                "diamondCode": "JUN150741",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "The madness continues as Venom and his squad of monstrous heroes wage all-out war on the SPIDER-QUEEN. To reclaim a Manhattan completely overrun by the Queen's spider-army, Venom'll need a little help from his friend. Which friend? We'll give you a hint: Thwip!"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/54815",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/54815/spider-island_2015_3?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Island-3/digital-comic/39851?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/20269",
+                    "name": "Spider-Island (2015 - Present)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/55972",
+                        "name": "Spider-Island (2015) #3 (Murata Manga Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-09-02T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-08-19T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/b0/55dde0179570f",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/b0/55dde0179570f",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/d/a0/55d39def98d8c",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/8/e0/5581a2c5aca46",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 3,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/54815/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11765",
+                            "name": "Christos Gage",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/3820",
+                            "name": "Paco Diaz Luque",
+                            "role": "artist"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/72",
+                            "name": "Humberto Ramos",
+                            "role": "penciller (cover)"
+                        }
+                    ],
+                    "returned": 3
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/54815/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/54815/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/120851",
+                            "name": "cover from Spider-Island (2015) #3",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/120852",
+                            "name": "story from Spider-Island (2015) #3",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/54815/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 57531,
+                "digitalId": 0,
+                "title": "Spider-Woman (2014) #10",
+                "issueNumber": 10,
+                "variantDescription": "",
+                "description": "The Last Days of Spider-Woman! Spider-Woman's roadtrip across the country continues, as she pays a visit to the Alamo! Not even Spider-Woman and her RAGTAG CREW OF BEN URICH AND THE PORCUPINE are safe from SECRET WARS, though.",
+                "modified": "2015-08-21T10:57:35-0400",
+                "isbn": "",
+                "upc": "",
+                "diamondCode": "",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "The Last Days of Spider-Woman! Spider-Woman's roadtrip across the country continues, as she pays a visit to the Alamo! Not even Spider-Woman and her RAGTAG CREW OF BEN URICH AND THE PORCUPINE are safe from SECRET WARS, though."
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/57531",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/57531/spider-woman_2014_10?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Woman-10/digital-comic/39867?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/18894",
+                    "name": "Spider-Woman (2014 - Present)"
+                },
+                "variants": [],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-08-26T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-08-05T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/7/10/55d50f8f893a4",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/7/10/55d50f8f893a4",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/d0/55c3cc6040183",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 4,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57531/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12765",
+                            "name": "Natacha Bustos",
+                            "role": "artist"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11901",
+                            "name": "Dennis Hopeless",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4300",
+                            "name": "Nick Lowe",
+                            "role": "editor"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/1117",
+                            "name": "Javier Rodriguez",
+                            "role": "penciller (cover)"
+                        }
+                    ],
+                    "returned": 4
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57531/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57531/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/125856",
+                            "name": "Interior Story Spider-Woman (2014) #10",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/125857",
+                            "name": "Spider-Woman (2014) #10 cover",
+                            "type": "cover"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/57531/events",
+                    "items": [],
+                    "returned": 0
+                }
+            },
+            {
+                "id": 52579,
+                "digitalId": 0,
+                "title": "Spider-Verse (2015) #4",
+                "issueNumber": 4,
+                "variantDescription": "",
+                "description": "The Spiders of the multiverse are in a race against Mayor Norman Osborn to discover what exactly brought them all together!",
+                "modified": "2015-08-14T16:56:56-0400",
+                "isbn": "",
+                "upc": "75960608240700411",
+                "diamondCode": "",
+                "ean": "",
+                "issn": "",
+                "format": "Comic",
+                "pageCount": 32,
+                "textObjects": [
+                    {
+                        "type": "issue_solicit_text",
+                        "language": "en-us",
+                        "text": "The Spiders of the multiverse are in a race against Mayor Norman Osborn to discover what exactly brought them all together!"
+                    }
+                ],
+                "resourceURI": "http://gateway.marvel.com/v1/public/comics/52579",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/issue/52579/spider-verse_2015_4?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    },
+                    {
+                        "type": "purchase",
+                        "url": "http://comicstore.marvel.com/Spider-Verse-4/digital-comic/39741?utm_campaign=apiRef&utm_source=efee5499983b06ed4211c1304fc645b5"
+                    }
+                ],
+                "series": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/series/19685",
+                    "name": "Spider-Verse (2015 - Present)"
+                },
+                "variants": [
+                    {
+                        "resourceURI": "http://gateway.marvel.com/v1/public/comics/53575",
+                        "name": "Spider-Verse (2015) #4 (Tbd Artist Variant)"
+                    }
+                ],
+                "collections": [],
+                "collectedIssues": [],
+                "dates": [
+                    {
+                        "type": "onsaleDate",
+                        "date": "2015-08-19T00:00:00-0400"
+                    },
+                    {
+                        "type": "focDate",
+                        "date": "2015-07-27T00:00:00-0400"
+                    }
+                ],
+                "prices": [
+                    {
+                        "type": "printPrice",
+                        "price": 3.99
+                    }
+                ],
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/20/55ce5605a52fa",
+                    "extension": "jpg"
+                },
+                "images": [
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/20/55ce5605a52fa",
+                        "extension": "jpg"
+                    },
+                    {
+                        "path": "http://i.annihil.us/u/prod/marvel/i/mg/7/10/5579bd9426bb7",
+                        "extension": "jpg"
+                    }
+                ],
+                "creators": {
+                    "available": 4,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/52579/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12297",
+                            "name": "Andre Araujo",
+                            "role": "penciller"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/11875",
+                            "name": "Nick Bradshaw",
+                            "role": "penciller (cover)"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/12452",
+                            "name": "Mike Costa",
+                            "role": "writer"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/4300",
+                            "name": "Nick Lowe",
+                            "role": "editor"
+                        }
+                    ],
+                    "returned": 4
+                },
+                "characters": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/52579/characters",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 2,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/52579/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/116735",
+                            "name": "cover from Spider-Verse (2015) #4",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/116736",
+                            "name": "story from Spider-Verse (2015) #4",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 2
+                },
+                "events": {
+                    "available": 1,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/comics/52579/events",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/events/323",
+                            "name": "Secret Wars (2015)"
+                        }
+                    ],
+                    "returned": 1
+                }
+            }
+        ]
+    }
+}
