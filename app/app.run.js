@@ -34,7 +34,8 @@
         }
     }
 
-    function setHttpDefaultCache($log, $http, CacheFactory, defaultCacheName, angularCacheStorage) {
+    function setHttpDefaultCache($log, $http, CacheFactory, defaultCacheName,
+                                 angularCacheStorage) {
 
         // In unit tests, we will run this for each spec.
         if (CacheFactory.get(defaultCacheName)) return;
@@ -150,7 +151,7 @@
         function goHome() {
             $log.info('APP READY');
             $rootScope.ready = true;
-            return $state.go('tab.characters');
+            return $state.go('app.characters');
         }
 
         function hideSplash() {

@@ -1,11 +1,11 @@
-describe('charactersService: ', function () {
+describe('characterListService: ', function () {
 
-    var charactersService, $httpBackend;
+    var characterListService, $httpBackend;
 
     beforeEach(module('app'));
 
     beforeEach(inject(function ($injector) {
-        charactersService = $injector.get('charactersService');
+        characterListService = $injector.get('characterListService');
         $httpBackend = $injector.get('$httpBackend');
     }));
 
@@ -16,7 +16,7 @@ describe('charactersService: ', function () {
     it('should have 4 results', function (done) {
         var fixture = readJSON(fixturesPath + '/characters/Deadpool.json');
         $httpBackend.expectGET(/\/characters/).respond(fixture);
-        charactersService.findByName('Deadpool').then(function (results) {
+        characterListService.findByName('Deadpool').then(function (results) {
             expect(results).toBeTruthy();
             expect(results.length).toBe(4);
             done();
@@ -32,13 +32,13 @@ describe('charactersService: ', function () {
         var prefix = 'sp';
         var offset = 0;
         var list = [];
-        charactersService.findByName(prefix).then(function (results) {
+        characterListService.findByName(prefix).then(function (results) {
             expect(results).toBeTruthy();
             expect(results.length).toBe(20);
             list = list.concat(results);
         }).then(function () {
             offset = 20;
-            return charactersService.findByName(prefix, offset);
+            return characterListService.findByName(prefix, offset);
         }).then(function (results) {
             expect(results).toBeTruthy();
             expect(results.length).toBe(13);

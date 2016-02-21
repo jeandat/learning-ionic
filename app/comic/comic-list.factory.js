@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .factory('comicsService', factory);
+        .factory('comicListService', factory);
 
     function factory(Restangular) {
         var comics = Restangular.all('comics');

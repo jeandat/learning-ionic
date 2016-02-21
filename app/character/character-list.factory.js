@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .factory('charactersService', factory);
+        .factory('characterListService', factory);
 
 
     function factory(Restangular) {

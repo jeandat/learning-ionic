@@ -34,9 +34,9 @@
 
         $stateProvider
 
-        // setup an abstract state for the tabs directive
-            .state('tab', {
-                url: '/tab',
+        // setup an abstract state for the apps directive
+            .state('app', {
+                url: '/app',
                 abstract: true,
                 nativeTransitions: {
                     'type': 'fade'
@@ -44,21 +44,21 @@
                 templateUrl: 'common/layout/layout.jade'
             })
 
-            // Each tab has its own nav history stack:
+            // Each app has its own nav history stack:
 
-            .state('tab.characters', {
+            .state('app.characters', {
                 url: '/characters',
                 nativeTransitions: {
                     'type': 'fade'
                 },
                 views: {
-                    'tab-characters': {
-                        templateUrl: 'characters/tab-characters.jade',
-                        controller: 'CharactersController as vm'
+                    'app-characters': {
+                        templateUrl: 'character/character-list.jade',
+                        controller: 'CharacterListController as vm'
                     }
                 }
             })
-            .state('tab.character-detail', {
+            .state('app.character-detail', {
                 url: '/characters',
                 nativeTransitions: {
                     'type': 'slide',
@@ -68,61 +68,64 @@
                     character: {}
                 },
                 views: {
-                    'tab-characters': {
-                        templateUrl: 'characters/character-detail.jade',
+                    'app-characters': {
+                        templateUrl: 'character/character-detail.jade',
                         controller: 'CharacterDetailController as vm'
                     }
                 }
             })
 
-            .state('tab.comics', {
+            .state('app.comics', {
                 url: '/comics',
                 nativeTransitions: {
                     'type': 'fade'
                 },
                 views: {
-                    'tab-comics': {
-                        templateUrl: 'comics/tab-comics.jade',
-                        controller: 'ComicsController as vm'
+                    'app-comics': {
+                        templateUrl: 'comic/comic-list.jade',
+                        controller: 'ComicListController as vm'
                     }
                 }
             })
-            .state('tab.comic-detail', {
-                url: '/comics/:comicId',
+            .state('app.comic-detail', {
+                url: '/comics',
                 nativeTransitions: {
                     'type': 'slide',
                     'direction': 'up'
                 },
+                params: {
+                    comic: {}
+                },
                 views: {
-                    'tab-comics': {
-                        templateUrl: 'comics/comic-detail.jade',
+                    'app-comics': {
+                        templateUrl: 'comic/comic-detail.jade',
                         controller: 'ComicDetailController as vm'
                     }
                 }
             })
 
-            .state('tab.favourites', {
+            .state('app.favourites', {
                 url: '/favourites',
                 nativeTransitions: {
                     'type': 'fade'
                 },
                 views: {
-                    'tab-favourites': {
-                        templateUrl: 'favourites/tab-favourites.jade',
-                        controller: 'FavouritesController as vm'
+                    'app-favourites': {
+                        templateUrl: 'favourite/favourite-list.jade',
+                        controller: 'FavouriteListController as vm'
                     }
                 }
             })
 
-            .state('tab.settings', {
+            .state('app.settings', {
                 url: '/settings',
                 nativeTransitions: {
                     'type': 'fade'
                 },
                 views: {
-                    'tab-settings': {
-                        templateUrl: 'settings/tab-settings.jade',
-                        controller: 'SettingsController as vm'
+                    'app-settings': {
+                        templateUrl: 'setting/setting-list.jade',
+                        controller: 'SettingListController as vm'
                     }
                 }
             });

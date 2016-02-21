@@ -3,12 +3,12 @@
 
     angular
         .module('app')
-        .controller('FavouritesController', FavouritesController);
+        .controller('FavouriteListController', FavouriteListController);
 
-    function FavouritesController($log) {
+    function FavouriteListController($log) {
 
         var vm = this;
-        vm.title = 'FavouritesController';
+        vm.title = 'FavouriteListController';
 
         activate();
 

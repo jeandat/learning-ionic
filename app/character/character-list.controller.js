@@ -3,13 +3,13 @@
 
     angular
         .module('app')
-        .controller('CharactersController', CharactersController);
+        .controller('CharacterListController', CharacterListController);
 
-    function CharactersController($log, charactersService, $cordovaToast, throwErr,
+    function CharacterListController($log, characterListService, $cordovaToast, throwErr,
                                   defaultOffset, $cordovaKeyboard) {
 
         var vm = this;
-        vm.title = 'CharactersController';
+        vm.title = 'CharacterListController';
         // Let's start with something cool ;)
         vm.filter = '';
         vm.characters = [];
@@ -35,7 +35,7 @@
 
         function search() {
             showSpinner();
-            var promise = charactersService.findByName(vm.filter);
+            var promise = characterListService.findByName(vm.filter);
             vm.characters = promise.$object;
             vm.offset = 0;
             $cordovaKeyboard.close();
@@ -65,7 +65,7 @@
         function loadMore() {
             showSpinner();
             vm.offset += defaultOffset;
-            return charactersService.findByName(vm.filter, vm.offset)
+            return characterListService.findByName(vm.filter, vm.offset)
                 .then(updateList)
                 .catch(throwErr)
                 .finally(hideSpinner);

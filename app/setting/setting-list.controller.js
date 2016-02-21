@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .controller('SettingsController', SettingsController);
+        .controller('SettingListController', SettingListController);
 
-    function SettingsController($log, $scope, $cordovaToast, defaultCacheName, CacheFactory,
+    function SettingListController($log, $scope, $cordovaToast, defaultCacheName, CacheFactory,
                                 $ionicPopup, throwErr, ImgCache, $timeout) {
 
         var vm = this;

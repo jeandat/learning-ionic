@@ -3,13 +3,13 @@
 
     angular
         .module('app')
-        .controller('ComicsController', ComicsController);
+        .controller('ComicListController', ComicListController);
 
-    function ComicsController($log, comicsService, $cordovaToast, throwErr, defaultOffset,
+    function ComicListController($log, comicListService, $cordovaToast, throwErr, defaultOffset,
                                   $cordovaKeyboard) {
 
         var vm = this;
-        vm.title = 'ComicsController';
+        vm.title = 'ComicListController';
         // Let's start with something cool ;)
         vm.filter = 'Deadpool';
         vm.comics = [];
@@ -35,7 +35,7 @@
 
         function search() {
             showSpinner();
-            var promise = comicsService.findByName(vm.filter);
+            var promise = comicListService.findByName(vm.filter);
             vm.comics = promise.$object;
             vm.offset = 0;
             $cordovaKeyboard.close();
@@ -65,7 +65,7 @@
         function loadMore() {
             showSpinner();
             vm.offset += defaultOffset;
-            return comicsService.findByName(vm.filter, vm.offset)
+            return comicListService.findByName(vm.filter, vm.offset)
                 .then(updateList)
                 .catch(throwErr)
                 .finally(hideSpinner);
