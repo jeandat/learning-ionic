@@ -18,7 +18,7 @@ module.exports.tasks = {
                 {
                     dest: '<%= pub %>/css/fonts/',
                     src: [
-                        'vendor/ionic/fonts/*'
+                        'vendor/ionic/release/fonts/*'
                     ],
                     expand: true,
                     flatten: true

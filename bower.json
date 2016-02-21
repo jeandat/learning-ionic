@@ -2,20 +2,20 @@
   "name": "learning-ionic",
   "private": "true",
   "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.2.4",
-    "lodash": "~4.3.0",
-    "angular-mocks": "~1.5.0",
-    "ngCordova": "~0.1.24-alpha",
-    "angular-local-storage": "~0.2.3",
-    "jquery": "~2.2.0",
-    "angular-cache": "~4.5.0",
+    "ionic": "^1.2.4",
+    "lodash": "^4.5.0",
+    "angular-mocks": "^1.5.0",
+    "ngCordova": "^0.1.24",
+    "angular-local-storage": "^0.2.3",
+    "jquery": "^2.2.0",
+    "angular-cache": "^4.5.0",
     "karma-read-json": "^1.1.0",
     "restangular": "^1.5.1",
     "angular-imgcache": "angular-imgcache.js#^0.1.0",
     "imgcache.js": "^1.0.0",
-    "ionic-native-transitions": "shprink/ionic-native-transitions#^1.0.0-rc9"
+    "ionic-native-transitions": "shprink/ionic-native-transitions#^1.0.0"
   },
   "resolutions": {
-    "angular": "~1.5.0"
+    "angular": "^1.5.0"
   }
 }
