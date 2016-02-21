@@ -8,6 +8,7 @@
         .run(addGlobals)
         .run(setHttpDefaultCache)
         .run(restConfig)
+        .run(handleAdjustPanKeyboardMode)
         .run(checkRequirements);
 
     //////////////////////
@@ -106,6 +107,33 @@
     function addGlobals($rootScope, $window) {
         $rootScope.isCordova = ionic.Platform.isWebView();
         $rootScope.isFileUrl = _.startsWith($window.location.origin, 'file:');
+    }
+
+    // Will add a simple div which height is the keyboard height in the scroll area
+    // in order to reveal what is behind. Makes sense only if the native keyboard behavior
+    // is to appears on top and do not resize webview; i.e only for android with
+    // `windowSoftInputMode="adjustPan"`.
+    function handleAdjustPanKeyboardMode($ionicScrollDelegate) {
+        if(!ionic.Platform.isAndroid()) return;
+
+        var $artificialItem;
+
+        window.addEventListener('native.keyboardshow', revealContentBehindKeyboard);
+        window.addEventListener('native.keyboardhide', removeArtificialItem);
+
+        ///////////////
+
+        function revealContentBehindKeyboard(e) {
+            var $scrollContent = $($ionicScrollDelegate.getScrollView().__content);
+            if ($artificialItem == null) {
+                $artificialItem = $('<div></div>').height(e.keyboardHeight);
+            }
+            $scrollContent.append($artificialItem);
+        }
+
+        function removeArtificialItem() {
+            $artificialItem.detach();
+        }
     }
 
     function checkRequirements($state, $cordovaSplashscreen, $timeout, ImgCache) {
