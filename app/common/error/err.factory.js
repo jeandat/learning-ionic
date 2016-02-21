@@ -11,7 +11,8 @@
             // Messages for common errors: 1xxx
             1000: 'Network unavailable right now',
             1001: 'Your request timed out. Please try again.',
-            1002: 'Something went wrong. Please try again.'
+            1002: 'Something went wrong. Please try again.',
+            1003: 'Damn, the limit of 3000 requests per day has been reached. Please try again tomorrow.'
 
         };
 

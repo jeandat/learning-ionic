@@ -7,7 +7,7 @@
 
     function httpInterceptor(Err, $q, $log) {
         return {
-            requestError: function(){
+            requestError: function () {
                 $log.debug('REQUEST ERROR:', arguments);
             },
             responseError: function (response) {
@@ -18,6 +18,9 @@
                 if (response.status === 0) {
                     // Timeout
                     return $q.reject(new Err(1001, {ui: true}));
+                }
+                if (response.status === 429) {
+                    return $q.reject(new Err(1003, {ui: true}));
                 }
                 return $q.reject(response);
             }
