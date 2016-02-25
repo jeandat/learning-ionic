@@ -6,16 +6,33 @@
         text-align: center;
         margin: $content-padding $content-padding $content-padding*2 $content-padding;
     }
-    &__item-cover{
-        background-color: #CCC;
-        object-fit: cover;
-        object-position: center;
+    &__search-bar{
+        // #perfmatters
+        // In order to not have a composite layer (the bar) inside another composite layer (the scroll area)
+        // Default css from ionic define a transform matrix which is useless in that case.
+        transform: none;
+    }
+    &-card{
+        // #perfmatters
+        box-shadow: none;
+        &__cover{
+            background-color: #CCC;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 250px;
+            &--not-found{
+                background-image: url('../img/image-not-available.png');
+            }
+        }
+        &__footer{
+            border-bottom: 1px solid #CCC !important;
+        }
     }
 }
 .platform-ios.platform-cordova .comics{
-    &__footer{
-        // Bugfix iOS
-        // margin-bottom is not respected.
+    &__show-more{
+        // Bugfix iOS: margin-bottom is not respected.
         transform: translateY(-10px);
     }
 }

@@ -12,26 +12,26 @@
         // Default css from ionic define a transform matrix which is useless in that case.
         transform: none;
     }
-    &__card{
+    &-card{
         // #perfmatters
         box-shadow: none;
-    }
-    &-card__cover{
-        background-color: #CCC;
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-        height: 250px;
-        &--not-found{
-            background-image: url('../img/image-not-available.png');
+        &__cover{
+            background-color: #CCC;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 250px;
+            &--not-found{
+                background-image: url('../img/image-not-available.png');
+            }
         }
-    }
-    &-card__footer{
-        border-bottom: 1px solid #CCC !important;
+        &__footer{
+            border-bottom: 1px solid #CCC !important;
+        }
     }
 }
 .platform-ios.platform-cordova .characters{
-    &__footer{
+    &__show-more{
         // Bugfix iOS: margin-bottom is not respected.
         transform: translateY(-10px);
     }

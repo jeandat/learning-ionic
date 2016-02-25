@@ -1,19 +1,20 @@
 ion-view.comics(view-title='Comics')
     ion-content
-        .bar.item-input-inset
+        .bar.item-input-inset.comics__search-bar
             form.comics__form(name='cmSearchForm' novalidate ng-submit='vm.search()' autocomplete="off")
                 label.item-input-wrapper
                     i.icon.ion-ios-search.placeholder-icon
-                    input(type='search' placeholder='Title starts with…' name='name'
-                    ng-model='vm.filter' spellcheck="false")
+                    input(type='search' placeholder='Title starts with…' name='name' ng-model='vm.filter'
+                    spellcheck="false")
         .list
-            .card(ng-repeat="comic in vm.comics track by comic.id")
+            .card.comics-card(ng-repeat="comic in vm.comics track by comic.id")
                 .item.item-image(ui-sref='app.comic-detail({comic:comic})')
-                    img.comics__item-cover(img-cache ic-src="{{::comic.getThumbnailUrl()}}" width="100%"
-                    height="250px")
-                .item.item-icon-right.assertive
-                    i.icon.ion-android-favorite-outline(ng-click='::vm.keep()')
+                    div.comics-card__cover(ng-if="comic.thumbnailUrl" img-cache ic-bg="{{::comic.thumbnailUrl}}")
+                    div.comics-card__cover.comics-card__cover--not-found(ng-if="!comic.thumbnailUrl")
+                .item.item-icon-right.assertive.comics-card__footer
+                    i.icon.ion-android-favorite-outline(ng-click='vm.keep()')
                     | {{::comic.title}}
         .comics__footer
             ion-spinner.spinner-assertive(ng-if='vm.searching')
-            button.button.button-block.button-assertive(ng-click='vm.loadMore()' ng-show='vm.hasMoreData()') Show more
+            button.button.button-block.button-assertive.comics__show-more(ng-click='vm.loadMore()' ng-show='vm.hasMoreData')
+                | Show more

@@ -7,7 +7,7 @@ ion-view.characters(view-title='Characters')
                     input(type='search' placeholder='Name starts with…' name='name' ng-model='vm.filter'
                     spellcheck="false")
         .list
-            .card.characters__card(ng-repeat="character in vm.characters track by character.id")
+            .card.characters-card(ng-repeat="character in vm.characters track by character.id")
                 .item.item-image(ui-sref='app.character-detail({character:character})')
                     div.characters-card__cover(ng-if="character.thumbnailUrl" img-cache ic-bg="{{::character.thumbnailUrl}}")
                     div.characters-card__cover.characters-card__cover--not-found(ng-if="!character.thumbnailUrl")
@@ -16,5 +16,5 @@ ion-view.characters(view-title='Characters')
                     | {{::character.name}}
         .characters__footer
             ion-spinner.spinner-assertive(ng-if='vm.searching')
-            button.button.button-block.button-assertive(ng-click='vm.loadMore()' ng-show='vm.hasMoreData')
+            button.button.button-block.button-assertive.characters__show-more(ng-click='vm.loadMore()' ng-show='vm.hasMoreData')
                 | Show more

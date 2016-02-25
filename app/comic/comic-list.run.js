@@ -9,14 +9,15 @@
 
     function addNewMethodsToComics(Restangular) {
         Restangular.extendModel('comics', function (model) {
-            model.getThumbnailUrl = getThumbnailUrl;
+            model.thumbnailUrl = getThumbnailUrl();
             return model;
 
             /////////////
 
             function getThumbnailUrl() {
-                if(_.isEmpty(model.thumbnail)) return '';
-                return model.thumbnail.path + '.' + model.thumbnail.extension;
+                var tnl = model.thumbnail;
+                if(_.isEmpty(tnl) || _.endsWith(tnl.path, 'image_not_available')) return '';
+                return tnl.path + '.' + tnl.extension;
             }
         });
     }

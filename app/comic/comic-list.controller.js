@@ -18,7 +18,7 @@
         vm.keep = keep;
         vm.search = search;
         vm.loadMore = loadMore;
-        vm.hasMoreData = hasMoreData;
+        vm.hasMoreData = false;
 
         activate();
 
@@ -36,20 +36,20 @@
         function search() {
             showSpinner();
             var promise = comicListService.findByName(vm.filter);
-            vm.comics = promise.$object;
+            vm.comics = [];
+            vm.hasMoreData = false;
             vm.offset = 0;
             $cordovaKeyboard.close();
             return promise
-                .then(clean)
+                .then(updateList)
+                .then(notify)
                 .catch(throwErr)
                 .finally(hideSpinner);
 
             ///////////
 
-            function clean(results) {
-                var meta = _.get(results, 'meta');
-                $log.info('Loaded', meta.count, '/', meta.total, 'comics which title contains', vm.filter);
-                $cordovaToast.showShortBottom(meta.total + ' results');
+            function notify() {
+                $cordovaToast.showShortBottom(vm.comics.meta.total + ' results');
             }
 
         }
@@ -69,23 +69,19 @@
                 .then(updateList)
                 .catch(throwErr)
                 .finally(hideSpinner);
-
-            ///////////
-
-            function updateList(results) {
-                var meta = _.get(results, 'meta');
-                $log.info('Loaded', (meta.count + meta.offset), '/', meta.total, 'comics which title contains', vm.filter);
-                vm.comics = _.concat(vm.comics, results);
-                vm.comics.meta = results.meta;
-            }
-
         }
 
-        function hasMoreData() {
-            var meta = _.get(vm, 'comics.meta');
-            return meta && (meta.count + meta.offset) < meta.total;
+        function updateList(results) {
+            var meta = _.get(results, 'meta');
+            $log.info('Loaded', (meta.count + meta.offset), '/', meta.total, 'comics which title starts with `' +
+                vm.filter + '`');
+            // Update list of comics
+            vm.comics = meta.offset === 0 ? results : _.concat(vm.comics, results);
+            // Update meta
+            meta = vm.comics.meta = results.meta;
+            // Update boolean to know instantly if there is more
+            vm.hasMoreData = meta && (meta.count + meta.offset) < meta.total;
         }
-
 
     }
 
