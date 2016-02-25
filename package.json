@@ -9,7 +9,7 @@
     "grunt-bump": "^0.7.0",
     "grunt-chokidar": "^1.0.0",
     "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-concat": "^1.0.0",
     "grunt-contrib-copy": "^0.8.2",
     "grunt-contrib-jade": "^0.15.0",
     "grunt-contrib-jshint": "^1.0.0",
@@ -28,7 +28,7 @@
     "grunt-sass-compile-imports": "^0.2.1",
     "grunt-shell": "^1.1.2",
     "jasmine-core": "^2.4.1",
-    "jit-grunt": "^0.9.1",
+    "jit-grunt": "^0.10.0",
     "js-yaml": "^3.5.2",
     "jscs-stylish": "^0.3.1",
     "jshint-stylish": "^2.1.0",
@@ -61,10 +61,6 @@
     "cordova-plugin-file-transfer",
     "cordova-plugin-file",
     "cordova-plugin-inappbrowser",
-    {
-      "locator": "https://github.com/Telerik-Verified-Plugins/NativePageTransitions",
-      "id": "com.telerik.plugins.nativepagetransitions"
-    },
     "cordova-plugin-wkwebview-engine"
   ],
   "cordovaPlatforms": [

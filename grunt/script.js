@@ -25,8 +25,7 @@ module.exports = function () {
                             'angular-cache/dist/angular-cache.js',
                             'restangular/dist/restangular.js',
                             'imgcache.js/js/imgcache.js',
-                            'angular-imgcache/angular-imgcache.js',
-                            'ionic-native-transitions/dist/ionic-native-transitions.js'
+                            'angular-imgcache/angular-imgcache.js'
                         ],
                         expand: true,
                         cwd: 'vendor',

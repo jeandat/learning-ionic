@@ -7,7 +7,6 @@
         'LocalStorageModule',
         'angular-cache',
         'restangular',
-        'ImgCache',
-        'ionic-native-transitions'
+        'ImgCache'
     ]);
 })();

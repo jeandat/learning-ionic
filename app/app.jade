@@ -22,6 +22,9 @@ html
 
         scroll-top
 
+        // cordova script (this will be a 404 during development)
+        script(src='cordova.js')
+
         // I'm not concatenating vendors to ease debugging without source maps.
         // In a cordova app, we can afford it.
         script(src='js/jquery.js')
@@ -39,14 +42,10 @@ html
         script(src='js/imgcache.js')
         script(src='js/angular-imgcache.js')
         script(src='@@ngCordovaScript')
-        script(src='js/ionic-native-transitions.js')
 
 
         script(src='js/templates.js')
         script(src='js/app.js')
-
-        // cordova script (this will be a 404 during development)
-        script(src='cordova.js' async)
 
 
         script(type='text/javascript').

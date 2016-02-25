@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .run(configureCordova)
+        .run(configureCordovaPlugins)
         .run(setCustomLogs)
         .run(addGlobals)
         .run(setHttpDefaultCache)
@@ -13,7 +13,7 @@
 
     //////////////////////
 
-    function configureCordova($cordovaStatusbar) {
+    function configureCordovaPlugins($cordovaStatusbar) {
 
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard for form inputs)
         if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -115,7 +115,7 @@
     // is to appears on top and do not resize webview; i.e only for android with
     // `windowSoftInputMode="adjustPan"`.
     function handleAdjustPanKeyboardMode($ionicScrollDelegate) {
-        if(!ionic.Platform.isAndroid()) return;
+        if (!ionic.Platform.isAndroid()) return;
 
         var $artificialItem;
 

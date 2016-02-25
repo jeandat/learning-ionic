@@ -5,7 +5,7 @@
         .module('app')
         .controller('CharacterDetailController', CharacterDetailController);
 
-    function CharacterDetailController($log, $stateParams, $scope, $ionicTabsDelegate) {
+    function CharacterDetailController($log, $stateParams) {
 
         var vm = this;
         vm.title = 'CharacterDetailController';
@@ -18,16 +18,6 @@
 
         function activate() {
             $log.debug(vm.title + ' instantiated');
-            $scope.$on('$ionicView.beforeEnter', hideTabs);
-            $scope.$on('$ionicView.beforeLeave', showTabs);
-        }
-
-        function showTabs() {
-            $ionicTabsDelegate.showBar(true);
-        }
-
-        function hideTabs() {
-            $ionicTabsDelegate.showBar(false);
         }
 
         function openDetailPage(){

@@ -7,7 +7,6 @@
         .config(routeConfig)
         .config(localStorageConfig)
         .config(ionicConfig)
-        .config(ionicNativeTransitions)
         .config(httpInterceptors)
         .config(imgCache);
 
@@ -38,9 +37,6 @@
             .state('app', {
                 url: '/app',
                 abstract: true,
-                nativeTransitions: {
-                    'type': 'fade'
-                },
                 templateUrl: 'common/layout/layout.jade'
             })
 
@@ -48,9 +44,6 @@
 
             .state('app.characters', {
                 url: '/characters',
-                nativeTransitions: {
-                    'type': 'fade'
-                },
                 views: {
                     'app-characters': {
                         templateUrl: 'character/character-list.jade',
@@ -60,10 +53,6 @@
             })
             .state('app.character-detail', {
                 url: '/characters',
-                nativeTransitions: {
-                    'type': 'slide',
-                    'direction': 'up'
-                },
                 params: {
                     character: {}
                 },
@@ -77,9 +66,6 @@
 
             .state('app.comics', {
                 url: '/comics',
-                nativeTransitions: {
-                    'type': 'fade'
-                },
                 views: {
                     'app-comics': {
                         templateUrl: 'comic/comic-list.jade',
@@ -89,10 +75,6 @@
             })
             .state('app.comic-detail', {
                 url: '/comics',
-                nativeTransitions: {
-                    'type': 'slide',
-                    'direction': 'up'
-                },
                 params: {
                     comic: {}
                 },
@@ -106,9 +88,6 @@
 
             .state('app.favourites', {
                 url: '/favourites',
-                nativeTransitions: {
-                    'type': 'fade'
-                },
                 views: {
                     'app-favourites': {
                         templateUrl: 'favourite/favourite-list.jade',
@@ -119,9 +98,6 @@
 
             .state('app.settings', {
                 url: '/settings',
-                nativeTransitions: {
-                    'type': 'fade'
-                },
                 views: {
                     'app-settings': {
                         templateUrl: 'setting/setting-list.jade',
@@ -142,13 +118,10 @@
     // Ionic defaults
     function ionicConfig($ionicConfigProvider) {
         $ionicConfigProvider.spinner.icon('dots');
-        $ionicConfigProvider.views.swipeBackEnabled(false);
-    }
-
-    function ionicNativeTransitions($ionicNativeTransitionsProvider){
-        $ionicNativeTransitionsProvider.setDefaultOptions({
-            backInOppositeDirection: true
-        });
+        $ionicConfigProvider.backButton.previousTitleText(false);
+        $ionicConfigProvider.tabs.position('top');
+        $ionicConfigProvider.views.maxCache(3);
+        //$ionicConfigProvider.views.transition('none');
     }
 
     // ! NOT USED FOR THE MOMENT !
