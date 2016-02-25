@@ -9,15 +9,16 @@
 
     function addNewMethodsToCharacters(Restangular) {
         Restangular.extendModel('characters', function (model) {
-            model.getThumbnailUrl = getThumbnailUrl;
-            model.getDetailUrl = getDetailUrl;
+            model.thumbnailUrl = getThumbnailUrl();
+            model.detailUrl = getDetailUrl();
             return model;
 
             /////////////
 
             function getThumbnailUrl() {
-                if(_.isEmpty(model.thumbnail)) return;
-                return model.thumbnail.path + '.' + model.thumbnail.extension;
+                var tnl = model.thumbnail;
+                if(_.isEmpty(tnl) || _.endsWith(tnl.path, 'image_not_available')) return '';
+                return tnl.path + '.' + tnl.extension;
             }
             function getDetailUrl(){
                 return _.get(_.find(model.urls, {type:'detail'}), 'url');

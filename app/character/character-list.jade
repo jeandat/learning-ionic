@@ -1,20 +1,20 @@
 ion-view.characters(view-title='Characters')
     ion-content
-        .bar.item-input-inset
-            form.characters__form(name='crtSearchForm', novalidate, ng-submit='vm.search()', autocomplete="off")
+        .bar.item-input-inset.characters__search-bar
+            form.characters__form(name='crtSearchForm' novalidate ng-submit='vm.search()' autocomplete="off")
                 label.item-input-wrapper
                     i.icon.ion-ios-search.placeholder-icon
-                    input(type='search', placeholder='Name starts with…', name='name',
-                    ng-model='vm.filter', spellcheck="false")
+                    input(type='search' placeholder='Name starts with…' name='name' ng-model='vm.filter'
+                    spellcheck="false")
         .list
-            .card(ng-repeat="character in vm.characters track by character.id")
+            .card.characters__card(ng-repeat="character in vm.characters track by character.id")
                 .item.item-image(ui-sref='app.character-detail({character:character})')
-                    img.characters__item-cover(img-cache ic-src="{{::character.getThumbnailUrl()}}", width="100%",
-                    height="250px")
-                .item.item-icon-right.assertive
-                    i.icon.ion-android-favorite-outline(ng-click='::vm.keep()')
+                    div.characters-card__cover(ng-if="character.thumbnailUrl" img-cache ic-bg="{{::character.thumbnailUrl}}")
+                    div.characters-card__cover.characters-card__cover--not-found(ng-if="!character.thumbnailUrl")
+                .item.item-icon-right.assertive.characters-card__footer
+                    i.icon.ion-android-favorite-outline(ng-click='vm.keep()')
                     | {{::character.name}}
         .characters__footer
             ion-spinner.spinner-assertive(ng-if='vm.searching')
-            button.button.button-block.button-assertive(ng-click='vm.loadMore()',
-            ng-show='vm.hasMoreData()') Show more
+            button.button.button-block.button-assertive(ng-click='vm.loadMore()' ng-show='vm.hasMoreData')
+                | Show more

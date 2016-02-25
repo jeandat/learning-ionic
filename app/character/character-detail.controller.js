@@ -22,7 +22,7 @@
 
         function openDetailPage(){
             var open = _.get(window, 'cordova.InAppBrowser.open') || window.open;
-            open(vm.character.getDetailUrl(), '_system');
+            open(vm.character.detailUrl, '_system');
         }
 
     }

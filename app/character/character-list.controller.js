@@ -11,14 +11,14 @@
         var vm = this;
         vm.title = 'CharacterListController';
         // Let's start with something cool ;)
-        vm.filter = '';
+        vm.filter = 'Deadpool';
         vm.characters = [];
         vm.searching = false;
         vm.offset = 0;
         vm.keep = keep;
         vm.search = search;
         vm.loadMore = loadMore;
-        vm.hasMoreData = hasMoreData;
+        vm.hasMoreData = false;
 
         activate();
 
@@ -36,20 +36,20 @@
         function search() {
             showSpinner();
             var promise = characterListService.findByName(vm.filter);
-            vm.characters = promise.$object;
+            vm.characters = [];
+            vm.hasMoreData = false;
             vm.offset = 0;
             $cordovaKeyboard.close();
             return promise
-                .then(clean)
+                .then(updateList)
+                .then(notify)
                 .catch(throwErr)
                 .finally(hideSpinner);
 
             ///////////
 
-            function clean(results) {
-                var meta = _.get(results, 'meta');
-                $log.info('Loaded', meta.count, '/', meta.total, 'characters which name starts with', vm.filter);
-                $cordovaToast.showShortBottom(meta.total + ' results');
+            function notify() {
+                $cordovaToast.showShortBottom(vm.characters.meta.total + ' results');
             }
 
         }
@@ -69,23 +69,19 @@
                 .then(updateList)
                 .catch(throwErr)
                 .finally(hideSpinner);
-
-            ///////////
-
-            function updateList(results) {
-                var meta = _.get(results, 'meta');
-                $log.info('Loaded', (meta.count + meta.offset), '/', meta.total, 'characters which name starts with', vm.filter);
-                vm.characters = _.concat(vm.characters, results);
-                vm.characters.meta = results.meta;
-            }
-
         }
 
-        function hasMoreData() {
-            var meta = _.get(vm, 'characters.meta');
-            return meta && (meta.count + meta.offset) < meta.total;
+        function updateList(results) {
+            var meta = _.get(results, 'meta');
+            $log.info('Loaded', (meta.count + meta.offset), '/', meta.total, 'characters which name starts with `' +
+                vm.filter + '`');
+            // Update list of characters
+            vm.characters = meta.offset === 0 ? results : _.concat(vm.characters, results);
+            // Update meta
+            meta = vm.characters.meta = results.meta;
+            // Update boolean to know instantly if there is more
+            vm.hasMoreData = meta && (meta.count + meta.offset) < meta.total;
         }
-
 
     }
 
