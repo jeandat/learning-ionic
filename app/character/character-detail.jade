@@ -1,9 +1,9 @@
 ion-view.character.character__background(view-title='{{::vm.character.name}}' img-cache ic-bg='{{::vm.character.getThumbnailUrl()}}')
+    ion-nav-buttons(side="right")
+        button.button.button-light.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
     ion-content.character__content
         .character__meta
             span.character__text.character__title {{::vm.character.name}}
             br
             br
             span.character__text.character__description {{::vm.character.description}}
-        button.button.button-assertive.button-small.character__details(ng-click='::vm.openDetailPage()')
-            | Read more
