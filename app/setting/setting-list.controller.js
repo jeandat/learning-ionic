@@ -6,11 +6,12 @@
         .controller('SettingListController', SettingListController);
 
     function SettingListController($log, $scope, $cordovaToast, defaultCacheName, CacheFactory,
-                                $ionicPopup, throwErr, ImgCache, $timeout) {
+                                $ionicPopup, throwErr, ImgCache, $timeout, $ionicConfig) {
 
         var vm = this;
         vm.settings = {
-            enableCache: true
+            enableCache: true,
+            enableAnimations: true
         };
         vm.clearing = false;
         vm.clearCache = clearCache;
@@ -24,6 +25,18 @@
                 if (newValue === oldValue) return;
                 $cordovaToast.showShortBottom('Not implemented yet…');
             });
+            $scope.$watch('vm.settings.enableAnimations', function (newValue, oldValue) {
+                if (newValue === oldValue) return;
+                newValue === true ? enableAnimations() : disableAnimations();
+            });
+        }
+
+        function enableAnimations(){
+            $ionicConfig.views.transition('platform');
+        }
+
+        function disableAnimations(){
+            $ionicConfig.views.transition('none');
         }
 
         function clearCache() {

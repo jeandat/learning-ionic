@@ -3,6 +3,8 @@ ion-view.settings(view-title='Settings')
         ion-list
             ion-toggle(ng-model='vm.settings.enableCache', toggle-class='toggle-positive')
                 | Enable Cache
+            ion-toggle(ng-model='vm.settings.enableAnimations', toggle-class='toggle-positive')
+                | Enable Animations
             ion-item(ng-click='vm.clearCache()')
                 button.button.button-assertive.button-small.button-block
                     span(ng-if='vm.clearing') Clearing…
