@@ -5,6 +5,5 @@ ion-view.settings(view-title='Settings')
                 | Enable Animations
             ion-item(ng-click='vm.clearCache()')
                 button.button.button-assertive.button-small.button-block
-                    span(ng-if='vm.clearing') Clearing…
-                    span(ng-if='!vm.clearing') Clear cache
+                    span(ng-bind="vm.clearing ? 'Clearing…' : 'Clear cache'")
         .settings__credits.padding Data provided by Marvel. © 2014 Marvel
