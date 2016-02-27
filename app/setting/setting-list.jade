@@ -3,7 +3,7 @@ ion-view.settings(view-title='Settings')
         ion-list
             ion-toggle(ng-model='vm.settings.enableAnimations', toggle-class='toggle-positive')
                 | Enable Animations
-            ion-item(ng-click='vm.clearCache()')
-                button.button.button-assertive.button-small.button-block
+            ion-item
+                button.button.button-assertive.button-small.button-block(ng-click='vm.clearCache()')
                     span(ng-bind="vm.clearing ? 'Clearing…' : 'Clear cache'")
         .settings__credits.padding Data provided by Marvel. © 2014 Marvel
