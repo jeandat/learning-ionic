@@ -9,10 +9,8 @@ ion-view.characters(view-title='Characters')
         .list
             .card.characters-card(ng-repeat="character in vm.characters track by character.id")
                 .item.item-image(ui-sref='app.character-detail({character:character})')
-                    div.characters-card__cover(
-                    ng-class='{"characters-card__cover--not-found": !character.thumbnailUrl}'
-                    ng-attr-img-cache='{{character.thumbnailUrl && true || undefined}}'
-                    ng-attr-ic-bg='{{character.thumbnailUrl || undefined}}')
+                    div.characters-card__cover(ng-if="character.thumbnailUrl" img-cache ic-bg="{{::character.thumbnailUrl}}")
+                    div.characters-card__cover.characters-card__cover--not-found(ng-if="!character.thumbnailUrl")
                 .item.item-icon-right.assertive.characters-card__footer
                     i.icon.ion-android-favorite-outline(ng-click='vm.keep()')
                     | {{::character.name}}
