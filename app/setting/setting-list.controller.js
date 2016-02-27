@@ -5,12 +5,11 @@
         .module('app')
         .controller('SettingListController', SettingListController);
 
-    function SettingListController($log, $scope, $cordovaToast, defaultCacheName, CacheFactory,
+    function SettingListController($log, $scope, defaultCacheName, CacheFactory,
                                 $ionicPopup, throwErr, ImgCache, $timeout, $ionicConfig) {
 
         var vm = this;
         vm.settings = {
-            enableCache: true,
             enableAnimations: true
         };
         vm.clearing = false;
@@ -21,10 +20,6 @@
         /////////////
 
         function activate() {
-            $scope.$watch('vm.settings.enableCache', function (newValue, oldValue) {
-                if (newValue === oldValue) return;
-                $cordovaToast.showShortBottom('Not implemented yet…');
-            });
             $scope.$watch('vm.settings.enableAnimations', function (newValue, oldValue) {
                 if (newValue === oldValue) return;
                 newValue === true ? enableAnimations() : disableAnimations();
