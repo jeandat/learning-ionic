@@ -7,9 +7,10 @@
         .run(setCustomLogs)
         .run(addGlobals)
         .run(setHttpDefaultCache)
-        .run(restConfig)
+        .run(setRestConfig)
         .run(handleAdjustPanKeyboardMode)
-        .run(checkRequirements);
+        .run(applySettings)
+        .run(boot);
 
     //////////////////////
 
@@ -55,7 +56,7 @@
     }
 
     // Restangular configuration
-    function restConfig(Restangular, apiEndpoint, apiKey, privateApiKey, $q, $window) {
+    function setRestConfig(Restangular, apiEndpoint, apiKey, privateApiKey, $q, $window) {
 
         // Temporary hack: Restangular is not compatible with Lodash v4.
         _.contains = _.includes;
@@ -137,8 +138,11 @@
         }
     }
 
-    function checkRequirements($state, $cordovaSplashscreen, $timeout, ImgCache, $rootScope,
-                               $log) {
+    function applySettings(settingService, $ionicConfig){
+        !settingService.settings.enableAnimations && $ionicConfig.views.transition('none');
+    }
+
+    function boot($state, $cordovaSplashscreen, $timeout, ImgCache, $rootScope, $log) {
         initImgCache().then(goHome).then(hideSplash);
 
         /////////////

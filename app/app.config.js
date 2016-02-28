@@ -112,7 +112,7 @@
 
     // All keys in local storage will have the prefix 'lrnion'.
     function localStorageConfig(localStorageServiceProvider) {
-        localStorageServiceProvider.setPrefix('lrnion'); // learning-ionic
+        localStorageServiceProvider.setPrefix('app');
     }
 
     // Ionic defaults
@@ -121,7 +121,6 @@
         $ionicConfigProvider.backButton.previousTitleText(false);
         $ionicConfigProvider.tabs.position('top');
         $ionicConfigProvider.views.maxCache(3);
-        //$ionicConfigProvider.views.transition('none');
     }
 
     // ! NOT USED FOR THE MOMENT !
