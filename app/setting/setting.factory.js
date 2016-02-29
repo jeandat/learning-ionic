@@ -13,7 +13,9 @@
 
         var service = {
             settings: _.defaults(localStorageService.get('settings'), defaults),
-            update: update,
+            applyDiffAndPersist: applyDiffAndPersist,
+            apply: apply,
+            persist: persist,
             clearCache: clearCache
         };
 
@@ -21,15 +23,24 @@
 
         ////////////
 
-        function update(){
-            var settings = service.settings;
-
+        function applyDiffAndPersist(newSettings, oldSettings){
             // enableAnimations property
-            settings.enableAnimations ? enableAnimations() : disableAnimations();
+            newSettings.enableAnimations !== oldSettings.enableAnimations && processEnableAnimations();
+            persist();
+        }
 
+        function persist(){
             // Persist in local storage
-            localStorageService.set('settings', settings);
+            localStorageService.set('settings', service.settings);
             $log.info('Settings persisted');
+        }
+
+        function apply(){
+            processEnableAnimations();
+        }
+
+        function processEnableAnimations(){
+            service.settings.enableAnimations ? enableAnimations() : disableAnimations();
         }
 
         function clearCache() {

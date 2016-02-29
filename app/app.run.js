@@ -138,8 +138,8 @@
         }
     }
 
-    function applySettings(settingService, $ionicConfig){
-        !settingService.settings.enableAnimations && $ionicConfig.views.transition('none');
+    function applySettings(settingService){
+        settingService.apply();
     }
 
     function boot($state, $cordovaSplashscreen, $timeout, ImgCache, $rootScope, $log) {

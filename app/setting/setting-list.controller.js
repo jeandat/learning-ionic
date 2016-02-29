@@ -17,7 +17,7 @@
         /////////////
 
         function activate() {
-            $scope.$watchCollection('vm.settings', settingService.update);
+            $scope.$watchCollection('vm.settings', settingService.applyDiffAndPersist);
         }
 
         function clearCache() {
