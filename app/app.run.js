@@ -142,14 +142,24 @@
         settingService.apply();
     }
 
-    function boot($state, $cordovaSplashscreen, $timeout, ImgCache, $rootScope, $log) {
-        initImgCache().then(goHome).then(hideSplash);
+    function boot($state, $cordovaSplashscreen, $timeout, ImgCache, $rootScope, $log, $ionicPopup) {
+        initImgCache().catch(explain).then(goHome).finally(hideSplash);
 
         /////////////
 
         function initImgCache() {
             ImgCache.$init();
             return ImgCache.$promise;
+        }
+
+        function explain(){
+            var options = {
+                title: 'Invalid state',
+                template: 'Please allow access to the filesystem if you want to use this app.',
+                cssClass: 'alert-popup',
+                okType: 'button-assertive'
+            };
+            $ionicPopup.alert(options).then(ionic.Platform.exitApp);
         }
 
         function goHome() {

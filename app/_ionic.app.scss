@@ -14,14 +14,13 @@ $base-background-color: #DDD;
 // Remove border under tabs
 $tabs-striped-border-width: 0px;
 
-
+// Alert popup override
+$popup-width: 300px;
 
 /*
 Include ionic sass files.
 */
 @import "../vendor/ionic/scss/ionic";
-
-
 
 /*
 CSS overrides.
@@ -29,20 +28,20 @@ CSS overrides.
 
 // Spinner color.
 .spinner {
-  stroke: $positive;
-  fill: $positive;
+    stroke: $positive;
+    fill: $positive;
 }
 
 // Useless background.
 .loading-container .loading {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 // All buttons should handle long text overflowing.
 .button {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 // Bugfix for Android
@@ -50,4 +49,16 @@ CSS overrides.
 .tabs-top.tabs-striped .tab-item.tab-item-active,
 .tabs-top.tabs-striped .tab-item.activated {
     margin-top: 0;
+}
+
+// Alert popup override
+.alert-popup {
+    .popup-title{
+        font-size: 1.2rem;
+        text-align: left;
+        font-weight: bold;
+    }
+    .popup-body {
+        font-size: 1rem;
+    }
 }
