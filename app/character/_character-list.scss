@@ -16,7 +16,7 @@
         // #perfmatters
         box-shadow: none;
         &__cover{
-            background-color: #CCC;
+            background-color: $media-background-color;
             background-size: cover;
             background-position: center;
             width: 100%;

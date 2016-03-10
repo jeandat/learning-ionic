@@ -27,11 +27,11 @@
         style && style(1);
     }
 
-    function setCustomLogs($rootScope, $log, stringify) {
+    function setCustomLogs($rootScope, $log) {
         $rootScope.$on('$stateChangeStart', logViewName);
 
         function logViewName(event, toState, toParams) {
-            $log.debug('Entering state ' + toState.name + ' with parameters: ' + stringify(toParams));
+            $log.debug('Entering state', toState.name, 'with parameters:', toParams);
         }
     }
 

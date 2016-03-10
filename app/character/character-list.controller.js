@@ -5,20 +5,20 @@
         .module('app')
         .controller('CharacterListController', CharacterListController);
 
-    function CharacterListController($log, characterListService, $cordovaToast, throwErr,
+    function CharacterListController($log, characterService, $cordovaToast, throwErr,
                                   defaultOffset, $cordovaKeyboard) {
 
         var vm = this;
         vm.title = 'CharacterListController';
         // Let's start with something cool ;)
-        vm.filter = 'Deadpool';
+        vm.filter = 'Spider';
         vm.characters = [];
         vm.searching = false;
         vm.offset = 0;
+        vm.hasMoreData = false;
         vm.keep = keep;
         vm.search = search;
         vm.loadMore = loadMore;
-        vm.hasMoreData = false;
 
         activate();
 
@@ -35,7 +35,7 @@
 
         function search() {
             showSpinner();
-            var promise = characterListService.findByName(vm.filter);
+            var promise = characterService.findByName(vm.filter);
             vm.characters = [];
             vm.hasMoreData = false;
             vm.offset = 0;
@@ -65,7 +65,7 @@
         function loadMore() {
             showSpinner();
             vm.offset += defaultOffset;
-            return characterListService.findByName(vm.filter, vm.offset)
+            return characterService.findByName(vm.filter, vm.offset)
                 .then(updateList)
                 .catch(throwErr)
                 .finally(hideSpinner);

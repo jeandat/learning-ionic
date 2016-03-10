@@ -5,7 +5,7 @@
         .module('app')
         .controller('ComicListController', ComicListController);
 
-    function ComicListController($log, comicListService, $cordovaToast, throwErr, defaultOffset,
+    function ComicListController($log, comicService, $cordovaToast, throwErr, defaultOffset,
                                   $cordovaKeyboard) {
 
         var vm = this;
@@ -35,7 +35,7 @@
 
         function search() {
             showSpinner();
-            var promise = comicListService.findByName(vm.filter);
+            var promise = comicService.findByName(vm.filter);
             vm.comics = [];
             vm.hasMoreData = false;
             vm.offset = 0;
@@ -65,7 +65,7 @@
         function loadMore() {
             showSpinner();
             vm.offset += defaultOffset;
-            return comicListService.findByName(vm.filter, vm.offset)
+            return comicService.findByName(vm.filter, {offset:vm.offset})
                 .then(updateList)
                 .catch(throwErr)
                 .finally(hideSpinner);

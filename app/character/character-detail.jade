@@ -7,3 +7,11 @@ ion-view.character.character__background(view-title='{{::vm.character.name}}' im
             br
             br
             span.character__text.character__description {{::vm.character.description}}
+        .character-comic-list
+            .character-comic-list__title.character__text(ui-sref='app.comics' ng-click='vm.showComics($event)')
+                span Comics
+                span.icon.ion-chevron-right.character-comic-list__count(ng-if='vm.hasMoreComics')
+                span.character-comic-list__count(ng-if='vm.hasMoreComics') / {{vm.character.comics.available}}
+                span.character-comic-list__count 1 - {{vm.comics.length}}
+            ion-slides.character-comic-list__swiper(options='vm.swiper.options' slider='vm.swiper.instance')
+                ion-slide-page.character-comic-list__cover(ng-repeat='comic in vm.comics track by comic.id' img-cache ic-bg='{{::comic.thumbnailUrl}}')

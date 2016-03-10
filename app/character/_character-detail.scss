@@ -1,11 +1,11 @@
-.character{
-    &__content{
+.character {
+    &__content {
         padding: $content-padding;
     }
-    &__meta{
+    &__meta {
         padding: $content-padding;
     }
-    &__text{
+    &__text {
         background-color: black;
         color: $light;
         font-size: 1.1rem;
@@ -13,11 +13,50 @@
         padding: $content-padding/2 0;
         box-shadow: $content-padding 0 0 0 black, -$content-padding 0 0 0 black;
     }
-    &__title{
+    &__title {
         font-size: 1.3rem;
     }
-    &__background{
+    &__background {
         background-size: cover;
         background-position: top center;
+    }
+    &__comic {
+        border: 2px solid black;
+        background-size: cover;
+    }
+}
+
+.character-comic-list {
+    margin: 1rem 0;
+    &__title{
+        margin: auto;
+        text-align: left;
+        width: 75vw;
+        box-shadow: none;
+        padding: $content-padding/2 $content-padding;
+    }
+    &__count{
+        float: right;
+        padding-left: $content-padding/2;
+    }
+    &__swiper {
+        width: 75vw;
+        height: 75vw * 4/3;
+        //width: 92vw;
+        //height: 46vw * 4/3;
+        margin: auto;
+    }
+    &__cover{
+        background-color: $media-background-color;
+        background-size: cover;
+    }
+}
+.character .swiper-pagination-bullet{
+    border: 2px solid black;
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    &-active{
+        background-color: $assertive;
     }
 }
