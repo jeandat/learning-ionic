@@ -9,12 +9,9 @@
         background-color: black;
         color: $light;
         font-size: 1.1rem;
-        line-height: 1.8rem;
+        line-height: 1.6rem;
         padding: $content-padding/2 0;
         box-shadow: $content-padding 0 0 0 black, -$content-padding 0 0 0 black;
-    }
-    &__title {
-        font-size: 1.3rem;
     }
     &__background {
         background-size: cover;
