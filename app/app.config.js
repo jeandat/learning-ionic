@@ -80,7 +80,7 @@
                 url: '/comics',
                 views: {
                     'app-comics': {
-                        templateUrl: 'comic/comic-list.jade',
+                        templateUrl: 'comic/list/comic-list.jade',
                         controller: 'ComicListController as vm'
                     }
                 }
@@ -92,7 +92,7 @@
                 },
                 views: {
                     'app-comics': {
-                        templateUrl: 'comic/comic-detail.jade',
+                        templateUrl: 'comic/detail/comic-detail.jade',
                         controller: 'ComicDetailController as vm'
                     }
                 }
