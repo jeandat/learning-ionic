@@ -8,7 +8,7 @@ ion-view.character.character__background(view-title='{{::vm.character.name}}' im
             br
             span.character__text.character__description {{::vm.character.description}}
         .character-comic-list
-            .character-comic-list__title.character__text(ng-click='vm.showComics($event)')
+            .character-comic-list__title.character__text(ui-sref='app.characterComics({comics:vm.comics})' ng-click='vm.showComics($event)')
                 span Comics
                 span.icon.ion-chevron-right.character-comic-list__count(ng-if='vm.hasMoreComics')
                 span.character-comic-list__count(ng-if='vm.hasMoreComics') See more

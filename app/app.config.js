@@ -51,7 +51,7 @@
                     }
                 }
             })
-            .state('app.character-detail', {
+            .state('app.characterDetail', {
                 url: '/characters',
                 params: {
                     character: {}
@@ -60,6 +60,18 @@
                     'app-characters': {
                         templateUrl: 'character/detail/character-detail.jade',
                         controller: 'CharacterDetailController as vm'
+                    }
+                }
+            })
+            .state('app.characterComics', {
+                url: '/characters',
+                params: {
+                    comics: []
+                },
+                views: {
+                    'app-characters': {
+                        templateUrl: 'character/comics/character-comics.jade',
+                        controller: 'CharacterComicsController as vm'
                     }
                 }
             })
@@ -73,7 +85,7 @@
                     }
                 }
             })
-            .state('app.comic-detail', {
+            .state('app.comicDetail', {
                 url: '/comics',
                 params: {
                     comic: {}

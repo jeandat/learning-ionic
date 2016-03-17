@@ -8,7 +8,7 @@ ion-view.comics(view-title='Comics')
                     spellcheck="false")
         .list
             .card.comics-card(ng-repeat="comic in vm.comics track by comic.id")
-                .item.item-image(ui-sref='app.comic-detail({comic:comic})')
+                .item.item-image(ui-sref='app.comicDetail({comic:comic})')
                     div.comics-card__cover(ng-if="::comic.thumbnailUrl" img-cache ic-bg="{{::comic.thumbnailUrl}}")
                     div.comics-card__cover.comics-card__cover--not-found(ng-if="::!comic.thumbnailUrl")
                 .item.item-icon-right.assertive.comics-card__footer

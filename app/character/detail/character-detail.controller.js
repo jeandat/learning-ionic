@@ -5,7 +5,7 @@
         .module('app')
         .controller('CharacterDetailController', CharacterDetailController);
 
-    function CharacterDetailController($log, $stateParams, comicService, $ionicModal, $scope) {
+    function CharacterDetailController($log, $stateParams, comicService) {
 
         var vm = this;
         vm.title = 'CharacterDetailController';
@@ -52,30 +52,6 @@
             if (!vm.hasMoreComics) {
                 $event.preventDefault();
                 return;
-            }
-
-            //Cleanup the modal when we're done with it!
-            $scope.$on('$destroy', destroyModal);
-
-            // Show it if already existing
-            if(vm.modal) {
-                vm.modal.show();
-                return;
-            }
-
-            $ionicModal
-                .fromTemplateUrl('character/detail/comics/character-comics.jade', {scope: $scope})
-                .then(saveReference);
-
-            ////////////
-
-            function saveReference(modal) {
-                vm.modal = modal;
-                vm.modal.show();
-            }
-
-            function destroyModal() {
-                vm.modal.remove();
             }
         }
 
