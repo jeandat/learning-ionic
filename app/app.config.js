@@ -46,7 +46,7 @@
                 url: '/characters',
                 views: {
                     'app-characters': {
-                        templateUrl: 'character/character-list.jade',
+                        templateUrl: 'character/list/character-list.jade',
                         controller: 'CharacterListController as vm'
                     }
                 }
@@ -58,7 +58,7 @@
                 },
                 views: {
                     'app-characters': {
-                        templateUrl: 'character/character-detail.jade',
+                        templateUrl: 'character/detail/character-detail.jade',
                         controller: 'CharacterDetailController as vm'
                     }
                 }
