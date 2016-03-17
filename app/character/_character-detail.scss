@@ -36,12 +36,16 @@
         float: right;
         padding-left: $content-padding/2;
     }
-    &__swiper {
+    &__content {
         width: 75vw;
         height: 75vw * 4/3;
-        //width: 92vw;
-        //height: 46vw * 4/3;
         margin: auto;
+        background-color: rgba($dark, .5);
+        &--centered{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
     &__cover{
         background-color: $media-background-color;

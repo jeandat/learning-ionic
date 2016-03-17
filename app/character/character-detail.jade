@@ -12,5 +12,7 @@ ion-view.character.character__background(view-title='{{::vm.character.name}}' im
                 span Comics
                 span.icon.ion-chevron-right.character-comic-list__count(ng-if='vm.hasMoreComics')
                 span.character-comic-list__count(ng-if='vm.hasMoreComics') See more
-            ion-slides.character-comic-list__swiper(options='vm.swiper.options' slider='vm.swiper.instance')
+            div.character-comic-list__content.character-comic-list__content--centered(ng-if='vm.isLoadingComics')
+                ion-spinner.spinner-assertive
+            ion-slides.character-comic-list__content(options='vm.swiper.options' slider='vm.swiper.instance' ng-if='!vm.isLoadingComics')
                 ion-slide-page.character-comic-list__cover(ng-repeat='comic in vm.comics track by comic.id' img-cache ic-bg='{{::comic.thumbnailUrl}}')

@@ -12,17 +12,10 @@
         vm.character = $stateParams.character;
         vm.comics = [];
         vm.hasMoreComics = true;
+        vm.isLoadingComics = false;
         vm.swiper = {
             options:{
-                //pagination: '',
-                //spaceBetween: 10,
-                //slidesPerView: 2,
-                //resistance: false
-                //centeredSlides: true,
-                effect: 'fade',
-                fade:{
-                    crossFade: true
-                }
+                effect: 'fade'
             },
             instance: null
         };
@@ -44,10 +37,12 @@
         }
 
         function loadComics(){
+            vm.isLoadingComics = true;
             return comicService.findByCharacterId(vm.character.id, {limit:10}).then(function(response){
                 vm.comics = response;
                 var meta = response.meta;
                 vm.hasMoreComics = meta.count < meta.total;
+                vm.isLoadingComics = false;
                 $log.debug('Comics for `%s`: %o', vm.character.name, vm.comics);
             });
         }
