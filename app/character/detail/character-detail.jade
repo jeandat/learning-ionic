@@ -1,6 +1,6 @@
 ion-view.character.character__background(view-title='{{::vm.character.name}}' img-cache ic-bg='{{::vm.character.thumbnailUrl}}')
     ion-nav-buttons(side="right")
-        button.button.button-light.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
+        button.button.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
     ion-content.character__content
         .character__meta
             span.character__text {{::vm.character.name}}
@@ -8,11 +8,12 @@ ion-view.character.character__background(view-title='{{::vm.character.name}}' im
             br
             span.character__text.character__description {{::vm.character.description}}
         .character-comic-list
-            .character-comic-list__title.character__text(ui-sref='app.characterComics({comics:vm.comics})' ng-click='vm.showComics($event)')
+            .character-comic-list__title.character__text(ui-sref='app.characterDetailComicList({comics:vm.comics})' ng-click='vm.showComics($event)')
                 span Comics
                 span.icon.ion-chevron-right.character-comic-list__count(ng-if='vm.hasMoreComics')
                 span.character-comic-list__count(ng-if='vm.hasMoreComics') See more
             div.character-comic-list__content.character-comic-list__content--centered(ng-if='vm.isLoadingComics')
                 ion-spinner.spinner-assertive
             ion-slides.character-comic-list__content(options='vm.swiper.options' slider='vm.swiper.instance' ng-if='!vm.isLoadingComics')
-                ion-slide-page.character-comic-list__cover(ng-repeat='comic in vm.comics track by comic.id' img-cache ic-bg='{{::comic.thumbnailUrl}}')
+                ion-slide-page.character-comic-list__cover(ng-repeat='comic in vm.comics track by comic.id'
+                    img-cache ic-bg='{{::comic.thumbnailUrl}}' ui-sref='app.characterDetailComicDetail({comic:comic})')

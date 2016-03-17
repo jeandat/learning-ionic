@@ -4,7 +4,7 @@ in ionic's _variables.scss file.
 */
 
 // The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "fonts" !default;
+$ionicons-font-path: "fonts";
 $base-background-color: #DDD;
 
 // Override default font family
@@ -25,12 +25,6 @@ Include ionic sass files.
 /*
 CSS overrides.
 */
-
-// Spinner color.
-.spinner {
-    stroke: $positive;
-    fill: $positive;
-}
 
 // Useless background.
 .loading-container .loading {

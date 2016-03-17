@@ -165,7 +165,7 @@
         function goHome() {
             $log.info('APP READY');
             $rootScope.ready = true;
-            return $state.go('app.characters');
+            return $state.go('app.characterList');
         }
 
         function hideSplash() {

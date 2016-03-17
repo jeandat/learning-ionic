@@ -42,7 +42,7 @@
 
             // Each app has its own nav history stack:
 
-            .state('app.characters', {
+            .state('app.characterList', {
                 url: '/characters',
                 views: {
                     'app-characters': {
@@ -63,7 +63,7 @@
                     }
                 }
             })
-            .state('app.characterComics', {
+            .state('app.characterDetailComicList', {
                 url: '/characters',
                 params: {
                     comics: []
@@ -72,6 +72,18 @@
                     'app-characters': {
                         templateUrl: 'character/comics/character-comics.jade',
                         controller: 'CharacterComicsController as vm'
+                    }
+                }
+            })
+            .state('app.characterDetailComicDetail', {
+                url: '/characters',
+                params: {
+                    comic: {}
+                },
+                views: {
+                    'app-characters': {
+                        templateUrl: 'comic/detail/comic-detail.jade',
+                        controller: 'ComicDetailController as vm'
                     }
                 }
             })
