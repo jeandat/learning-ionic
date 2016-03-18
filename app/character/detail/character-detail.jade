@@ -19,3 +19,4 @@ ion-view.character.character__background(view-title='{{::vm.character.name}}' im
                 ion-slide-page(ng-repeat='comic in vm.comics track by comic.id' ui-sref='app.characterDetailComicDetail({comic:comic})')
                     div.character-comic-list__cover(ng-if='::comic.thumbnailUrl' img-cache ic-bg='{{::comic.thumbnailUrl}}')
                     div.character-comic-list__cover.character-comic-list__cover--not-found(ng-if='::!comic.thumbnailUrl')
+                        div {{::comic.title}}
