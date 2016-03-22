@@ -15,6 +15,6 @@ ion-view.comics(view-title='Comics')
                     i.icon.ion-android-favorite-outline(ng-click='vm.keep()')
                     | {{::comic.title}}
         .comics__footer
-            ion-spinner.spinner-assertive(ng-if='vm.searching')
+            ion-spinner(ng-if='vm.searching')
             button.button.button-block.button-assertive.comics__show-more(ng-click='vm.loadMore()' ng-show='vm.hasMoreData')
                 | Show more

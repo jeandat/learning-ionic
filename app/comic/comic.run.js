@@ -10,14 +10,20 @@
     function addNewMethodsToComics(Restangular) {
         Restangular.extendModel('comics', function (model) {
             model.thumbnailUrl = getThumbnailUrl();
+            model.thumbnailUrlInPortraitUncanny = getThumbnailUrlInPortraitUncanny();
             return model;
 
             /////////////
 
             function getThumbnailUrl() {
                 var tnl = model.thumbnail;
-                if(_.isEmpty(tnl) || _.endsWith(tnl.path, 'image_not_available')) return '';
+                if (_.isEmpty(tnl) || _.endsWith(tnl.path, 'image_not_available')) return '';
                 return tnl.path + '.' + tnl.extension;
+            }
+            function getThumbnailUrlInPortraitUncanny(){
+                var tnl = model.thumbnail;
+                if (_.isEmpty(tnl) || _.endsWith(tnl.path, 'image_not_available')) return '';
+                return tnl.path + '/portrait_uncanny.' + tnl.extension;
             }
         });
     }

@@ -15,6 +15,6 @@ ion-view.characters(view-title='Characters')
                     i.icon.ion-android-favorite-outline(ng-click='vm.keep()')
                     | {{::character.name}}
         .characters__footer
-            ion-spinner.spinner-assertive(ng-if='vm.searching')
+            ion-spinner(ng-if='vm.searching')
             button.button.button-block.button-assertive.characters__show-more(ng-click='vm.loadMore()' ng-show='vm.hasMoreData')
                 | Show more

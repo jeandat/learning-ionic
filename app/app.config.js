@@ -33,14 +33,12 @@
 
         $stateProvider
 
-        // setup an abstract state for the apps directive
+            // setup an abstract state for the apps directive
             .state('app', {
                 url: '/app',
                 abstract: true,
                 templateUrl: 'common/layout/layout.jade'
             })
-
-            // Each app has its own nav history stack:
 
             .state('app.characterList', {
                 url: '/characters',
@@ -66,7 +64,8 @@
             .state('app.characterDetailComicList', {
                 url: '/characters',
                 params: {
-                    comics: []
+                    comics: [],
+                    character: {}
                 },
                 views: {
                     'app-characters': {

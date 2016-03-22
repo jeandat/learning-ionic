@@ -1,0 +1,22 @@
+.character-comics{
+    &__cover-container{
+        padding: $content-padding/2;
+    }
+    &__cover-wrapper{
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        // Clever technique to reserve space although we don't know the image size yet.
+        // We can do that because we know the image aspect ratio and padding values
+        // expressed in percentage are relative to the width.
+        // http://andmag.se/2012/10/responsive-images-how-to-prevent-reflow/
+        padding-bottom: 450/300 * 100%;
+        background-color: darken($base-background-color, 10%);
+    }
+    &__cover{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width:100%;
+    }
+}
