@@ -5,7 +5,7 @@
         .module('app')
         .controller('CharacterDetailController', CharacterDetailController);
 
-    function CharacterDetailController($log, $stateParams, comicService) {
+    function CharacterDetailController($log, $stateParams, comicService, throwErr) {
 
         var vm = this;
         vm.title = 'CharacterDetailController';
@@ -13,6 +13,7 @@
         vm.comics = [];
         vm.hasMoreComics = true;
         vm.isLoadingComics = false;
+        vm.noComics = false;
         vm.swiper = {
             options: {
                 effect: 'fade'
@@ -39,13 +40,25 @@
 
         function loadComics() {
             vm.isLoadingComics = true;
-            return comicService.findByCharacterId(vm.character.id, {limit: 10}).then(function (response) {
+            return comicService
+                .findByCharacterId(vm.character.id, {limit: 10})
+                .then(updateLayout)
+                .catch(processErr);
+
+            ////////////
+
+            function updateLayout(response){
                 vm.comics = response;
+                if(response.length === 0) vm.noComics = true;
                 var meta = response.meta;
                 vm.hasMoreComics = meta.count < meta.total;
                 vm.isLoadingComics = false;
                 $log.debug('Comics for `%s`: %o', vm.character.name, vm.comics);
-            });
+            }
+            function processErr(err){
+                vm.noComics = true;
+                throwErr(err);
+            }
         }
 
         function showComics($event) {

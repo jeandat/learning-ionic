@@ -46,6 +46,9 @@ $coverWidth: 70vw;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: $light;
+            height: 2rem;
+            font-weight: bold;
         }
     }
     &__cover{
@@ -58,6 +61,7 @@ $coverWidth: 70vw;
             align-items: center;
             justify-content: center;
             font-weight: bold;
+            text-align: center;
         }
     }
 }
