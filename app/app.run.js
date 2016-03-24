@@ -10,6 +10,7 @@
         .run(setRestConfig)
         .run(handleAdjustPanKeyboardMode)
         .run(applySettings)
+        .run(setTracker)
         .run(boot);
 
     //////////////////////
@@ -140,6 +141,31 @@
 
     function applySettings(settingService){
         settingService.apply();
+    }
+
+    function setTracker($log, trackerId, $rootScope, $cordovaGoogleAnalytics) {
+
+        $cordovaGoogleAnalytics.startTrackerWithId(trackerId);
+        '@@env' === 'dev' && $cordovaGoogleAnalytics.debugMode();
+
+        // Now we can start tracking pages
+        $rootScope.$on('$stateChangeSuccess', trackView);
+
+        ////////////////
+
+        function trackView(event, toState) {
+            var url = toState.name;
+            $cordovaGoogleAnalytics.trackView(url).then(beaconSent).catch(beaconCrashed);
+
+            ////////////////
+
+            function beaconSent() {
+                $log.debug('GA beacon sent for url `' + url + '`');
+            }
+            function beaconCrashed(err) {
+                $log.error('GA beacon crashed for url `' + url + '` with error:', err);
+            }
+        }
     }
 
     function boot($state, $cordovaSplashscreen, $timeout, ImgCache, $rootScope, $log, $ionicPopup) {

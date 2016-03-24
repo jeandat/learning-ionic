@@ -21,5 +21,5 @@ module.exports = extend(true, {}, pkg, {
     ngCordovaModuleName: mock ? 'ngCordovaMocks' : 'ngCordova',
     debug: '<script>Error && Error.stackTraceLimit && (Error.stackTraceLimit=50);</script>',
     csp: "default-src 'self' 'unsafe-inline' http://*:35729 ws://*:35729 cdvfile: filesystem: gap: https://ssl.gstatic.com;",
-    gaUserId: 'TODO'
+    trackerId: 'UA-75478648-1'
 });

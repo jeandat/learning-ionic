@@ -7,7 +7,7 @@
         .constant('_', _)
         .constant('version', '@@version')
         .constant('stringify', stringify)
-		.constant('gaUserId', '@@gaUserId')
+		.constant('trackerId', '@@trackerId')
 		.constant('env', '@@env')
 		.constant('apiEndpoint', '@@apiEndpoint')
 		.constant('apiKey', '@@apiKey')
