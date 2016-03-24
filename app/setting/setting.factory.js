@@ -5,10 +5,11 @@
         .module('app')
         .factory('settingService', factory);
 
-    function factory($log, localStorageService, defaultCacheName, CacheFactory, ImgCache, $q, $ionicConfig) {
+    function factory($log, localStorageService, defaultCacheName, CacheFactory, ImgCache, $q, $ionicConfig, $window, trackerId) {
 
         var defaults = {
-            enableAnimations: true
+            enableAnimations: true,
+            enableTracker: true
         };
 
         var service = {
@@ -26,6 +27,7 @@
         function applyDiffAndPersist(newSettings, oldSettings){
             // enableAnimations property
             newSettings.enableAnimations !== oldSettings.enableAnimations && processEnableAnimations();
+            newSettings.enableTracker !== oldSettings.enableTracker && processEnableTracker();
             persist();
         }
 
@@ -41,6 +43,18 @@
 
         function processEnableAnimations(){
             service.settings.enableAnimations ? enableAnimations() : disableAnimations();
+        }
+
+        function processEnableTracker(){
+            service.settings.enableTracker ? enableTracker() : disableTracker();
+        }
+
+        function enableTracker(){
+            $window['ga-disable-' + trackerId] = false;
+        }
+
+        function disableTracker(){
+            $window['ga-disable-' + trackerId] = true;
         }
 
         function clearCache() {
