@@ -7,9 +7,13 @@ module.exports = function (grunt) {
     // I'm doing that in order to be able to give command line arguments from npm to that parallel task.
     grunt.registerTask('run', function (platform) {
         if (!platform) {
-            grunt.fail.fatal('Syntax: grunt shell:run:<platform>');
+            grunt.fail.fatal('Syntax: grunt run:<platform> [--proxy]');
             return;
         }
+
+        // Boolean value that indicate if we are using the built-in `--livereload` option from `ionic run`.
+        var useLivereload = grunt.option('proxy');
+
         var config = {
             parallel: {
                 run: {
@@ -21,7 +25,7 @@ module.exports = function (grunt) {
                         args: ['chokidar']
                     }, {
                         cmd: 'ionic',
-                        args: ['run', platform, '-c', '-s', '--livereload']
+                        args: ['run', platform, '-c', '-s', useLivereload ? '--livereload' : '']
                     }]
                 }
             }
@@ -36,7 +40,10 @@ module.exports = function (grunt) {
     // I'm doing that in order to be able to give command line arguments from npm to that parallel task.
     grunt.registerTask('serve', function () {
 
-        var lab = grunt.option('lab');
+        // Boolean value that indicate if we are using the built-in `--livereload` option from `ionic serve`. 
+        var useLivereload = grunt.option('proxy');
+        // Boolean value that indicate if we are using the built-in `--lab` option from `ionic serve`.
+        var useLab = grunt.option('lab');
 
         // wrapper for `ionic serve` command which launch a local web server serving `www` folder.
         var config = {
@@ -50,7 +57,7 @@ module.exports = function (grunt) {
                         args: ['chokidar']
                     }, {
                         cmd: 'ionic',
-                        args: ['serve', '-a', '-c', '-s', '--nogulp', '--livereload', lab ? '--lab' : '']
+                        args: ['serve', '-a', '-c', '-s', '--nogulp', useLivereload ? '--livereload' : '', useLab ? '--lab' : '']
                     }]
                 }
             }
