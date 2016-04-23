@@ -24,6 +24,9 @@
         // $compileProvider.debugInfoEnabled(env === 'dev');
         // ```
         // Don't forget to inject the env constant.
+
+        // Empty the hash before the router is started in order to guaranty we will execute the boot process before any controller.
+        window.location.hash = '';
     }
 
     function routeConfig($stateProvider) {
@@ -146,7 +149,6 @@
         $ionicConfigProvider.views.maxCache(3);
     }
 
-    // ! NOT USED FOR THE MOMENT !
     function httpInterceptors($httpProvider) {
         $httpProvider.interceptors.push('httpInterceptor');
     }
