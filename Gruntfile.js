@@ -32,6 +32,8 @@ module.exports = function (grunt) {
         patternsFileName = taskName === 'dist' ? 'dist' : 'dev';
     }
     var patterns = require('./conf/' + patternsFileName + '.js');
+    // Pseudo private property for grunt tasks.
+    patterns._name = patternsFileName;
     grunt.verbose.writeln('Loaded patterns from conf/' + patternsFileName + '.js: ' + stringify(patterns));
 
     var options = {
