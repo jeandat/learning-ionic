@@ -61,7 +61,6 @@
     "cordova-plugin-file-transfer",
     "cordova-plugin-file",
     "cordova-plugin-inappbrowser",
-    "cordova-plugin-wkwebview-engine",
     {
       "locator": "https://github.com/danwilson/google-analytics-plugin.git",
       "id": "cordova-plugin-google-analytics"
