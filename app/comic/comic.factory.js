@@ -20,13 +20,12 @@
 
         // Search comics which name starts with `name`.
         function findByName(prefix, options) {
-            if (!prefix) throw new Err(1004, {missing: 'prefix'});
             var criteria = _.defaults(options, {
                 format: 'comic',
                 formatType: 'comic',
                 noVariants: true
             });
-            criteria.titleStartsWith = prefix;
+            prefix && (criteria.titleStartsWith = prefix);
             return comics.getList(criteria);
         }
 

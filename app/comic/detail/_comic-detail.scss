@@ -1,23 +1,33 @@
-.comic{
-    &__content{
+.comic {
+    &__content {
         padding: $content-padding;
     }
-    &__meta{
+    &__meta {
         padding: $content-padding;
     }
-    &__text{
+    &__text {
         background-color: black;
         color: $light;
-        font-size: 1.1rem;
-        line-height: 1.8rem;
+        font-size: 1rem;
+        line-height: 1.4rem;
         padding: $content-padding/2 0;
         box-shadow: $content-padding 0 0 0 black, -$content-padding 0 0 0 black;
     }
-    &__title{
-        font-size: 1.3rem;
-    }
-    &__background{
+    &__background {
         background-size: cover;
         background-position: top center;
+    }
+    &__price{
+        font-weight: bold;
+        position: absolute;
+        top: -36px;
+        right: 0;
+        color: black;
+        background: rgba($light,.8);
+        padding: 26px 5px 5px 5px;
+        border-radius: 50%;
+        height: 50px;
+        width: 80px;
+        text-align: center;
     }
 }
