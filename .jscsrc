@@ -8,7 +8,7 @@
     "requireDollarBeforejQueryAssignment": true,
     "requireDotNotation": true,
     "requireSemicolons": true,
-    "safeContextKeyword": ["self", "vm"],
+    "safeContextKeyword": ["self", "vm", "context"],
     "validateIndentation": 4,
     "validateLineBreaks": "LF",
     "validateQuoteMarks": { "mark": "'", "escape": true }

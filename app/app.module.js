@@ -7,6 +7,7 @@
         'LocalStorageModule',
         'angular-cache',
         'restangular',
-        'ImgCache'
+        'ImgCache',
+        'firebase'
     ]);
 })();

@@ -9,12 +9,14 @@
 
         var codes = {
             // Messages for common errors: 1xxx
-            1000: 'Network unavailable right now',
+            1000: 'Network unavailable',
             1001: 'Your request timed out. Please try again.',
             1002: 'Something went wrong. Please try again.',
             1003: 'Damn, the limit of 3000 requests per day has been reached. Please try again tomorrow.',
-            1004: 'Missing argument: {{missing}}'
-
+            1004: 'Missing argument: {{missing}}',
+            
+            // Messages for faves
+            2000: 'Firebase unavailable'
         };
 
         // `code` {Number}: mandatory. By convention, all errors should be defined in `codes` above to have a

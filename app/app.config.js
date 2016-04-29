@@ -36,12 +36,14 @@
 
         $stateProvider
 
-            // setup an abstract state for the apps directive
+        // setup an abstract state for the apps directive
             .state('app', {
                 url: '/app',
                 abstract: true,
                 templateUrl: 'common/layout/layout.jade'
             })
+
+            /////////////////////////////////////////////////////////////////
 
             .state('app.characterList', {
                 url: '/characters',
@@ -90,6 +92,8 @@
                 }
             })
 
+            /////////////////////////////////////////////////////////////////
+
             .state('app.comics', {
                 url: '/comics',
                 views: {
@@ -112,6 +116,8 @@
                 }
             })
 
+            /////////////////////////////////////////////////////////////////
+
             .state('app.favourites', {
                 url: '/favourites',
                 views: {
@@ -121,6 +127,8 @@
                     }
                 }
             })
+
+            /////////////////////////////////////////////////////////////////
 
             .state('app.settings', {
                 url: '/settings',

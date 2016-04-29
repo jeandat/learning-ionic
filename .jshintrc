@@ -39,6 +39,7 @@
         "defaultTranslations": true,
         "md5": false,
         "readJSON": false,
-        "fixturesPath": true
+        "fixturesPath": true,
+        "Firebase": false
     }
 }

@@ -5,20 +5,23 @@
         .module('app')
         .controller('CharacterListController', CharacterListController);
 
-    function CharacterListController($log, characterService, $cordovaToast, throwErr,
-                                  defaultOffset, $cordovaKeyboard) {
+    function CharacterListController($log, characterService, $cordovaToast, throwErr, defaultOffset, $cordovaKeyboard,
+                                     favouriteService, $scope, $rootScope) {
 
         var vm = this;
         vm.title = 'CharacterListController';
         // Let's start with something cool ;)
-        vm.filter = 'Spider';
+        vm.filter = 'Iron m';
         vm.characters = [];
         vm.searching = false;
         vm.offset = 0;
         vm.hasMoreData = false;
-        vm.keep = keep;
+        vm.toggleFave = toggleFave;
         vm.search = search;
         vm.loadMore = loadMore;
+
+        var listeners = [];
+        var faves = favouriteService.faves;
 
         activate();
 
@@ -26,11 +29,10 @@
 
         function activate() {
             $log.debug(vm.title + ' instantiated');
+            listeners.push($rootScope.$on('fave:added', favouriteDidAdded));
+            listeners.push($rootScope.$on('fave:removed', favouriteDidRemoved));
+            $scope.$on('$ionicView.unloaded', stopMonitoringFavourites);
             search();
-        }
-
-        function keep() {
-            $cordovaToast.showShortBottom('Not implemented yet…');
         }
 
         function search() {
@@ -51,14 +53,13 @@
             function notify() {
                 $cordovaToast.showShortBottom(vm.characters.meta.total + ' results');
             }
-
         }
 
-        function showSpinner(){
+        function showSpinner() {
             vm.searching = true;
         }
 
-        function hideSpinner(){
+        function hideSpinner() {
             vm.searching = false;
         }
 
@@ -81,6 +82,42 @@
             meta = vm.characters.meta = results.meta;
             // Update boolean to know instantly if there is more
             vm.hasMoreData = meta && (meta.count + meta.offset) < meta.total;
+        }
+
+        // Event handler called when clicking the fave button (heart).
+        // It will add or remove a favourite in our local db.
+        function toggleFave(character) {
+            if (character.favourite) {
+                faves.$remove(character.favourite);
+            }
+            else {
+                // var itemToAdd = _.pick(character, 'id', 'name');
+                character.type = 'character';
+                // itemToAdd.type = 'character';
+                faves.$add(character.plain());
+                // faves.$add(itemToAdd);
+            }
+        }
+
+        function favouriteDidAdded(event, fave) {
+            // Nothing to do if there is zero characters.
+            if (!vm.characters.length) return;
+            var model = _.find(vm.characters, {id: fave.id});
+            if (model) model.favourite = fave;
+            $log.debug('Fave added:', fave);
+        }
+
+        function favouriteDidRemoved(event, fave) {
+            var model = _.find(vm.characters, {id: fave.id});
+            if (model) model.favourite = null;
+            $log.debug('Fave removed:', fave);
+        }
+
+        // Remove existing event handlers.
+        function stopMonitoringFavourites() {
+            listeners.forEach(function (fn) {
+                fn();
+            });
         }
 
     }

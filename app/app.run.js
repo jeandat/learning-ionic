@@ -139,7 +139,7 @@
         }
     }
 
-    function applySettings(settingService){
+    function applySettings(settingService) {
         settingService.apply();
     }
 
@@ -162,14 +162,20 @@
             function beaconSent() {
                 $log.debug('GA beacon sent for url `' + url + '`');
             }
+
             function beaconCrashed(err) {
                 $log.error('GA beacon crashed for url `' + url + '` with error:', err);
             }
         }
     }
 
-    function boot($state, $cordovaSplashscreen, $timeout, ImgCache, $rootScope, $log, $ionicPopup) {
-        initImgCache().catch(explain).then(goHome).finally(hideSplash);
+    function boot($state, $cordovaSplashscreen, $timeout, ImgCache, $rootScope, $log, $ionicPopup, favouriteService, Err, showErr) {
+        initImgCache()
+            .catch(explain)
+            .then(favouriteService.init)
+            .catch(noFave)
+            .then(goHome)
+            .finally(hideSplash);
 
         /////////////
 
@@ -178,7 +184,7 @@
             return ImgCache.$promise;
         }
 
-        function explain(){
+        function explain() {
             var options = {
                 title: 'Invalid state',
                 template: 'Please allow access to the filesystem if you want to use this app.',
@@ -197,6 +203,12 @@
         function hideSplash() {
             return $timeout($cordovaSplashscreen.hide, 1000);
         }
+
+        function noFave(exception){
+            var err = new Err(2000, {source: exception, ui:true});
+            showErr(err);
+        }
+
     }
 
 

@@ -7,30 +7,13 @@
         .module('app')
         .decorator('$exceptionHandler', $exceptionHandlerDecorator);
 
-    $exceptionHandlerDecorator.$inject = ['$delegate', '$log', '$injector'];
+    $exceptionHandlerDecorator.$inject = ['$delegate', '$log', 'showErr'];
 
-    function $exceptionHandlerDecorator($delegate, $log, $injector) {
+    function $exceptionHandlerDecorator($delegate, $log, showErr) {
 
         function exceptionHandler(exception, cause) {
-
             $delegate(exception, cause);
-
-            var Err = $injector.get('Err');
-            var $cordovaToast = $injector.get('$cordovaToast');
-
-            if(exception instanceof Err){
-                if(exception.ui){
-                    return showToast(exception.message);
-                }
-            }
-
-            return showToast(new Err(1002).message);
-
-            ///////////////
-
-            function showToast(message){
-                $cordovaToast.showLongBottom(message);
-            }
+            showErr(exception);            
         }
 
         // Does that thing works ?

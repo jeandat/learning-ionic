@@ -15,7 +15,8 @@
 		.constant('privateApiKey', '@@privateApiKey')
         // Marvel default offset when requesting a list of results (number of items)
         .constant('defaultOffset', 20)
-        .constant('defaultCacheName', 'defaultCache');
+        .constant('defaultCacheName', 'defaultCache')
+        .constant('firebaseUrl', 'https://learning-ionic.firebaseIO.com');
 
     // Same as `JSON.stringify` but with indentation.
     function stringify(value) {
