@@ -8,7 +8,7 @@
     function favouriteService(Firebase, $firebaseArray, firebaseUrl, $rootScope, $log) {
 
         var query = new Firebase(firebaseUrl + '/favourites');
-        var faves = $firebaseArray(query.orderByChild('id'));
+        var faves = $firebaseArray(query);
 
         var service = {
             init: init,

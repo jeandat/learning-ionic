@@ -21,8 +21,8 @@
             $log.debug(vm.title + ' instantiated');
         }
 
-        function deleteFave(){
-
+        function deleteFave(fave){
+            vm.faves.$remove(fave);
         }
 
         function navigate(fave){
