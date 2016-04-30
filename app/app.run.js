@@ -4,6 +4,7 @@
     angular
         .module('app')
         .run(configureCordovaPlugins)
+        .run(setRouteConfig)
         .run(setCustomLogs)
         .run(addGlobals)
         .run(setHttpDefaultCache)
@@ -26,6 +27,50 @@
         // Style status bar
         var style = _.get($cordovaStatusbar, 'style');
         style && style(1);
+    }
+
+    // It is not possible with the current version of ui-router to cancel a navigation in the onEnter function of a state definition.
+    // Thus, if you open a modal in that function, you will always navigate somewhere. We don't want that.
+    // We want to prevent navigation and open a modal instead. So why create a state in the first place ?
+    // Because I want to centralize navigation entries and their params. Some times we will navigate normally and some times we will
+    // open a modal instead. Next version of ui-router might be smarter.
+    function setRouteConfig($ionicModal, $rootScope, $log, $stateParams) {
+
+        $rootScope.$on('$stateChangeStart', route);
+
+        ///////////
+
+        function route(event, toState, toParams) {
+
+            var stateName = toState.name;
+
+            if (_.includes(stateName, 'Modal')) {
+                // Prevent state navigation: taking control from here
+                event.preventDefault();
+                // Copy params given to state in $stateParams in order to retrieve them in modals.
+                // As we are cancelling navigation, the ui router will not set $stateParams. That's too bad because I like that pattern.
+                _.assign($stateParams, toParams);
+            }
+
+            var modalOptions = {
+                animation: 'slide-in-right'
+            };
+
+            switch (stateName) {
+                case 'app.characterDetailInModal':
+                    return $ionicModal.fromTemplateUrl('character/detail/character-detail.jade', modalOptions).then(show);
+                case 'app.characterComicListInModal':
+                    return $ionicModal.fromTemplateUrl('character/comic-list/character-comic-list.jade', modalOptions).then(show);
+                case 'app.comicDetailInModal':
+                    return $ionicModal.fromTemplateUrl('comic/detail/comic-detail.jade', modalOptions).then(show);
+            }
+
+            /////////
+
+            function show(modal) {
+                modal.show();
+            }
+        }
     }
 
     function setCustomLogs($rootScope, $log) {
@@ -204,8 +249,8 @@
             return $timeout($cordovaSplashscreen.hide, 1000);
         }
 
-        function noFave(exception){
-            var err = new Err(2000, {source: exception, ui:true});
+        function noFave(exception) {
+            var err = new Err(2000, {source: exception, ui: true});
             showErr(err);
         }
 

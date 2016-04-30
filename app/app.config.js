@@ -54,41 +54,18 @@
                     }
                 }
             })
-            .state('app.characterDetail', {
+            // Open a modal (see #routeConfig app.run.js)
+            .state('app.characterDetailInModal', {
                 url: '/characters',
                 params: {
                     character: {}
-                },
-                views: {
-                    'app-characters': {
-                        templateUrl: 'character/detail/character-detail.jade',
-                        controller: 'CharacterDetailController as vm'
-                    }
                 }
             })
-            .state('app.characterDetailComicList', {
+            .state('app.characterComicListInModal', {
                 url: '/characters',
                 params: {
                     comics: [],
                     character: {}
-                },
-                views: {
-                    'app-characters': {
-                        templateUrl: 'character/comics/character-comics.jade',
-                        controller: 'CharacterComicsController as vm'
-                    }
-                }
-            })
-            .state('app.characterDetailComicDetail', {
-                url: '/characters',
-                params: {
-                    comic: {}
-                },
-                views: {
-                    'app-characters': {
-                        templateUrl: 'comic/detail/comic-detail.jade',
-                        controller: 'ComicDetailController as vm'
-                    }
                 }
             })
 
@@ -103,16 +80,10 @@
                     }
                 }
             })
-            .state('app.comicDetail', {
+            .state('app.comicDetailInModal', {
                 url: '/comics',
                 params: {
                     comic: {}
-                },
-                views: {
-                    'app-comics': {
-                        templateUrl: 'comic/detail/comic-detail.jade',
-                        controller: 'ComicDetailController as vm'
-                    }
                 }
             })
 

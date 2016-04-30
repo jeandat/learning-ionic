@@ -1,0 +1,16 @@
+ion-modal-view.character-comics(ng-controller='CharacterComicListController as vm')
+    ion-header-bar.bar-assertive
+        back-button(ng-click='vm.remove()')
+        h1.title Comics
+    ion-content
+        .row.row-wrap
+            .col-33.character-comics__cover-container(ng-repeat='comic in ::vm.comics track by $index')
+                div.character-comics__cover-wrapper
+                    img.character-comics__cover(ng-if='::comic.thumbnailUrlInPortraitUncanny' width='100%' height='auto'
+                    img-cache ic-src='{{::comic.thumbnailUrlInPortraitUncanny}}'
+                    ui-sref='app.comicDetailInModal({comic:comic})')
+                    img.character-comics__cover(ng-if='::!comic.thumbnailUrlInPortraitUncanny' width='100%' height='auto'
+                    ng-src='img/image-not-available_portrait-uncanny.png'
+                    ui-sref='app.comicDetailInModal({comic:comic})')
+
+        ion-infinite-scroll(on-infinite='vm.showMore()' distance='20%' immediate-check='false' ng-if='vm.hasMore')

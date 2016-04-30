@@ -1,4 +1,4 @@
-/*
+/* ----------------------------------------------------------------------------------------------------------------------------------------
 To customize the look and feel of Ionic, you can override the variables defined
 in ionic's _variables.scss file.
 */
@@ -18,12 +18,16 @@ $tabs-striped-border-width: 0px;
 // Alert popup override
 $popup-width: 300px;
 
-/*
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------
 Include ionic sass files.
 */
 @import "../vendor/ionic/scss/ionic";
 
-/*
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------
 CSS overrides.
 */
 
@@ -56,4 +60,21 @@ CSS overrides.
     .popup-body {
         font-size: 1rem;
     }
+}
+
+// Slide left from right, used for modals
+.slide-in-right {
+    transform: translate3d(100%, 0, 0);
+}
+.slide-in-right.ng-enter,
+.slide-in-right > .ng-enter {
+    transition: all cubic-bezier(.1, .7, .1, 1) 400ms;
+}
+.slide-in-right.ng-enter-active,
+.slide-in-right > .ng-enter-active {
+    transform: translate3d(0, 0, 0);
+}
+.slide-in-right.ng-leave,
+.slide-in-right > .ng-leave {
+    transition: all ease-in-out 250ms;
 }

@@ -27,9 +27,9 @@
 
         function navigate(fave){
             if(fave.type === 'character'){
-                $state.go('app.favouritesCharacterDetail', {character:fave});
+                $state.go('app.characterDetailInModal', {character:fave});
             } else {
-                $state.go('app.favouriteComicDetail', {comic:fave});
+                $state.go('app.comicDetailInModal', {comic:fave});
             }
         }
     }

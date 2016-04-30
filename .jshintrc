@@ -40,6 +40,7 @@
         "md5": false,
         "readJSON": false,
         "fixturesPath": true,
-        "Firebase": false
+        "Firebase": false,
+        "ImgCache": false
     }
 }

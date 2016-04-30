@@ -8,7 +8,7 @@ ion-view.characters(view-title='Characters')
                     spellcheck="false")
         .list
             .card.characters-card(ng-repeat="character in vm.characters track by character.id")
-                .item.item-image(ui-sref='app.characterDetail({character:character})')
+                .item.item-image(ui-sref='app.characterDetailInModal({character:character})')
                     div.characters-card__cover(ng-if="::character.thumbnailUrl" img-cache ic-bg="{{::character.thumbnailUrl}}")
                     div.characters-card__cover.characters-card__cover--not-found(ng-if="::!character.thumbnailUrl")
                 .item.item-icon-right.assertive.characters-card__footer

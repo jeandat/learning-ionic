@@ -1,14 +1,16 @@
-ion-view.character.character__background(view-title='{{::vm.character.name}}' img-cache ic-bg='{{::vm.character.thumbnailUrl}}')
-    ion-nav-buttons(side="right")
+ion-modal-view.character(ng-controller='CharacterDetailController as vm')
+    ion-header-bar.bar-assertive
+        back-button(ng-click='vm.remove()')
+        h1.title {{::vm.character.name}}
         button.button.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
-    ion-content.character__content
+    ion-content.character__content.character__background(jd-ic-src='{{::vm.character.thumbnailUrl}}')
         .character__meta
             span.character__text {{::vm.character.name}}
             br
             br
-            span.character__text.character__description(ng-bind-html='::vm.character.description')
+            span.character__text.character__description(ng-bind-html='::vm.character.description | html2text')
         .character-comic-list
-            .character-comic-list__title.character__text(ui-sref='app.characterDetailComicList({comics:vm.comics, character: vm.character})'
+            .character-comic-list__title.character__text(ui-sref='app.characterComicListInModal({comics:vm.comics, character: vm.character})'
             ng-click='vm.showComics($event)')
                 span Comics
                 span.icon.ion-chevron-right.character-comic-list__count(ng-if='vm.hasMoreComics && !vm.isLoadingComics')
@@ -17,7 +19,7 @@ ion-view.character.character__background(view-title='{{::vm.character.name}}' im
                 ion-spinner.spinner-light
             div.character-comic-list__content.character-comic-list__content--centered(ng-if='vm.noComics') :(
             ion-slides.character-comic-list__content(options='vm.swiper.options' slider='vm.swiper.instance' ng-if='!vm.isLoadingComics && !vm.noComics')
-                ion-slide-page(ng-repeat='comic in vm.comics track by comic.id' ui-sref='app.characterDetailComicDetail({comic:comic})')
+                ion-slide-page(ng-repeat='comic in vm.comics track by comic.id' ui-sref='app.comicDetailInModal({comic:comic})')
                     div.character-comic-list__cover(ng-if='::comic.thumbnailUrl' img-cache ic-bg='{{::comic.thumbnailUrl}}')
                     div.character-comic-list__cover.character-comic-list__cover--not-found(ng-if='::!comic.thumbnailUrl')
                         div {{::comic.title}}

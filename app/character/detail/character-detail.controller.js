@@ -5,7 +5,7 @@
         .module('app')
         .controller('CharacterDetailController', CharacterDetailController);
 
-    function CharacterDetailController($log, $stateParams, comicService, throwErr) {
+    function CharacterDetailController($log, $stateParams, comicService, throwErr, $scope) {
 
         var vm = this;
         vm.title = 'CharacterDetailController';
@@ -20,9 +20,9 @@
             },
             instance: null
         };
-        vm.modal = null;
         vm.openDetailPage = openDetailPage;
         vm.showComics = showComics;
+        vm.remove = remove;
 
         activate();
 
@@ -66,6 +66,16 @@
                 $event.preventDefault();
                 return;
             }
+        }
+
+
+        function remove(){
+            // Little subtlety.
+            // For simplicity sake, the modal load a template which define its own controller in the template (this one).
+            // As ionicModal create a scope automatically if not provided, it is automatically the parent of the one created for this controller.
+            // You should know too that ionicModal will register the created instance as a property of the scope.
+            // Thus our parent scope possessing a reference to our modal instance.
+            $scope.$parent.modal.remove();
         }
 
     }
