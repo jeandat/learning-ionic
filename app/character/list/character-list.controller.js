@@ -91,11 +91,8 @@
                 faves.$remove(character.favourite);
             }
             else {
-                // var itemToAdd = _.pick(character, 'id', 'name');
                 character.type = 'character';
-                // itemToAdd.type = 'character';
                 faves.$add(character.plain());
-                // faves.$add(itemToAdd);
             }
         }
 
