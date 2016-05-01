@@ -68,7 +68,7 @@ CSS overrides.
 }
 .slide-in-right.ng-enter,
 .slide-in-right > .ng-enter {
-    transition: all cubic-bezier(.1, .7, .1, 1) 400ms;
+    transition: all ease-out 300ms;
 }
 .slide-in-right.ng-enter-active,
 .slide-in-right > .ng-enter-active {
@@ -76,5 +76,5 @@ CSS overrides.
 }
 .slide-in-right.ng-leave,
 .slide-in-right > .ng-leave {
-    transition: all ease-in-out 250ms;
+    transition: all ease-in 300ms;
 }
