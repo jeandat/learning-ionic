@@ -70,6 +70,10 @@ CSS overrides.
 .slide-in-right > .ng-enter {
     transition: all ease-out 300ms;
 }
+.no-animation .slide-in-right.ng-enter,
+.no-animation .slide-in-right > .ng-enter {
+    transition: none;
+}
 .slide-in-right.ng-enter-active,
 .slide-in-right > .ng-enter-active {
     transform: translate3d(0, 0, 0);
@@ -77,4 +81,8 @@ CSS overrides.
 .slide-in-right.ng-leave,
 .slide-in-right > .ng-leave {
     transition: all ease-in 300ms;
+}
+.no-animation .slide-in-right.ng-leave,
+.no-animation .slide-in-right > .ng-leave {
+    transition: none;
 }

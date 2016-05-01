@@ -5,7 +5,7 @@
         .module('app')
         .factory('settingService', factory);
 
-    function factory($log, localStorageService, defaultCacheName, CacheFactory, ImgCache, $q, $ionicConfig, $window, trackerId) {
+    function factory($log, localStorageService, defaultCacheName, CacheFactory, ImgCache, $q, $ionicConfig, $window, trackerId, $ionicBody) {
 
         var defaults = {
             enableAnimations: true,
@@ -42,7 +42,9 @@
         }
 
         function processEnableAnimations(){
-            service.settings.enableAnimations ? enableAnimations() : disableAnimations();
+            var enable = service.settings.enableAnimations;
+            $ionicBody.enableClass(!enable, 'no-animation');
+            enable ? enableAnimations() : disableAnimations();
         }
 
         function processEnableTracker(){
