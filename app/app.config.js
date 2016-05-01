@@ -5,6 +5,7 @@
         .module('app')
         .config(appConfig)
         .config(routeConfig)
+        .config(animationConfig)
         .config(localStorageConfig)
         .config(ionicConfig)
         .config(httpInterceptors)
@@ -113,6 +114,17 @@
 
         console.debug('States defined');
 
+    }
+
+    function animationConfig($animateProvider){
+        // By default, the $animate service will check for animation styling
+        // on every structural change. This requires a lot of animateFrame-based
+        // DOM-inspection. However, we can tell $animate to only check for
+        // animations on elements that have a specific class name RegExp pattern
+        // present. In this case, we are requiring the "animated" class.
+        // https://docs.angularjs.org/guide/animations
+        // http://www.bennadel.com/blog/2935-enable-animations-explicitly-for-a-performance-boost-in-angularjs.htm
+        $animateProvider.classNameFilter( /\banimated\b/ );
     }
 
     // All keys in local storage will have the prefix 'lrnion'.
