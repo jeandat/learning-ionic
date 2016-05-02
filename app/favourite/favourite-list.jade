@@ -2,8 +2,10 @@ ion-view(view-title='Favourites')
     ion-content
         ion-nav-view(name='app-favourites-detail')
         ion-list
-            ion-item.item-avatar(ng-click='vm.navigate(fave)' ng-repeat="fave in vm.faves | orderBy:'name || title' track by fave.id")
+            div.item.item-divider(ng-repeat-start="letter in vm.faveKeys" ng-bind='letter')
+            ion-item.item-avatar(ng-click='vm.navigate(fave)' ng-repeat="fave in vm.faves[letter] | orderBy:'name || title' track by fave.id")
                 img(img-cache ic-src='{{::fave.thumbnailUrl}}')
-                h2 {{fave.name || fave.title}}
-                p.fave__meta {{::fave.type}}
+                h2(ng-bind='::fave.name || fave.title')
+                p.fave__meta(ng-bind='::fave.type')
                 ion-option-button.button-assertive(ng-click='vm.deleteFave(fave)') Delete
+            div(ng-repeat-end)
