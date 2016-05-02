@@ -2,8 +2,10 @@ ion-modal-view.character(ng-controller='CharacterDetailController as vm')
     ion-header-bar.bar-assertive
         back-button(ng-click='vm.remove()')
         h1.title {{::vm.character.name}}
-        button.button.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
-    ion-content.character__content.character__background(jd-ic-src='{{::vm.character.thumbnailUrl}}')
+        .buttons
+            button.button.button-clear.icon.ion-image(ng-click='::vm.toggleContent()')
+            button.button.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
+    ion-content.character__content.character__background(jd-ic-src='{{::vm.character.thumbnailUrl}}' ng-class="{'hide-content': vm.hideContent}")
         .character__meta
             span.character__text {{::vm.character.name}}
             br

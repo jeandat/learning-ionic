@@ -2,8 +2,10 @@ ion-modal-view.comic(ng-controller='ComicDetailController as vm')
     ion-header-bar.bar-assertive
         back-button(ng-click='vm.remove()')
         h1.title {{::vm.comic.title}}
-        button.button.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
-    ion-content.comic__content.comic__background(jd-ic-src='{{::vm.comic.thumbnailUrl}}')
+        .buttons
+            button.button.button-clear.icon.ion-image(ng-click='::vm.toggleContent()')
+            button.button.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
+    ion-content.comic__content.comic__background(jd-ic-src='{{::vm.comic.thumbnailUrl}}' ng-class="{'hide-content': vm.hideContent}")
         .comic__meta
             div.comic__price(ng-if='vm.comic.printPrice') {{::vm.comic.printPrice}} $
             br

@@ -12,6 +12,7 @@
         vm.comic = $stateParams.comic;
         vm.openDetailPage = openDetailPage;
         vm.remove = remove;
+        vm.toggleContent = toggleContent;
 
         activate();
 
@@ -33,6 +34,10 @@
             // You should know too that ionicModal will register the created instance as a property of the scope.
             // Thus our parent scope possessing a reference to our modal instance.
             $scope.$parent.modal.remove();
+        }
+
+        function toggleContent(){
+            vm.hideContent = !vm.hideContent;
         }
 
     }

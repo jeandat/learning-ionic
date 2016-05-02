@@ -23,6 +23,7 @@
         vm.openDetailPage = openDetailPage;
         vm.showComics = showComics;
         vm.remove = remove;
+        vm.toggleContent = toggleContent;
 
         activate();
 
@@ -68,7 +69,6 @@
             }
         }
 
-
         function remove(){
             // Little subtlety.
             // For simplicity sake, the modal load a template which define its own controller in the template (this one).
@@ -76,6 +76,10 @@
             // You should know too that ionicModal will register the created instance as a property of the scope.
             // Thus our parent scope possessing a reference to our modal instance.
             $scope.$parent.modal.remove();
+        }
+
+        function toggleContent(){
+            vm.hideContent = !vm.hideContent;
         }
 
     }
