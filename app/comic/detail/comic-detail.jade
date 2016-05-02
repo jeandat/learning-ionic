@@ -7,9 +7,10 @@ ion-modal-view.comic(ng-controller='ComicDetailController as vm')
             button.button.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
     ion-content.comic__content.comic__background(jd-ic-src='{{::vm.comic.thumbnailUrl}}' ng-class="{'hide-content': vm.hideContent}")
         .comic__meta
-            div.comic__price(ng-if='vm.comic.printPrice') {{::vm.comic.printPrice}} $
-            br
             span.comic__text {{::vm.comic.title}}
+            br
+            br
+            span.comic__text(ng-if='::vm.comic.printPrice') {{::vm.comic.printPrice}} $
             br
             br
             span.comic__text.comic__description(ng-bind-html='::vm.comic.description | html2text')

@@ -1,12 +1,14 @@
 
-
 body {
     font-family: $font-family-sans-serif;
 }
 
-ion-content > * {
-    transition: opacity ease-out 200ms;
+ion-content > .scroll {
+    transition: transform 500ms;
 }
-ion-content.hide-content > * {
-    opacity: 0;
+.no-animation ion-content > .scroll {
+    transition: none;
+}
+ion-content.hide-content > .scroll {
+    transform: translate3d(0, 101%, 0) !important;
 }
