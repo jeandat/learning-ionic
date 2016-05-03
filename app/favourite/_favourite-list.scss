@@ -3,3 +3,10 @@
     text-transform: uppercase;
     font-size: 0.7rem !important;
 }
+.warning-banner{
+    color: $light;
+    font-weight: bold;
+    background-color: $energized;
+    padding: $content-padding;
+    box-shadow: none;
+}

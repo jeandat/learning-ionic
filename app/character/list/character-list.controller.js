@@ -91,8 +91,9 @@
                 faves.$remove(character.favourite);
             }
             else {
-                character.type = 'character';
-                faves.$add(character.plain());
+                var fave = character.plain();
+                fave.type = 'character';
+                faves.$add(fave);
             }
         }
 

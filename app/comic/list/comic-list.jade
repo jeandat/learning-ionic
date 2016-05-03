@@ -13,7 +13,7 @@ ion-view.comics(view-title='Comics')
                     div.comics-card__cover.comics-card__cover--not-found(ng-if="::!comic.thumbnailUrl")
                 .item.item-icon-right.assertive.comics-card__footer
                     i.icon(ng-click='vm.toggleFave(comic)' ng-class="{'ion-android-favorite': comic.favourite, " +
-                    "'ion-android-favorite-outline': !comic.favourite}")
+                    "'ion-android-favorite-outline': !comic.favourite}" ng-if='firebaseReady')
                     | {{::comic.title}}
         .comics__footer
             ion-spinner(ng-if='vm.searching')
