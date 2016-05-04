@@ -39,17 +39,22 @@
 
         function navigate(fave, $event) {
             // I deactivated highlight on items because I don't want to see a flickering when swiping on an item.
-            // Thus when clicking an item, we need to add it our self.
-            $event.currentTarget.classList.add('activated');
+            // Thus when clicking an item, we need to add the right class our self.
+            ionic.DomUtil.requestAnimationFrame(addClass);
             if (fave.type === 'character') {
                 $state.go('app.characterDetailInModal', {character: fave});
             } else {
                 $state.go('app.comicDetailInModal', {comic: fave});
             }
-            $timeout(removeClass, 200);
+            $timeout(_.wrap(removeClass, ionic.DomUtil.requestAnimationFrame), 200);
             ////////////
+            function addClass(){
+                $event.currentTarget.classList.add('activated');
+                $log.debug('Added activated class');
+            }
             function removeClass(){
                 $event.currentTarget.classList.remove('activated');
+                $log.debug('Removed activated class');
             }
         }
     }
