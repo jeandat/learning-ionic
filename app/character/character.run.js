@@ -9,6 +9,7 @@
 
     function addNewMethodsToCharacters(Restangular, favouriteService) {
         Restangular.extendModel('characters', function (model) {
+            
             model.thumbnailUrl = getThumbnailUrl();
             model.detailUrl = getDetailUrl();
             model.favourite = getFavourite();
@@ -25,8 +26,7 @@
                 return _.get(_.find(model.urls, {type:'detail'}), 'url');
             }
             function getFavourite(){
-                // Subtility for Firebase
-                return _.find(favouriteService.faves, {id: model.id}) || null;
+                return favouriteService.createRef(model.id);
             }
         });
     }

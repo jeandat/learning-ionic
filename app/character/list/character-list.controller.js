@@ -5,8 +5,7 @@
         .module('app')
         .controller('CharacterListController', CharacterListController);
 
-    function CharacterListController($log, characterService, $cordovaToast, throwErr, defaultOffset, $cordovaKeyboard,
-                                     favouriteService, $scope, $rootScope) {
+    function CharacterListController($log, characterService, $cordovaToast, throwErr, defaultOffset, $cordovaKeyboard, $scope) {
 
         var vm = this;
         vm.title = 'CharacterListController';
@@ -20,18 +19,13 @@
         vm.search = search;
         vm.loadMore = loadMore;
 
-        var listeners = [];
-        var faves = favouriteService.faves;
-
         activate();
 
         ////////////////
 
         function activate() {
             $log.debug(vm.title + ' instantiated');
-            listeners.push($rootScope.$on('fave:added', favouriteDidAdded));
-            listeners.push($rootScope.$on('fave:removed', favouriteDidRemoved));
-            $scope.$on('$ionicView.unloaded', stopMonitoringFavourites);
+            $scope.$on('$ionicView.unloaded', releaseFavourites);
             search();
         }
 
@@ -39,6 +33,7 @@
             showSpinner();
             var promise = characterService.findByName(vm.filter);
             vm.characters = [];
+            releaseFavourites();
             vm.hasMoreData = false;
             vm.offset = 0;
             $cordovaKeyboard.close();
@@ -87,34 +82,24 @@
         // Event handler called when clicking the fave button (heart).
         // It will add or remove a favourite in our local db.
         function toggleFave(character) {
-            if (character.favourite) {
-                faves.$remove(character.favourite);
+            var fave = character.favourite;
+            if (fave.id) {
+                fave.$remove();
             }
             else {
-                var fave = character.plain();
-                fave.type = 'character';
-                faves.$add(fave);
+                var extract = _.pickBy(character.plain(), function(value, key){
+                    return key !== 'favourite';
+                });
+                extract.type = 'character';
+                _.extend(fave, extract);
+                fave.$save();
             }
         }
 
-        function favouriteDidAdded(event, fave) {
-            // Nothing to do if there is zero characters.
-            if (!vm.characters.length) return;
-            var model = _.find(vm.characters, {id: fave.id});
-            if (model) model.favourite = fave;
-            $log.debug('Fave added:', fave);
-        }
-
-        function favouriteDidRemoved(event, fave) {
-            var model = _.find(vm.characters, {id: fave.id});
-            if (model) model.favourite = null;
-            $log.debug('Fave removed:', fave);
-        }
-
-        // Remove existing event handlers.
-        function stopMonitoringFavourites() {
-            listeners.forEach(function (fn) {
-                fn();
+        // Remove existing firebase refs.
+        function releaseFavourites() {
+            _.forEach(vm.characters, function(character){
+                character.favourite.$destroy();
             });
         }
 

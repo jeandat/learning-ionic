@@ -7,12 +7,14 @@
 
     ///////////////
 
-    function addNewMethodsToComics(Restangular) {
+    function addNewMethodsToComics(Restangular, favouriteService) {
         Restangular.extendModel('comics', function (model) {
+
             model.thumbnailUrl = getThumbnailUrl();
             model.thumbnailUrlInPortraitUncanny = getThumbnailUrlInPortraitUncanny();
             model.detailUrl = getDetailUrl();
             model.printPrice = getPrintPrice();
+            model.favourite = getFavourite();
             return model;
 
             /////////////
@@ -32,6 +34,9 @@
             }
             function getPrintPrice(){
                 return _.get(_.find(model.prices, {type: 'printPrice'}), 'price');
+            }
+            function getFavourite(){
+                return favouriteService.createRef(model.id);
             }
         });
     }

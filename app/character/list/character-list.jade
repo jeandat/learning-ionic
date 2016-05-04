@@ -12,8 +12,8 @@ ion-view.characters(view-title='Characters')
                     div.characters-card__cover(ng-if="::character.thumbnailUrl" img-cache ic-bg="{{::character.thumbnailUrl}}")
                     div.characters-card__cover.characters-card__cover--not-found(ng-if="::!character.thumbnailUrl")
                 .item.item-icon-right.assertive.characters-card__footer
-                    i.icon(ng-click='vm.toggleFave(character)' ng-class="{'ion-android-favorite': character.favourite, " +
-                    "'ion-android-favorite-outline': !character.favourite}" ng-if='firebaseReady')
+                    i.icon(ng-click='vm.toggleFave(character)' ng-class="{'ion-android-favorite': character.favourite.id, " +
+                    "'ion-android-favorite-outline': !character.favourite.id}" ng-if='firebaseReady')
                     | {{::character.name}}
         .characters__footer
             ion-spinner(ng-if='vm.searching')
