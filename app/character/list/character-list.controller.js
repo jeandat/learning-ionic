@@ -5,7 +5,8 @@
         .module('app')
         .controller('CharacterListController', CharacterListController);
 
-    function CharacterListController($log, characterService, $cordovaToast, throwErr, defaultOffset, $cordovaKeyboard, $scope) {
+    function CharacterListController($log, characterService, $cordovaToast, throwErr, defaultOffset, $cordovaKeyboard, $scope,
+                                     favouriteService) {
 
         var vm = this;
         vm.title = 'CharacterListController';
@@ -25,7 +26,7 @@
 
         function activate() {
             $log.debug(vm.title + ' instantiated');
-            $scope.$on('$ionicView.unloaded', releaseFavourites);
+            $scope.$on('$ionicView.unloaded', destroyFirebaseRefs);
             search();
         }
 
@@ -33,7 +34,7 @@
             showSpinner();
             var promise = characterService.findByName(vm.filter);
             vm.characters = [];
-            releaseFavourites();
+            destroyFirebaseRefs();
             vm.hasMoreData = false;
             vm.offset = 0;
             $cordovaKeyboard.close();
@@ -77,6 +78,7 @@
             meta = vm.characters.meta = results.meta;
             // Update boolean to know instantly if there is more
             vm.hasMoreData = meta && (meta.count + meta.offset) < meta.total;
+            createFirebaseRefs();
         }
 
         // Event handler called when clicking the fave button (heart).
@@ -87,7 +89,7 @@
                 fave.$remove();
             }
             else {
-                var extract = _.pickBy(character.plain(), function(value, key){
+                var extract = _.pickBy(character.plain(), function (value, key) {
                     return key !== 'favourite';
                 });
                 extract.type = 'character';
@@ -97,9 +99,15 @@
         }
 
         // Remove existing firebase refs.
-        function releaseFavourites() {
-            _.forEach(vm.characters, function(character){
+        function destroyFirebaseRefs() {
+            _.forEach(vm.characters, function (character) {
                 character.favourite.$destroy();
+            });
+        }
+
+        function createFirebaseRefs() {
+            _.forEach(vm.characters, function (character) {
+                character.favourite = favouriteService.createRef(character.id);
             });
         }
 

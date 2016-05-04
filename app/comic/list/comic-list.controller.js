@@ -5,7 +5,8 @@
         .module('app')
         .controller('ComicListController', ComicListController);
 
-    function ComicListController($log, comicService, $cordovaToast, throwErr, defaultOffset, $cordovaKeyboard, $scope) {
+    function ComicListController($log, comicService, $cordovaToast, throwErr, defaultOffset, $cordovaKeyboard, $scope,
+                                 favouriteService) {
 
         var vm = this;
         vm.title = 'ComicListController';
@@ -26,7 +27,7 @@
 
         function activate() {
             $log.debug(vm.title + ' instantiated');
-            $scope.$on('$ionicView.unloaded', releaseFavourites);
+            $scope.$on('$ionicView.unloaded', destroyFirebaseRefs);
             search();
         }
 
@@ -38,7 +39,7 @@
             showSpinner();
             var promise = comicService.findByName(vm.filter);
             vm.comics = [];
-            releaseFavourites();
+            destroyFirebaseRefs();
             vm.hasMoreData = false;
             vm.offset = 0;
             $cordovaKeyboard.close();
@@ -83,6 +84,7 @@
             meta = vm.comics.meta = results.meta;
             // Update boolean to know instantly if there is more
             vm.hasMoreData = meta && (meta.count + meta.offset) < meta.total;
+            createFirebaseRefs();
         }
 
         // Event handler called when clicking the fave button (heart).
@@ -93,7 +95,7 @@
                 fave.$remove();
             }
             else {
-                var extract = _.pickBy(comic.plain(), function(value, key){
+                var extract = _.pickBy(comic.plain(), function (value, key) {
                     return key !== 'favourite';
                 });
                 extract.type = 'comic';
@@ -103,9 +105,15 @@
         }
 
         // Remove existing firebase refs.
-        function releaseFavourites() {
-            _.forEach(vm.comics, function(comic){
+        function destroyFirebaseRefs() {
+            _.forEach(vm.comics, function (comic) {
                 comic.favourite.$destroy();
+            });
+        }
+
+        function createFirebaseRefs() {
+            _.forEach(vm.comics, function (comic) {
+                comic.favourite = favouriteService.createRef(comic.id);
             });
         }
 

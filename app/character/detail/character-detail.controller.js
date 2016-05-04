@@ -48,15 +48,16 @@
 
             ////////////
 
-            function updateLayout(response){
+            function updateLayout(response) {
                 vm.comics = response;
-                if(response.length === 0) vm.noComics = true;
+                if (response.length === 0) vm.noComics = true;
                 var meta = response.meta;
                 vm.hasMoreComics = meta.count < meta.total;
                 vm.isLoadingComics = false;
                 $log.debug('Comics for `%s`: %o', vm.character.name, vm.comics);
             }
-            function processErr(err){
+
+            function processErr(err) {
                 vm.noComics = true;
                 throwErr(err);
             }
@@ -69,7 +70,7 @@
             }
         }
 
-        function remove(){
+        function remove() {
             // Little subtlety.
             // For simplicity sake, the modal load a template which define its own controller in the template (this one).
             // As ionicModal create a scope automatically if not provided, it is automatically the parent of the one created for this controller.
@@ -78,7 +79,7 @@
             $scope.$parent.modal.remove();
         }
 
-        function toggleContent(){
+        function toggleContent() {
             vm.hideContent = !vm.hideContent;
         }
 
