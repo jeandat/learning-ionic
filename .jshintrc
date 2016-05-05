@@ -41,6 +41,7 @@
         "readJSON": false,
         "fixturesPath": true,
         "Firebase": false,
-        "ImgCache": false
+        "ImgCache": false,
+        "PhotoViewer": false
     }
 }

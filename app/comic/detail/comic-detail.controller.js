@@ -5,14 +5,16 @@
         .module('app')
         .controller('ComicDetailController', ComicDetailController);
 
-    function ComicDetailController($log, $stateParams, $scope) {
+    function ComicDetailController($log, $stateParams, $scope, $rootScope) {
 
         var vm = this;
         vm.title = 'ComicDetailController';
         vm.comic = $stateParams.comic;
+        vm.isCordova = $rootScope.isCordova;
         vm.openDetailPage = openDetailPage;
         vm.remove = remove;
         vm.toggleContent = toggleContent;
+        vm.showViewer = showViewer;
 
         activate();
 
@@ -38,6 +40,10 @@
 
         function toggleContent(){
             vm.hideContent = !vm.hideContent;
+        }
+
+        function showViewer(){
+            PhotoViewer.show(vm.comic.thumbnailUrl, vm.comic.title);
         }
 
     }

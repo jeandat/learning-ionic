@@ -3,7 +3,7 @@ ion-modal-view.character(ng-controller='CharacterDetailController as vm')
         back-button(ng-click='vm.remove()')
         h1.title {{::vm.character.name}}
         .buttons
-            button.button.button-clear.icon.ion-image(ng-click='::vm.toggleContent()')
+            button.button.button-clear.icon.ion-image(ng-click='vm.isCordova ? vm.showViewer() : vm.toggleContent()')
             button.button.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
     ion-content.character__content.character__background(img-cache ic-bg='{{::vm.character.thumbnailUrl}}' hide-content="{{vm.hideContent}}")
         .character__meta
@@ -12,7 +12,7 @@ ion-modal-view.character(ng-controller='CharacterDetailController as vm')
             br
             span.character__text.character__description(ng-bind-html='::vm.character.description | html2text')
         .character-comic-list
-            .character-comic-list__title.character__text(ui-sref='app.characterComicListInModal({comics:vm.comics, character: vm.character})'
+            .character-comic-list__title.character__text(ui-sref='app.characterComicListInModal({comics:vm.comics, character:vm.character})'
             ng-click='vm.showComics($event)')
                 span Comics
                 span.icon.ion-chevron-right.character-comic-list__count(ng-if='vm.hasMoreComics && !vm.isLoadingComics')

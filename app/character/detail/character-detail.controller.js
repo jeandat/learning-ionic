@@ -5,7 +5,7 @@
         .module('app')
         .controller('CharacterDetailController', CharacterDetailController);
 
-    function CharacterDetailController($log, $stateParams, comicService, throwErr, $scope) {
+    function CharacterDetailController($log, $stateParams, comicService, throwErr, $scope, $rootScope) {
 
         var vm = this;
         vm.title = 'CharacterDetailController';
@@ -20,10 +20,12 @@
             },
             instance: null
         };
+        vm.isCordova = $rootScope.isCordova;
         vm.openDetailPage = openDetailPage;
         vm.showComics = showComics;
         vm.remove = remove;
         vm.toggleContent = toggleContent;
+        vm.showViewer = showViewer;
 
         activate();
 
@@ -80,6 +82,10 @@
 
         function toggleContent(){
             vm.hideContent = !vm.hideContent;
+        }
+
+        function showViewer(){
+            PhotoViewer.show(vm.character.thumbnailUrl, vm.character.name);
         }
 
     }
