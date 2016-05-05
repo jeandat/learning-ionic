@@ -3,9 +3,9 @@
 
     angular
         .module('app')
-        .directive('jdIcSrc', jdIcSrc);
+        .directive('jdIcBg', jdIcBg);
 
-    function jdIcSrc($log) {
+    function jdIcBg($log) {
 
         var directive = {
             link: link,
@@ -17,7 +17,7 @@
         /////////////////
 
         function link(scope, element, attrs) {
-            attrs.$observe('jdIcSrc', tryToCacheUrl);
+            attrs.$observe('jdIcBg', tryToCacheUrl);
             ///////////
             function tryToCacheUrl(srcUrl){
                 ImgCache.getCachedFileURL(srcUrl, fileAlreadyInCache, cacheFile);
