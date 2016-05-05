@@ -6,6 +6,7 @@ in ionic's _variables.scss file.
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "fonts";
 $base-background-color: #DDD;
+$modal-bg-color: $base-background-color;
 $dark: #333;
 
 // Override default font family
