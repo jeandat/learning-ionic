@@ -5,7 +5,7 @@ ion-modal-view.comic(ng-controller='ComicDetailController as vm')
         .buttons
             button.button.button-clear.icon.ion-image(ng-click='::vm.toggleContent()')
             button.button.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
-    ion-content.comic__content.comic__background(jd-ic-src='{{::vm.comic.thumbnailUrl}}' ng-class="{'hide-content': vm.hideContent}")
+    ion-content.comic__content.comic__background(jd-ic-src='{{::vm.comic.thumbnailUrl}}' hide-content="{{vm.hideContent}}")
         .comic__meta
             span.comic__text {{::vm.comic.title}}
             br

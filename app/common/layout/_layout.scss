@@ -9,6 +9,3 @@ ion-content > .scroll {
 .no-animation ion-content > .scroll {
     transition: none;
 }
-ion-content.hide-content > .scroll {
-    transform: translate3d(0, -101%, 0) !important;
-}
