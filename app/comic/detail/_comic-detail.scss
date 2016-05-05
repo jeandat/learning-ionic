@@ -14,8 +14,7 @@
         box-shadow: $content-padding 0 0 0 black, -$content-padding 0 0 0 black;
         &--price{
             font-weight: bold;
-            background-color: $assertive;
-            box-shadow: $content-padding 0 0 0 $assertive, -$content-padding 0 0 0 $assertive;
+            color: $assertive;
         }
     }
     &__background {
