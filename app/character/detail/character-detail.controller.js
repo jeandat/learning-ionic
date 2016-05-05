@@ -5,7 +5,7 @@
         .module('app')
         .controller('CharacterDetailController', CharacterDetailController);
 
-    function CharacterDetailController($log, $stateParams, comicService, throwErr, $scope, $rootScope) {
+    function CharacterDetailController($log, $stateParams, comicService, throwErr, $scope) {
 
         var vm = this;
         vm.title = 'CharacterDetailController';
@@ -20,7 +20,6 @@
             },
             instance: null
         };
-        vm.isCordova = $rootScope.isCordova;
         vm.openDetailPage = openDetailPage;
         vm.showComics = showComics;
         vm.remove = remove;

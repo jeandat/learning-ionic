@@ -3,7 +3,8 @@ ion-modal-view.character(ng-controller='CharacterDetailController as vm')
         back-button(ng-click='vm.remove()')
         h1.title {{::vm.character.name}}
         .buttons
-            button.button.button-clear.icon.ion-image(ng-click='vm.isCordova ? vm.showViewer() : vm.toggleContent()')
+            button.button.button-clear.icon.ion-easel(ng-click='::vm.showViewer()')
+            button.button.button-clear.icon.ion-ios-photos-outline(ng-click='::vm.toggleContent()')
             button.button.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
     ion-content.character__content.character__background(img-cache ic-bg='{{::vm.character.thumbnailUrl}}' hide-content="{{vm.hideContent}}")
         .character__meta

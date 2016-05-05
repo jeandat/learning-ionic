@@ -5,12 +5,11 @@
         .module('app')
         .controller('ComicDetailController', ComicDetailController);
 
-    function ComicDetailController($log, $stateParams, $scope, $rootScope) {
+    function ComicDetailController($log, $stateParams, $scope) {
 
         var vm = this;
         vm.title = 'ComicDetailController';
         vm.comic = $stateParams.comic;
-        vm.isCordova = $rootScope.isCordova;
         vm.openDetailPage = openDetailPage;
         vm.remove = remove;
         vm.toggleContent = toggleContent;
