@@ -21,8 +21,7 @@
             ///////////
             function hideOrRevealContent(shouldHide){
                 shouldHide = shouldHide === 'true' ? true : false;
-                var scrollElement = element.find('.scroll');
-                var el = scrollElement.get(0);
+                var el = element[0].querySelector('.scroll');
                 var scrollHeight = shouldHide ? el.scrollHeight : 0;
                 var translateValue = 'translate3d(0,-' + scrollHeight + 'px,0)';
                 el.style.transform = translateValue;

@@ -17,9 +17,13 @@
         ////////////
 
         function link(scope) {
-            $('ion-nav-bar').on('click', '.title', function(){
-                scope.$apply(scrollTop);
-            });
+            var navBar = document.getElementsByTagName('ion-nav-bar')[0];
+            navBar.addEventListener('click', onClick, true);
+            //////////
+            function onClick(event){
+                if(event.target.classList.contains('title'))
+                    scope.$apply(scrollTop);
+            }
         }
 
         function scrollTop(){

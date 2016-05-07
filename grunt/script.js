@@ -12,7 +12,6 @@ module.exports = function (grunt, config) {
                     files: [{
                         dest: '<%= pub %>/js',
                         src: [
-                            'jquery/dist/jquery.js',
                             'md5/md5.js',
                             'ionic/release/js/ionic.js',
                             'angular/angular.js',

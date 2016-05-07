@@ -6,7 +6,6 @@ module.exports = function (config) {
         basePath: '..',
         files: [
             // vendors
-            'www/js/jquery.js',
             'www/js/md5.js',
             'www/js/ionic.js',
             'www/js/angular.js',
