@@ -42,6 +42,7 @@
         "fixturesPath": true,
         "Firebase": false,
         "ImgCache": false,
-        "PhotoViewer": false
+        "PhotoViewer": false,
+        "resolveLocalFileSystemURL": false
     }
 }

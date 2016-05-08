@@ -5,7 +5,7 @@
         .module('app')
         .controller('ComicDetailController', ComicDetailController);
 
-    function ComicDetailController($log, $stateParams, $scope) {
+    function ComicDetailController($log, $stateParams, $scope, utils) {
 
         var vm = this;
         vm.title = 'ComicDetailController';
@@ -41,8 +41,19 @@
             vm.hideContent = !vm.hideContent;
         }
 
-        function showViewer(){
-            PhotoViewer.show(vm.comic.thumbnailUrl, vm.comic.title);
+        // Show a native viewer with zoom capability.
+        function showViewer() {
+            // Unfortunately, this plugin doesn't handle cdvfile: url.
+            // So I'm converting it to a normal file system url to avoid to download again that image.
+            // Plus the plugin doesn't have any error callback, so using the cached file avoid us issues with network.
+            utils.cacheFile(vm.comic.thumbnailUrl)
+                .then(utils.convertLocalFileSystemURL)
+                .then(showNativeViewer)
+                .catch(showNativeViewer);
+            //////////
+            function showNativeViewer(url) {
+                PhotoViewer.show(url, vm.comic.title);
+            }
         }
 
     }

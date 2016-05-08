@@ -5,7 +5,7 @@
         .module('app')
         .controller('CharacterDetailController', CharacterDetailController);
 
-    function CharacterDetailController($log, $stateParams, comicService, throwErr, $scope) {
+    function CharacterDetailController($log, $stateParams, comicService, throwErr, $scope, utils) {
 
         var vm = this;
         vm.title = 'CharacterDetailController';
@@ -49,15 +49,16 @@
 
             ////////////
 
-            function updateLayout(response){
+            function updateLayout(response) {
                 vm.comics = response;
-                if(response.length === 0) vm.noComics = true;
+                if (response.length === 0) vm.noComics = true;
                 var meta = response.meta;
                 vm.hasMoreComics = meta.count < meta.total;
                 vm.isLoadingComics = false;
                 $log.debug('Comics for `%s`: %o', vm.character.name, vm.comics);
             }
-            function processErr(err){
+
+            function processErr(err) {
                 vm.noComics = true;
                 throwErr(err);
             }
@@ -70,7 +71,7 @@
             }
         }
 
-        function remove(){
+        function remove() {
             // Little subtlety.
             // For simplicity sake, the modal load a template which define its own controller in the template (this one).
             // As ionicModal create a scope automatically if not provided, it is automatically the parent of the one created for this controller.
@@ -79,12 +80,23 @@
             $scope.$parent.modal.remove();
         }
 
-        function toggleContent(){
+        function toggleContent() {
             vm.hideContent = !vm.hideContent;
         }
 
-        function showViewer(){
-            PhotoViewer.show(vm.character.thumbnailUrl, vm.character.name);
+        // Show a native viewer with zoom capability.
+        function showViewer() {
+            // Unfortunately, this plugin doesn't handle cdvfile: url.
+            // So I'm converting it to a normal file system url to avoid to download again that image.
+            // Plus the plugin doesn't have any error callback, so using the cached file avoid us issues with network.
+            utils.cacheFile(vm.character.thumbnailUrl)
+                .then(utils.convertLocalFileSystemURL)
+                .then(showNativeViewer)
+                .catch(showNativeViewer);
+            //////////
+            function showNativeViewer(url) {
+                PhotoViewer.show(url, vm.character.name);
+            }
         }
 
     }

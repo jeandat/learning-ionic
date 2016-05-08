@@ -5,7 +5,7 @@
         .module('app')
         .directive('jdIcBg', jdIcBg);
 
-    function jdIcBg($log) {
+    function jdIcBg($log, utils) {
 
         var directive = {
             link: link,
@@ -19,26 +19,13 @@
         function link(scope, element, attrs) {
             attrs.$observe('jdIcBg', tryToCacheUrl);
             ///////////
-            function tryToCacheUrl(srcUrl){
-                ImgCache.getCachedFileURL(srcUrl, fileAlreadyInCache, cacheFile);
-                /////////////
-                function fileAlreadyInCache(providedUrl, cachedUrl){
-                    $log.debug('%s already in cache: %s', providedUrl, cachedUrl);
-                    setBackgroundUrl(cachedUrl);
-                }
-                function cacheFile(providedUrl){
-                    ImgCache.cacheFile(providedUrl, fileInCacheNow, fallbackToOnlineUrl);
-                }
-                function fileInCacheNow(cachedUrl){
-                    $log.debug('%s just cached: %s', srcUrl, cachedUrl);
-                    setBackgroundUrl(cachedUrl);
-                }
-                function fallbackToOnlineUrl(){
-                    $log.warn('Failed to cache %s', srcUrl);
-                    setBackgroundUrl(srcUrl);
-                }
-                function setBackgroundUrl(srcUrl){
-                    element.css({'background-image': 'url(' + srcUrl + ')' });
+            function tryToCacheUrl(srcUrl) {
+                utils.cacheFile(srcUrl)
+                    .then(setBackgroundUrl)
+                    .catch(setBackgroundUrl);
+                //////////
+                function setBackgroundUrl(url) {
+                    element.css({'background-image': 'url(' + url + ')'});
                 }
             }
         }

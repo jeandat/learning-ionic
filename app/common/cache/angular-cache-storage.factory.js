@@ -9,7 +9,7 @@
     // Angular cache is able to use localStorage as persistent storage but default behavior is to
     // use a GET url as key.
     // Problem is that when loading the app from a file: url, Marvel backend thinks we are a server.
-    // And so they ask for more paremeters like ts which is a timestamp preventing caching.
+    // And so they ask for more parameters like ts which is a timestamp preventing caching.
     // This implementation will remove that parameter when dealing with localStorage.
     function angularCacheStorage($rootScope) {
 
