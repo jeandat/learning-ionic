@@ -32,7 +32,7 @@
             listeners.push($rootScope.$on('fave:added', favouriteDidAdded));
             listeners.push($rootScope.$on('fave:removed', favouriteDidRemoved));
             $scope.$on('$ionicView.unloaded', stopMonitoringFavourites);
-            search();
+            $scope.$on('$ionicView.loaded', search);
         }
 
         function search() {

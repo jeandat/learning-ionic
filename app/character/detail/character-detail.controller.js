@@ -32,7 +32,7 @@
 
         function activate() {
             $log.debug(vm.title + ' instantiated');
-            loadComics();
+            $scope.$parent.$on('modal.shown', loadComics);
         }
 
         function openDetailPage() {
