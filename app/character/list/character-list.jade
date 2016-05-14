@@ -17,5 +17,5 @@ ion-view.characters(view-title='Characters')
                     | {{::character.name}}
         .characters__footer
             ion-spinner(ng-if='vm.searching')
-            button.button.button-block.button-assertive.characters__show-more(ng-click='vm.loadMore()' ng-show='vm.hasMoreData')
+            button.button.button-block.button-assertive.characters__show-more(ng-click='vm.showMore()' ng-show='vm.hasMore')
                 | Show more

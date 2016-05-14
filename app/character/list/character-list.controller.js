@@ -15,10 +15,10 @@
         vm.characters = [];
         vm.searching = false;
         vm.offset = 0;
-        vm.hasMoreData = false;
+        vm.hasMore = false;
         vm.toggleFave = toggleFave;
         vm.search = search;
-        vm.loadMore = loadMore;
+        vm.showMore = showMore;
 
         var listeners = [];
         var faves = favouriteService.faves;
@@ -39,7 +39,7 @@
             showSpinner();
             var promise = characterService.findByName(vm.filter);
             vm.characters = [];
-            vm.hasMoreData = false;
+            vm.hasMore = false;
             vm.offset = 0;
             $cordovaKeyboard.close();
             return promise
@@ -63,7 +63,7 @@
             vm.searching = false;
         }
 
-        function loadMore() {
+        function showMore() {
             showSpinner();
             vm.offset += defaultOffset;
             return characterService.findByName(vm.filter, vm.offset)
@@ -81,7 +81,7 @@
             // Update meta
             meta = vm.characters.meta = results.meta;
             // Update boolean to know instantly if there is more
-            vm.hasMoreData = meta && (meta.count + meta.offset) < meta.total;
+            vm.hasMore = meta && (meta.count + meta.offset) < meta.total;
         }
 
         // Event handler called when clicking the fave button (heart).
