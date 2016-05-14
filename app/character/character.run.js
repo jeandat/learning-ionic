@@ -25,8 +25,7 @@
                 return _.get(_.find(model.urls, {type:'detail'}), 'url');
             }
             function getFavourite(){
-                // Subtility for Firebase
-                return _.find(favouriteService.faves, {id: model.id}) || null;
+                return favouriteService.getFaveByModelId(model.id);
             }
         });
     }

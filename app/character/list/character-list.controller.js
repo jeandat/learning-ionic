@@ -33,6 +33,7 @@
             listeners.push($rootScope.$on('fave:removed', favouriteDidRemoved));
             $scope.$on('$ionicView.unloaded', stopMonitoringFavourites);
             $scope.$on('$ionicView.loaded', search);
+            $rootScope.$on('firebase:ready', checkFavourites);
         }
 
         function search() {
@@ -116,6 +117,14 @@
             listeners.forEach(function (fn) {
                 fn();
             });
+        }
+        
+        function checkFavourites(){
+            _.forEach(vm.characters, updateFavourite);
+            /////////
+            function updateFavourite(character){
+                character.favourite = favouriteService.getFaveByModelId(character.id);
+            }
         }
 
     }

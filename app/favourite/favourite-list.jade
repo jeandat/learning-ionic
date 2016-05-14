@@ -1,8 +1,7 @@
 ion-view.favourites(view-title='Favourites')
     ion-content
         .card.warning-banner(ng-if='!firebaseReady')
-            | Favourites are momentarily unavailable. Here is the local copy of your data until connectivity come back. In the mean time,
-            | it is not possible to add or remove faves.
+            | Favourites are momentarily unavailable. In the mean time it is not possible to add or remove faves.
         ion-list(can-swipe='firebaseReady')
             div.item.item-divider(ng-repeat-start="letter in vm.faveKeys" ng-bind='letter')
             ion-item.item-avatar(ng-click='vm.navigate(fave, $event)' data-tap-disabled='true'
@@ -10,5 +9,5 @@ ion-view.favourites(view-title='Favourites')
                 img(img-cache ic-src='{{::fave.thumbnailUrl}}')
                 h2(ng-bind='::fave.name || fave.title')
                 p.fave__meta(ng-bind='::fave.type')
-                ion-option-button.button-assertive(ng-click='vm.deleteFave(fave)') Delete
+                ion-option-button.button-assertive(ng-click='::vm.deleteFave(fave)') Delete
             div(ng-repeat-end)
