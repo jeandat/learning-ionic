@@ -34,7 +34,7 @@
         }
 
         function deleteFave(fave) {
-            favouriteService.faves.$remove(fave);
+            favouriteService.removeFave(fave);
         }
 
         function navigate(fave, $event) {
@@ -49,11 +49,11 @@
             $timeout(_.wrap(removeClass, ionic.DomUtil.requestAnimationFrame), 200);
             ////////////
             function addClass(){
-                $event.currentTarget.classList.add('activated');
+                $event.target.parentNode.classList.add('activated');
                 $log.debug('Added activated class');
             }
             function removeClass(){
-                $event.currentTarget.classList.remove('activated');
+                $event.target.parentNode.classList.remove('activated');
                 $log.debug('Removed activated class');
             }
         }
