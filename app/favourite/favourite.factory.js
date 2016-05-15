@@ -10,10 +10,15 @@
         var query = new Firebase(firebaseUrl + '/favourites');
         var faves = $firebaseArray(query);
 
+        var unsyncedCreatedFaves = localStorageService.get('faves.created') || [];
+        var unsyncedDeletedFaves = localStorageService.get('faves.deleted') || [];
+
         var service = {
             init: init,
             faves: faves,
-            getFaveByModelId: getFaveByModelId
+            getFaveByModelId: getFaveByModelId,
+            addFave: addFave,
+            removeFave: removeFave
         };
 
         return service;
@@ -27,7 +32,7 @@
                 // Normal firebase boot.
                 faves.$loaded()
                     .then(stopTimer)
-                    .then(saveUnsyncItems)
+                    .then(syncItems)
                     .then(watch)
                     .then(notify);
                 ///////////
@@ -48,16 +53,50 @@
                 }
             });
         }
-        
+
         function getFaveByModelId(id){
             return _.find(faves, {id: id}) || null;
         }
 
-        function saveUnsyncItems(){
-            // if(!faves) return;
-            // for(var i=0, lg=faves.length; i<lg; i++){
-            //     faves.$save(i);
-            // }
+        function addFave(fave){
+            if(!_.includes(unsyncedCreatedFaves, fave)) registerFaveForCreation(fave);
+            faves.$add(fave).then(clean);
+            ///////////
+            function clean(){
+                removeFaveForCreation(fave);
+            }
+        }
+
+        function removeFave(fave){
+            if(!_.includes(unsyncedDeletedFaves, fave)) registerFaveForDeletion(fave);
+            // Using the index syntax because when faves come from the local storage, Firebase will not recognize them as valid objects.
+            faves.$remove(_.findIndex(faves, {id: fave.id})).then(clean);
+            ///////////
+            function clean(){
+                removeFaveForDeletion(fave);
+            }
+        }
+
+        function registerFaveForCreation(fave){
+            unsyncedCreatedFaves.push(fave);
+            localStorageService.set('faves.created', unsyncedCreatedFaves);
+        }
+        function removeFaveForCreation(fave){
+            _.pull(unsyncedCreatedFaves, fave);
+            localStorageService.set('faves.created', unsyncedCreatedFaves);
+        }
+        function registerFaveForDeletion(fave){
+            unsyncedDeletedFaves.push(fave);
+            localStorageService.set('faves.deleted', unsyncedDeletedFaves);
+        }
+        function removeFaveForDeletion(fave){
+            _.pull(unsyncedDeletedFaves, fave);
+            localStorageService.set('faves.deleted', unsyncedDeletedFaves);
+        }
+
+        function syncItems(){
+            _.forEach(unsyncedCreatedFaves, addFave);
+            _.forEach(unsyncedDeletedFaves, removeFave);
         }
 
         // Emit an event on $rootScope for components willing to be notified when a fave is added or removed.

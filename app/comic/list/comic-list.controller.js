@@ -22,7 +22,6 @@
         vm.toggleFave = toggleFave;
 
         var listeners = [];
-        var faves = favouriteService.faves;
 
         activate();
 
@@ -95,11 +94,12 @@
         // It will add or remove a favourite in our local db.
         function toggleFave(comic) {
             if (comic.favourite) {
-                faves.$remove(comic.favourite);
+                favouriteService.removeFave(comic.favourite);
             }
             else {
-                comic.type = 'comic';
-                faves.$add(comic.plain());
+                var fave = comic.plain();
+                fave.type = 'comic';
+                favouriteService.addFave(fave);
             }
         }
 
