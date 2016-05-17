@@ -44,7 +44,7 @@
                 $scope.$broadcast('scroll.infiniteScrollComplete');
             }
         }
-        
+
         function remove(){
             // Little subtlety.
             // For simplicity sake, the modal load a template which define its own controller in the template (this one).

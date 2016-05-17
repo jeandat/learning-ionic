@@ -1,10 +1,10 @@
 ion-modal-view.character-comics(ng-controller='CharacterComicListController as vm')
     ion-header-bar.bar-assertive
-        back-button(ng-click='vm.remove()')
+        back-button(ng-click='::vm.remove()')
         h1.title Comics
     ion-content
         .row.row-wrap
-            .col-33.character-comics__cover-container(ng-repeat='comic in ::vm.comics track by $index')
+            .col-33.character-comics__cover-container(ng-repeat='comic in vm.comics track by comic.id')
                 div.character-comics__cover-wrapper
                     img.character-comics__cover(ng-if='::comic.thumbnailUrlInPortraitUncanny' width='100%' height='auto'
                     img-cache ic-src='{{::comic.thumbnailUrlInPortraitUncanny}}'
