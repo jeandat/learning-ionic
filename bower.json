@@ -2,10 +2,10 @@
   "name": "learning-ionic",
   "private": "true",
   "devDependencies": {
-    "ionic": "^1.2",
+    "ionic": "~1.x",
     "lodash": "^4.5.0",
     "angular-mocks": "^1.5.0",
-    "ngCordova": "^0.1.24",
+    "ngCordova": "~0.1.x",
     "angular-local-storage": "^0.2.3",
     "angular-cache": "^4.5.0",
     "karma-read-json": "^1.1.0",

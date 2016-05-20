@@ -5,7 +5,7 @@
         .module('app')
         .controller('CharacterDetailController', CharacterDetailController);
 
-    function CharacterDetailController($log, $stateParams, comicService, throwErr, $scope, utils) {
+    function CharacterDetailController($log, $stateParams, comicService, throwErr, $scope, utils, $timeout) {
 
         var vm = this;
         vm.title = 'CharacterDetailController';
@@ -42,13 +42,14 @@
 
         function loadComics() {
             vm.isLoadingComics = true;
-            return comicService
-                .findByCharacterId(vm.character.id, {limit: 10})
-                .then(updateLayout)
-                .catch(processErr);
-
-            ////////////
-
+            $timeout(waitAnimationEnd, 500);
+            ///////////
+            function waitAnimationEnd(){
+                return comicService
+                    .findByCharacterId(vm.character.id, {limit: 10})
+                    .then(updateLayout)
+                    .catch(processErr);
+            }
             function updateLayout(response) {
                 vm.comics = response;
                 if (response.length === 0) vm.noComics = true;
@@ -57,9 +58,9 @@
                 vm.isLoadingComics = false;
                 $log.debug('Comics for `%s`: %o', vm.character.name, vm.comics);
             }
-
             function processErr(err) {
                 vm.noComics = true;
+                vm.isLoadingComics = false;
                 throwErr(err);
             }
         }
