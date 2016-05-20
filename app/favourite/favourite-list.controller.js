@@ -39,7 +39,7 @@
 
         function navigate(fave, $event) {
             // I deactivated highlight on items because I don't want to see a flickering when swiping on an item.
-            // Thus when clicking an item, we need to add the right class our self.
+            // Thus when clicking an item, we need to add the right class ourselves.
             ionic.DomUtil.requestAnimationFrame(addClass);
             if (fave.type === 'character') {
                 $state.go('app.characterDetailInModal', {character: fave});
