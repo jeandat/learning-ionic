@@ -25,6 +25,8 @@
         vm.remove = remove;
         vm.toggleContent = toggleContent;
         vm.showViewer = showViewer;
+        
+        var unlisten;
 
         activate();
 
@@ -32,7 +34,7 @@
 
         function activate() {
             $log.debug(vm.title + ' instantiated');
-            $scope.$parent.$on('modal.shown', loadComics);
+            unlisten = $scope.$parent.$on('modal.shown', loadComics);
         }
 
         function openDetailPage() {
@@ -41,6 +43,7 @@
         }
 
         function loadComics() {
+            unlisten();
             vm.isLoadingComics = true;
             $timeout(waitAnimationEnd, 500);
             ///////////
