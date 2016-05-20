@@ -63,13 +63,17 @@ CSS overrides.
     }
 }
 
-// Slide left from right, used for modals
+// Slide from left to right
+// Used for modals
 .slide-in-right {
     transform: translate3d(100%, 0, 0);
+    will-change: transform;
 }
 .slide-in-right.ng-enter,
 .slide-in-right > .ng-enter {
-    transition: all ease-out 300ms;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+    transition-duration: 300ms;
 }
 .no-animation .slide-in-right.ng-enter,
 .no-animation .slide-in-right > .ng-enter {
@@ -81,7 +85,9 @@ CSS overrides.
 }
 .slide-in-right.ng-leave,
 .slide-in-right > .ng-leave {
-    transition: all ease-in 300ms;
+    transition-property: transform;
+    transition-timing-function: ease-in;
+    transition-duration: 300ms;
 }
 .no-animation .slide-in-right.ng-leave,
 .no-animation .slide-in-right > .ng-leave {
