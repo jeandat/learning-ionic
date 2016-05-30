@@ -44,13 +44,13 @@
 
             var stateName = toState.name;
 
-            if (_.includes(stateName, 'Modal')) {
-                // Prevent state navigation: taking control from here
-                event.preventDefault();
-                // Copy params given to state in $stateParams in order to retrieve them in modals.
-                // As we are cancelling navigation, the ui router will not set $stateParams. That's too bad because I like that pattern.
-                _.assign($stateParams, toParams);
-            }
+            if (!_.includes(stateName, 'Modal')) return;
+
+            // Prevent state navigation: taking control from here
+            event.preventDefault();
+            // Copy params given to state in $stateParams in order to retrieve them in modals.
+            // As we are cancelling navigation, the ui router will not set $stateParams. That's too bad because I like that pattern.
+            _.assign($stateParams, toParams);
 
             var modalOptions = {
                 animation: 'slide-in-right'
