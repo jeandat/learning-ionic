@@ -5,7 +5,7 @@
         .module('app')
         .factory('favouriteService', favouriteService);
 
-    function favouriteService(Firebase, $firebaseArray, firebaseUrl, $rootScope, $log, localStorageService, $q, $timeout) {
+    function favouriteService(Firebase, $firebaseArray, firebaseUrl, $rootScope, $log, localStorageService, $q, $timeout, utils) {
 
         var query = new Firebase(firebaseUrl + '/favourites');
         var faves = $firebaseArray(query);
@@ -33,6 +33,7 @@
                 faves.$loaded()
                     .then(stopTimer)
                     .then(syncItems)
+                    .then(utils.cacheThumbnails)
                     .then(watch)
                     .then(notify);
                 ///////////
@@ -97,8 +98,9 @@
         function syncItems(){
             _.forEach(unsyncedCreatedFaves, addFave);
             _.forEach(unsyncedDeletedFaves, removeFave);
+            return faves;
         }
-
+        
         // Emit an event on $rootScope for components willing to be notified when a fave is added or removed.
         function watch() {
             // WARNING: when adding, I'm using angularfire because it handles a strange conceptual choice in Firebase which I don't like.

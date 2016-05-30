@@ -6,7 +6,8 @@ ion-modal-view.comic(ng-controller='ComicDetailController as vm')
             button.button.button-clear.icon.ion-easel(ng-click='::vm.showViewer()')
             button.button.button-clear.icon.ion-ios-photos-outline(ng-click='::vm.toggleContent()')
             button.button.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
-    ion-content.comic__content.comic__background(img-cache ic-bg='{{::vm.comic.thumbnailUrl}}' hide-content="{{vm.hideContent}}")
+    ion-content.comic__content.comic__background(style="background-image: url('{{::vm.comic.thumbnailUrlInCache || vm.comic.thumbnailUrl}}')"
+        hide-content="{{vm.hideContent}}")
         .comic__meta
             span.comic__text {{::vm.comic.title}}
             br

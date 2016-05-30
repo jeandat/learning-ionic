@@ -5,7 +5,7 @@
         .module('app')
         .factory('comicService', factory);
 
-    function factory(Restangular, Err) {
+    function factory(Restangular, Err, utils) {
 
         var comics = Restangular.all('comics');
 
@@ -26,7 +26,7 @@
                 noVariants: true
             });
             prefix && (criteria.titleStartsWith = prefix);
-            return comics.getList(criteria);
+            return comics.getList(criteria).then(utils.cacheThumbnails);
         }
 
         // Search comics which name starts with `name`.
@@ -38,7 +38,7 @@
                 noVariants: true
             });
             criteria.characters = '' + id;
-            return comics.getList(criteria);
+            return comics.getList(criteria).then(utils.cacheThumbnails);
         }
     }
 

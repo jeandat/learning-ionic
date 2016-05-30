@@ -144,7 +144,7 @@
         $httpProvider.interceptors.push('httpInterceptor');
     }
 
-    function imgCache(ImgCacheProvider) {
+    function imgCache(ImgCacheProvider, $compileProvider) {
         ImgCacheProvider.setOptions({
             debug: true,
             chromeQuota: 50 * 1024 * 1024,
@@ -152,6 +152,8 @@
             usePersistentCache: false
         });
         ImgCacheProvider.manualInit = true;
+        // Add cdvfile scheme is angular whitelist for image sources.
+        $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|file|cdvfile|filesystem|content|blob|ms-appx|ms-appx-web|x-wmapp0):|data:image\//);
     }
 
 })();

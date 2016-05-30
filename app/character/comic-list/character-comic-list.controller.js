@@ -9,8 +9,8 @@
 
         var vm = this;
         vm.title = 'CharacterComicListController';
-        vm.comics = $stateParams.comics;
-        vm.character = $stateParams.character;
+        vm.comics = [];
+        vm.character = {};
         vm.hasMore = true;
         vm.showMore = showMore;
         vm.remove = remove;
@@ -21,6 +21,8 @@
 
         function activate() {
             $log.debug(vm.title + ' instantiated');
+            vm.comics = $stateParams.comics;
+            vm.character = $stateParams.character;
         }
 
         function showMore(){

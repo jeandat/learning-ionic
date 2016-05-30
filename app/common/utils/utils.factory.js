@@ -9,7 +9,8 @@
 
         var service = {
             cacheFile: cacheFile,
-            convertLocalFileSystemURL: convertLocalFileSystemURL
+            convertLocalFileSystemURL: convertLocalFileSystemURL,
+            cacheThumbnails: cacheThumbnails
         };
         return service;
 
@@ -17,6 +18,10 @@
 
         function cacheFile(srcUrl) {
             return $q(function (resolve, reject) {
+                if(!srcUrl) {
+                    reject(srcUrl);
+                    return;
+                }
                 ImgCache.getCachedFileURL(srcUrl, fileAlreadyInCache, cacheFile);
                 /////////////
                 function fileAlreadyInCache(providedUrl, cachedUrl) {
@@ -50,6 +55,32 @@
                     resolve(nativeUrl);
                 }
             });
+        }
+
+        function cacheThumbnails(items, properties){
+            if(_.isEmpty(items)) return items;
+            // Avoid configuring everyone for these very common properties.
+            if(_.isEmpty(properties)) properties = ['thumbnailUrl', 'thumbnailUrlInPortraitUncanny'];
+            var promises = [];
+            _.forEach(items, cacheThumbnail);
+            return $q.all(promises).then(function(){
+                return items;
+            });
+            /////////
+            function cacheThumbnail(item) {
+                _.forEach(properties, cacheProperty);
+                /////////
+                function cacheProperty(property){
+                    _.has(item, property) && promises.push(cacheFile(item[property]).then(updateModel).catch(bypass));
+                    //////////
+                    function updateModel(cachedUrl) {
+                        item[property + 'InCache'] = cachedUrl;
+                    }
+                    function bypass(){
+                        return $q.resolve();
+                    }
+                }
+            }
         }
     }
 

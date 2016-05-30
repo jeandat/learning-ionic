@@ -12,7 +12,7 @@
         vm.character = $stateParams.character;
         vm.comics = [];
         vm.hasMoreComics = true;
-        vm.isLoadingComics = false;
+        vm.isLoadingComics = true;
         vm.noComics = false;
         vm.swiper = {
             options: {
@@ -25,7 +25,7 @@
         vm.remove = remove;
         vm.toggleContent = toggleContent;
         vm.showViewer = showViewer;
-        
+
         var unlisten;
 
         activate();
@@ -44,10 +44,10 @@
 
         function loadComics() {
             unlisten();
-            vm.isLoadingComics = true;
             $timeout(waitAnimationEnd, 500);
             ///////////
             function waitAnimationEnd(){
+                vm.isLoadingComics = true;
                 return comicService
                     .findByCharacterId(vm.character.id, {limit: 10})
                     .then(updateLayout)

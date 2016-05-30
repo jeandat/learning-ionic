@@ -6,7 +6,8 @@ ion-modal-view.character(ng-controller='CharacterDetailController as vm')
             button.button.button-clear.icon.ion-easel(ng-click='::vm.showViewer()')
             button.button.button-clear.icon.ion-ios-photos-outline(ng-click='::vm.toggleContent()')
             button.button.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
-    ion-content.character__content.character__background(img-cache ic-bg='{{::vm.character.thumbnailUrl}}' hide-content="{{vm.hideContent}}")
+    ion-content.character__content.character__background(style="background-image: url('{{::vm.character.thumbnailUrlInCache || vm.character.thumbnailUrl}}')"
+    hide-content="{{vm.hideContent}}")
         .character__meta
             span.character__text {{::vm.character.name}}
             br
@@ -23,6 +24,7 @@ ion-modal-view.character(ng-controller='CharacterDetailController as vm')
             div.character-comic-list__content.character-comic-list__content--centered(ng-if='vm.noComics') :(
             ion-slides.character-comic-list__content(options='vm.swiper.options' slider='vm.swiper.instance' ng-if='!vm.isLoadingComics && !vm.noComics')
                 ion-slide-page(ng-repeat='comic in vm.comics track by comic.id' ui-sref='app.comicDetailInModal({comic:comic})')
-                    div.character-comic-list__cover(ng-if='::comic.thumbnailUrl' img-cache ic-bg='{{::comic.thumbnailUrl}}')
+                    div.character-comic-list__cover(ng-if='::comic.thumbnailUrl'
+                    style="background-image: url('{{::comic.thumbnailUrlInCache || comic.thumbnailUrl}}')")
                     div.character-comic-list__cover.character-comic-list__cover--not-found(ng-if='::!comic.thumbnailUrl')
                         div {{::comic.title}}

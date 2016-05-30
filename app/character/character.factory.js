@@ -6,7 +6,7 @@
         .factory('characterService', factory);
 
 
-    function factory(Restangular) {
+    function factory(Restangular, utils) {
         var characters = Restangular.all('characters');
 
         var service = {
@@ -18,11 +18,11 @@
         ///////////////
 
         // Search characters which name starts with `name`.
-        function findByName(prefix, offset){
+        function findByName(prefix, offset) {
             var criteria = {};
             prefix && (criteria.nameStartsWith = prefix);
             offset && (criteria.offset = offset);
-            return characters.getList(criteria);
+            return characters.getList(criteria).then(utils.cacheThumbnails);
         }
 
     }
