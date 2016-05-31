@@ -2,8 +2,6 @@ describe('comicService: ', function () {
 
     var comicService, $httpBackend;
 
-    beforeEach(module('app'));
-
     beforeEach(inject(function ($injector) {
         comicService = $injector.get('comicService');
         $httpBackend = $injector.get('$httpBackend');

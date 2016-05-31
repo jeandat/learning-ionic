@@ -1,9 +1,7 @@
 describe('characterService: ', function () {
 
     var characterService, $httpBackend;
-
-    beforeEach(module('app'));
-
+    
     beforeEach(inject(function ($injector) {
         characterService = $injector.get('characterService');
         $httpBackend = $injector.get('$httpBackend');
