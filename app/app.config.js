@@ -8,7 +8,7 @@
         .config(animationConfig)
         .config(localStorageConfig)
         .config(ionicConfig)
-        .config(httpInterceptors)
+        .config(httpConfig)
         .config(imgCache);
 
     function appConfig($compileProvider) {
@@ -140,7 +140,8 @@
         $ionicConfigProvider.views.maxCache(3);
     }
 
-    function httpInterceptors($httpProvider) {
+    function httpConfig($httpProvider) {
+        $httpProvider.useApplyAsync(true);
         $httpProvider.interceptors.push('httpInterceptor');
     }
 
