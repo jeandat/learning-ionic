@@ -27,7 +27,7 @@
             function updateSource(){
                 $timeout(function(){
                     element.attr('src', src);
-                }, 0);
+                }, 0, false);
             }
         }
     }

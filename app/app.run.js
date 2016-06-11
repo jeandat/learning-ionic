@@ -246,7 +246,7 @@
         }
 
         function hideSplash() {
-            return $timeout($cordovaSplashscreen.hide, 1000);
+            return $timeout($cordovaSplashscreen.hide, 1000, false);
         }
 
         function noFave(exception) {

@@ -22,7 +22,7 @@
             //////////
             function onClick(event){
                 if(event.target.classList.contains('title'))
-                    scope.$apply(scrollTop);
+                    scope.$applyAsync(scrollTop);
             }
         }
 
