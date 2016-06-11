@@ -11,8 +11,8 @@
     "karma-read-json": "^1.1.0",
     "restangular": "^1.5.1",
     "imgcache.js": "^1.0.0",
-    "firebase": "^2.4.2",
-    "angularfire": "^1.2.0",
+    "firebase": "^3.0.4",
+    "angularfire": "^2.0.1",
     "angular-imgcache": "angular-imgcache.js#^1.0.1"
   },
   "resolutions": {

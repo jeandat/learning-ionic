@@ -41,6 +41,7 @@
         "readJSON": false,
         "fixturesPath": true,
         "Firebase": false,
+        "firebase": false,
         "ImgCache": false,
         "PhotoViewer": false,
         "resolveLocalFileSystemURL": false

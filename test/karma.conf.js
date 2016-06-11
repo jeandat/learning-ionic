@@ -22,7 +22,7 @@ module.exports = function (config) {
             'www/js/restangular.js',
             'www/js/imgcache.js',
             'www/js/angular-imgcache.js',
-            'www/js/firebase-debug.js',
+            'www/js/firebase.js',
             'www/js/angularfire.js',
             // app
             'www/js/templates.js',

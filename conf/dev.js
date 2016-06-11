@@ -20,7 +20,6 @@ module.exports = extend(true, {}, pkg, {
     ngCordovaScript: mock ? 'js/ng-cordova-mocks.js' : 'js/ng-cordova.js',
     ngCordovaModuleName: mock ? 'ngCordovaMocks' : 'ngCordova',
     debug: '<script>Error && Error.stackTraceLimit && (Error.stackTraceLimit=50);</script>',
-    csp: "default-src 'self' 'unsafe-inline' http://*:35729 ws://*:35729 ws://*.firebaseio.com https://*.firebaseio.com wss: cdvfile: filesystem: gap: https://ssl.gstatic.com;",
-    trackerId: 'UA-75478648-1',
-    firebaseScript: 'js/firebase-debug.js'
+    csp: "default-src 'self' 'unsafe-inline' http://*:35729 ws://*:35729 ws://*.firebaseio.com https://*.firebaseio.com https://*.firebaseapp.com https://*.appspot.com https://*.google.com https://www.googleapis.com wss: cdvfile: filesystem: gap: https://ssl.gstatic.com;",
+    trackerId: 'UA-75478648-1'
 });

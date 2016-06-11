@@ -1,8 +1,6 @@
 'use strict';
 
-module.exports = function (grunt, config) {
-
-    var dev = config.patterns._name === 'dev';
+module.exports = function () {
 
     return {
         tasks: {
@@ -27,7 +25,7 @@ module.exports = function (grunt, config) {
                             'restangular/dist/restangular.js',
                             'imgcache.js/js/imgcache.js',
                             'angular-imgcache/angular-imgcache.js',
-                            'firebase/firebase' + (dev ? '-debug' : '') + '.js',
+                            'firebase/firebase.js',
                             'angularfire/dist/angularfire.js'
                         ],
                         expand: true,

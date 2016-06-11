@@ -5,20 +5,20 @@
         .module('app')
         .factory('favouriteService', favouriteService);
 
-    function favouriteService(Firebase, $firebaseArray, firebaseUrl, $rootScope, $log, localStorageService, $q, $timeout, utils) {
+    function favouriteService($firebaseArray, $firebaseAuth, $rootScope, $log, localStorageService, $q, $timeout,
+                              utils, firebaseApiKey, firebaseAuthDomain, firebaseDatabaseUrl, firebaseStorageBucket) {
 
-        var query = new Firebase(firebaseUrl + '/favourites');
-        var faves = $firebaseArray(query);
+        var faves, auth;
 
         var unsyncedCreatedFaves = localStorageService.get('faves.created') || [];
         var unsyncedDeletedFaves = localStorageService.get('faves.deleted') || [];
 
         var service = {
             init: init,
-            faves: faves,
             getFaveByModelId: getFaveByModelId,
             addFave: addFave,
             removeFave: removeFave
+            // faves: faves,    // Will be added to contract later on after authentication
         };
 
         return service;
@@ -27,10 +27,19 @@
 
         function init() {
             return $q(function (resolve) {
+                var config = {
+                    apiKey: firebaseApiKey,               // Your Firebase API key
+                    authDomain: firebaseAuthDomain,       // Your Firebase Auth domain ("*.firebaseapp.com")
+                    databaseURL: firebaseDatabaseUrl,     // Your Firebase Database URL ("https://*.firebaseio.com")
+                    storageBucket: firebaseStorageBucket  // Your Firebase Storage bucket ("*.appspot.com")
+                };
+                // Checking number of apps for unit tests (avoid initializing multiple times).
+                if(_.isEmpty(firebase.apps)) firebase.initializeApp(config);
                 // If no response from firebase after 5s, we will use the local backup.
-                var timer = $timeout(fallback, 5000);
+                var timer = $timeout(fallback, 5000, false);
                 // Normal firebase boot.
-                faves.$loaded()
+                authenticate()
+                    .then(loadFaves)
                     .then(stopTimer)
                     .then(syncItems)
                     .then(utils.cacheThumbnails)
@@ -53,6 +62,26 @@
                     resolve();
                 }
             });
+        }
+
+        function loadFaves(){
+            return faves.$loaded();
+        }
+
+        function authenticate(){
+            auth = $firebaseAuth();
+            return auth.$signInAnonymously().then(authDidSucceeded).catch(authDidFailed);
+            //////////
+            function authDidSucceeded(authData){
+                $log.info('Logged in anonymously as:', authData.uid);
+                var userRef = firebase.database().ref().child('users').child(authData.uid);
+                userRef.set({provider: 'anonymous'});
+                faves = $firebaseArray(userRef.child('favourites'));
+                service.faves = faves;
+            }
+            function authDidFailed(error) {
+                $log.error('Authentication failed:', error);
+            }
         }
 
         function getFaveByModelId(id){
@@ -100,7 +129,7 @@
             _.forEach(unsyncedDeletedFaves, removeFave);
             return faves;
         }
-        
+
         // Emit an event on $rootScope for components willing to be notified when a fave is added or removed.
         function watch() {
             // WARNING: when adding, I'm using angularfire because it handles a strange conceptual choice in Firebase which I don't like.
