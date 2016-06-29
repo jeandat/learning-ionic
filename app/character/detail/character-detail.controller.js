@@ -57,7 +57,7 @@
                 vm.comics = response;
                 if (response.length === 0) vm.noComics = true;
                 var meta = response.meta;
-                vm.hasMoreComics = meta.count < meta.total;
+                vm.hasMoreComics = meta.count > 0;
                 vm.isLoadingComics = false;
                 $log.debug('Comics for `%s`: %o', vm.character.name, vm.comics);
             }
