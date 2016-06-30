@@ -12,7 +12,7 @@ module.exports = function (grunt, config) {
                     src: ['<%= tmp %>/*', '<%= pub %>/*']
                 },
                 doc: {
-                    src: ['doc']
+                    src: ['doc/*', '!doc/screens']
                 },
                 test: {
                     src: ['doc/test']
