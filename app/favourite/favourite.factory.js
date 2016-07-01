@@ -78,12 +78,26 @@
         function authenticate() {
             return $q(function (resolve, reject) {
                 auth = $firebaseAuth();
-                auth.$signInAnonymously().then(authDidSucceeded).catch(reject);
+                var unlisten = auth.$onAuthStateChanged(function(user){
+                    if(user) {
+                        $log.info('User known. Reloading user info…');
+                        user.reload()
+                            .then(_.wrap(user, initFaves))
+                            .catch(reject);
+                    } else {
+                        $log.info('No known user. Signing in…');
+                        auth.$signInAnonymously()
+                            .then(initFaves)
+                            .catch(reject);
+                    }
+                });
                 //////////
-                function authDidSucceeded(user) {
-                    $log.info('Logged in as %s with provider %s', user.uid, user.providerId);
+                function initFaves(user){
+                    unlisten();
+                    $log.info('Logged in as %s (%s) with provider %s', user.email, user.uid, user.providerId);
+                    $log.debug('Provider data:', user.providerData);
                     var userRef = firebase.database().ref().child('users').child(user.uid);
-                    userRef.set({provider: user.providerId});
+                    if(!userRef.child('provider').toString()) userRef.set({provider: user.providerId});
                     service.faves = faves = $firebaseArray(userRef.child('favourites'));
                     resolve();
                 }
