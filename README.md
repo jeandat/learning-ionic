@@ -43,6 +43,7 @@ On iOS land, [WkWebView](https://www.npmjs.com/package/cordova-plugin-wkwebview-
 ![](./doc/screens/sc4.png)
 ![](./doc/screens/sc5.png)
 ![](./doc/screens/sc6.png)
+![](./doc/screens/sc7.png)
 
 # Prerequisites
 
