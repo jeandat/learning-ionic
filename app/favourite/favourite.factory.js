@@ -34,7 +34,7 @@
                     storageBucket: firebaseStorageBucket  // Your Firebase Storage bucket ("*.appspot.com")
                 };
                 // Checking number of apps for unit tests (avoid initializing multiple times).
-                if(_.isEmpty(firebase.apps)) firebase.initializeApp(config);
+                if (_.isEmpty(firebase.apps)) firebase.initializeApp(config);
                 // If no response from firebase after 5s, we will use the local backup.
                 var timer = $timeout(fallback, 5000, false);
                 // Normal firebase boot.
@@ -44,16 +44,19 @@
                     .then(syncItems)
                     .then(utils.cacheThumbnails)
                     .then(watch)
-                    .then(notify);
+                    .then(notify)
+                    .catch(firebaseInitFailed);
                 ///////////
                 function fallback() {
                     $log.warn('Firebase UNAVAILABLE');
                     timer = null;
                     resolve();
                 }
-                function stopTimer(){
+
+                function stopTimer() {
                     timer && $timeout.cancel(timer);
                 }
+
                 function notify() {
                     $log.info('FIREBASE READY');
                     $log.info('%i items in favourite list', faves.length);
@@ -61,70 +64,76 @@
                     $rootScope.$emit('firebase:ready');
                     resolve();
                 }
+
+                function firebaseInitFailed(error) {
+                    $log.error('Firebase init failed:', error);
+                }
             });
         }
 
-        function loadFaves(){
+        function loadFaves() {
             return faves.$loaded();
         }
 
-        function authenticate(){
-            auth = $firebaseAuth();
-            return auth.$signInAnonymously().then(authDidSucceeded).catch(authDidFailed);
-            //////////
-            function authDidSucceeded(authData){
-                $log.info('Logged in anonymously as:', authData.uid);
-                var userRef = firebase.database().ref().child('users').child(authData.uid);
-                userRef.set({provider: 'anonymous'});
-                faves = $firebaseArray(userRef.child('favourites'));
-                service.faves = faves;
-            }
-            function authDidFailed(error) {
-                $log.error('Authentication failed:', error);
-            }
+        function authenticate() {
+            return $q(function (resolve, reject) {
+                auth = $firebaseAuth();
+                auth.$signInAnonymously().then(authDidSucceeded).catch(reject);
+                //////////
+                function authDidSucceeded(user) {
+                    $log.info('Logged in as %s with provider %s', user.uid, user.providerId);
+                    var userRef = firebase.database().ref().child('users').child(user.uid);
+                    userRef.set({provider: user.providerId});
+                    service.faves = faves = $firebaseArray(userRef.child('favourites'));
+                    resolve();
+                }
+            });
         }
 
-        function getFaveByModelId(id){
+        function getFaveByModelId(id) {
             return _.find(faves, {id: id}) || null;
         }
 
-        function addFave(fave){
-            if(!_.includes(unsyncedCreatedFaves, fave)) registerFaveForCreation(fave);
+        function addFave(fave) {
+            if (!_.includes(unsyncedCreatedFaves, fave)) registerFaveForCreation(fave);
             faves.$add(fave).then(clean);
             ///////////
-            function clean(){
+            function clean() {
                 removeFaveForCreation(fave);
             }
         }
 
-        function removeFave(fave){
-            if(!_.includes(unsyncedDeletedFaves, fave)) registerFaveForDeletion(fave);
+        function removeFave(fave) {
+            if (!_.includes(unsyncedDeletedFaves, fave)) registerFaveForDeletion(fave);
             // Using the index syntax because when faves come from the local storage, Firebase will not recognize them as valid objects.
             faves.$remove(_.findIndex(faves, {id: fave.id})).then(clean);
             ///////////
-            function clean(){
+            function clean() {
                 removeFaveForDeletion(fave);
             }
         }
 
-        function registerFaveForCreation(fave){
+        function registerFaveForCreation(fave) {
             unsyncedCreatedFaves.push(fave);
             localStorageService.set('faves.created', unsyncedCreatedFaves);
         }
-        function removeFaveForCreation(fave){
+
+        function removeFaveForCreation(fave) {
             _.pull(unsyncedCreatedFaves, fave);
             localStorageService.set('faves.created', unsyncedCreatedFaves);
         }
-        function registerFaveForDeletion(fave){
+
+        function registerFaveForDeletion(fave) {
             unsyncedDeletedFaves.push(fave);
             localStorageService.set('faves.deleted', unsyncedDeletedFaves);
         }
-        function removeFaveForDeletion(fave){
+
+        function removeFaveForDeletion(fave) {
             _.pull(unsyncedDeletedFaves, fave);
             localStorageService.set('faves.deleted', unsyncedDeletedFaves);
         }
 
-        function syncItems(){
+        function syncItems() {
             _.forEach(unsyncedCreatedFaves, addFave);
             _.forEach(unsyncedDeletedFaves, removeFave);
             return faves;
