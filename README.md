@@ -1,15 +1,12 @@
 
-# State
-
-This is a work in progress.
-
-I will probably stop working on it when all MUST tasks are done in order to focus on a complete rewrite with IONIC 2, Angular 2 and TypeScript.
-
 # Overview
 
-This is a demo app to apprehend IONIC which is built upon Cordova.
+This is a demo app to apprehend IONIC which is built upon Cordova and Firebase.
 
 Scope : iOS 8+ / Android 4.4+
+
+I will not develop new UI functionalities. It is a simple demo. In a normal app, some UI choices would have been different but I wanted to illustrate some components and keep it simple.
+Detail screens are poor in informations by necessity because the Marvel API is very limited. You have to go to the official site in order to view more detailed infos.
 
 Quick readers can do `npm start` in order to :
 
