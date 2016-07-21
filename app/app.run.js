@@ -174,7 +174,7 @@
         function revealContentBehindKeyboard(e) {
             var $scrollContent = angular.element($ionicScrollDelegate.getScrollView().__content);
             if ($artificialItem == null) {
-                $artificialItem = angular.element('<div></div>').height(e.keyboardHeight);
+                $artificialItem = angular.element('<div></div>').css('height', e.keyboardHeight + 'px');
             }
             $scrollContent.append($artificialItem);
         }
