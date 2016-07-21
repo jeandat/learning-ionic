@@ -5,8 +5,6 @@ This is a work in progress.
 
 I will probably stop working on it when all MUST tasks are done in order to focus on a complete rewrite with IONIC 2, Angular 2 and TypeScript.
 
-Right now I'm struggling with Firebase 3 which is not working as well as Firebase 2 in a cordova context.
-
 # Overview
 
 This is a demo app to apprehend IONIC which is built upon Cordova.
