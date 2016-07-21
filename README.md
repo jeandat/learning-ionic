@@ -34,14 +34,14 @@ On iOS land, [WkWebView](https://www.npmjs.com/package/cordova-plugin-wkwebview-
 
 # Illustrations
 
-![](./doc/screens/sc0.png)
-![](./doc/screens/sc1.png)
-![](./doc/screens/sc2.png)
-![](./doc/screens/sc3.png)
-![](./doc/screens/sc4.png)
-![](./doc/screens/sc5.png)
-![](./doc/screens/sc6.png)
-![](./doc/screens/sc7.png)
+<img src="./doc/screens/character-list.jpg" width="263px" />
+<img src="./doc/screens/comic-list.jpg" width="263px" />
+<img src="./doc/screens/character-detail.jpg" width="263px" />
+<img src="./doc/screens/character-comics.jpg" width="263px" />
+<img src="./doc/screens/character-preview.jpg" width="263px" />
+<img src="./doc/screens/official-site.jpg" width="263px" />
+<img src="./doc/screens/favourite-list.jpg" width="263px" />
+<img src="./doc/screens/settings.jpg" width="263px" />
 
 # Prerequisites
 
