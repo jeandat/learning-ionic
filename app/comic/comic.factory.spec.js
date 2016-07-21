@@ -1,6 +1,6 @@
 describe('comicService: ', function () {
 
-    var comicService, $httpBackend;
+    var comicService, $httpBackend, prefix = 'sp';
 
     beforeEach(inject(function ($injector) {
         comicService = $injector.get('comicService');
@@ -22,27 +22,25 @@ describe('comicService: ', function () {
         $httpBackend.flush();
     });
 
-    it('should have multiple pages', function (done) {
-        var fixture1 = readJSON(fixturesPath + '/comics/s_0.json');
-        var fixture2 = readJSON(fixturesPath + '/comics/s_20.json');
+    it('should get the twenty first results', function (done) {
+        var fixture1 = readJSON(fixturesPath + '/comics/sp_0.json');
         $httpBackend.expectGET(/\/comics/).respond(fixture1);
-        $httpBackend.expectGET(/\/comics/).respond(fixture2);
-        var prefix = 'sp';
-        var offset = 0;
-        var list = [];
         comicService.findByName(prefix).then(function (results) {
             expect(results).toBeTruthy();
             expect(results.length).toBe(20);
-            list = list.concat(results);
-        }).then(function () {
-            offset = 20;
-            return comicService.findByName(prefix, {offset:offset});
-        }).then(function (results) {
+            expect(results[0].id).toBe(56169);
+            done();
+        });
+        $httpBackend.flush();
+    });
+
+    it('should get the remaining results', function(done){
+        var fixture2 = readJSON(fixturesPath + '/comics/sp_20.json');
+        $httpBackend.expectGET(/\/comics/).respond(fixture2);
+        comicService.findByName(prefix, 20).then(function (results) {
             expect(results).toBeTruthy();
             expect(results.length).toBe(20);
-            expect(list[0].id).not.toBe(results[0].id);
-            list = list.concat(results);
-            expect(list.length).toBe(40);
+            expect(results[0].id).toBe(55717);
             done();
         });
         $httpBackend.flush();

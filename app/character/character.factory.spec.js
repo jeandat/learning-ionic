@@ -1,7 +1,7 @@
 describe('characterService: ', function () {
 
-    var characterService, $httpBackend;
-    
+    var characterService, $httpBackend, prefix = 'sp';
+
     beforeEach(inject(function ($injector) {
         characterService = $injector.get('characterService');
         $httpBackend = $injector.get('$httpBackend');
@@ -22,27 +22,25 @@ describe('characterService: ', function () {
         $httpBackend.flush();
     });
 
-    it('should have multiple pages', function (done) {
-        var fixture1 = readJSON(fixturesPath + '/characters/s_0.json');
-        var fixture2 = readJSON(fixturesPath + '/characters/s_20.json');
+    it('should get the twenty first results', function (done) {
+        var fixture1 = readJSON(fixturesPath + '/characters/sp_0.json');
         $httpBackend.expectGET(/\/characters/).respond(fixture1);
-        $httpBackend.expectGET(/\/characters/).respond(fixture2);
-        var prefix = 'sp';
-        var offset = 0;
-        var list = [];
         characterService.findByName(prefix).then(function (results) {
             expect(results).toBeTruthy();
             expect(results.length).toBe(20);
-            list = list.concat(results);
-        }).then(function () {
-            offset = 20;
-            return characterService.findByName(prefix, offset);
-        }).then(function (results) {
+            expect(results[0].id).toBe(1009552);
+            done();
+        });
+        $httpBackend.flush();
+    });
+    
+    it('should get the remaining results', function(done){
+        var fixture2 = readJSON(fixturesPath + '/characters/sp_20.json');
+        $httpBackend.expectGET(/\/characters.*offset=20/).respond(fixture2);
+        characterService.findByName(prefix, 20).then(function (results) {
             expect(results).toBeTruthy();
             expect(results.length).toBe(13);
-            expect(list[0].id).not.toBe(results[0].id);
-            list = list.concat(results);
-            expect(list.length).toBe(33);
+            expect(results[0].id).toBe(1016181);
             done();
         });
         $httpBackend.flush();

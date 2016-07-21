@@ -58,6 +58,7 @@
         }
 
         function cacheThumbnails(items, properties){
+            $log.debug('Caching thumbnails');
             if(_.isEmpty(items)) return items;
             // Avoid configuring everyone for these very common properties.
             if(_.isEmpty(properties)) properties = ['thumbnailUrl', 'thumbnailUrlInPortraitUncanny'];

@@ -12,7 +12,7 @@
 
         var unsyncedCreatedFaves = localStorageService.get('faves.created') || [];
         var unsyncedDeletedFaves = localStorageService.get('faves.deleted') || [];
-
+        
         var service = {
             init: init,
             getFaveByModelId: getFaveByModelId,

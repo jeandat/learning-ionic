@@ -1,4 +1,5 @@
 window.fixturesPath = 'test/unit/fixtures';
+// jasmine.DEFAULT_TIMEOUT_INTERVAL = 20000;
 
 beforeEach(module('app'));
 
