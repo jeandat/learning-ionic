@@ -38,7 +38,24 @@ On iOS land, [WkWebView](https://www.npmjs.com/package/cordova-plugin-wkwebview-
 <img src="./doc/screens/character-preview.jpg" width="263px" />
 <img src="./doc/screens/official-site.jpg" width="263px" />
 <img src="./doc/screens/favourite-list.jpg" width="263px" />
-<img src="./doc/screens/settings.jpg" width="263px" />
+<img src="./doc/screens/setting-list.jpg" width="263px" />
+
+# Features
+
+- Search for characters whose name starts with…
+- Search for comics whose title starts with…
+- Show character/comic infos (very limited by design by Marvel)
+- Preview character/comic illustration with zoom and sharing capabilities
+- Open in default browser the character/comic official page on marvel.com
+- Show comics related to a character in an infinite list
+- Save favourites (comic or character) via Firebase Database and Firebase Auth (anonymous auth only)
+- JSON responses are cached on disk for one week
+- Images are cached on disk
+- Go up to the top in search lists by clicking the title
+- Settings : 
+  - empty responses and images caches
+  - Disable animations for less capable devices
+  - Disable google analytics
 
 # Prerequisites
 
