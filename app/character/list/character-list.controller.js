@@ -11,7 +11,7 @@
         var vm = this;
         vm.title = 'CharacterListController';
         // Let's start with something cool ;)
-        vm.filter = 'Iron m';
+        vm.filter = 'wolverine';
         vm.characters = [];
         vm.searching = false;
         vm.offset = 0;

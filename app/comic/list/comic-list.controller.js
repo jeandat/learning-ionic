@@ -11,7 +11,7 @@
         var vm = this;
         vm.title = 'ComicListController';
         // Let's start with something cool ;)
-        vm.filter = 'Iron m';
+        vm.filter = 'son';
         vm.comics = [];
         vm.searching = false;
         vm.offset = 0;
