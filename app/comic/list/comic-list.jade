@@ -1,11 +1,11 @@
 ion-view.comics(view-title='Comics')
     ion-content
         .bar.item-input-inset.comics__search-bar
-            form.comics__form(name='cmSearchForm' novalidate ng-submit='vm.search()' autocomplete="off")
+            form.comics__form(name='cmSearchForm' novalidate ng-submit='vm.search()')
                 label.item-input-wrapper
                     i.icon.ion-ios-search.placeholder-icon
                     input(type='search' placeholder='Title starts with…' name='name' ng-model='vm.filter'
-                    spellcheck="false")
+                    spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off")
         .list
             .card.comics-card(ng-repeat="comic in vm.comics track by comic.id")
                 .item.item-image(ui-sref='app.comicDetailInModal({comic:comic})')

@@ -21,8 +21,6 @@
         function findByName(prefix, offset) {
             var criteria = {};
             prefix && (criteria.nameStartsWith = prefix);
-            console.log('prefix:', prefix);
-            console.log('offset:', offset);
             offset && (criteria.offset = offset);
             return characters.getList(criteria).then(utils.cacheThumbnails);
         }

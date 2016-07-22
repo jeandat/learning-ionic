@@ -1,11 +1,11 @@
 ion-view.characters(view-title='Characters')
     ion-content
         .bar.item-input-inset.characters__search-bar
-            form.characters__form(name='crtSearchForm' novalidate ng-submit='vm.search()' autocomplete="off")
+            form.characters__form(name='crtSearchForm' novalidate ng-submit='vm.search()')
                 label.item-input-wrapper
                     i.icon.ion-ios-search.placeholder-icon
                     input(type='search' placeholder='Name starts with…' name='name' ng-model='vm.filter'
-                    spellcheck="false")
+                    spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off")
         .list
             .card.characters-card(ng-repeat="character in vm.characters track by character.id")
                 .item.item-image(ui-sref='app.characterDetailInModal({character:character})')
