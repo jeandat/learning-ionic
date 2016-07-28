@@ -1,4 +1,8 @@
 
+[![Build Status](https://travis-ci.org/jdat82/learning-ionic.svg)](https://travis-ci.org/jdat82/learning-ionic)
+[![NPM dev dependencies](https://img.shields.io/david/dev/jdat82/learning-ionic.svg)](https://david-dm.org/jdat82/learning-ionic#info=devDependencies&view=table)
+[![NPM Release](https://img.shields.io/github/release/jdat82/learning-ionic.svg)](https://github.com/jdat82/learning-ionic/releases)
+
 # Overview
 
 This is a demo app to apprehend IONIC which is built upon Cordova and Firebase.
