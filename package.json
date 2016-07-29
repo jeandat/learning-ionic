@@ -64,7 +64,8 @@
       "locator": "https://github.com/danwilson/google-analytics-plugin.git",
       "id": "cordova-plugin-google-analytics"
     },
-    "com-sarriaroman-photoviewer"
+    "com-sarriaroman-photoviewer",
+    "cordova-fabric-plugin --variable FABRIC_API_KEY=e80c28807e2be09aa4756fcf320d5e2177a7dce7 --variable FABRIC_API_SECRET=573fc3586b5032baf179cb57759bff8a9271f7b4f38beba9fe992d19ac49a4ca"
   ],
   "cordovaPlatforms": [
     "android",
