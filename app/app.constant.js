@@ -14,7 +14,7 @@
         // Oups, I did it again
 		.constant('privateApiKey', '@@privateApiKey')
         // Marvel default offset when requesting a list of results (number of items)
-        .constant('defaultOffset', 20)
+        .constant('defaultOffset', 10)
         .constant('defaultCacheName', 'defaultCache')
         .constant('firebaseApiKey', 'AIzaSyCgo-Ta3byIK8w9I9g0o3Hrgop70-Ajm-8')
         .constant('firebaseAuthDomain', 'learning-ionic.firebaseapp.com')

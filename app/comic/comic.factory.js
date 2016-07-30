@@ -5,7 +5,7 @@
         .module('app')
         .factory('comicService', factory);
 
-    function factory(Restangular, Err, utils) {
+    function factory(Restangular, Err, utils, defaultOffset) {
 
         var comics = Restangular.all('comics');
 
@@ -23,7 +23,8 @@
             var criteria = _.defaults(options, {
                 format: 'comic',
                 formatType: 'comic',
-                noVariants: true
+                noVariants: true,
+                limit: defaultOffset
             });
             prefix && (criteria.titleStartsWith = prefix);
             return comics.getList(criteria).then(utils.cacheThumbnails);
