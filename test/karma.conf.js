@@ -43,9 +43,11 @@ module.exports = function (config) {
             '.tmp/**/!(*.spec).js': ['coverage']
         },
         coverageReporter: {
-            type: 'lcov',
             dir: 'doc/test/coverage/',
-            subdir: 'phantom'
+            reporters: [
+                // {type: 'lcov', subdir: 'lcov'},
+                {type: 'lcov', subdir: 'lcov'}
+            ]
         },
         junitReporter: {
             outputDir: 'doc/test/junit/',
