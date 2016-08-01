@@ -4,6 +4,54 @@
 [![NPM Release](https://img.shields.io/github/release/jdat82/learning-ionic.svg)](https://github.com/jdat82/learning-ionic/releases)
 [![codecov](https://codecov.io/gh/jdat82/learning-ionic/branch/master/graph/badge.svg)](https://codecov.io/gh/jdat82/learning-ionic)
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Overview](#overview)
+- [Illustrations](#illustrations)
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Conventions](#conventions)
+  - [Build](#build)
+  - [Javascript](#javascript)
+    - [General](#general)
+    - [Angular](#angular)
+  - [CSS](#css)
+    - [SASS](#sass)
+    - [Classes](#classes)
+- [Run](#run)
+  - [In case you don't know](#in-case-you-dont-know)
+  - [npm run serve](#npm-run-serve)
+  - [npm run android](#npm-run-android)
+  - [npm run android-lr](#npm-run-android-lr)
+  - [npm run ios](#npm-run-ios)
+  - [npm run ios-lr](#npm-run-ios-lr)
+  - [npm test](#npm-test)
+  - [npm run wtest](#npm-run-wtest)
+  - [npm run doc](#npm-run-doc)
+  - [npm run build [-- \<platform>]](#npm-run-build----%5Cplatform)
+- [Build](#build-1)
+  - [Options](#options)
+    - [--proxy | --no-proxy](#--proxy----no-proxy)
+    - [--mock | --no-mock](#--mock----no-mock)
+    - [--patterns <name>](#--patterns-name)
+    - [--platform <name>](#--platform-name)
+- [Serving changes](#serving-changes)
+  - [In your browser](#in-your-browser)
+  - [On device](#on-device)
+    - [Without livereload support](#without-livereload-support)
+    - [With livereload support](#with-livereload-support)
+- [Tests](#tests)
+  - [Unit tests](#unit-tests)
+- [Documentation](#documentation)
+- [Error handling](#error-handling)
+  - [Err class](#err-class)
+  - [Default angular handler](#default-angular-handler)
+- [Splashscreen reflexions](#splashscreen-reflexions)
+- [Known Bugs](#known-bugs)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Overview
 
@@ -391,7 +439,7 @@ I recommend to either hide the splashscreen yourself when you are ready* (more o
 
 I don't know a cordova way to customize the app's default background, but by modifying the code of each shell and defining a custom background color in adequation with your look it can be even prettier. I don't like modifying native code though.
  
- # Known Bugs
+# Known Bugs
  
  - Images in cache (file:// urls) does not load the first time for a security reason when deploying in live reload mode (http://)
  - Random crash in lists caused by duplicate IDs in the Marvel database
