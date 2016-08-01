@@ -5,7 +5,7 @@
         .module('app')
         .controller('ComicListController', ComicListController);
 
-    function ComicListController($log, comicService, $cordovaToast, throwErr, defaultOffset, favouriteService, $cordovaKeyboard,
+    function ComicListController($log, comicService, $cordovaToast, throwErr, defaultPageSize, favouriteService, $cordovaKeyboard,
                                  $rootScope, $scope) {
 
         var vm = this;
@@ -71,7 +71,7 @@
 
         function loadMore() {
             showSpinner();
-            vm.offset += defaultOffset;
+            vm.offset += defaultPageSize;
             return comicService.findByName(vm.filter, {offset: vm.offset})
                 .then(updateList)
                 .catch(throwErr)

@@ -5,7 +5,7 @@
         .module('app')
         .controller('CharacterListController', CharacterListController);
 
-    function CharacterListController($log, characterService, $cordovaToast, throwErr, defaultOffset, $cordovaKeyboard,
+    function CharacterListController($log, characterService, $cordovaToast, throwErr, defaultPageSize, $cordovaKeyboard,
                                      favouriteService, $scope, $rootScope) {
 
         var vm = this;
@@ -65,7 +65,7 @@
 
         function showMore() {
             showSpinner();
-            vm.offset += defaultOffset;
+            vm.offset += defaultPageSize;
             return characterService.findByName(vm.filter, vm.offset)
                 .then(updateList)
                 .catch(throwErr)

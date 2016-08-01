@@ -5,7 +5,7 @@
         .module('app')
         .factory('comicService', factory);
 
-    function factory(Restangular, Err, utils, defaultOffset) {
+    function factory(Restangular, Err, utils, defaultPageSize) {
 
         var comics = Restangular.all('comics');
 
@@ -24,7 +24,7 @@
                 format: 'comic',
                 formatType: 'comic',
                 noVariants: true,
-                limit: defaultOffset
+                limit: defaultPageSize
             });
             prefix && (criteria.titleStartsWith = prefix);
             return comics.getList(criteria).then(utils.cacheThumbnails);
@@ -36,7 +36,8 @@
             var criteria = _.defaults(options, {
                 format: 'comic',
                 formatType: 'comic',
-                noVariants: true
+                noVariants: true,
+                limit: defaultPageSize
             });
             criteria.characters = '' + id;
             return comics.getList(criteria).then(utils.cacheThumbnails);

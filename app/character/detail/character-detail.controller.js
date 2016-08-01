@@ -49,7 +49,7 @@
             function waitAnimationEnd(){
                 vm.isLoadingComics = true;
                 return comicService
-                    .findByCharacterId(vm.character.id, {limit: 10})
+                    .findByCharacterId(vm.character.id, {limit: 5})
                     .then(updateLayout)
                     .catch(processErr);
             }
