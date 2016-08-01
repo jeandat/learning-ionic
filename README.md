@@ -110,6 +110,8 @@ On iOS land, [WkWebView](https://www.npmjs.com/package/cordova-plugin-wkwebview-
   - empty responses and images caches
   - Disable animations for less capable devices
   - Disable google analytics
+- Travis CI : web build & unit tests (javascript)
+- Greenhouse CI : native build & Crashlytics Beta deployment
 
 # Prerequisites
 
