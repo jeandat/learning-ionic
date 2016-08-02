@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-npm i -g grunt-cli ionic cordova bower
+npm i -g grunt-cli ionic@beta cordova bower
 npm i
 ionic state restore
 npm test
