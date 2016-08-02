@@ -83,7 +83,7 @@
             $log.info('Loaded', (meta.count + meta.offset), '/', meta.total, 'comics which title starts with `' +
                 vm.filter + '`');
             // Update list of comics
-            vm.comics = meta.offset === 0 ? results : _.concat(vm.comics, results);
+            vm.comics = meta.offset === 0 ? results : _.unionBy(vm.comics, results, 'id');
             // Update meta
             meta = vm.comics.meta = results.meta;
             // Update boolean to know instantly if there is more

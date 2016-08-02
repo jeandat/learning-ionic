@@ -77,7 +77,7 @@
             $log.info('Loaded', (meta.count + meta.offset), '/', meta.total, 'characters which name starts with `' +
                 vm.filter + '`');
             // Update list of characters
-            vm.characters = meta.offset === 0 ? results : _.concat(vm.characters, results);
+            vm.characters = meta.offset === 0 ? results : _.unionBy(vm.characters, results, 'id');
             // Update meta
             meta = vm.characters.meta = results.meta;
             // Update boolean to know instantly if there is more
@@ -117,7 +117,7 @@
                 fn();
             });
         }
-        
+
         function checkFavourites(){
             _.forEach(vm.characters, updateFavourite);
             /////////
