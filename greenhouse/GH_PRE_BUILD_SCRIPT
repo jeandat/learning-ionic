@@ -1,0 +1,6 @@
+#!/bin/sh
+npm i -g grunt-cli ionic cordova bower
+npm i
+ionic state restore
+npm test
+npm run build -- android

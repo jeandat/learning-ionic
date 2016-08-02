@@ -16,7 +16,7 @@ describe('characterService: ', function () {
         $httpBackend.expectGET(/\/characters/).respond(fixture);
         characterService.findByName('Deadpool').then(function (results) {
             expect(results).toBeTruthy();
-            expect(results.length).toBe(4);
+            expect(results.length).toBe(2);
             done();
         });
         $httpBackend.flush();
@@ -33,7 +33,7 @@ describe('characterService: ', function () {
         });
         $httpBackend.flush();
     });
-    
+
     it('should get the remaining results', function(done){
         var fixture2 = readJSON(fixturesPath + '/characters/sp_20.json');
         $httpBackend.expectGET(/\/characters.*offset=20/).respond(fixture2);
