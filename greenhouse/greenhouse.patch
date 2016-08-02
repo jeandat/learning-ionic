@@ -1,0 +1,28 @@
+Index: greenhouse/GH_PRE_BUILD_SCRIPT
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- platforms/platforms.json	(revision fb08481107185287812580e2171e0b5fe49a317c)
++++ platforms/platforms.json	(revision fb08481107185287812580e2171e0b5fe49a317c)
+@@ -0,0 +1,3 @@
++{
++    "android": "5.1.1"
++}
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .gitignore	(revision c5d64b834fb5ae99dfab661d11262ddb8da05e8d)
++++ .gitignore	(revision fb08481107185287812580e2171e0b5fe49a317c)
+@@ -5,7 +5,8 @@
+ !doc/screens
+ .idea/
+ node_modules/
+-platforms/
++platforms/*
++!platforms/platforms.json
+ plugins/
+ .sass-cache/
+ .tmp/
