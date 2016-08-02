@@ -111,7 +111,7 @@ On iOS land, [WkWebView](https://www.npmjs.com/package/cordova-plugin-wkwebview-
   - Disable animations for less capable devices
   - Disable google analytics
 - Travis CI : web build & unit tests (javascript)
-- Greenhouse CI : native build & Crashlytics Beta deployment
+- Greenhouse CI : native build & unit tests (javascript) & Crashlytics Beta deployment
 
 # Prerequisites
 
@@ -443,5 +443,5 @@ I don't know a cordova way to customize the app's default background, but by mod
  
 # Known Bugs
  
- - Images in cache (file:// urls) does not load the first time for a security reason when deploying in live reload mode (http://)
+ - Images in cache (`file://` urls) does not load the first time for a security reason when deploying in live reload mode (`http://`)
  - Random crash in lists caused by duplicate IDs in the Marvel database
