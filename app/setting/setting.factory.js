@@ -24,6 +24,7 @@
 
         ////////////
 
+        // Execute a diff between previous and new options and process the ones that have changed.
         function applyDiffAndPersist(newSettings, oldSettings){
             // enableAnimations property
             newSettings.enableAnimations !== oldSettings.enableAnimations && processEnableAnimations();
@@ -41,12 +42,14 @@
             processEnableAnimations();
         }
 
+        // Enable or disable animations
         function processEnableAnimations(){
             var enable = service.settings.enableAnimations;
             $ionicBody.enableClass(!enable, 'no-animation');
             enable ? enableAnimations() : disableAnimations();
         }
 
+        // Enable or disable Google Analytics
         function processEnableTracker(){
             service.settings.enableTracker ? enableTracker() : disableTracker();
         }
@@ -59,6 +62,9 @@
             $window['ga-disable-' + trackerId] = true;
         }
 
+        // Clear two caches: 
+        // - Images cached on disk (file system)
+        // - HTTP responses cached on disk (local storage)
         function clearCache() {
             return $q(function (resolve, reject) {
 

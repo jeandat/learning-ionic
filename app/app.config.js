@@ -141,6 +141,8 @@
     }
 
     function httpConfig($httpProvider) {
+        // Performance optimisation: batch multiple $http responses into one $digest when possible
+        // http://blog.thoughtram.io/angularjs/2015/01/14/exploring-angular-1.3-speed-up-with-applyAsync.html
         $httpProvider.useApplyAsync(true);
         $httpProvider.interceptors.push('httpInterceptor');
     }

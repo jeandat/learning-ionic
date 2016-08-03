@@ -5,6 +5,8 @@
         .module('app')
         .directive('jdIcBg', jdIcBg);
 
+    // Directive that can cache an image on disk and add a background image to that element via css.
+    // Avoid the usual web effect that makes the image appears line after line from top to bottom. 
     function jdIcBg($log, utils) {
 
         var directive = {

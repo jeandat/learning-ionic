@@ -5,6 +5,8 @@
         .module('app')
         .directive('backButton', factory);
 
+    // Back button component that do what Ionic do automatically in the navbar : show a back button which respects guidelines from the
+    // platform currently active.
     function factory() {
 
         var directive = {

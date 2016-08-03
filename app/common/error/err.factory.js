@@ -5,6 +5,7 @@
         .module('app')
         .factory('Err', createClass);
 
+    // Enhanced Error class.
     function createClass($interpolate) {
 
         var codes = {

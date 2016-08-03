@@ -5,6 +5,7 @@
         .module('app')
         .factory('httpInterceptor', httpInterceptor);
 
+    // Normalize and transform network errors.
     function httpInterceptor(Err, $q, $log) {
         return {
             requestError: function () {

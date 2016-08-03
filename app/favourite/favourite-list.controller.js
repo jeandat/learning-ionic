@@ -21,9 +21,11 @@
 
         function activate() {
             $log.debug(vm.title + ' instantiated');
+            // This check is done after the view has fully entered to avoid executing anything during animations.
             $scope.$on('$ionicView.afterEnter', checkFirebaseStatus);
         }
 
+        // Start listening to faves changes.
         function checkFirebaseStatus() {
             if (!vm.loaded && $rootScope.firebaseReady) {
                 vm.loaded = true;
@@ -32,6 +34,7 @@
             }
         }
 
+        // Transform an array of faves into a map in order to class faves into groups (one per letter in the alphabet). 
         function generateIndex() {
             vm.faves = _.groupBy(favouriteService.faves, nameOrTitle);
             vm.faveKeys = _.sortBy(_.keys(vm.faves));

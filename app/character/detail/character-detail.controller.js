@@ -42,6 +42,7 @@
             open(vm.character.detailUrl, '_system');
         }
 
+        // Request the first five comics for this character. 
         function loadComics() {
             unlisten();
             $timeout(waitAnimationEnd, 500);

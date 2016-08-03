@@ -5,6 +5,8 @@
         .module('app')
         .directive('scrollTop', scrollTopDirective);
 
+    // Allow to go to the top by clicking the page title. Put it once in your dom.
+    // Scroll will be animated if inferior to a certain distance.
     function scrollTopDirective($ionicScrollDelegate) {
 
         var directive = {

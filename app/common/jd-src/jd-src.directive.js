@@ -5,6 +5,8 @@
         .module('app')
         .directive('jdSrc', jdSrc);
 
+    // Directive that preload an image in memory and then set the `src` attribute. 
+    // The objective is normally to avoid the usual web effect with images which is a partial loading from top to bottom. 
     function jdSrc($timeout) {
 
         var directive = {

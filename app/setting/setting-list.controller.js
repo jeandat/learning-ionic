@@ -20,6 +20,8 @@
             $scope.$watchCollection('vm.settings', settingService.applyDiffAndPersist);
         }
 
+        // Clear some caches.
+        // See settingService#clearCache.
         function clearCache() {
 
             var options = {

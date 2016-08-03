@@ -9,6 +9,7 @@
 
     $exceptionHandlerDecorator.$inject = ['$delegate', '$log', 'showErr'];
 
+    // Default angular handler for uncatched exceptions. Render a native toast.
     function $exceptionHandlerDecorator($delegate, $log, showErr) {
 
         function exceptionHandler(exception, cause) {

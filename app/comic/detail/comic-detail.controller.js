@@ -23,6 +23,7 @@
             $log.debug(vm.title + ' instantiated');
         }
 
+        // Open comic page on marvel.com in default browser.
         function openDetailPage() {
             var open = _.get(window, 'cordova.InAppBrowser.open') || window.open;
             open(vm.comic.detailUrl, '_system');
@@ -41,7 +42,7 @@
             vm.hideContent = !vm.hideContent;
         }
 
-        // Show a native viewer with zoom capability.
+        // Show a native viewer with zoom and sharing capabilities.
         function showViewer() {
             // Unfortunately, this plugin doesn't handle cdvfile: url.
             // So I'm converting it to a normal file system url to avoid to download again that image.

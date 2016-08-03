@@ -35,6 +35,7 @@
             $rootScope.$on('firebase:ready', checkFavourites);
         }
 
+        // Search for characters whose name starts with…
         function search() {
             showSpinner();
             var promise = characterService.findByName(vm.filter);
@@ -63,6 +64,7 @@
             vm.searching = false;
         }
 
+        // Request new items for the current search.
         function showMore() {
             showSpinner();
             vm.offset += defaultPageSize;
@@ -72,6 +74,7 @@
                 .finally(hideSpinner);
         }
 
+        // Concatenate current results with new ones. Update meta infos.
         function updateList(results) {
             var meta = _.get(results, 'meta');
             $log.info('Loaded', (meta.count + meta.offset), '/', meta.total, 'characters which name starts with `' +
@@ -85,7 +88,7 @@
         }
 
         // Event handler called when clicking the fave button (heart).
-        // It will add or remove a favourite in our local db.
+        // It will add or remove a favourite in Firebase.
         function toggleFave(character) {
             if (character.favourite) {
                 favouriteService.removeFave(character.favourite);
@@ -97,6 +100,7 @@
             }
         }
 
+        // Indicate us a fave has been added in Firebase (at least locally).
         function favouriteDidAdded(event, fave) {
             // Nothing to do if there is zero characters.
             if (!vm.characters.length) return;
@@ -105,6 +109,7 @@
             $log.debug('Fave added:', fave);
         }
 
+        // Indicate us a fave has been removed in Firebase (at least locally).
         function favouriteDidRemoved(event, fave) {
             var model = _.find(vm.characters, {id: fave.id});
             if (model) model.favourite = null;
@@ -118,6 +123,7 @@
             });
         }
 
+        // Get the corresponding fave in Firebase (if any) for each model.
         function checkFavourites(){
             _.forEach(vm.characters, updateFavourite);
             /////////

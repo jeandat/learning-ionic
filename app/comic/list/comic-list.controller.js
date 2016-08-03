@@ -16,7 +16,6 @@
         vm.searching = false;
         vm.offset = 0;
         vm.hasMoreData = false;
-        vm.keep = keep;
         vm.search = search;
         vm.loadMore = loadMore;
         vm.toggleFave = toggleFave;
@@ -36,10 +35,7 @@
             $rootScope.$on('firebase:ready', checkFavourites);
         }
 
-        function keep() {
-            $cordovaToast.showShortBottom('Not implemented yet…');
-        }
-
+        // Search for comics whose name starts with…
         function search() {
             showSpinner();
             var promise = comicService.findByName(vm.filter);
@@ -69,6 +65,7 @@
             vm.searching = false;
         }
 
+        // Request new items for the current search.
         function loadMore() {
             showSpinner();
             vm.offset += defaultPageSize;
@@ -78,6 +75,7 @@
                 .finally(hideSpinner);
         }
 
+        // Concatenate current results with new ones. Update meta infos.
         function updateList(results) {
             var meta = _.get(results, 'meta');
             $log.info('Loaded', (meta.count + meta.offset), '/', meta.total, 'comics which title starts with `' +
@@ -91,7 +89,7 @@
         }
 
         // Event handler called when clicking the fave button (heart).
-        // It will add or remove a favourite in our local db.
+        // It will add or remove a favourite in Firebase.
         function toggleFave(comic) {
             if (comic.favourite) {
                 favouriteService.removeFave(comic.favourite);
@@ -103,6 +101,7 @@
             }
         }
 
+        // Indicate us a fave has been added in Firebase (at least locally).
         function favouriteDidAdded(event, fave) {
             // Nothing to do if there is zero comics.
             if (!vm.comics.length) return;
@@ -111,6 +110,7 @@
             $log.debug('Fave added:', fave);
         }
 
+        // Indicate us a fave has been removed in Firebase (at least locally).
         function favouriteDidRemoved(event, fave) {
             var model = _.find(vm.comics, {id: fave.id});
             if (model) model.favourite = null;
@@ -124,6 +124,7 @@
             });
         }
 
+        // Get the corresponding fave in Firebase (if any) for each model.
         function checkFavourites(){
             _.forEach(vm.comics, updateFavourite);
             /////////

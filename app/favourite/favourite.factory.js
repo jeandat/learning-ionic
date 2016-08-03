@@ -12,7 +12,7 @@
 
         var unsyncedCreatedFaves = localStorageService.get('faves.created') || [];
         var unsyncedDeletedFaves = localStorageService.get('faves.deleted') || [];
-        
+
         var service = {
             init: init,
             getFaveByModelId: getFaveByModelId,
@@ -27,6 +27,7 @@
 
         function init() {
             return $q(function (resolve) {
+                // Firebase configuration
                 var config = {
                     apiKey: firebaseApiKey,               // Your Firebase API key
                     authDomain: firebaseAuthDomain,       // Your Firebase Auth domain ("*.firebaseapp.com")
@@ -75,6 +76,7 @@
             return faves.$loaded();
         }
 
+        // Initiate an anonymous sign in if needed using the Firebase backend.
         function authenticate() {
             return $q(function (resolve, reject) {
                 auth = $firebaseAuth();
@@ -98,6 +100,7 @@
                     $log.debug('Provider data:', user.providerData);
                     var userRef = firebase.database().ref().child('users').child(user.uid);
                     if(!userRef.child('provider').toString()) userRef.set({provider: user.providerId});
+                    // Get faves from firebase and store them in a $firebaseArray for convenience.
                     service.faves = faves = $firebaseArray(userRef.child('favourites'));
                     resolve();
                 }
@@ -108,6 +111,7 @@
             return _.find(faves, {id: id}) || null;
         }
 
+        // Add fave in Firebase.
         function addFave(fave) {
             if (!_.includes(unsyncedCreatedFaves, fave)) registerFaveForCreation(fave);
             faves.$add(fave).then(clean);
@@ -117,6 +121,7 @@
             }
         }
 
+        // Remove fave from Firebase.
         function removeFave(fave) {
             if (!_.includes(unsyncedDeletedFaves, fave)) registerFaveForDeletion(fave);
             // Using the index syntax because when faves come from the local storage, Firebase will not recognize them as valid objects.
@@ -127,6 +132,9 @@
             }
         }
 
+        // Save `fave` locally until it is synced online (created).
+        // Even if Firebase can handle temporary disconnections you will lose everything that is not synchronized upon a restart.
+        // So we have to save it ourselves locally until we are done. It is safe to restart.
         function registerFaveForCreation(fave) {
             unsyncedCreatedFaves.push(fave);
             localStorageService.set('faves.created', unsyncedCreatedFaves);
@@ -137,6 +145,9 @@
             localStorageService.set('faves.created', unsyncedCreatedFaves);
         }
 
+        // Save `fave` locally until it is synced online (deleted).
+        // Even if Firebase can handle temporary disconnections you will lose everything that is not synchronized upon a restart.
+        // So we have to save it ourselves locally until we are done. It is safe to restart.
         function registerFaveForDeletion(fave) {
             unsyncedDeletedFaves.push(fave);
             localStorageService.set('faves.deleted', unsyncedDeletedFaves);
@@ -147,6 +158,7 @@
             localStorageService.set('faves.deleted', unsyncedDeletedFaves);
         }
 
+        // Try to sync unsynced items with Firebase (creations and deletions).
         function syncItems() {
             _.forEach(unsyncedCreatedFaves, addFave);
             _.forEach(unsyncedDeletedFaves, removeFave);

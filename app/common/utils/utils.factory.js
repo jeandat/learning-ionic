@@ -5,6 +5,7 @@
         .module('app')
         .factory('utils', utils);
 
+    // As expected, helper functions.
     function utils($log, $q) {
 
         var service = {
@@ -16,9 +17,12 @@
 
         ////////////////
 
+        // Cache an image on disk from a source url.
+        // Returns a promise. The resolve callback receive a cached url.
+        // The reject callback receive the source url. 
         function cacheFile(srcUrl) {
             return $q(function (resolve, reject) {
-                if(!srcUrl) {
+                if (!srcUrl) {
                     reject(srcUrl);
                     return;
                 }
@@ -45,6 +49,7 @@
             });
         }
 
+        // Convert a cordova url (`cdvfile://`) into a standard file system url.
         function convertLocalFileSystemURL(url) {
             return $q(function (resolve, reject) {
                 resolveLocalFileSystemURL(url, success, reject);
@@ -57,27 +62,32 @@
             });
         }
 
-        function cacheThumbnails(items, properties){
+        // Cache thumbnail urls in each item and add one new property for each given property corresponding to the cached url.
+        // The created property uses the actual name suffixed with 'InCache'.
+        // `properties` Array<String> Accepted values are : `thumbnailUrl`, `thumbnailUrlInPortraitUncanny`
+        // `ìtems` Array of comics or characters 
+        function cacheThumbnails(items, properties) {
             $log.debug('Caching thumbnails');
-            if(_.isEmpty(items)) return items;
+            if (_.isEmpty(items)) return items;
             // Avoid configuring everyone for these very common properties.
-            if(_.isEmpty(properties)) properties = ['thumbnailUrl', 'thumbnailUrlInPortraitUncanny'];
+            if (_.isEmpty(properties)) properties = ['thumbnailUrl', 'thumbnailUrlInPortraitUncanny'];
             var promises = [];
             _.forEach(items, cacheThumbnail);
-            return $q.all(promises).then(function(){
+            return $q.all(promises).then(function () {
                 return items;
             });
             /////////
             function cacheThumbnail(item) {
                 _.forEach(properties, cacheProperty);
                 /////////
-                function cacheProperty(property){
+                function cacheProperty(property) {
                     _.has(item, property) && promises.push(cacheFile(item[property]).then(updateModel).catch(bypass));
                     //////////
                     function updateModel(cachedUrl) {
                         item[property + 'InCache'] = cachedUrl;
                     }
-                    function bypass(){
+
+                    function bypass() {
                         return $q.resolve();
                     }
                 }

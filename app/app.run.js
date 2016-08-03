@@ -24,7 +24,7 @@
             cordova.plugins.Keyboard.disableScroll(false);
         }
 
-        // Style status bar
+        // Style the status bar
         var style = _.get($cordovaStatusbar, 'style');
         style && style(1);
     }
@@ -73,6 +73,7 @@
         }
     }
 
+    // Help to detect in console which states have been invoked.
     function setCustomLogs($rootScope, $log) {
         $rootScope.$on('$stateChangeStart', logViewName);
 
@@ -184,10 +185,12 @@
         }
     }
 
+    // Apply saved settings at startup.
     function applySettings(settingService) {
         settingService.apply();
     }
 
+    // Set up Google Analytics
     function setTracker($log, trackerId, $rootScope, $cordovaGoogleAnalytics) {
 
         $cordovaGoogleAnalytics.startTrackerWithId(trackerId);
@@ -214,6 +217,7 @@
         }
     }
 
+    // Boot workflow that will initialize several components, go to the home page and then hide the splashscreen.
     function boot($state, $cordovaSplashscreen, $timeout, ImgCache, $rootScope, $log, $ionicPopup, favouriteService, Err, showErr) {
         initImgCache()
             .catch(explain)

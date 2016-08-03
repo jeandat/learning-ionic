@@ -29,6 +29,7 @@
             unlisten = $scope.$parent.$on('modal.shown', showMore);
         }
 
+        // Request new comics for the character.
         function showMore() {
             if (unlisten) {
                 unlisten();

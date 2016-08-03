@@ -5,6 +5,7 @@
         .module('app')
         .directive('hideContent', ddf);
 
+    // Directive that will hide content from its container depending on the expression value.
     function ddf() {
 
         var directive = {
