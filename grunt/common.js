@@ -22,8 +22,8 @@ module.exports = function (grunt, config) {
             // Utility so useful for versioning
             bump: {
                 options: {
-                    files: ['package.json', 'bower.json'],
-                    commitFiles: ['package.json', 'bower.json'],
+                    files: ['package.json'],
+                    commitFiles: ['package.json'],
                     pushTo: 'origin'
                 }
             },
