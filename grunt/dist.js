@@ -9,8 +9,8 @@ module.exports = function () {
             // Utility so useful for versioning
             bump: {
                 options: {
-                    files: ['package.json'],
-                    commitFiles: ['package.json'],
+                    files: ['package.json', 'config.xml'],
+                    commitFiles: ['package.json', 'config.xml'],
                     pushTo: 'origin'
                 }
             },

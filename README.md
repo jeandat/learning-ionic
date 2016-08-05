@@ -51,7 +51,8 @@
   - [Err class](#err-class)
   - [Default angular handler](#default-angular-handler)
 - [Splashscreen reflexions](#splashscreen-reflexions)
-- [Known Bugs](#known-bugs)
+- [Known bugs](#known-bugs)
+- [Release process](#release-process)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -443,7 +444,18 @@ I recommend to either hide the splashscreen yourself when you are ready* (more o
 
 I don't know a cordova way to customize the app's default background, but by modifying the code of each shell and defining a custom background color in adequation with your look it can be even prettier. I don't like modifying native code though.
  
-# Known Bugs
+# Known bugs
  
- - Images in cache (`file://` urls) does not load the first time for a security reason when deploying in live reload mode (`http://`)
- - Random crash in lists caused by duplicate IDs in the Marvel database
+- Images in cache (`file://` urls) does not load the first time for a security reason when deploying in live reload mode (`http://`)
+- Random crash in lists caused by duplicate IDs in the Marvel database
+ 
+# Release process
+
+```bash
+# 1. Modify package.json and config.xml
+grunt bump-only[:<version>]
+# 2. Generate changelog
+grunt conventionalChangelog
+# 3. Commit, create tag and push to origin (including tags)
+grunt commit-only
+```

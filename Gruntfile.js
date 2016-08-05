@@ -10,8 +10,8 @@ module.exports = function (grunt) {
     // Load grunt tasks on demand —> Better build time
     require('jit-grunt')(grunt, {
         'sass_compile_imports': 'grunt-sass-compile-imports',
-        'bump-only': 'grunt-bump',
-        'bump-commit': 'grunt-bump'
+        'bump-only': 'grunt-bump-cordova',
+        'bump-commit': 'grunt-bump-cordova'
     });
 
     // Will print the time taken by each task at the end of process
