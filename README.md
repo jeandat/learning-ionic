@@ -1,7 +1,6 @@
 
 [![Build Status](https://travis-ci.org/jdat82/learning-ionic.svg)](https://travis-ci.org/jdat82/learning-ionic)
 [![Dependency Status](https://gemnasium.com/badges/github.com/jdat82/learning-ionic.svg)](https://gemnasium.com/github.com/jdat82/learning-ionic)
-[![NPM Release](https://img.shields.io/github/release/jdat82/learning-ionic.svg)](https://github.com/jdat82/learning-ionic/releases)
 [![codecov](https://codecov.io/gh/jdat82/learning-ionic/branch/master/graph/badge.svg)](https://codecov.io/gh/jdat82/learning-ionic)
 
 [//]: # ([![Inline docs](http://inch-ci.org/github/jdat82/learning-ionic.svg?branch=master)](http://inch-ci.org/github/jdat82/learning-ionic))
