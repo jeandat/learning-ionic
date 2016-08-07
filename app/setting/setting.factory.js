@@ -40,6 +40,7 @@
 
         function apply(){
             processEnableAnimations();
+            processEnableTracker();
         }
 
         // Enable or disable animations
@@ -62,7 +63,7 @@
             $window['ga-disable-' + trackerId] = true;
         }
 
-        // Clear two caches: 
+        // Clear two caches:
         // - Images cached on disk (file system)
         // - HTTP responses cached on disk (local storage)
         function clearCache() {
