@@ -46,4 +46,20 @@ describe('comicService: ', function () {
         $httpBackend.flush();
     });
 
+    it('should get wolverine comics', function(done){
+        var fixture = readJSON(fixturesPath + '/characters/wolverine-comics.json');
+        $httpBackend.expectGET(/\/comics/).respond(fixture);
+        comicService.findByCharacterId(1009718).then(function (results) {
+            expect(results).toBeTruthy();
+            expect(results.length).toBe(5);
+            expect(results[0].id).toBe(48022);
+            done();
+        });
+        $httpBackend.flush();
+    });
+
+    it('should throw an error if id is missing', function(){
+        expect(comicService.findByCharacterId).toThrowError();
+    });
+
 });
