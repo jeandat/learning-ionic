@@ -240,12 +240,13 @@ npm run serve -- --lab
 
 - Build web project with cordova mocks support
 - Execute unit tests with karma in a PhantomJS container
+- Generate JUnit and Coverage reporters
 
 ## npm run wtest
 
 - Build web project with cordova mocks support
 - Start a watcher for web code
-- Execute unit tests with karma in a PhantomJS container with auto-watch enabled
+- Execute unit tests with karma in a Chrome container with auto-watch enabled and no reporters
   - it means changes to code or tests are taken into account live
 
 ## npm run doc

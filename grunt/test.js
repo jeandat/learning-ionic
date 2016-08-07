@@ -11,7 +11,10 @@ module.exports.tasks = {
             singleRun: true
         },
         wdev: {
-            singleRun: false
+            singleRun: false,
+            // I'm deactivating the junit and coverage reporters cause they are not necessary and makes debugging quite impossible.
+            reporters: ['kjhtml', 'progress'],
+            browsers: ['Chrome']
         }
     },
 

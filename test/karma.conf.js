@@ -55,7 +55,6 @@ module.exports = function (config) {
             outputFile: 'TESTS-xunit.xml',
             useBrowserName: false
         },
-        //browsers: ['Chrome'],
         browsers: ['PhantomJS'],
         phantomjsLauncher: {
             // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
