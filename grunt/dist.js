@@ -10,8 +10,10 @@ module.exports = function () {
             bump: {
                 options: {
                     files: ['package.json', 'config.xml'],
-                    commitFiles: ['package.json', 'config.xml'],
-                    pushTo: 'origin'
+                    commitFiles: ['package.json', 'config.xml', 'CHANGELOG.md'],
+                    pushTo: 'origin',
+                    tagName: 'v%VERSION%',
+                    commitMessage: 'Release v%VERSION%'
                 }
             },
 

@@ -1,3 +1,30 @@
+<a name="0.4.2"></a>
+## [0.4.2](https://github.com/jdat82/learning-ionic/compare/v0.4.0...v0.4.2) (2016-08-08)
+
+
+### Bug Fixes
+
+* **settings:** Tracker setting was not applied at startup ([7bd3859](https://github.com/jdat82/learning-ionic/commit/7bd3859))
+
+
+### Features
+
+* **build:** Move from grunt-bump to grunt-bump-cordova. ([8c87c16](https://github.com/jdat82/learning-ionic/commit/8c87c16))
+* **doc:** Removed the Github Release badge ([ed7a9b4](https://github.com/jdat82/learning-ionic/commit/ed7a9b4))
+* **tests:** Better debugging for unit tests ([5a572ec](https://github.com/jdat82/learning-ionic/commit/5a572ec))
+* **tests:** Error case for a view controller. ([8f3d792](https://github.com/jdat82/learning-ionic/commit/8f3d792))
+* **tests:** Example unit test for a controller ([c1e126f](https://github.com/jdat82/learning-ionic/commit/c1e126f))
+* **tests:** New unit test for comic factory. ([12635dd](https://github.com/jdat82/learning-ionic/commit/12635dd))
+* **tests:** New unit tests for error components ([f1b6145](https://github.com/jdat82/learning-ionic/commit/f1b6145))
+* **tests:** Simplified throwErr unit test. ([79e3ec7](https://github.com/jdat82/learning-ionic/commit/79e3ec7))
+* **tests:** Test generic network errors like offline, timeout, 500, … ([6c2c266](https://github.com/jdat82/learning-ionic/commit/6c2c266))
+* **tests:** The global script now uses only `angular.mock.module` and not `angular.mock.inject` in order to avoid creating the injector too soon. ([b9fc5d8](https://github.com/jdat82/learning-ionic/commit/b9fc5d8))
+* **tests:** Unit test for a directive ([1ed5143](https://github.com/jdat82/learning-ionic/commit/1ed5143))
+* **tests:** Unit test for a filter ([4b9be8b](https://github.com/jdat82/learning-ionic/commit/4b9be8b))
+* **tests:** Unit test for the setting service ([3f94d10](https://github.com/jdat82/learning-ionic/commit/3f94d10))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/jdat82/learning-ionic/compare/v0.3.0...v0.4.0) (2016-08-05)
 
