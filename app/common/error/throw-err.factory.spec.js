@@ -9,8 +9,6 @@ describe('throwErr', function(){
 
     it('should throw the given err', function(){
         var err = new Err(2000);
-        var stub = {throwErr: _.wrap(err, throwErr)};
-        spyOn(stub, 'throwErr').and.callThrough();
-        expect(stub.throwErr).toThrowError(Err);
+        expect(_.wrap(err, throwErr)).toThrowError(Err);
     });
 });
