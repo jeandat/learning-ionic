@@ -1,7 +1,16 @@
 describe('CharacterListController', function(){
 
-    var scope, ctrl, $httpBackend, characterService, $cordovaToast;
+    var scope, ctrl, $httpBackend, characterService, $cordovaToast, throwErr, showErr;
 
+    beforeEach(module(function ($provide) {
+        // The real `throwErr` component will throw an exception to trigger $exceptionHandler but that will make jasmine fail obviously.
+        $provide.decorator('throwErr', function ($q) {
+            return jasmine.createSpy().and.callFake(function (err) {
+                return $q.reject(err);
+            });
+        });
+    }));
+        
     beforeEach(inject(function($injector){
         var $rootScope = $injector.get('$rootScope');
         scope = $rootScope.$new();
@@ -14,6 +23,8 @@ describe('CharacterListController', function(){
         $httpBackend = $injector.get('$httpBackend');
         characterService = $injector.get('characterService');
         $cordovaToast = $injector.get('$cordovaToast');
+        throwErr = $injector.get('throwErr');
+        showErr = $injector.get('showErr');
     }));
 
     afterEach(function() {
@@ -41,6 +52,27 @@ describe('CharacterListController', function(){
             expect(first.name).toBe('Wolverine');
             done();
         });
+        $httpBackend.flush();
+    });
+
+    it('should fail loading characters', function(done){
+
+        expect(ctrl.characters.length).toBe(0);
+        $httpBackend.expectGET(/\/characters/).respond(500);
+
+        ctrl.search()
+            .then(function(){
+                throw 'Should have failed';
+            })
+            .catch(function(err){
+                expect(err).toEqual(jasmine.any(Object));
+                expect(err.status).toBe(500);
+                expect(ctrl.characters.length).toBe(0);
+                expect(ctrl.characters.meta).toBeUndefined();
+                expect(ctrl.hasMore).toBe(false);
+                expect(ctrl.searching).toBe(false);
+                done();
+            });
         $httpBackend.flush();
     });
 });
