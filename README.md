@@ -28,8 +28,10 @@
   - [npm run android-lr](#npm-run-android-lr)
   - [npm run ios](#npm-run-ios)
   - [npm run ios-lr](#npm-run-ios-lr)
-  - [npm test](#npm-test)
-  - [npm run wtest](#npm-run-wtest)
+  - [npm test or npm run test-local](#npm-test-or-npm-run-test-local)
+  - [npm run test-local-w](#npm-run-test-local-w)
+  - [npm run test-saucelabs](#npm-run-test-saucelabs)
+  - [npm run test-full](#npm-run-test-full)
   - [npm run doc](#npm-run-doc)
   - [npm run build [-- \<platform>]](#npm-run-build----%5Cplatform)
 - [Build](#build-1)
@@ -57,33 +59,15 @@
 
 # Overview
 
-This is a demo app to apprehend IONIC which is built upon Cordova and Firebase.
+This is a demo app to apprehend IONIC v1 (which is built upon Cordova) and Firebase v3.
 
 Scope : iOS 8+ / Android 4.4+
 
-I will not develop new UI functionalities. It is a simple demo. In a normal app, some UI choices would have been different but I wanted to illustrate some components and keep it simple.
-Detail screens are poor in informations by necessity because the Marvel API is very limited. You have to go to the official site in order to view more detailed infos.
-
-Quick readers can do `npm start` in order to :
-
-- Install node dependencies
-- Install javascript dependencies
-- Build project
-- Launch a web server with reverse proxy and livereload
-- Open app in default browser
-
-Nonetheless I do not recommend to develop with your browser. It is different than a real device. You should develop on a real device and use the browser solution when it makes sense to make your life simpler for particular cases.
-
-In order to test in a simulator/emulator/device, you will need first to install everything needed by cordova and ionic (sdk, emulators, etc.) and then hit `ionic state restore` in your terminal which will install all cordova platforms and plugins. See prerequisites (next section).
-
-Then you just need to use one of the predefined npm alias. For instance: `npm run android` in order to :
-
-- Build project
-- Deploy on a real device if connected or an emulator/simulator as fallback
+I don't think I will develop new UI functionalities from this point. It is a simple demo. In a normal app, some UI choices would have been different and of course the app would have been richer but I wanted to illustrate some components and keep it simple. Detail screens are limited in informations by necessity because the Marvel API is a tad poor in details.
 
 [Crosswalk](https://www.npmjs.com/package/cordova-plugin-crosswalk-webview) is used as the default android browser, thus allowing us to share the same engine for all platforms. It give us control on that engine. We can update it whenever we want and have always the latest innovations from Chromium. The downside is a 25mb overload to the apk size.
 
-On iOS land, [WkWebView](https://www.npmjs.com/package/cordova-plugin-wkwebview-engine) is not used yet because it is too young.
+On iOS land, [WkWebView](https://www.npmjs.com/package/cordova-plugin-wkwebview-engine) is not used yet because it is too young. WkWebView should be handled natively in Ionic v2.
 
 # Illustrations
 
@@ -95,6 +79,22 @@ On iOS land, [WkWebView](https://www.npmjs.com/package/cordova-plugin-wkwebview-
 <img src="./doc/screens/official-site.jpg" width="263px" />
 <img src="./doc/screens/favourite-list.jpg" width="263px" />
 <img src="./doc/screens/setting-list.jpg" width="263px" />
+
+# Quick readers
+
+Quick readers can do `npm start` in order to check it quickly :
+
+- Install node dependencies (npm)
+- Install javascript dependencies (bower)
+- Build project
+- Launch a web server with reverse proxy and livereload
+- Open app in default browser
+
+I do not recommend to develop in the browser. It is different than a real device. You should develop on a real device and use the browser solution when it makes sense to make your life simpler for particular cases.
+
+In order to test in a simulator/emulator/device, you will need first to install everything needed by cordova and ionic (sdk, emulators, etc.) and then hit `ionic state restore` in your terminal which will install all cordova platforms and plugins. See prerequisites section.
+
+Then you just need to use one of the predefined npm alias. For instance: `npm run android` to deploy on a device/emulator.
 
 # Features
 
@@ -108,12 +108,21 @@ On iOS land, [WkWebView](https://www.npmjs.com/package/cordova-plugin-wkwebview-
 - JSON responses are cached on disk for one week
 - Images are cached on disk
 - Go up to the top in search lists by clicking the title
-- Settings : 
-  - empty responses and images caches
+- Google Analytics integration
+- Settings: 
+  - Clear responses and images caches
   - Disable animations for less capable devices
-  - Disable google analytics
-- Travis CI : web build & unit tests (javascript)
-- Greenhouse CI : native build & unit tests (javascript) & Crashlytics Beta deployment
+  - Disable google analytics  
+- Travis CI: 
+  - Web build
+  - Local unit tests (PhantomJS)
+  - Remote unit tests (emulators on SauceLabs)
+- Greenhouse CI: 
+  - Native build
+  - Local unit tests (PhantomJS)
+  - Remote unit tests (emulators on SauceLabs)
+  - Crashlytics Beta deployment
+- Coverage report on codecov.io
 
 # Prerequisites
 
@@ -141,7 +150,7 @@ This project should work on all versions of node since 0.12.7. I recommend [NVM]
 ## Build
 
 This project uses [Grunt](http://gruntjs.com/) as a task manager. Grunt tasks are lazy-loaded for performance.
-Tasks are defined inside `grunt` folder. There is one file per type of task. For instance, `css.js` contains css related tasks. It allows to have all related tasks in one file without having a too bigger file. I found it to be a good compromise between a one-file-per-task and and a one-big-monolithic-file strategies.
+Tasks are defined inside `grunt` folder. There is one file per type of task. For instance, `css.js` contains css related tasks. It allows to have all related tasks in one file without having a too bigger file. I found it to be a good compromise between the one-file-per-task and one-big-monolithic-file strategies.
 
 Grunt is used essentially to build web code and start tools.
 
@@ -149,17 +158,25 @@ Grunt is used essentially to build web code and start tools.
 
 ### General
 
-This project is using jshint and jscs to validate both form and content.
+This project is using jshint (see `.jshintrc`) and jscs (see `.jscsrc`) to validate both form and content.
 
 ### Angular
 
 This project tries to respect [guidelines from Angular team](https://github.com/johnpapa/angular-styleguide).
 
-Don't forget to use super easy optimisations like [one-time binding](https://code.angularjs.org/1.4.8/docs/guide/expression) and [track-by expressions](https://code.angularjs.org/1.4.8/docs/api/ng/directive/ngRepeat).
+I have tried to use super easy optimisations like:
+
+- [one-time binding](https://code.angularjs.org/1.4.8/docs/guide/expression) 
+- [track-by expressions](https://code.angularjs.org/1.4.8/docs/api/ng/directive/ngRepeat)
+- [disabling debug data](https://code.angularjs.org/1.4.8/docs/guide/production#disabling-debug-data)
+- [Enable animations explicitly](http://www.bennadel.com/blog/2935-enable-animations-explicitly-for-a-performance-boost-in-angularjs.htm)
+- [Use applyAsync](http://blog.thoughtram.io/angularjs/2015/01/14/exploring-angular-1.3-speed-up-with-applyAsync.html)
 
 ## CSS
 
 ### SASS
+
+`SASS` is used to build upon Ionic SASS code and allow easy UI customisations. 
 
 `_ionic.app.scss` is reserved for ionic customization like when we want to override default colors, or default font sizes, etc.
 
@@ -172,13 +189,15 @@ When writing a new scss file for a component you should always prefix it with `_
 ### Classes
 
 I always liked css object oriented features but they come with the cost of performance and maintainability.
-I would like to try a [BEM custom approach](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) which seems to be a good compromise :
+I tried a [BEM custom approach](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) which seems to be a good compromise :
 
 - better performance because there is less levels of imbrication
 - better maintainability and readability
 - less regressions and complications when working with other developers
 
-# Run
+Nonetheless, it is not a religion and normal css selectors are used [when it makes sense](http://cssguidelin.es/#bem-like-naming). 
+
+# High-level npm comands
 
 The file `package.json` contains a list of useful alias that you can invoke with `npm run <alias>`.
 
@@ -220,7 +239,7 @@ npm run serve -- --lab
 - Build native code
 - Start a watcher for web code
 - Start a web server with proxy
-- Deploy to android device (emulator if none) with livereload support
+- Deploy to android device (emulator if none) in livereload mode
 
 ## npm run ios
 
@@ -234,20 +253,33 @@ npm run serve -- --lab
 - Build native code 
 - Start a watcher for web code
 - Start a web server with proxy
-- Deploy to ios device (simulator if none) with livereload support
+- Deploy to ios device (simulator if none) in livereload mode
 
-## npm test
+## npm test or npm run test-local
 
 - Build web project with cordova mocks support
 - Execute unit tests with karma in a PhantomJS container
-- Generate JUnit and Coverage reporters
+- Generate JUnit and Coverage reports
 
-## npm run wtest
+## npm run test-local-w
 
 - Build web project with cordova mocks support
-- Start a watcher for web code
-- Execute unit tests with karma in a Chrome container with auto-watch enabled and no reporters
-  - it means changes to code or tests are taken into account live
+- Start a watcher for app code
+- Execute unit tests with karma in a Chrome container and watch for changes in test code
+- It means changes to code (tests and app) are taken into account live
+- JUnit and Coverage reporters disabled
+- Debug possible via Chrome DevTools
+- Nice html report in debug window
+
+## npm run test-saucelabs
+
+- Build web project with cordova mocks support
+- Execute unit tests with Karma in the SauceLabs cloud platform on iOS and Android emulators
+- JUnit and Coverage reporters disabled
+
+## npm run test-full
+
+- Execute tests locally in PhantomJS (`npm test`) and remotely in SauceLabs (`npm run test-saucelabs`)  
 
 ## npm run doc
 
@@ -270,13 +302,15 @@ To reduce build time, you can use `grunt` or `grunt newdev` to build only what c
 
 `grunt dist` will build with distribution options.
 
-## Options
+I almost never use low-level grunt tasks. I prefer to use npm high-level tasks. But it is good to understand how it works.
+
+## Grunt options
 
 ### --proxy | --no-proxy
 
 Instrument `conf/dev.js`: change API endpoint and enable the livereload option in order to leverage a reverse proxy on the local machine.
 
-Make sense for these commands :
+Make sense when serving code via a web server :
 
 - `npm run serve`
 - `npm run <platform>-lr`
@@ -285,7 +319,7 @@ Make sense for these commands :
 
 Instrument `conf/dev.js`: enable ngCordova mocks.
 
-Make sense for this command :
+Make sense when serving code in a browser :
 
 - `npm run serve`
 
@@ -296,15 +330,11 @@ See [grunt-replace](https://github.com/outaTiME/grunt-replace).
 
 For instance: `grunt dev --patterns foo` would use `conf/foo.js`.
 
-Can be use with any command.
-
 ### --platform <name>
 
 Define which platform is currently built. May be useful if you want to do something for a specific platform like adding or removing a library… 
 
 For instance: `grunt dev --platform windows`
-
-Can be use with any command. 
 
 # Serving changes
 
@@ -313,11 +343,13 @@ Can be use with any command.
 ## In your browser
 
 To build, launch a local web server and watch for changes:
+
 ```bash
 npm run serve
 ```
 
 You may pass a `--lab` option as it will delegate to `ionic serve` internally:
+
 ```bash
 npm run serve -- --lab
 ```
@@ -327,6 +359,7 @@ Code is loaded from `http://localhost:8100`.
 ## On device
 
 To build and deploy on device (or simulator if any):
+
 ```bash
 npm run <platform>
 ```
@@ -335,8 +368,8 @@ npm run <platform>
 
 Allowed `platform` values:
 
-- android
-- ios
+- `android`
+- `ios`
 
 Code is loaded from `file://assets/index.html`.
 
@@ -344,8 +377,8 @@ Code is loaded from `file://assets/index.html`.
 
 You may use instead:
 
-- android-lr
-- ios-lr
+- `android-lr`
+- `ios-lr`
 
 It will also start a watcher for code changes and the built-in ionic web server in livereload mode.
 
@@ -357,18 +390,45 @@ See npm scripts in `package.json` and [IONIC CLI](http://ionicframework.com/docs
 
 ## Unit tests
 
-To launch unit tests : `npm run test` ou `npm test`.
+Unit tests are run by Karma and written with Jasmine.
 
-To launch unit tests and watch for changes : `npm run wtest`.
+To launch unit tests locally in a PhantomJS container:
 
-Unit tests are run by Karma and written with Jasmine:
+```bash
+npm run test-local
+# Equivalent to `npm test`
+```
 
 - JUnit reports are generated inside `doc/test/junit`
-- Coverage reports are generated with Istanbul inside `doc/test/coverage`
+- Coverage reports are generated with Istanbul inside `doc/test/coverage` (used also by codecov.io)
+
+To launch unit tests locally in a Chrome container in debug mode and watch for changes:
+
+```bash
+npm run test-local-w
+```
+
+JUnit and coverage reports are disabled.
+
+To launch unit tests remotely on iOS/Android emulators via the SauceLabs cloud platform: 
+
+```bash
+npm run test-saucelabs
+```
+
+To launch all unit tests available: 
+
+```bash
+npm run test-full
+```
 
 # Documentation
 
-To generate groc and plato documentation inside `doc` folder: `npm run doc`.
+To generate groc and plato documentation inside `doc` folder: 
+
+```bash
+npm run doc
+```
 
 # Error handling
 
@@ -380,6 +440,7 @@ Error codes should be defined in `err.factory.js`.
 Its message is automatically defined based on its code but it is possible to override that message. You may also give it a cause.
 
 To create a new error, you can do:
+
 ```javascript
 // if 1000 is an an existing error code, its message will be found automatically.
 if(condition) throw new Err(1000);   
@@ -393,7 +454,7 @@ throw new Err(1000, {ui:true});
 
 ## Default angular handler
 
-`$exceptionHandler` was decorated to show a toast in last resort.
+Angular default error handler, a.k.a `$exceptionHandler` was decorated to show a native toast in last resort. If the received err is an instance of `Err` and `ui` is set to `true` its `message` attribute is used. 
 
 **Concerning chains of promises, you should follow some rules:**
 
@@ -417,7 +478,7 @@ function showErr(err){
 }
 ```
 
-To resume, if you do not have any error handling in your code because, for instance, you do not have to manage any specific error code for your case, you should at least use `throwErr` so generic errors are being handled by $exceptionHandler`.
+To resume, if you do not have any error handling to do in one of your component, you should at least use `throwErr` so generic errors are being handled by $exceptionHandler`.
 
 ```javascript
 return countryLanguageService.allCountries().then(function (response) {
@@ -438,7 +499,7 @@ I do not recommend to auto hide the splashscreen. Depending on your device veloc
 
 Augmenting the delay may be a solution if you didn't set preference `SplashShowOnlyFirstTime` to false. It is not very pretty though.
  
-I recommend to either hide the splashscreen yourself when you are ready* (more on that later) or use a very basic native splashscreen (one color) and then a web splashscreen. A web splashscreen allows much more flexibility and creativity but is more expensive.
+I recommend to either hide the splashscreen yourself when you are ready or use a very basic native splashscreen (one color) and then a web splashscreen. A web splashscreen allows much more flexibility and creativity but is more expensive.
 
 > Warning: [the plugin splashscreen is broken in version 3.0.0 and 3.1.0](https://issues.apache.org/jira/browse/CB-10412?jql=project%20%3D%20CB%20AND%20status%20in%20(Open%2C%20%22In%20Progress%22%2C%20Reopened)%20AND%20resolution%20%3D%20Unresolved%20AND%20component%20%3D%20%22Plugin%20Splashscreen%22%20AND%20text%20~%20%22hide%22%20ORDER%20BY%20priority%20DESC%2C%20summary%20ASC%2C%20updatedDate%20DESC): you can't hide the splashscreen yourself.
 
@@ -446,14 +507,15 @@ I don't know a cordova way to customize the app's default background, but by mod
  
 # Known bugs
  
-- Images in cache (`file://` urls) does not load the first time for a security reason when deploying in live reload mode (`http://`)
-- Random crash in lists caused by duplicate IDs in the Marvel database
+- Images in cache (`file://` urls) does not load the first time for a security reason when deploying in livereload mode (`http://`)
  
 # Release process
 
+I prefer to not automate more than that in order to have control after each step. But it would be easy to make an npm script.
+
 ```bash
 # 1. Modify package.json and config.xml
-grunt bump-only[:<version>]
+grunt bump-only[:<patch|minor|major|…>]
 # 2. Generate changelog
 grunt conventionalChangelog
 # 3. Commit, create tag and push to origin (including tags)

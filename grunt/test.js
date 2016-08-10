@@ -10,22 +10,26 @@ module.exports.tasks = {
         dev: {
             singleRun: true
         },
-        wdev: {
+        'dev-w': {
             singleRun: false,
             // I'm deactivating the junit and coverage reporters cause they are not necessary and makes debugging quite impossible.
             reporters: ['kjhtml', 'progress'],
             browsers: ['Chrome']
+        },
+        // SauceLabs karma conf
+        'dev-saucelabs': {
+            configFile: 'test/karma-saucelabs.conf.js'
         }
     },
 
     parallel: {
         // Launch a karma server in watch mode and a watch server for source files.
-        wtest: {
+        'test-w': {
             options: {
                 stream: true,
                 grunt: true
             },
-            tasks: ['karma:wdev', 'chokidar']
+            tasks: ['karma:dev-w', 'chokidar']
         }
     },
 
