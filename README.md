@@ -167,11 +167,12 @@ This project tries to respect [guidelines from Angular team](https://github.com/
 
 I have tried to use super easy optimisations like:
 
-- [one-time binding](https://code.angularjs.org/1.4.8/docs/guide/expression) 
+- [One-time binding](https://code.angularjs.org/1.4.8/docs/guide/expression) 
 - [track-by expressions](https://code.angularjs.org/1.4.8/docs/api/ng/directive/ngRepeat)
-- [disabling debug data](https://code.angularjs.org/1.4.8/docs/guide/production#disabling-debug-data)
-- [Enable animations explicitly](http://www.bennadel.com/blog/2935-enable-animations-explicitly-for-a-performance-boost-in-angularjs.htm)
-- [Use applyAsync](http://blog.thoughtram.io/angularjs/2015/01/14/exploring-angular-1.3-speed-up-with-applyAsync.html)
+- [Disabling debug data](https://code.angularjs.org/1.4.8/docs/guide/production#disabling-debug-data)
+- [Enabling animations explicitly](http://www.bennadel.com/blog/2935-enable-animations-explicitly-for-a-performance-boost-in-angularjs.htm)
+- [Using applyAsync](http://blog.thoughtram.io/angularjs/2015/01/14/exploring-angular-1.3-speed-up-with-applyAsync.html)
+- …
 
 ## CSS
 

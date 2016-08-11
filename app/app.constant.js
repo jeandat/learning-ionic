@@ -23,10 +23,10 @@
         // HTTP cache name
         .constant('defaultCacheName', 'defaultCache')
         // Firebase configuration
-        .constant('firebaseApiKey', 'AIzaSyCgo-Ta3byIK8w9I9g0o3Hrgop70-Ajm-8')
-        .constant('firebaseAuthDomain', 'learning-ionic.firebaseapp.com')
-        .constant('firebaseDatabaseUrl', 'https://learning-ionic.firebaseio.com')
-        .constant('firebaseStorageBucket', 'learning-ionic.appspot.com');
+        .constant('firebaseApiKey', 'AIzaSyCiOPVylkHxiZ7At1EdOUdtua7uCfJQC_I')
+        .constant('firebaseAuthDomain', 'learning-ionic-872b8.firebaseapp.com')
+        .constant('firebaseDatabaseUrl', 'https://learning-ionic-872b8.firebaseio.com')
+        .constant('firebaseStorageBucket', 'learning-ionic-872b8.appspot.com');
 
     // Same as `JSON.stringify` but with indentation.
     function stringify(value) {
