@@ -181,7 +181,8 @@
             // WARNING: when deleting, I'm using firebase directly because angularfire just give you the deleted key but not the actual
             // record. And you can't get it yourself because by the time you get notified, the local one is already deleted.
             // So in order to get best of both world and do what I want to do the easy way, I'm mixing here angularfire and pure firebase
-            // code.
+            // code which is kind of a good thing cause angularfire intent is not to replace the firebase sdk completely but just simplify 
+            // integration with angular when it makes sense. 
             var ref = faves.$ref();
             ref.on('child_removed', function (snapshot) {
                 var value = snapshot.val();
