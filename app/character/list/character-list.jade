@@ -4,7 +4,7 @@ ion-view.characters(view-title='Characters')
             form.characters__form(name='crtSearchForm' novalidate ng-submit='vm.search()')
                 label.item-input-wrapper
                     i.icon.ion-ios-search.placeholder-icon
-                    input(type='search' placeholder='Name starts with…' name='name' ng-model='vm.filter'
+                    input(type='search' placeholder='Name starts with…' name='name' ng-model='vm.filter' ng-model-options='{debounce: 200}'
                     spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off")
         .list
             .card.characters-card(ng-repeat="character in vm.characters track by character.id")
@@ -14,7 +14,7 @@ ion-view.characters(view-title='Characters')
                     div.characters-card__cover.characters-card__cover--not-found(ng-if="::!character.thumbnailUrl")
                 .item.item-icon-right.assertive.characters-card__footer
                     i.icon(ng-click='vm.toggleFave(character)' ng-class="{'ion-android-favorite': character.favourite, " +
-                    "'ion-android-favorite-outline': !character.favourite}" ng-if='firebaseReady')
+                    "'ion-android-favorite-outline': !character.favourite}" ng-if='favouritesReady')
                     | {{::character.name}}
         .characters__footer
             ion-spinner(ng-if='vm.searching')

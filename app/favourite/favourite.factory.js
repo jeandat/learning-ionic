@@ -5,10 +5,9 @@
         .module('app')
         .factory('favouriteService', favouriteService);
 
-    function favouriteService($firebaseArray, $firebaseAuth, $rootScope, $log, localStorageService, $q, $timeout,
-                              utils, firebaseApiKey, firebaseAuthDomain, firebaseDatabaseUrl, firebaseStorageBucket) {
+    function favouriteService($firebaseArray, authService, $rootScope, $log, localStorageService, $q, $timeout, utils) {
 
-        var faves, auth;
+        var faves;
 
         var unsyncedCreatedFaves = localStorageService.get('faves.created') || [];
         var unsyncedDeletedFaves = localStorageService.get('faves.deleted') || [];
@@ -27,42 +26,29 @@
 
         function init() {
             return $q(function (resolve) {
-                // Firebase configuration
-                var config = {
-                    apiKey: firebaseApiKey,               // Your Firebase API key
-                    authDomain: firebaseAuthDomain,       // Your Firebase Auth domain ("*.firebaseapp.com")
-                    databaseURL: firebaseDatabaseUrl,     // Your Firebase Database URL ("https://*.firebaseio.com")
-                    storageBucket: firebaseStorageBucket  // Your Firebase Storage bucket ("*.appspot.com")
-                };
-                // Checking number of apps for unit tests (avoid initializing multiple times).
-                if (_.isEmpty(firebase.apps)) firebase.initializeApp(config);
-                // If no response from firebase after 5s, we will use the local backup.
-                var timer = $timeout(fallback, 5000, false);
-                // Normal firebase boot.
-                authenticate()
+
+                // 1. Authenticate anonymously if needed
+                // 2. Load remote faves
+                // 3. Sync local items that we have saved ourselves (Firebase don't do that in the web sdk for now)
+                // 4. Cache thumbnails
+                // 5. Watch for remote changes
+                // 6. Notify internally
+                // 7. Handle errors
+                authService.authenticate()
                     .then(loadFaves)
-                    .then(stopTimer)
                     .then(syncItems)
                     .then(utils.cacheThumbnails)
                     .then(watch)
                     .then(notify)
                     .catch(firebaseInitFailed);
-                ///////////
-                function fallback() {
-                    $log.warn('Firebase UNAVAILABLE');
-                    timer = null;
-                    resolve();
-                }
 
-                function stopTimer() {
-                    timer && $timeout.cancel(timer);
-                }
+                ///////////
 
                 function notify() {
                     $log.info('FIREBASE READY');
                     $log.info('%i items in favourite list', faves.length);
-                    $rootScope.firebaseReady = true;
-                    $rootScope.$emit('firebase:ready');
+                    $rootScope.favouritesReady = true;
+                    $rootScope.$emit('favourites:ready');
                     resolve();
                 }
 
@@ -72,39 +58,10 @@
             });
         }
 
-        function loadFaves() {
+        function loadFaves(userRef) {
+            // Get faves from firebase and store them in a $firebaseArray for convenience.
+            service.faves = faves = $firebaseArray(userRef.child('favourites'));
             return faves.$loaded();
-        }
-
-        // Initiate an anonymous sign in if needed using the Firebase backend.
-        function authenticate() {
-            return $q(function (resolve, reject) {
-                auth = $firebaseAuth();
-                var unlisten = auth.$onAuthStateChanged(function(user){
-                    if(user) {
-                        $log.info('User known. Reloading user info…');
-                        user.reload()
-                            .then(_.wrap(user, initFaves))
-                            .catch(reject);
-                    } else {
-                        $log.info('No known user. Signing in…');
-                        auth.$signInAnonymously()
-                            .then(initFaves)
-                            .catch(reject);
-                    }
-                });
-                //////////
-                function initFaves(user){
-                    unlisten();
-                    $log.info('Logged in as %s (%s) with provider %s', user.email, user.uid, user.providerId);
-                    $log.debug('Provider data:', user.providerData);
-                    var userRef = firebase.database().ref().child('users').child(user.uid);
-                    if(!userRef.child('provider').toString()) userRef.set({provider: user.providerId});
-                    // Get faves from firebase and store them in a $firebaseArray for convenience.
-                    service.faves = faves = $firebaseArray(userRef.child('favourites'));
-                    resolve();
-                }
-            });
         }
 
         function getFaveByModelId(id) {
@@ -181,8 +138,8 @@
             // WARNING: when deleting, I'm using firebase directly because angularfire just give you the deleted key but not the actual
             // record. And you can't get it yourself because by the time you get notified, the local one is already deleted.
             // So in order to get best of both world and do what I want to do the easy way, I'm mixing here angularfire and pure firebase
-            // code which is kind of a good thing cause angularfire intent is not to replace the firebase sdk completely but just simplify 
-            // integration with angular when it makes sense. 
+            // code which is kind of a good thing cause angularfire intent is not to replace the firebase sdk completely but just simplify
+            // integration with angular when it makes sense.
             var ref = faves.$ref();
             ref.on('child_removed', function (snapshot) {
                 var value = snapshot.val();

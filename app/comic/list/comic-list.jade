@@ -4,7 +4,7 @@ ion-view.comics(view-title='Comics')
             form.comics__form(name='cmSearchForm' novalidate ng-submit='vm.search()')
                 label.item-input-wrapper
                     i.icon.ion-ios-search.placeholder-icon
-                    input(type='search' placeholder='Title starts with…' name='name' ng-model='vm.filter'
+                    input(type='search' placeholder='Title starts with…' name='name' ng-model='vm.filter' ng-model-options='{debounce: 200}'
                     spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off")
         .list
             .card.comics-card(ng-repeat="comic in vm.comics track by comic.id")
@@ -14,7 +14,7 @@ ion-view.comics(view-title='Comics')
                     div.comics-card__cover.comics-card__cover--not-found(ng-if="::!comic.thumbnailUrl")
                 .item.item-icon-right.assertive.comics-card__footer
                     i.icon(ng-click='vm.toggleFave(comic)' ng-class="{'ion-android-favorite': comic.favourite, " +
-                    "'ion-android-favorite-outline': !comic.favourite}" ng-if='firebaseReady')
+                    "'ion-android-favorite-outline': !comic.favourite}" ng-if='favouritesReady')
                     | {{::comic.title}}
         .comics__footer
             ion-spinner(ng-if='vm.searching')

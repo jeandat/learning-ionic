@@ -32,7 +32,7 @@
             listeners.push($rootScope.$on('fave:removed', favouriteDidRemoved));
             $scope.$on('$ionicView.unloaded', stopMonitoringFavourites);
             $scope.$on('$ionicView.loaded', search);
-            $rootScope.$on('firebase:ready', checkFavourites);
+            $rootScope.$on('favourites:ready', checkFavourites);
         }
 
         // Search for comics whose name starts with…

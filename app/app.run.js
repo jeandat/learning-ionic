@@ -78,7 +78,7 @@
         $rootScope.$on('$stateChangeStart', logViewName);
 
         function logViewName(event, toState, toParams) {
-            $log.debug('Entering state', toState.name, 'with parameters:', toParams);
+            $log.info('Entering state', toState.name, 'with parameters:', toParams);
         }
     }
 
@@ -208,7 +208,7 @@
             ////////////////
 
             function beaconSent() {
-                $log.debug('GA beacon sent for url `' + url + '`');
+                $log.info('GA beacon sent for url `' + url + '`');
             }
 
             function beaconCrashed(err) {
@@ -218,10 +218,10 @@
     }
 
     // Boot workflow that will initialize several components, go to the home page and then hide the splashscreen.
-    function boot($state, $cordovaSplashscreen, $timeout, ImgCache, $rootScope, $log, $ionicPopup, favouriteService, Err, showErr) {
+    function boot($state, $cordovaSplashscreen, $timeout, ImgCache, $rootScope, $log, $ionicPopup, favouriteService, Err, showErr, $q) {
         initImgCache()
             .catch(explain)
-            .then(favouriteService.init)
+            .then(initFaves)
             .catch(noFave)
             .then(goHome)
             .finally(hideSplash);
@@ -241,6 +241,27 @@
                 okType: 'button-assertive'
             };
             $ionicPopup.alert(options).then(ionic.Platform.exitApp);
+        }
+
+        function initFaves(){
+            return $q(function(resolve){
+                // If no response from firebase after 5s, favourites will be unavailable temporarily.
+                // I do not want to block the boot process if that takes too long for a non critical functionality.
+                var timer = $timeout(fallback, 5000, false);
+                favouriteService.init().then(stopTimer);
+                //////////
+                function fallback() {
+                    $log.warn('Favourites unavailable for now');
+                    timer = null;
+                    resolve();
+                }
+                function stopTimer() {
+                    if(timer){
+                        $timeout.cancel(timer);
+                        resolve();
+                    }
+                }
+            });
         }
 
         function goHome() {

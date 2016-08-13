@@ -27,7 +27,7 @@
 
         // Start listening to faves changes.
         function checkFirebaseStatus() {
-            if (!vm.loaded && $rootScope.firebaseReady) {
+            if (!vm.loaded && $rootScope.favouritesReady) {
                 vm.loaded = true;
                 favouriteService.faves.$watch(generateIndex);
                 generateIndex();
