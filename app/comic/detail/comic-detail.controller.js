@@ -5,7 +5,7 @@
         .module('app')
         .controller('ComicDetailController', ComicDetailController);
 
-    function ComicDetailController($log, $stateParams, $scope, utils) {
+    function ComicDetailController($log, $stateParams, $scope) {
 
         var vm = this;
         vm.title = 'ComicDetailController';
@@ -29,7 +29,7 @@
             open(vm.comic.detailUrl, '_system');
         }
 
-        function remove(){
+        function remove() {
             // Little subtlety.
             // For simplicity sake, the modal load a template which define its own controller in the template (this one).
             // As ionicModal create a scope automatically if not provided, it is automatically the parent of the one created for this controller.
@@ -38,23 +38,13 @@
             $scope.$parent.modal.remove();
         }
 
-        function toggleContent(){
+        function toggleContent() {
             vm.hideContent = !vm.hideContent;
         }
 
         // Show a native viewer with zoom and sharing capabilities.
         function showViewer() {
-            // Unfortunately, this plugin doesn't handle cdvfile: url.
-            // So I'm converting it to a normal file system url to avoid to download again that image.
-            // Plus the plugin doesn't have any error callback, so using the cached file avoid us issues with network.
-            utils.cacheFile(vm.comic.thumbnailUrl)
-                .then(utils.convertLocalFileSystemURL)
-                .then(showNativeViewer)
-                .catch(showNativeViewer);
-            //////////
-            function showNativeViewer(url) {
-                PhotoViewer.show(url, vm.comic.title);
-            }
+            PhotoViewer.show(vm.comic.thumbnailUrlInCache, vm.comic.title);
         }
 
     }
