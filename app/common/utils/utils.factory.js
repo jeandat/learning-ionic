@@ -11,7 +11,8 @@
         var service = {
             cacheFile: cacheFile,
             convertLocalFileSystemURL: convertLocalFileSystemURL,
-            cacheThumbnails: cacheThumbnails
+            cacheThumbnails: cacheThumbnails,
+            showPhotoViewer: showPhotoViewer
         };
         return service;
 
@@ -19,7 +20,7 @@
 
         // Cache an image on disk from a source url.
         // Returns a promise. The resolve callback receive a cached url.
-        // The reject callback receive the source url. 
+        // The reject callback receive the source url.
         function cacheFile(srcUrl) {
             return $q(function (resolve, reject) {
                 if (!srcUrl) {
@@ -65,7 +66,7 @@
         // Cache thumbnail urls in each item and add one new property for each given property corresponding to the cached url.
         // The created property uses the actual name suffixed with 'InCache'.
         // `properties` Array<String> Accepted values are : `thumbnailUrl`, `thumbnailUrlInPortraitUncanny`
-        // `ìtems` Array of comics or characters 
+        // `ìtems` Array of comics or characters
         function cacheThumbnails(items, properties) {
             $log.info('Caching thumbnails');
             if (_.isEmpty(items)) return items;
@@ -93,7 +94,24 @@
                 }
             }
         }
+
+        // Will cache the remote image at `url` if not already in cache and use a local url instead of the remote one.
+        // Avoid to download it again.
+        function showPhotoViewer(url, title) {
+            cacheFile(url)
+            // Unfortunately, this plugin doesn't handle cdvfile: url.
+            // So I'm converting it to a normal file system url.
+                .then(convertLocalFileSystemURL)
+                .then(showNativeViewer)
+                // In case we can't cache the file, the remote url will be used.
+                .catch(showNativeViewer);
+            //////////
+            function showNativeViewer(url) {
+                PhotoViewer.show(url, title);
+            }
+        }
     }
 
 })();
+
 

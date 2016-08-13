@@ -94,7 +94,9 @@
 
         // Show a native viewer with zoom capability.
         function showViewer() {
-            PhotoViewer.show(vm.character.thumbnailUrlInCache, vm.character.name);
+            // We can't use blindly `thumbnailUrlInCache' cause the file might not be in cache anymore. For instance if we just cleared 
+            // the cache after a search have been made. 
+            utils.showPhotoViewer(vm.character.thumbnailUrl, vm.character.name);
         }
 
     }

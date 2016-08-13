@@ -5,7 +5,7 @@
         .module('app')
         .controller('ComicDetailController', ComicDetailController);
 
-    function ComicDetailController($log, $stateParams, $scope) {
+    function ComicDetailController($log, $stateParams, $scope, utils) {
 
         var vm = this;
         vm.title = 'ComicDetailController';
@@ -44,7 +44,9 @@
 
         // Show a native viewer with zoom and sharing capabilities.
         function showViewer() {
-            PhotoViewer.show(vm.comic.thumbnailUrlInCache, vm.comic.title);
+            // We can't use blindly `thumbnailUrlInCache' cause the file might not be in cache anymore. For instance if we just cleared 
+            // the cache after a search have been made. 
+            utils.showPhotoViewer(vm.comic.thumbnailUrl, vm.comic.title);
         }
 
     }
