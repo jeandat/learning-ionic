@@ -8,21 +8,22 @@ ion-modal-view.character(ng-controller='CharacterDetailController as vm')
             button.button.button-clear.icon.ion-link(ng-click='::vm.openDetailPage()')
     ion-content.character__content.character__background(style="background-image: url('{{::vm.character.thumbnailUrlInCache || vm.character.thumbnailUrl}}')"
     hide-content="{{vm.hideContent}}")
-        .character__meta
+        div.character__meta
             span.character__text {{::vm.character.name}}
             br
             br
             span.character__text.character__description(ng-bind-html='::vm.character.description | html2text')
-        .character-comic-list
-            .character-comic-list__title.character__text(ui-sref='app.characterComicListInModal({comics:vm.comics, character:vm.character})'
+        div.character-comic-list
+            div.character-comic-list__title.character__text(ui-sref='app.characterComicListInModal({comics:vm.comics, character:vm.character})'
             ng-click='vm.showComics($event)')
                 span Comics
                 span.icon.ion-chevron-right.character-comic-list__count(ng-if='vm.hasMoreComics && !vm.isLoadingComics')
                 span.character-comic-list__count(ng-if='vm.hasMoreComics && !vm.isLoadingComics') See more
-            div.character-comic-list__content.character-comic-list__content--centered(ng-if='vm.isLoadingComics')
-                ion-spinner.spinner-light
-            div.character-comic-list__content.character-comic-list__content--centered(ng-if='vm.noComics') :(
-            ion-slides.character-comic-list__content(options='vm.swiper.options' slider='vm.swiper.instance' ng-if='!vm.isLoadingComics && !vm.noComics')
+            div.character-comic-list__content.character-comic-list__content--centered(ng-if='vm.isLoadingComics'): ion-spinner.spinner-light
+            div.character-comic-list__content.character-comic-list__content--centered(ng-if='!vm.isLoadingComics && vm.noComics') :(
+            div.character-comic-list__content.character-comic-list__content--centered(ng-if='!vm.isLoadingComics && vm.err')
+            ion-slides.character-comic-list__content(ng-if='!vm.isLoadingComics && vm.comics.length'
+            options='vm.swiper.options' slider='vm.swiper.instance')
                 ion-slide-page(ng-repeat='comic in vm.comics track by comic.id' ui-sref='app.comicDetailInModal({comic:comic})')
                     div.character-comic-list__cover(ng-if='::comic.thumbnailUrl'
                     style="background-image: url('{{::comic.thumbnailUrlInCache || comic.thumbnailUrl}}')")

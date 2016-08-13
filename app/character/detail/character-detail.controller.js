@@ -11,9 +11,10 @@
         vm.title = 'CharacterDetailController';
         vm.character = $stateParams.character;
         vm.comics = [];
-        vm.hasMoreComics = true;
+        vm.hasMoreComics = false;
         vm.isLoadingComics = true;
         vm.noComics = false;
+        vm.err = null;
         vm.swiper = {
             options: {
                 effect: 'fade'
@@ -42,18 +43,19 @@
             open(vm.character.detailUrl, '_system');
         }
 
-        // Request the first five comics for this character. 
+        // Request the first five comics for this character.
         function loadComics() {
             unlisten();
             $timeout(waitAnimationEnd, 500);
             ///////////
-            function waitAnimationEnd(){
+            function waitAnimationEnd() {
                 vm.isLoadingComics = true;
                 return comicService
                     .findByCharacterId(vm.character.id, {limit: 5})
                     .then(updateLayout)
                     .catch(processErr);
             }
+
             function updateLayout(response) {
                 vm.comics = response;
                 if (response.length === 0) vm.noComics = true;
@@ -62,8 +64,9 @@
                 vm.isLoadingComics = false;
                 $log.debug('Comics for `%s`: %o', vm.character.name, vm.comics);
             }
+
             function processErr(err) {
-                vm.noComics = true;
+                vm.err = err;
                 vm.isLoadingComics = false;
                 throwErr(err);
             }
@@ -91,17 +94,7 @@
 
         // Show a native viewer with zoom capability.
         function showViewer() {
-            // Unfortunately, this plugin doesn't handle cdvfile: url.
-            // So I'm converting it to a normal file system url to avoid to download again that image.
-            // Plus the plugin doesn't have any error callback, so using the cached file avoid us issues with network.
-            utils.cacheFile(vm.character.thumbnailUrl)
-                .then(utils.convertLocalFileSystemURL)
-                .then(showNativeViewer)
-                .catch(showNativeViewer);
-            //////////
-            function showNativeViewer(url) {
-                PhotoViewer.show(url, vm.character.name);
-            }
+            PhotoViewer.show(vm.character.thumbnailUrlInCache, vm.character.name);
         }
 
     }
