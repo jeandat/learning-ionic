@@ -5,7 +5,7 @@
         .module('app')
         .factory('favouriteService', favouriteService);
 
-    function favouriteService($firebaseArray, authService, $rootScope, $log, localStorageService, $q, $timeout, utils) {
+    function favouriteService($firebaseArray, authService, $rootScope, $log, localStorageService, $q) {
 
         var faves;
 
@@ -30,14 +30,12 @@
                 // 1. Authenticate anonymously if needed
                 // 2. Load remote faves
                 // 3. Sync local items that we have saved ourselves (Firebase don't do that in the web sdk for now)
-                // 4. Cache thumbnails
-                // 5. Watch for remote changes
-                // 6. Notify internally
-                // 7. Handle errors
+                // 4. Watch for remote changes
+                // 5. Notify internally
+                // 6. Handle errors
                 authService.authenticate()
                     .then(loadFaves)
                     .then(syncItems)
-                    .then(utils.cacheThumbnails)
                     .then(watch)
                     .then(notify)
                     .catch(firebaseInitFailed);

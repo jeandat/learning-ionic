@@ -5,7 +5,7 @@
         .module('app')
         .controller('FavouriteListController', FavouriteListController);
 
-    function FavouriteListController($log, favouriteService, $state, $timeout, $rootScope, $scope) {
+    function FavouriteListController($log, favouriteService, $state, $timeout, $rootScope, $scope, utils) {
 
         var vm = this;
         vm.title = 'FavouriteListController';
@@ -34,11 +34,14 @@
             }
         }
 
-        // Transform an array of faves into a map in order to class faves into groups (one per letter in the alphabet). 
+        // Transform an array of faves into a map in order to class faves into groups (one per letter in the alphabet).
         function generateIndex() {
-            vm.faves = _.groupBy(favouriteService.faves, nameOrTitle);
-            vm.faveKeys = _.sortBy(_.keys(vm.faves));
+            utils.cacheThumbnails(favouriteService.faves).then(createIndex);
             //////////
+            function createIndex(faves){
+                vm.faves = _.groupBy(faves, nameOrTitle);
+                vm.faveKeys = _.sortBy(_.keys(vm.faves));
+            }
             function nameOrTitle(fave) {
                 return _.first(fave.name || fave.title);
             }
