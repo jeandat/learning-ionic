@@ -12,7 +12,7 @@
             // Messages for common errors: 1xxx
             1000: 'No internet connection',
             1001: 'Your request timed out. Please try again.',
-            1002: 'Something went wrong. Please try again.',
+            1002: 'Failed. Try again later.',
             1003: 'Damn, the limit of 3000 requests per day has been reached. Please try again tomorrow.',
             1004: 'Missing argument: {{missing}}',
 
