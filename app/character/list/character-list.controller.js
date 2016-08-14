@@ -6,12 +6,12 @@
         .controller('CharacterListController', CharacterListController);
 
     function CharacterListController($log, characterService, $cordovaToast, throwErr, defaultPageSize, $cordovaKeyboard,
-                                     favouriteService, $scope, $rootScope) {
+                                     favouriteService, $scope, $rootScope, localStorageService) {
 
         var vm = this;
         vm.title = 'CharacterListController';
         // Let's start with something cool ;)
-        vm.filter = 'wolverine';
+        vm.filter = getFirstFilter();
         vm.characters = [];
         vm.searching = false;
         vm.offset = 0;
@@ -52,6 +52,7 @@
             ///////////
 
             function notify() {
+                localStorageService.set('lastCharacterFilter', vm.filter || '');
                 $cordovaToast.showShortBottom(vm.characters.meta.total + ' results');
             }
         }
@@ -124,12 +125,18 @@
         }
 
         // Get the corresponding fave in Firebase (if any) for each model.
-        function checkFavourites(){
+        function checkFavourites() {
             _.forEach(vm.characters, updateFavourite);
             /////////
-            function updateFavourite(character){
+            function updateFavourite(character) {
                 character.favourite = favouriteService.getFaveByModelId(character.id);
             }
+        }
+
+        function getFirstFilter() {
+            var lastFilter = localStorageService.get('lastCharacterFilter');
+            // First time ever, I like to start with something nice. 
+            return lastFilter == null ? 'wolverine' : lastFilter;
         }
 
     }
