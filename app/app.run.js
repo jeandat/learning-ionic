@@ -245,9 +245,9 @@
 
         function initFaves(){
             return $q(function(resolve){
-                // If no response from firebase after 5s, favourites will be unavailable temporarily.
-                // I do not want to block the boot process if that takes too long for a non critical functionality.
-                var timer = $timeout(fallback, 5000, false);
+                // If no response from firebase after 3s, favourites will be unavailable temporarily.
+                // I do not want to block the boot process for too long for a non critical functionality.
+                var timer = $timeout(fallback, 3000, false);
                 favouriteService.init().then(stopTimer);
                 //////////
                 function fallback() {
