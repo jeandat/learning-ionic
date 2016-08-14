@@ -5,13 +5,12 @@
         .module('app')
         .controller('FavouriteListController', FavouriteListController);
 
-    function FavouriteListController($log, favouriteService, $state, $timeout, $rootScope, $scope, utils) {
+    function FavouriteListController($log, favouriteService, $state, $timeout, $rootScope, utils) {
 
         var vm = this;
         vm.title = 'FavouriteListController';
         vm.faves = [];
         vm.faveKeys = [];
-        vm.loaded = false;
         vm.generatingIndex = false;
         vm.deleteFave = deleteFave;
         vm.navigate = navigate;
@@ -22,14 +21,12 @@
 
         function activate() {
             $log.debug(vm.title + ' instantiated');
-            // This check is done after the view has fully entered to avoid executing anything during animations.
-            $scope.$on('$ionicView.afterEnter', checkFirebaseStatus);
-        }
-
-        // Start listening to faves changes.
-        function checkFirebaseStatus() {
-            if (!vm.loaded && $rootScope.favouritesReady) {
-                vm.loaded = true;
+            var unlisten = $rootScope.$watch('favouritesReady', startListening);
+            //////////
+            function startListening(ready){
+                if(!ready) return;
+                unlisten();
+                // Start listening to fave changes.
                 favouriteService.faves.$watch(generateIndex);
                 generateIndex();
             }
