@@ -6,12 +6,12 @@
         .controller('ComicListController', ComicListController);
 
     function ComicListController($log, comicService, $cordovaToast, throwErr, defaultPageSize, favouriteService, $cordovaKeyboard,
-                                 $rootScope, $scope) {
+                                 $rootScope, $scope, localStorageService) {
 
         var vm = this;
         vm.title = 'ComicListController';
         // Let's start with something cool ;)
-        vm.filter = 'son';
+        vm.filter = getFirstFilter();
         vm.comics = [];
         vm.searching = false;
         vm.offset = 0;
@@ -52,6 +52,7 @@
             ///////////
 
             function notify() {
+                localStorageService.set('lastComicFilter', vm.filter || '');
                 $cordovaToast.showShortBottom(vm.comics.meta.total + ' results');
             }
 
@@ -131,6 +132,12 @@
             function updateFavourite(comic){
                 comic.favourite = favouriteService.getFaveByModelId(comic.id);
             }
+        }
+
+        function getFirstFilter() {
+            var lastFilter = localStorageService.get('lastComicFilter');
+            // First time ever, I like to start with something nice.
+            return lastFilter == null ? 'son' : lastFilter;
         }
 
     }
