@@ -2,9 +2,10 @@ ion-view.favourites(view-title='Favourites')
     ion-content
         .card.warning-banner(ng-if='!favouritesReady')
             | Favourites are momentarily unavailable. In the mean time it is not possible to add or remove faves.
-        .no-favourite.padding(ng-if='!vm.faveKeys.length && favouritesReady') You don't have favourite yet.
+        .no-favourite.padding(ng-if='!vm.faveKeys.length && favouritesReady && !vm.generatingIndex') You don't have favourite yet.
         ion-list(can-swipe='favouritesReady')
-            div.item.item-divider(ng-repeat-start="letter in vm.faveKeys" ng-bind='letter')
+            .spinner-wrapper: ion-spinner(ng-if='vm.generatingIndex')
+            .item.item-divider(ng-repeat-start="letter in vm.faveKeys" ng-bind='letter')
             ion-item.item-avatar(ng-click='vm.navigate(fave, $event)' data-tap-disabled='true'
             ng-repeat="fave in vm.faves[letter] | orderBy:'name || title' track by fave.id")
                 img(ng-src="{{::fave.thumbnailUrlInCache || fave.thumbnailUrl}}")

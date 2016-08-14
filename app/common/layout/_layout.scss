@@ -2,10 +2,12 @@
 body {
     font-family: $font-family-sans-serif;
 }
-
 ion-content > .scroll {
     transition: transform 500ms;
 }
 .no-animation ion-content > .scroll {
     transition: none;
+}
+.spinner-wrapper{
+    text-align: center;
 }

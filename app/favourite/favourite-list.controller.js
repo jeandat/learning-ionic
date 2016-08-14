@@ -12,6 +12,7 @@
         vm.faves = [];
         vm.faveKeys = [];
         vm.loaded = false;
+        vm.generatingIndex = false;
         vm.deleteFave = deleteFave;
         vm.navigate = navigate;
 
@@ -36,11 +37,13 @@
 
         // Transform an array of faves into a map in order to class faves into groups (one per letter in the alphabet).
         function generateIndex() {
+            vm.generatingIndex = true;
             utils.cacheThumbnails(favouriteService.faves).then(createIndex);
             //////////
             function createIndex(faves){
                 vm.faves = _.groupBy(faves, nameOrTitle);
                 vm.faveKeys = _.sortBy(_.keys(vm.faves));
+                vm.generatingIndex = false;
             }
             function nameOrTitle(fave) {
                 return _.first(fave.name || fave.title);
