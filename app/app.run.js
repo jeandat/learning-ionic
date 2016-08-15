@@ -27,6 +27,9 @@
         // Style the status bar
         var style = _.get($cordovaStatusbar, 'style');
         style && style(1);
+        var styleHex = _.get($cordovaStatusbar, 'styleHex');
+        styleHex && styleHex('#e53935');
+
     }
 
     // It is not possible with the current version of ui-router to cancel a navigation in the onEnter function of a state definition.
