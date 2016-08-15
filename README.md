@@ -99,6 +99,8 @@ Then you just need to use one of the predefined npm alias. For instance: `npm ru
 
 # Features
 
+## UI
+
 - Search for characters whose name starts with…
 - Search for comics whose title starts with…
 - Show character/comic infos (very limited by design by Marvel)
@@ -114,25 +116,56 @@ Then you just need to use one of the predefined npm alias. For instance: `npm ru
   - Clear responses and images caches
   - Disable animations for less capable devices
   - Disable google analytics  
+
+## Build
+
+- Complete build powered by grunt and npm:
+    - CSS: 
+        - SASS compilation
+        - Auto imports of SASS partials
+        - Auto prefixing of css vendors (code is easier to read and write)
+    - Javascript:
+        - Concatenation and minification
+        - Angular annotations for dependency injection (avoid us to use annotations or the array notation - code is easier to read and write)
+    - JADE:
+        - Templates compilation as a javascript bundle (avoid to compile templates at runtime)
+    - Quality:
+        - JSHINT: analyse structure 
+        - JSCS: analyse form
+    - Release:
+        - Version bumping 
+        - Changelog generation
+    - Doc:
+        - GROC: to read existing code easily
+        - PLATO: sonar light to anaylyse code quality
+    - Watchers for css, javascript and templates
+    - Unit tests: local and remote
+    - Simple and very readable declaration of grunt aliases via a YAML file
+    - Pattern replacements for build instrumentation based on context 
+
 - Travis CI: 
-  - Web build
-  - Local unit tests (PhantomJS)
-  - Remote unit tests (emulators on SauceLabs)
+    - Web build
+    - Local unit tests (PhantomJS)
+    - Remote unit tests (emulators on SauceLabs)
+
 - Greenhouse CI: 
-  - Native build
-  - Local unit tests (PhantomJS)
-  - Remote unit tests (emulators on SauceLabs)
-  - Crashlytics Beta deployment
+    - Native build
+    - Local unit tests (PhantomJS)
+    - Remote unit tests (emulators on SauceLabs)
+    - Crashlytics Beta deployment
+
 - Coverage report on codecov.io
 
 # Prerequisites
 
-Cordova, Ionic, Bower and Grunt should be installed globally, they will delegate to a local instance if any :
+Cordova, Ionic, Bower and Grunt should be installed globally, they will delegate to a local instance if any:
+
 ```bash
 npm i -g cordova ionic bower grunt-cli
 ```
 
-iOS deployment tools should also be installed globally as recommended by Ionic for practical reasons too :
+iOS deployment tools should also be installed globally as recommended by Ionic for practical reasons too:
+
 ```bash
 npm i -g ios-sim ios-deploy
 ```
@@ -151,7 +184,9 @@ This project should work on all versions of node since 0.12.7. I recommend [NVM]
 ## Build
 
 This project uses [Grunt](http://gruntjs.com/) as a task manager. Grunt tasks are lazy-loaded for performance.
-Tasks are defined inside `grunt` folder. There is one file per type of task. For instance, `css.js` contains css related tasks. It allows to have all related tasks in one file without having a too bigger file. I found it to be a good compromise between the one-file-per-task and one-big-monolithic-file strategies.
+Tasks are defined inside `grunt` folder. There is one file per type of task. For instance, `css.js` contains css related tasks. 
+It allows to have all related tasks in one file without having a too bigger file. 
+I found it to be a good compromise between the one-file-per-task and one-big-monolithic-file strategies.
 
 Grunt is used essentially to build web code and start tools.
 
@@ -165,7 +200,7 @@ This project is using jshint (see `.jshintrc`) and jscs (see `.jscsrc`) to valid
 
 This project tries to respect [guidelines from Angular team](https://github.com/johnpapa/angular-styleguide).
 
-I have tried to use super easy optimisations like:
+I have tried to use super easy and known optimisations like:
 
 - [One-time binding](https://code.angularjs.org/1.4.8/docs/guide/expression) 
 - [track-by expressions](https://code.angularjs.org/1.4.8/docs/api/ng/directive/ngRepeat)
@@ -173,6 +208,9 @@ I have tried to use super easy optimisations like:
 - [Enabling animations explicitly](http://www.bennadel.com/blog/2935-enable-animations-explicitly-for-a-performance-boost-in-angularjs.htm)
 - [Using applyAsync](http://blog.thoughtram.io/angularjs/2015/01/14/exploring-angular-1.3-speed-up-with-applyAsync.html)
 - …
+
+An hybrid app should be very optimized (especially when there is animations) regarding today browser performances which are a lot inferior
+to native code. It means also each functionality should be judged with caution in regard of added value, code complexity and performance. 
 
 ## CSS
 
@@ -188,7 +226,7 @@ I have tried to use super easy optimisations like:
 
 When writing a new scss file for a component you should always prefix it with `_` so we know it is a partial. This is convention in sass world. All partials are automatically imported by `app.scss` when building. See `grunt/css.js`.
 
-### Classes
+### BEM
 
 I always liked css object oriented features but they come with the cost of performance and maintainability.
 I tried a [BEM custom approach](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) which seems to be a good compromise :
@@ -286,6 +324,10 @@ npm run serve -- --lab
 ## npm run doc
 
 - Generate [groc](https://github.com/nevir/groc) and [plato](https://github.com/es-analysis/plato) documentation.
+
+## npm run doctoc
+
+- To update Table Of Content (TOC) inside `README.md`.
 
 ## npm run build [-- \<platform>]
 
@@ -424,14 +466,6 @@ To launch all unit tests available:
 npm run test-full
 ```
 
-# Documentation
-
-To generate groc and plato documentation inside `doc` folder: 
-
-```bash
-npm run doc
-```
-
 # Error handling
 
 ## Err class
@@ -507,13 +541,9 @@ I recommend to either hide the splashscreen yourself when you are ready or use a
 
 I don't know a cordova way to customize the app's default background, but by modifying the code of each shell and defining a custom background color in adequation with your look it can be even prettier. I don't like modifying native code though.
  
-# Known bugs
- 
-- Images in cache (`file://` urls) does not load the first time for a security reason when deploying in livereload mode (`http://`)
- 
 # Release process
 
-I prefer to not automate more than that in order to have control after each step. But it would be easy to make an npm script.
+I prefer not to automate more than that in order to have control after each step. But it would be easy to make an npm script.
 
 ```bash
 # 1. Modify package.json and config.xml
@@ -523,3 +553,22 @@ grunt conventionalChangelog
 # 3. Commit, create tag and push to origin (including tags)
 grunt commit-only
 ```
+
+Regarding changelog generation, my conf is [not standard](TODO). I should have used angular conventions which I like a lot. 
+At least, my commit syntax is simpler:
+
+- `feature/<scope> — <subject>` for features
+- `bugfix/<scope> — <subject>` for bug fixes
+
+I add also a body to my commits some time by separating the header and the body with an empty line. 
+
+Almost everything is a feature in this app as it is a demo app. A normal app would use more types.
+
+I recommend to follow solid conventions like the one used by the Angular or IONIC team which have proven to work. 
+Plus they are handled by the conventional-changelog plugin natively.   
+
+The `conventionalChangelog` task inside `grunt/dist.js` is a good example of customisation if like me your commit messages are not standard. 
+
+# Known bugs
+ 
+- Images in cache (`file://` urls) does not load the first time for a security reason when deploying in livereload mode (`http://`)
