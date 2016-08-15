@@ -19,15 +19,6 @@ module.exports = function (grunt, config) {
                 }
             },
 
-            // Utility so useful for versioning
-            bump: {
-                options: {
-                    files: ['package.json'],
-                    commitFiles: ['package.json'],
-                    pushTo: 'origin'
-                }
-            },
-
             // Replace tokens respecting pattern '@@something'.
             replace: {
                 build: {
