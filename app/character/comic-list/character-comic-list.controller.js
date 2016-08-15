@@ -42,7 +42,7 @@
             comicService
                 .findByCharacterId(vm.character.id, {offset: vm.comics.length})
                 .then(updateList)
-                .catch(throwErr);
+                .catch(showErr);
 
             /////////////
 
@@ -57,6 +57,11 @@
                 // Update boolean to know instantly if there is more
                 vm.hasMore = meta && (meta.count + meta.offset) < meta.total;
                 $scope.$broadcast('scroll.infiniteScrollComplete');
+            }
+            
+            function showErr(err){
+                vm.spinnerVisible = false;
+                throwErr(err);
             }
         }
 
