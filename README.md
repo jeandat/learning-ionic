@@ -554,8 +554,8 @@ grunt conventionalChangelog
 grunt commit-only
 ```
 
-Regarding changelog generation, my conf is [not standard](TODO). I should have used angular conventions which I like a lot. 
-At least, my commit syntax is simpler:
+Regarding changelog generation, my conf is [not standard](https://github.com/bcoe/conventional-changelog-standard/blob/master/convention.md). 
+I should have used angular conventions which I like a lot. At least, my commit syntax is simpler:
 
 - `feature/<scope> — <subject>` for features
 - `bugfix/<scope> — <subject>` for bug fixes
