@@ -4,6 +4,7 @@ body {
 }
 ion-content > .scroll {
     transition: transform 500ms;
+    will-change: transform;
 }
 .no-animation ion-content > .scroll {
     transition: none;
