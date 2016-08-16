@@ -1,4 +1,4 @@
-ion-view.comics(view-title='Comics')
+ion-view.comics(view-title='Comics' refresh-on="'cache:cleared'" refresh-callback='vm.search()')
     ion-content
         .bar.item-input-inset.comics__search-bar
             form.comics__form(name='cmSearchForm' novalidate ng-submit='vm.search()')

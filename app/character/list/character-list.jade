@@ -1,4 +1,4 @@
-ion-view.characters(view-title='Characters')
+ion-view.characters(view-title='Characters' refresh-on="'cache:cleared'" refresh-callback='vm.search()')
     ion-content
         .bar.item-input-inset.characters__search-bar
             form.characters__form(name='crtSearchForm' novalidate ng-submit='vm.search()')

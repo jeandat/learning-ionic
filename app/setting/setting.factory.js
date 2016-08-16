@@ -5,7 +5,8 @@
         .module('app')
         .factory('settingService', factory);
 
-    function factory($log, localStorageService, defaultCacheName, CacheFactory, ImgCache, $q, $ionicConfig, $window, trackerId, $ionicBody) {
+    function factory($log, localStorageService, defaultCacheName, CacheFactory, ImgCache, $q, $ionicConfig, $window, trackerId, 
+                     $ionicBody, $rootScope) {
 
         var defaults = {
             enableAnimations: true,
@@ -77,6 +78,7 @@
 
                 function ok() {
                     $log.info('Image cache is now empty');
+                    $rootScope.$emit('cache:cleared');
                     resolve();
                 }
             });

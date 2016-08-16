@@ -1,4 +1,4 @@
-ion-view.favourites(view-title='Favourites')
+ion-view.favourites(view-title='Favourites' refresh-on="'cache:cleared'" refresh-callback='vm.generateIndex()')
     ion-content
         .card.warning-banner(ng-if='!favouritesReady')
             | Favourites are momentarily unavailable. In the mean time it is not possible to add or remove faves.

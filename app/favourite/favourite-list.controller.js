@@ -14,6 +14,7 @@
         vm.generatingIndex = false;
         vm.deleteFave = deleteFave;
         vm.navigate = navigate;
+        vm.generateIndex = generateIndex;
 
         activate();
 
