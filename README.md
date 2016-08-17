@@ -74,14 +74,15 @@ On iOS land, [WkWebView](https://www.npmjs.com/package/cordova-plugin-wkwebview-
 
 # Illustrations
 
-<img src="./doc/screens/character-list.jpg" width="263px" />
-<img src="./doc/screens/comic-list.jpg" width="263px" />
-<img src="./doc/screens/character-detail.jpg" width="263px" />
-<img src="./doc/screens/character-comics.jpg" width="263px" />
-<img src="./doc/screens/character-preview.jpg" width="263px" />
-<img src="./doc/screens/official-site.jpg" width="263px" />
-<img src="./doc/screens/favourite-list.jpg" width="263px" />
-<img src="./doc/screens/setting-list.jpg" width="263px" />
+<img src="./doc/screens/character-list.png" width="263px" />
+<img src="./doc/screens/comic-list.png" width="263px" />
+<img src="./doc/screens/character-detail.png" width="263px" />
+<img src="./doc/screens/character-comic-list.png" width="263px" />
+<img src="./doc/screens/character-preview.png" width="263px" />
+<img src="./doc/screens/character-preview-2.png" width="263px" />
+<img src="./doc/screens/character-site.png" width="263px" />
+<img src="./doc/screens/favourite-list.png" width="263px" />
+<img src="./doc/screens/setting-list.png" width="263px" />
 
 # Quick readers
 
