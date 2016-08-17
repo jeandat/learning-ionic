@@ -69,7 +69,7 @@
         // `ìtems` Array of comics or characters
         function cacheThumbnails(items, properties) {
             $log.info('Caching thumbnails');
-            if (_.isEmpty(items)) return items;
+            if (_.isEmpty(items)) return $q.resolve(items);
             // Avoid configuring everyone for these very common properties.
             if (_.isEmpty(properties)) properties = ['thumbnailUrl', 'thumbnailUrlInPortraitUncanny'];
             var promises = [];
