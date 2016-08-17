@@ -1,3 +1,13 @@
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/jdat82/learning-ionic/compare/v0.5.0...v0.5.1) (2016-08-17)
+
+
+### Features
+
+* **doc:** Update screenshots. ([8f6a804](https://github.com/jdat82/learning-ionic/commit/8f6a804))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/jdat82/learning-ionic/compare/v0.4.3...v0.5.0) (2016-08-17)
 
