@@ -13,15 +13,17 @@
 - [Illustrations](#illustrations)
 - [Quick readers](#quick-readers)
 - [Features](#features)
+  - [UI](#ui)
+  - [Build](#build)
 - [Prerequisites](#prerequisites)
 - [Conventions](#conventions)
-  - [Build](#build)
+  - [Build](#build-1)
   - [Javascript](#javascript)
     - [General](#general)
     - [Angular](#angular)
   - [CSS](#css)
     - [SASS](#sass)
-    - [Classes](#classes)
+    - [BEM](#bem)
 - [High-level npm comands](#high-level-npm-comands)
   - [In case you don't know](#in-case-you-dont-know)
   - [npm run serve](#npm-run-serve)
@@ -34,8 +36,9 @@
   - [npm run test-saucelabs](#npm-run-test-saucelabs)
   - [npm run test-full](#npm-run-test-full)
   - [npm run doc](#npm-run-doc)
+  - [npm run doctoc](#npm-run-doctoc)
   - [npm run build [-- \<platform>]](#npm-run-build----%5Cplatform)
-- [Build](#build-1)
+- [Build](#build-2)
   - [Grunt options](#grunt-options)
     - [--proxy | --no-proxy](#--proxy----no-proxy)
     - [--mock | --no-mock](#--mock----no-mock)
@@ -48,13 +51,12 @@
     - [With livereload support](#with-livereload-support)
 - [Tests](#tests)
   - [Unit tests](#unit-tests)
-- [Documentation](#documentation)
 - [Error handling](#error-handling)
   - [Err class](#err-class)
   - [Default angular handler](#default-angular-handler)
 - [Splashscreen reflexions](#splashscreen-reflexions)
-- [Known bugs](#known-bugs)
 - [Release process](#release-process)
+- [Known bugs](#known-bugs)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -147,12 +149,14 @@ Then you just need to use one of the predefined npm alias. For instance: `npm ru
     - Web build
     - Local unit tests (PhantomJS)
     - Remote unit tests (emulators on SauceLabs)
+    - Test all branches
 
 - Greenhouse CI: 
     - Native build
     - Local unit tests (PhantomJS)
     - Remote unit tests (emulators on SauceLabs)
     - Crashlytics Beta deployment
+    - Test branch master only
 
 - Coverage report on codecov.io
 
