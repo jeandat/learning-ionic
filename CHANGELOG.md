@@ -1,3 +1,48 @@
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/jdat82/learning-ionic/compare/v0.4.3...v0.5.0) (2016-08-17)
+
+
+### Bug Fixes
+
+* **build:** Duplicate task. ([99869cd](https://github.com/jdat82/learning-ionic/commit/99869cd))
+* **cache:** Refresh tabs after clearing the cache in order to avoid bugs on iOS when image in cache is not present anymore. ([1a6932a](https://github.com/jdat82/learning-ionic/commit/1a6932a))
+* **character-comic-list:** When request fail, spinner should disappear. ([4259ad4](https://github.com/jdat82/learning-ionic/commit/4259ad4))
+* **character-detail:** When offline, we should not see a result inside comic list and notably the button 'See more'. ([129d367](https://github.com/jdat82/learning-ionic/commit/129d367))
+* **doc:** Missing URL. ([505e293](https://github.com/jdat82/learning-ionic/commit/505e293))
+* **favourite-list:** Avoid having the spinner and the unavailable message together. ([4a340dc](https://github.com/jdat82/learning-ionic/commit/4a340dc))
+* **favourite-list:** Initializing the index when there is no fave yet was failing. ([f1fce49](https://github.com/jdat82/learning-ionic/commit/f1fce49))
+* **favourite-list:** Move thumbnails caching from the service to the controller in order to be sure we always cache items before rendering the list. ([cbe3480](https://github.com/jdat82/learning-ionic/commit/cbe3480))
+* **favourite-list:** Refresh list automatically the first time when firebase become available without the need to leave and come back. ([dbbb475](https://github.com/jdat82/learning-ionic/commit/dbbb475))
+* **security:** On iOS, one google API was not handled by my CSP tag. ([853c832](https://github.com/jdat82/learning-ionic/commit/853c832))
+
+
+### Features
+
+* **boot:** Reduce timeout for firebase in order to start more quickly when network is bad. ([3806e8a](https://github.com/jdat82/learning-ionic/commit/3806e8a))
+* **character-list:** Responsive technique to avoid hardcoding an height. ([13e31dd](https://github.com/jdat82/learning-ionic/commit/13e31dd))
+* **character-list:** Save last search filter upon restart ([f183858](https://github.com/jdat82/learning-ionic/commit/f183858))
+* **comic-detail:** Unnecessary cache processing (already done). ([f96c17d](https://github.com/jdat82/learning-ionic/commit/f96c17d))
+* **comic-list:** Responsive technique to avoid hardcoding an height. ([a5ac482](https://github.com/jdat82/learning-ionic/commit/a5ac482))
+* **comic-list:** Save last search filter upon restart ([fb9e873](https://github.com/jdat82/learning-ionic/commit/fb9e873))
+* **doc:** Add details about the build functionalities. ([b0d8c36](https://github.com/jdat82/learning-ionic/commit/b0d8c36))
+* **doc:** Add some basic hints for performance in angular world. ([6b94543](https://github.com/jdat82/learning-ionic/commit/6b94543))
+* **doc:** Little detail which has its importance. ([cc89cba](https://github.com/jdat82/learning-ionic/commit/cc89cba))
+* **doc:** Little precision about why I mixed two API in order to process two related events. ([329ed0e](https://github.com/jdat82/learning-ionic/commit/329ed0e))
+* **doc:** Update TOC in README ([888673c](https://github.com/jdat82/learning-ionic/commit/888673c))
+* **error:** Change default error message. ([a592c05](https://github.com/jdat82/learning-ionic/commit/a592c05))
+* **error:** Renamed offline error message ([17911d8](https://github.com/jdat82/learning-ionic/commit/17911d8))
+* **favourite-list:** favourite/favourite-list — Add a spinner while index is generated. ([f900bac](https://github.com/jdat82/learning-ionic/commit/f900bac))
+* **favourite-list:** Refactor faves initialisation process. ([dd64506](https://github.com/jdat82/learning-ionic/commit/dd64506))
+* **photo-viewer:** Factorize call to native photo viewer. ([d88b565](https://github.com/jdat82/learning-ionic/commit/d88b565))
+* **settings:** Change font of clear cache button. ([50c7141](https://github.com/jdat82/learning-ionic/commit/50c7141))
+* **status-bar:** Add some color to the status bar for coherence with app main theme. ([2557598](https://github.com/jdat82/learning-ionic/commit/2557598))
+* **tests:** Incorporate saucelabs tests in travis build ([57e6e56](https://github.com/jdat82/learning-ionic/commit/57e6e56))
+* **tests:** New container for unit tests: the saucelabs cloud platform ([3be8264](https://github.com/jdat82/learning-ionic/commit/3be8264))
+* Missing optimisation. ([15b3f36](https://github.com/jdat82/learning-ionic/commit/15b3f36))
+* Upgrade crosswalk to version 20 (Chrome 50). ([6832a01](https://github.com/jdat82/learning-ionic/commit/6832a01))
+
+
+
 <a name="0.4.3"></a>
 ## [0.4.3](https://github.com/jdat82/learning-ionic/compare/0.4.2...v0.4.3) (2016-08-08)
 
