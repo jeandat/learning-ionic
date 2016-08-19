@@ -63,9 +63,9 @@ module.exports = function () {
                         preserveComments: false,
                         screwIE8: true
                     },
-                    files: [{
-                        src: '<%= pub %>/js/app.js'
-                    }]
+                    files: {
+                        '<%= pub %>/js/app.js': '<%= pub %>/js/app.js'
+                    }
                 }
             },
 
