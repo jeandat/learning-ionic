@@ -1,6 +1,6 @@
 {
     "name": "learning-ionic",
-    "version": "0.5.1",
+    "version": "0.5.2",
     "description": "Project to learn ionic of course",
     "devDependencies": {
         "autoprefixer": "^6.3.1",

@@ -1,3 +1,20 @@
+<a name="0.5.2"></a>
+## [0.5.2](https://github.com/jdat82/learning-ionic/compare/v0.5.1...v0.5.2) (2016-08-19)
+
+
+### Bug Fixes
+
+* **build:** Fix uglify conf (probably due to a version change). ([32fcd9d](https://github.com/jdat82/learning-ionic/commit/32fcd9d))
+
+
+### Features
+
+* Icon file for Play Store page. ([0adc76a](https://github.com/jdat82/learning-ionic/commit/0adc76a))
+* Licence file. ([cc2d2e1](https://github.com/jdat82/learning-ionic/commit/cc2d2e1))
+* Play store banner. ([9cb1d49](https://github.com/jdat82/learning-ionic/commit/9cb1d49))
+
+
+
 <a name="0.5.1"></a>
 ## [0.5.1](https://github.com/jdat82/learning-ionic/compare/v0.5.0...v0.5.1) (2016-08-17)
 
