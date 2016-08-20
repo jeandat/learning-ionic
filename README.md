@@ -577,4 +577,4 @@ The `conventionalChangelog` task inside `grunt/dist.js` is a good example of cus
 
 # Known bugs
  
-- Images in cache (`file://` urls) does not load the first time for a security reason when deploying in livereload mode (`http://`)
+- Livereload mode breaks images first time they are put in cache (`file://` url is used in place of `cdvfile://` url)

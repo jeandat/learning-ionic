@@ -9,15 +9,15 @@
         .constant('version', '@@version')
         .constant('stringify', stringify)
         // Google Analytics account ID
-		.constant('trackerId', '@@trackerId')
-		// Current environment (dev or dist)
+        .constant('trackerId', '@@trackerId')
+        // Current environment (dev or dist)
         .constant('env', '@@env')
         // Backend endpoint (local pc in livereload mode - proxy - or Marvel servers)
-		.constant('apiEndpoint', '@@apiEndpoint')
+        .constant('apiEndpoint', '@@apiEndpoint')
         // Marvel API key
-		.constant('apiKey', '@@apiKey')
+        .constant('apiKey', '@@apiKey')
         // Marvel private API key (yeah I know, but Marvel forced my hand)
-		.constant('privateApiKey', '@@privateApiKey')
+        .constant('privateApiKey', '@@privateApiKey')
         // Marvel default offset when requesting a list of results (number of items)
         .constant('defaultPageSize', 10)
         // HTTP cache name
