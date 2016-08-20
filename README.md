@@ -151,7 +151,7 @@ Then you just need to use one of the predefined npm alias. For instance: `npm ru
     - Local unit tests (PhantomJS)
     - Remote unit tests (emulators on SauceLabs)
     - Test all git branches with a `.travis.yml` file
-    - Test several versions of node (down to 0.10)
+    - Test several versions of node (down to 0.12)
 
 - Greenhouse CI: 
     - Native build
