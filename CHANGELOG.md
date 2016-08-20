@@ -1,3 +1,19 @@
+<a name="0.5.3"></a>
+## [0.5.3](https://github.com/jdat82/learning-ionic/compare/v0.5.2...v0.5.3) (2016-08-20)
+
+
+### Bug Fixes
+
+* **doc:** Add one advantage of Travis over Greenhouse (both with a free account). ([1e26071](https://github.com/jdat82/learning-ionic/commit/1e26071))
+* **tests:** Greenhouse (like Travis) should execute remote tests in saucelabs cloud like mentionned in README. ([880f75c](https://github.com/jdat82/learning-ionic/commit/880f75c))
+
+
+### Features
+
+* Upgrade npm packages with `updtr`. ([f6fa4ee](https://github.com/jdat82/learning-ionic/commit/f6fa4ee))
+
+
+
 <a name="0.5.2"></a>
 ## [0.5.2](https://github.com/jdat82/learning-ionic/compare/v0.5.1...v0.5.2) (2016-08-19)
 
