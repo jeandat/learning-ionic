@@ -578,3 +578,4 @@ The `conventionalChangelog` task inside `grunt/dist.js` is a good example of cus
 # Known bugs
  
 - Livereload mode breaks images first time they are put in cache (`file://` url is used in place of `cdvfile://` url)
+- Cordova plugin `google-analytics-plugin` has been updated during summer with **not so smart** breaking changes in the API. Waiting for `ngCordova` to be updated.   
