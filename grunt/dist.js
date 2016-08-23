@@ -57,6 +57,23 @@ module.exports = function () {
                 release: {
                     src: 'CHANGELOG.md'
                 }
+            },
+
+            // Generate an apk for play store.
+            // Use a local keystore.
+            // To be customized per project.
+            shell: {
+                dist: {
+                    command: [
+                        'grunt dist',
+                        'cordova build --release android',
+                        'jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ../learning-ionic-keystore/learning-ionic.keystore \ ' +
+                        'platforms/android/build/outputs/apk/android-armv7-release-unsigned.apk learning-ionic',
+                        'rm -f learning-ionic.apk',
+                        '$ANDROID_HOME/build-tools/current/zipalign -v 4 platforms/android/build/outputs/apk/android-armv7-release-unsigned.apk \ ' +
+                        'learning-ionic.apk'
+                    ].join(' && ')
+                }
             }
 
         }
