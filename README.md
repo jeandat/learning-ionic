@@ -84,6 +84,12 @@ On iOS land, [WkWebView](https://www.npmjs.com/package/cordova-plugin-wkwebview-
 <img src="./doc/screens/favourite-list.png" width="263px" />
 <img src="./doc/screens/setting-list.png" width="263px" />
 
+
+<a href='https://play.google.com/store/apps/details?id=com.oab.demo.ionic&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+    <img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="196px"/>
+</a>
+
+
 # Quick readers
 
 Quick readers can do `npm start` in order to check it quickly :

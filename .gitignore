@@ -3,14 +3,12 @@
 
 doc/*
 !doc/screens
+!doc/readme
 .idea/
 node_modules/
 platforms/
 plugins/
-.sass-cache/
 .tmp/
 vendor/*
 !vendor/md5
-sublime/
-npm-debug.log
 www/*
