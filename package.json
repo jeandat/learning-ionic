@@ -76,7 +76,7 @@
     "ios"
   ],
   "scripts": {
-    "prestart": "npm install",
+    "prestart": " chmod a+x ./hooks/after_prepare/*.js && npm install",
     "postinstall": "bower install",
     "start": "npm run serve",
     "serve": "grunt dev --mock --proxy && grunt serve --mock --proxy",
