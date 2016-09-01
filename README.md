@@ -268,6 +268,8 @@ Ionic comes with some very useful tools. Essentially it allows three differents 
 > WARNING: if I'm not mistaken, ionic built-in proxy is not working behind a corporate proxy.
 > For myself, I'm working either on wifi or on a local network made with my mobile.
 
+The following npm commands are wrappers around ionic and cordova commands. 
+Il simplifies day-to-day job but allows nonetheless to use direct ionic or cordova commands when needed.
 
 ## npm run serve
 
