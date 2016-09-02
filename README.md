@@ -394,6 +394,31 @@ Define which platform is currently built. May be useful if you want to do someth
 
 For instance: `grunt dev --platform windows`
 
+## Instrument code based on context
+
+We just saw the `--patterns` grunt option allows to choose a set of patterns. There is two default sets: `dev` & `dist`.
+
+The first way to instrument code is by using the `@@` syntax. It allows to insert any variable in any file like that:
+
+```jade
+meta(http-equiv='Content-Security-Policy', content="@@csp")
+```
+
+As an alternative, in javascript files, I prefer to declare a constant using that variable in `app.constant.js` and then inject it in my angular components.
+I recommend to do it that way for javascript files in order to respect the dependency injection paradigm which is used every where in angular notably in unit tests.
+
+```javascript
+// Backend endpoint
+app.constant('apiEndpoint', '@@apiEndpoint');
+
+…
+
+// Restangular configuration
+function setRestConfig(Restangular, apiEndpoint) {
+	…
+}
+```
+
 # Serving changes
 
 > WARNING: if I'm not mistaken, ionic built-in proxy is not working behind a corporate proxy.
