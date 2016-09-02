@@ -44,6 +44,19 @@
     - [--mock | --no-mock](#--mock----no-mock)
     - [--patterns <name>](#--patterns-name)
     - [--platform <name>](#--platform-name)
+  - [Instrument code based on context](#instrument-code-based-on-context)
+  - [Grunt tasks](#grunt-tasks)
+    - [`aliases.yaml`](#aliasesyaml)
+    - [`grunt/css.js`](#gruntcssjs)
+    - [`grunt/script.js`](#gruntscriptjs)
+    - [`grunt/template.js`](#grunttemplatejs)
+    - [`grunt/quality.js`](#gruntqualityjs)
+    - [`grunt/dist.js`](#gruntdistjs)
+    - [`grunt/doc.js`](#gruntdocjs)
+    - [`grunt/serve.js`](#gruntservejs)
+    - [`grunt/test.js`](#grunttestjs)
+    - [`grunt/assets.js`](#gruntassetsjs)
+    - [`grunt/common.js`](#gruntcommonjs)
 - [Serving changes](#serving-changes)
   - [In your browser](#in-your-browser)
   - [On device](#on-device)
@@ -418,6 +431,61 @@ function setRestConfig(Restangular, apiEndpoint) {
 	…
 }
 ```
+
+## Grunt tasks
+
+There is one `gruntfile.js` in the root ; then everything else grunt related is inside `grunt` folder. Each file groups several grunt tasks per type.
+
+Temporary file instrumentation is done inside `.tmp`.
+
+Target files are generated or copied to cordova `www` folder. That folder is emptied before each build and should not contain versionned source code.
+
+### `aliases.yaml`
+
+Define grunt aliases the easy way. There is 3 default aliases. More on than later. For novices, a grunt alias is just a task invoking a set of tasks.
+
+### `grunt/css.js`
+
+SASS files are imported into `_partials.scss` and then compiled into app.css. PostCSS allows us to instrument this generated file to add and remove vendor prefixes based on our scope (which browser we want to support). 
+
+### `grunt/script.js`
+
+Angular functions eligible to dependency injection are rewritten to use the array notation in order to be compatible with minification. Code is contactenated and eventually minified (in production mode). 
+
+### `grunt/template.js`
+
+Compile jade templates as either html file or javascript angular module. Either case, not jade compilation is made at runtime.
+
+### `grunt/quality.js`
+
+Analyse javascript files content (semantics and style).
+
+### `grunt/dist.js`
+
+Task related to the release process. Initialized with basic tools. May highly from one project to another.
+
+### `grunt/doc.js`
+
+Groc might be handy when discovering code written by others. Plato is a simple solution to get some insights about code quality. Less evolved than SONAR.
+
+### `grunt/serve.js`
+
+Utility grunt tasks to launch in parallel several tools. Default chokidar configuration.
+
+> Each file in `grunt/` folder may contain a chokidar task which is responsible to watch files for changes. 
+I prefer to put them near the related tasks because it makes more sense and is easier to debug.
+
+### `grunt/test.js`
+
+Karma configuration.
+
+### `grunt/assets.js`
+
+Copy static files.
+
+### `grunt/common.js`
+
+Everything else like patterns replacement or cleaning.
 
 # Serving changes
 
