@@ -87,15 +87,15 @@ On iOS land, [WkWebView](https://www.npmjs.com/package/cordova-plugin-wkwebview-
 
 # Illustrations
 
-<img src="./doc/screens/character-list.png" width="263px" />
-<img src="./doc/screens/comic-list.png" width="263px" />
-<img src="./doc/screens/character-detail.png" width="263px" />
-<img src="./doc/screens/character-comic-list.png" width="263px" />
-<img src="./doc/screens/character-preview.png" width="263px" />
-<img src="./doc/screens/character-preview-2.png" width="263px" />
-<img src="./doc/screens/character-site.png" width="263px" />
-<img src="./doc/screens/favourite-list.png" width="263px" />
-<img src="./doc/screens/setting-list.png" width="263px" />
+<img src="doc/screens/character-list.png" width="263px" />
+<img src="doc/screens/comic-list.png" width="263px" />
+<img src="doc/screens/character-detail.png" width="263px" />
+<img src="doc/screens/character-comic-list.png" width="263px" />
+<img src="doc/screens/character-preview.png" width="263px" />
+<img src="doc/screens/character-preview-2.png" width="263px" />
+<img src="doc/screens/character-site.png" width="263px" />
+<img src="doc/screens/favourite-list.png" width="263px" />
+<img src="doc/screens/setting-list.png" width="263px" />
 
 
 <a href='https://play.google.com/store/apps/details?id=com.oab.demo.ionic&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
